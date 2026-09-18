@@ -29,10 +29,10 @@
 #include <stdio.h>
 #include <string.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
-static Mix_Chunk *xor_snd;
+static MIX_Audio *xor_snd;
 static int xor_radius = 16;
 
 Uint32 xor_api_version(void);
@@ -76,7 +76,7 @@ int xor_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 com
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/xor.ogg", api->data_directory);
-  xor_snd = Mix_LoadWAV(fname);
+  xor_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -126,14 +126,15 @@ static void do_xor(void *ptr, int which ATTRIBUTE_UNUSED,
   float hue, sat, val;
   Uint32 pixel;
 
-  SDL_GetRGB(api->getpixel(canvas, x, y), canvas->format, &r, &g, &b);
+  SDL_GetRGB(api->getpixel(canvas, x, y), SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), &r,
+             &g, &b);
   api->rgbtohsv(r, g, b, &hue, &sat, &val);
   if (sat == 0)
     xor = (2 * (int)hue + (x ^ y)) % 360;
   else
     xor = ((int)hue + (x ^ y)) % 360;
   api->hsvtorgb(xor, 1, 1, &r, &g, &b);
-  pixel = SDL_MapRGB(canvas->format, r, g, b);
+  pixel = SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b);
   api->putpixel(canvas, x, y, pixel);
 }
 
@@ -142,12 +143,13 @@ static void do_xor_circle(void *ptr, int which ATTRIBUTE_UNUSED,
 {
   magic_api *api = (magic_api *) ptr;
   int xx, yy;
+  int xor_radius_p = max(1, (int)(xor_radius * api->pressure));
 
-  for (yy = -xor_radius; yy < xor_radius; yy++)
+  for (yy = -xor_radius_p; yy < xor_radius_p; yy++)
   {
-    for (xx = -xor_radius; xx < xor_radius; xx++)
+    for (xx = -xor_radius_p; xx < xor_radius_p; xx++)
     {
-      if (api->in_circle(xx, yy, xor_radius))
+      if (api->in_circle(xx, yy, xor_radius_p))
       {
         if (!api->touched(xx + x, yy + y))
           do_xor(api, which, canvas, last, x + xx, y + yy);
@@ -215,7 +217,7 @@ void xor_release(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
 void xor_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (xor_snd != NULL)
-    Mix_FreeChunk(xor_snd);
+    MIX_DestroyAudio(xor_snd);
 }
 
 void xor_set_color(magic_api *api ATTRIBUTE_UNUSED,

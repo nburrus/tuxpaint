@@ -24,8 +24,10 @@
 #ifndef __PLATFORM_H__
 #define __PLATFORM_H__
 
+#include <SDL3/SDL_platform_defines.h>
 
-#if defined(__APPLE__)
+
+#if defined(SDL_PLATFORM_APPLE)
 #include <TargetConditionals.h>
 
     /*
@@ -41,7 +43,7 @@
 
 #warning "Unsupported Apple platform, will build on a best-effort basis"
 #endif
-#endif /* __APPLE__ */
+#endif /* SDL_PLATFORM_APPLE */
 
 
 #endif /* __PLATFORM_H__ */

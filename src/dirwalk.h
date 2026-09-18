@@ -26,7 +26,7 @@
 #ifndef DIRWALK_H
 #define DIRWALK_H
 
-#include "SDL.h"
+#include <SDL3/SDL.h>
 
 #include "compiler.h"
 

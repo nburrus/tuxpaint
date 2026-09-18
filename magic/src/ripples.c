@@ -29,14 +29,14 @@
 #include <stdio.h>
 #include <string.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 #include <math.h>
 
 /* Our globals: */
 
-static Mix_Chunk *ripples_snd;
+static MIX_Audio *ripples_snd;
 
 static int ripples_z, ripples_brite;
 static float ripples_radius = 100;
@@ -82,7 +82,7 @@ int ripples_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/ripples.ogg", api->data_directory);
-  ripples_snd = Mix_LoadWAV(fname);
+  ripples_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -143,13 +143,14 @@ static void ripples_linecb(void *ptr, int which ATTRIBUTE_UNUSED, SDL_Surface *c
   Uint32 pix;
 
   pix = api->getpixel(last, x + ripples_z, y + ripples_z);
-  SDL_GetRGB(pix, last->format, &r, &g, &b);
+  SDL_GetRGB(pix, SDL_GetPixelFormatDetails(last->format), SDL_GetSurfacePalette(last), &r, &g, &b);
 
   r = max(0, min(255, r + ripples_brite));
   g = max(0, min(255, g + ripples_brite));
   b = max(0, min(255, b + ripples_brite));
 
-  api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, r, g, b));
+  api->putpixel(canvas, x, y,
+                SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b));
 }
 
 // Affect the canvas on click:
@@ -201,7 +202,7 @@ void ripples_release(magic_api *api ATTRIBUTE_UNUSED,
 void ripples_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (ripples_snd != NULL)
-    Mix_FreeChunk(ripples_snd);
+    MIX_DestroyAudio(ripples_snd);
 }
 
 // Record the color from Tux Paint:

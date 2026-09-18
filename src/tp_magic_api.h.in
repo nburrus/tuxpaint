@@ -3,14 +3,14 @@
 
 /* src/tp_magic_api.h.in last modified 2024-06-01 */
 
-#include "SDL.h"
-#include "SDL_mixer.h"
+#include <SDL3/SDL.h>
+#include <SDL3_mixer/SDL_mixer.h>
 #include "libintl.h"
 #ifndef gettext_noop
 #define gettext_noop(String) String
 #endif
 
-#ifdef __OS2__
+#ifdef SDL_PLATFORM_OS2
 #  define TX_EXTERN __declspec(dllexport)
 #else
 #  define TX_EXTERN
@@ -121,11 +121,14 @@ typedef struct magic_api_t {
   /* XOR's the pixel at (x,y) location of the surface. */
   void (*xorpixel)(SDL_Surface *, int, int);
 
+  /* The mixer used to play sound as it is needed to load audio */
+  MIX_Mixer * mmixer;
+
   /* Asks Tux Paint to play a sound (one loaded via SDL_mixer library);
      the first value is for left/right panning (0 is left, 128 is center,
      255 is right); the second value is for total volume (0 is off, 255 is
      loudest) */
-  void (*playsound)(Mix_Chunk *, int, int);
+  void (*playsound)(MIX_Audio *, int, int);
 
   /* Asks Tux Paint whether a sound is currently being played (by 'playsound()') */
   int (*playingsound)(void);
@@ -182,6 +185,11 @@ typedef struct magic_api_t {
      drawn something "temporary" (such as guides) onto the canvas during
      a previous click event. */
   void (*retract_undo)(void);
+
+  /* Pen pressure already corrected. Will be in the range 0.0 - 1.0
+     Some magic tools could benefit from it.
+     Will allways be 1.0 for mouse clicks. */
+  float pressure;
 } magic_api;
 
 

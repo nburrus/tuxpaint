@@ -30,12 +30,12 @@
 #include <string.h>
 #include <stdlib.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 /* Our globals: */
 
-static Mix_Chunk *foam_snd;
+static MIX_Audio *foam_snd;
 static Uint8 foam_r, foam_g, foam_b;
 static int foam_mask_w, foam_mask_h;
 static int *foam_mask, *foam_mask_tmp;
@@ -84,7 +84,7 @@ int foam_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 co
   SDL_Surface *foam_data;
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/foam.ogg", api->data_directory);
-  foam_snd = Mix_LoadWAV(fname);
+  foam_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   snprintf(fname, sizeof(fname), "%simages/magic/foam_data.png", api->data_directory);
   foam_data = IMG_Load(fname);
@@ -99,7 +99,7 @@ int foam_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 co
   foam_3 = api->scale(foam_data, ((api->canvas_w / FOAM_PROP) * 2) / 4, ((api->canvas_h / FOAM_PROP) * 2) / 4, 1);
   foam_1 = api->scale(foam_data, ((api->canvas_w / FOAM_PROP) * 1) / 4, ((api->canvas_h / FOAM_PROP) * 1) / 4, 1);
 
-  SDL_FreeSurface(foam_data);
+  SDL_DestroySurface(foam_data);
 
   if (foam_7 == NULL || foam_5 == NULL || foam_3 == NULL || foam_1 == NULL)
   {
@@ -157,14 +157,15 @@ static void do_foam(void *ptr, int which ATTRIBUTE_UNUSED,
 {
   magic_api *api = (magic_api *) ptr;
   int xx, yy, nx, ny;
+  int FOAM_RADIUS_P = max(1, (int)(FOAM_RADIUS * api->pressure));
 
   /* SDL_Rect dest; */
 
-  for (yy = -FOAM_RADIUS; yy < FOAM_RADIUS; yy++)
+  for (yy = -FOAM_RADIUS_P; yy < FOAM_RADIUS_P; yy++)
   {
-    for (xx = -FOAM_RADIUS; xx < FOAM_RADIUS; xx++)
+    for (xx = -FOAM_RADIUS_P; xx < FOAM_RADIUS_P; xx++)
     {
-      if (api->in_circle(xx, yy, FOAM_RADIUS))
+      if (api->in_circle(xx, yy, FOAM_RADIUS_P))
       {
         nx = (x / FOAM_PROP) + xx;
         ny = (y / FOAM_PROP) + yy;
@@ -445,19 +446,19 @@ void foam_release_worker(SDL_Surface *canvas, SDL_Surface *last, SDL_Rect *updat
 void foam_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (foam_snd != NULL)
-    Mix_FreeChunk(foam_snd);
+    MIX_DestroyAudio(foam_snd);
 
   if (foam_mask != NULL)
     free(foam_mask);
 
   if (foam_1 != NULL)
-    SDL_FreeSurface(foam_1);
+    SDL_DestroySurface(foam_1);
   if (foam_3 != NULL)
-    SDL_FreeSurface(foam_3);
+    SDL_DestroySurface(foam_3);
   if (foam_5 != NULL)
-    SDL_FreeSurface(foam_5);
+    SDL_DestroySurface(foam_5);
   if (foam_7 != NULL)
-    SDL_FreeSurface(foam_7);
+    SDL_DestroySurface(foam_7);
 }
 
 // Record the color from Tux Paint:

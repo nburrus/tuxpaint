@@ -29,11 +29,12 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <libintl.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 #include <math.h>
 #include <limits.h>
 #include <time.h>
@@ -51,7 +52,7 @@ enum
   noise_NUM_TOOLS
 };
 
-static Mix_Chunk *noise_snd_effect[noise_NUM_TOOLS];
+static MIX_Audio *noise_snd_effect[noise_NUM_TOOLS];
 
 const char *noise_snd_filenames[noise_NUM_TOOLS] = {
   "noise.ogg",
@@ -124,7 +125,7 @@ int noise_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 c
   for (i = 0; i < noise_NUM_TOOLS; i++)
   {
     snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, noise_snd_filenames[i]);
-    noise_snd_effect[i] = Mix_LoadWAV(fname);
+    noise_snd_effect[i] = MIX_LoadAudio(api->mmixer, fname, 0);
   }
   return (1);
 }
@@ -177,12 +178,15 @@ static void do_noise_pixel(void *ptr, int which ATTRIBUTE_UNUSED,
   double temp2[3];
   int k;
 
-  SDL_GetRGB(api->getpixel(canvas, x, y), canvas->format, &temp[0], &temp[1], &temp[2]);
+  SDL_GetRGB(api->getpixel(canvas, x, y), SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
+             &temp[0], &temp[1], &temp[2]);
   for (k = 0; k < 3; k++)
   {
     temp2[k] = clamp(0.0, (int)temp[k] - (rand() % noise_AMOUNT) + noise_AMOUNT / 2.0, 255.0);
   }
-  api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, temp2[0], temp2[1], temp2[2]));
+  api->putpixel(canvas, x, y,
+                SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), temp2[0], temp2[1],
+                           temp2[2]));
 
 }
 
@@ -205,12 +209,13 @@ static void do_noise_brush(void *ptr, int which, SDL_Surface *canvas, SDL_Surfac
 {
   int xx, yy;
   magic_api *api = (magic_api *) ptr;
+  int noise_RADIUS_p = max(1, (int)(noise_RADIUS * api->pressure));
 
-  for (yy = y - noise_RADIUS; yy < y + noise_RADIUS; yy++)
+  for (yy = y - noise_RADIUS_p; yy < y + noise_RADIUS_p; yy++)
   {
-    for (xx = x - noise_RADIUS; xx < x + noise_RADIUS; xx++)
+    for (xx = x - noise_RADIUS_p; xx < x + noise_RADIUS_p; xx++)
     {
-      if (api->in_circle(xx - x, yy - y, noise_RADIUS) && !api->touched(xx, yy))
+      if (api->in_circle(xx - x, yy - y, noise_RADIUS_p) && !api->touched(xx, yy))
       {
         do_noise_pixel(api, which, canvas, last, xx, yy);
       }
@@ -284,7 +289,7 @@ void noise_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   {
     if (noise_snd_effect[i] != NULL)
     {
-      Mix_FreeChunk(noise_snd_effect[i]);
+      MIX_DestroyAudio(noise_snd_effect[i]);
     }
   }
 }

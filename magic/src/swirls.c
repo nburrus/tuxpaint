@@ -11,13 +11,14 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <libintl.h>
 #include <math.h>
 
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 enum
 {
@@ -81,7 +82,7 @@ int SWIRLS_STROKE_LENGTH[NUM_SWIRL_TOOLS] = {
   5
 };
 
-Mix_Chunk *snd_effects[NUM_SWIRL_TOOLS];
+MIX_Audio *snd_effects[NUM_SWIRL_TOOLS];
 SDL_Surface *swirls_snapshot = NULL;
 int swirls_start_x, swirls_start_y;
 Uint32 swirl_stroke_color;
@@ -132,7 +133,7 @@ int swirls_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
   for (i = 0; i < NUM_SWIRL_TOOLS; i++)
   {
     snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, swirl_sfx_filenames[i]);
-    snd_effects[i] = Mix_LoadWAV(fname);
+    snd_effects[i] = MIX_LoadAudio(api->mmixer, fname, 0);
   }
 
   return (1);
@@ -211,7 +212,7 @@ void swirls_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   for (i = 0; i < NUM_SWIRL_TOOLS; i++)
   {
     if (snd_effects[i] != NULL)
-      Mix_FreeChunk(snd_effects[i]);
+      MIX_DestroyAudio(snd_effects[i]);
   }
 }
 
@@ -304,15 +305,17 @@ void swirls_line_callback_drag(void *ptr, int which,
   int i, ang_deg, radius, nx, ny;
   double ang_rad;
   magic_api *api = (magic_api *) ptr;
+  float p = api->pressure;
 
   if (snd_effects[which] != NULL)
     api->playsound(snd_effects[which], (x * 255) / canvas->w, 255);
 
-  for (i = 0; i < SWIRLS_NUM_STROKES_PER_DRAG_LINE[which]; i++)
+  for (i = 0; i < p * SWIRLS_NUM_STROKES_PER_DRAG_LINE[which]; i++)
   {
     ang_deg = (rand() % 360);
     ang_rad = (ang_deg * M_PI) / 180.0;
-    radius = (rand() % (SWIRLS_DRAG_LINE_STROKE_RADIUS[which] * 2)) - SWIRLS_DRAG_LINE_STROKE_RADIUS[which];
+    /* FIXME: added + 1 to avoid floating point exceptions, specially in "Fur" with low pressure on the pencil. */
+    radius = (rand() % ((int)(p * SWIRLS_DRAG_LINE_STROKE_RADIUS[which] * 2) + 1)) - p * SWIRLS_DRAG_LINE_STROKE_RADIUS[which];
 
     nx = x + (int)(cos(ang_rad) * radius);
     ny = y + (int)(sin(ang_rad) * radius);
@@ -351,7 +354,8 @@ void swirls_draw_stroke(magic_api *api, int which, SDL_Surface *canvas, int x, i
   else
   {
     swirl_stroke_color = api->getpixel(swirls_snapshot, x, y);
-    SDL_GetRGB(swirl_stroke_color, canvas->format, &r, &g, &b);
+    SDL_GetRGB(swirl_stroke_color, SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), &r, &g,
+               &b);
   }
 
   api->rgbtohsv(r, g, b, &h, &s, &v);
@@ -386,7 +390,7 @@ void swirls_draw_stroke(magic_api *api, int which, SDL_Surface *canvas, int x, i
     v = 1.0;
   }
   api->hsvtorgb(h, s, v, &r, &g, &b);
-  swirl_stroke_color = SDL_MapRGB(canvas->format, r, g, b);
+  swirl_stroke_color = SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b);
 
   api->line((void *)api, which, canvas, NULL /* N/A */ ,
             x1, y1, x2, y2, 1, swirls_line_callback_draw_stroke);
@@ -421,10 +425,7 @@ void swirls_switchin(magic_api *api ATTRIBUTE_UNUSED,
                      int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas)
 {
   if (swirls_snapshot == NULL)
-    swirls_snapshot =
-      SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->w, canvas->h,
-                           canvas->format->BitsPerPixel,
-                           canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+    swirls_snapshot = SDL_CreateSurface(canvas->w, canvas->h, canvas->format);
 
   if (swirls_snapshot != NULL)
     SDL_BlitSurface(canvas, NULL, swirls_snapshot, NULL);

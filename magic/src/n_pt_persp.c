@@ -21,12 +21,15 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <libintl.h>
+#include <math.h>
+#include <float.h>
 
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 // #define DEBUG
 // #define PERF
@@ -271,7 +274,7 @@ enum
   NUM_SNDS
 };
 
-Mix_Chunk *sound_effects[NUM_SNDS];
+MIX_Audio *sound_effects[NUM_SNDS];
 
 const char *sound_filenames[NUM_SNDS] = {
   "n_pt_persp_select.ogg",
@@ -393,7 +396,7 @@ int n_pt_persp_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Ui
   for (i = 0; i < NUM_SNDS; i++)
   {
     snprintf(filename, sizeof(filename), "%ssounds/magic/%s", api->data_directory, sound_filenames[i]);
-    sound_effects[i] = Mix_LoadWAV(filename);
+    sound_effects[i] = MIX_LoadAudio(api->mmixer, filename, 0);
   }
 
   /* Set default vanishing point positions: */
@@ -447,7 +450,7 @@ int n_pt_persp_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Ui
 
   /* Generate our own snapshot surface */
 
-  n_pt_persp_snapshot = SDL_CreateRGBSurface(SDL_SWSURFACE, api->canvas_w, api->canvas_h, 32, 0x00ff0000, 0x0000ff00, 0x000000ff, 0xff000000);  // FIXME: Safe?
+  n_pt_persp_snapshot = SDL_CreateSurface(api->canvas_w, api->canvas_h, SDL_PIXELFORMAT_ARGB8888);      // FIXME: Safe?
   if (n_pt_persp_snapshot == NULL)
   {
     fprintf(stderr, "n_pt_persp -- Could not create a 32-bit surface of size %d x %d!\n", api->canvas_w, api->canvas_h);
@@ -575,14 +578,14 @@ void n_pt_persp_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 
   if (n_pt_persp_snapshot != NULL)
   {
-    SDL_FreeSurface(n_pt_persp_snapshot);
+    SDL_DestroySurface(n_pt_persp_snapshot);
   }
 
   for (i = 0; i < NUM_SNDS; i++)
   {
     if (sound_effects[i] != NULL)
     {
-      Mix_FreeChunk(sound_effects[i]);
+      MIX_DestroyAudio(sound_effects[i]);
     }
   }
 }
@@ -1581,7 +1584,9 @@ void n_pt_persp_line_callback(void *pointer ATTRIBUTE_UNUSED,
   r.w = n_pt_persp_size;
   r.h = n_pt_persp_size;
 
-  SDL_FillRect(canvas, &r, SDL_MapRGB(canvas->format, n_pt_persp_r, n_pt_persp_g, n_pt_persp_b));
+  SDL_FillSurfaceRect(canvas, &r,
+                      SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), n_pt_persp_r,
+                                 n_pt_persp_g, n_pt_persp_b));
 }
 
 void n_pt_persp_switchin(magic_api *api, int which, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas)
@@ -1896,11 +1901,13 @@ void n_pt_persp_draw_one_point(magic_api *api, SDL_Surface *canvas, int x, int y
     {
       if (api->in_circle(xx, yy, DOT_WIDTH) && abs(xx) >= i && abs(yy) >= i)
       {
-        SDL_GetRGB(api->getpixel(canvas, x + xx, y + yy), canvas->format, &r, &g, &b);
+        SDL_GetRGB(api->getpixel(canvas, x + xx, y + yy), SDL_GetPixelFormatDetails(canvas->format),
+                   SDL_GetSurfacePalette(canvas), &r, &g, &b);
         r ^= 255;
         g ^= 255;
         b ^= 255;
-        api->putpixel(canvas, x + xx, y + yy, SDL_MapRGB(canvas->format, r, g, b));
+        api->putpixel(canvas, x + xx, y + yy,
+                      SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b));
       }
     }
   }

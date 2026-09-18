@@ -30,7 +30,7 @@
 #ifndef PIXELS_H
 #define PIXELS_H
 
-#include "SDL.h"
+#include <SDL3/SDL.h>
 
 extern void (*putpixels[])(SDL_Surface *, int, int, Uint32);
 extern Uint32(*getpixels[]) (SDL_Surface *, int, int);

@@ -26,7 +26,7 @@
 
 #include <windows.h>
 #include <direct.h>
-#include "SDL_syswm.h"
+#include <SDL3/SDL_syswm.h>
 #include "win32_print.h"
 #include "debug.h"
 
@@ -51,8 +51,8 @@ static SDL_Surface *make24bitDIB(SDL_Surface *surf)
 
   memset(&pixfmt, 0, sizeof(pixfmt));
   pixfmt.palette = NULL;
-  pixfmt.BitsPerPixel = 24;
-  pixfmt.BytesPerPixel = 3;
+  pixfmt.bits_per_pixel = 24;
+  pixfmt.bytes_per_pixel = 3;
   pixfmt.Rmask = 0x00FF0000;
   pixfmt.Gmask = 0x0000FF00;
   pixfmt.Bmask = 0x000000FF;
@@ -66,9 +66,9 @@ static SDL_Surface *make24bitDIB(SDL_Surface *surf)
   pixfmt.Bloss = 0;
   pixfmt.Aloss = 0;
 
-  surf24 = SDL_ConvertSurface(surf, &pixfmt, SDL_SWSURFACE);
-  surfDIB = SDL_CreateRGBSurface(SDL_SWSURFACE, surf24->w, surf24->h, 24,
-                                 pixfmt.Rmask, pixfmt.Gmask, pixfmt.Bmask, pixfmt.Amask);
+  surf24 = SDL_ConvertSurface(surf, &pixfmt);
+  surfDIB = SDL_CreateSurface(surf24->w, surf24->h,
+                              SDL_GetPixelFormatForMasks(24, pixfmt.Rmask, pixfmt.Gmask, pixfmt.Bmask, pixfmt.Amask));
 
   linesize = surf24->w * 3;     // Flip top2bottom
   dst = surfDIB->pixels;
@@ -80,7 +80,7 @@ static SDL_Surface *make24bitDIB(SDL_Surface *surf)
     dst += surfDIB->pitch;
   }
 
-  SDL_FreeSurface(surf24);      // Free temp surface
+  SDL_DestroySurface(surf24);   // Free temp surface
 
   return surfDIB;
 }
@@ -497,7 +497,7 @@ error:
   if (hbm)
     DeleteObject(hbm);
   if (surf24)
-    SDL_FreeSurface(surf24);
+    SDL_DestroySurface(surf24);
 
   EnableWindow(hWnd, TRUE);
   ShowWindow(hWnd, SW_SHOWNORMAL);

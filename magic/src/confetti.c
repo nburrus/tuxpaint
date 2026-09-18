@@ -2,11 +2,13 @@
   Last updated: October 7, 2024
 */
 
+#include <stdio.h>
+#include <stdlib.h>
 #include <time.h>               //For time()
 
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 static int CONFETTI_BRUSH_SIZE = 8;     //radius of each confetti circle
 
@@ -23,7 +25,7 @@ struct confetti_rgb
 
 struct confetti_rgb confetti_colors;    //storage for colors, just for having everything in one place
 
-Mix_Chunk *confetti_snd;
+MIX_Audio *confetti_snd;
 
 /* Local function prototypes: */
 Uint32 confetti_api_version(void);
@@ -80,7 +82,7 @@ int confetti_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/confetti.ogg", api->data_directory);
-  confetti_snd = Mix_LoadWAV(fname);
+  confetti_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -135,7 +137,7 @@ void confetti_release(magic_api *api ATTRIBUTE_UNUSED,
 
 void confetti_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
-  Mix_FreeChunk(confetti_snd);
+  MIX_DestroyAudio(confetti_snd);
 }
 
 
@@ -176,7 +178,7 @@ Uint32 confetti_get_new_color(void *ptr, SDL_Surface *canvas)   //this function 
 
   api->hsvtorgb(hsv_h, hsv_s, hsv_v, &temp_r, &temp_g, &temp_b);        //...and come back to RGB
 
-  return SDL_MapRGB(canvas->format, temp_r, temp_g, temp_b);
+  return SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), temp_r, temp_g, temp_b);
 }
 
 
@@ -187,12 +189,17 @@ static void confetti_circle(void *ptr, int which ATTRIBUTE_UNUSED,
 
   int xx, yy;
   Uint32 color = confetti_get_new_color(api, canvas);
+  int CONFETTI_BRUSH_SIZE_P;
 
-  for (yy = y - CONFETTI_BRUSH_SIZE / 2; yy < y + CONFETTI_BRUSH_SIZE / 2; yy++)
+  if(api->pressure < 1.0)
+    CONFETTI_BRUSH_SIZE_P = max(2, (int)(CONFETTI_BRUSH_SIZE * api->pressure));
+  else
+    CONFETTI_BRUSH_SIZE_P = CONFETTI_BRUSH_SIZE;
+  for (yy = y - CONFETTI_BRUSH_SIZE_P / 2; yy < y + CONFETTI_BRUSH_SIZE_P / 2; yy++)
 
-    for (xx = x - CONFETTI_BRUSH_SIZE / 2; xx < x + CONFETTI_BRUSH_SIZE / 2; xx++)
+    for (xx = x - CONFETTI_BRUSH_SIZE_P / 2; xx < x + CONFETTI_BRUSH_SIZE_P / 2; xx++)
 
-      if (api->in_circle(xx - x, yy - y, CONFETTI_BRUSH_SIZE / 2))
+      if (api->in_circle(xx - x, yy - y, CONFETTI_BRUSH_SIZE_P / 2))
         api->putpixel(canvas, xx, yy, color);
 }
 

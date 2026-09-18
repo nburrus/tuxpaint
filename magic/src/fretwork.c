@@ -5,8 +5,10 @@
 */
 
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
 
 #define SEG_NONE 0
@@ -32,7 +34,7 @@
 #define inline static
 #endif
 
-Mix_Chunk *fretwork_snd;
+MIX_Audio *fretwork_snd;
 unsigned int img_w, img_h;
 unsigned int fretwork_segments_x, fretwork_segments_y;  //how many segments do we have?
 inline int fretwork_math_ceil(int x, int y);    //ceil() in cstdlib returns float and is relative slow, so we'll use our one
@@ -129,9 +131,12 @@ static void fretwork_colorize(magic_api *api, SDL_Surface *dest, SDL_Surface *sr
   {
     for (x = 0; x < src->w; x++)
     {
-      SDL_GetRGBA(api->getpixel(src, x, y), src->format, &r, &g, &b, &a);
+      SDL_GetRGBA(api->getpixel(src, x, y), SDL_GetPixelFormatDetails(src->format), SDL_GetSurfacePalette(src), &r, &g,
+                  &b, &a);
 
-      api->putpixel(dest, x, y, SDL_MapRGBA(dest->format, fretwork_r, fretwork_g, fretwork_b, a));
+      api->putpixel(dest, x, y,
+                    SDL_MapRGBA(SDL_GetPixelFormatDetails(dest->format), SDL_GetSurfacePalette(dest), fretwork_r,
+                                fretwork_g, fretwork_b, a));
     }
   }
 
@@ -189,7 +194,7 @@ int fretwork_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint
   img_h = fretwork_one->h;
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/fretwork.ogg", api->data_directory);
-  fretwork_snd = Mix_LoadWAV(fname);
+  fretwork_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -249,16 +254,16 @@ void fretwork_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   Uint8 i;
 
   if (fretwork_snd != NULL)
-    Mix_FreeChunk(fretwork_snd);
-  SDL_FreeSurface(fretwork_one);
-  SDL_FreeSurface(fretwork_three);
-  SDL_FreeSurface(fretwork_four);
-  SDL_FreeSurface(fretwork_corner);
-  SDL_FreeSurface(fretwork_one_back);
-  SDL_FreeSurface(fretwork_three_back);
-  SDL_FreeSurface(fretwork_four_back);
-  SDL_FreeSurface(fretwork_corner_back);
-  SDL_FreeSurface(canvas_backup);
+    MIX_DestroyAudio(fretwork_snd);
+  SDL_DestroySurface(fretwork_one);
+  SDL_DestroySurface(fretwork_three);
+  SDL_DestroySurface(fretwork_four);
+  SDL_DestroySurface(fretwork_corner);
+  SDL_DestroySurface(fretwork_one_back);
+  SDL_DestroySurface(fretwork_three_back);
+  SDL_DestroySurface(fretwork_four_back);
+  SDL_DestroySurface(fretwork_corner_back);
+  SDL_DestroySurface(canvas_backup);
 
   for (i = 0; i < 4; i++)
     free(fretwork_images[i]);
@@ -273,10 +278,7 @@ void fretwork_switchin(magic_api *api ATTRIBUTE_UNUSED,
 {
   //we've to compute the quantity of segments in each direction
 
-  canvas_backup =
-    SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->w, canvas->h,
-                         canvas->format->BitsPerPixel, canvas->format->Rmask,
-                         canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+  canvas_backup = SDL_CreateSurface(canvas->w, canvas->h, canvas->format);
 
   SDL_BlitSurface(canvas, NULL, canvas_backup, NULL);
   fretwork_segments_x = fretwork_math_ceil(canvas->w, img_w);
@@ -543,17 +545,9 @@ static void fretwork_draw(void *ptr, int which ATTRIBUTE_UNUSED,
 
   fretwork_status_of_segments[segment] = image; //and write it to global table
 
-  result =
-    SDL_CreateRGBSurface(SDL_SWSURFACE, img_w, img_h,
-                         fretwork_one->format->BitsPerPixel,
-                         fretwork_one->format->Rmask,
-                         fretwork_one->format->Gmask, fretwork_one->format->Bmask, fretwork_one->format->Amask);
+  result = SDL_CreateSurface(img_w, img_h, fretwork_one->format);
 
-  temp =
-    SDL_CreateRGBSurface(SDL_SWSURFACE, img_w, img_h,
-                         fretwork_one->format->BitsPerPixel,
-                         fretwork_one->format->Rmask,
-                         fretwork_one->format->Gmask, fretwork_one->format->Bmask, fretwork_one->format->Amask);
+  temp = SDL_CreateSurface(img_w, img_h, fretwork_one->format);
 
   SDL_BlitSurface(canvas_backup, &modification_rect, result, NULL);
 
@@ -618,9 +612,9 @@ static void fretwork_draw(void *ptr, int which ATTRIBUTE_UNUSED,
   if (use_temp)
     SDL_BlitSurface(temp, NULL, result, NULL);
 
-  SDL_FreeSurface(temp);
+  SDL_DestroySurface(temp);
   SDL_BlitSurface(result, NULL, canvas, &modification_rect);
-  SDL_FreeSurface(result);
+  SDL_DestroySurface(result);
   api->playsound(fretwork_snd, (x * 255) / canvas->w, 255);
 }
 

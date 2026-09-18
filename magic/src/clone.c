@@ -30,8 +30,8 @@
 #include <string.h>
 #include <math.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 /* What tools we contain: */
 
@@ -54,7 +54,7 @@ enum
 
 /* Our globals: */
 
-static Mix_Chunk *clone_start_snd, *clone_snd;
+static MIX_Audio *clone_start_snd, *clone_snd;
 int clone_state;
 int clone_src_x, clone_src_y;
 int clone_drag_start_x, clone_drag_start_y;
@@ -107,10 +107,10 @@ int clone_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 c
   }
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/clone_start.ogg", api->data_directory);
-  clone_start_snd = Mix_LoadWAV(fname);
+  clone_start_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/clone.ogg", api->data_directory);
-  clone_snd = Mix_LoadWAV(fname);
+  clone_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   clone_state = CLONE_READY_TO_START;
   clone_crosshair_visible = 0;
@@ -176,19 +176,20 @@ static void do_clone(void *ptr, int which ATTRIBUTE_UNUSED, SDL_Surface *canvas,
   int srcx, srcy;
   SDL_Rect src;
   SDL_Rect dest;
+  float cr = api->pressure * clone_radius;
 
   srcx = clone_src_x + (x - clone_drag_start_x);
   srcy = clone_src_y + (y - clone_drag_start_y);
 
   if (!api->touched(x, y))
   {
-    for (yy = -clone_radius; yy < clone_radius; yy++)
+    for (yy = -cr; yy < cr; yy++)
     {
       /* Since we're just copying from last to canvas,
          speed things up by using SDL_BlitSurface() on
          slices, rather than getpixel()/putpixel() on
          individual pixels (along with an in_circle() test) */
-      dx = sqrt(pow(clone_radius, 2) - pow(yy, 2));
+      dx = sqrt(pow(cr, 2) - pow(yy, 2));
 
       src.y = srcy + yy;
       src.x = srcx - dx;
@@ -352,9 +353,9 @@ void clone_crosshairs(magic_api *api, SDL_Surface *canvas, int x, int y)
 void clone_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (clone_snd != NULL)
-    Mix_FreeChunk(clone_snd);
+    MIX_DestroyAudio(clone_snd);
   if (clone_start_snd != NULL)
-    Mix_FreeChunk(clone_start_snd);
+    MIX_DestroyAudio(clone_start_snd);
 }
 
 void clone_set_color(magic_api *api ATTRIBUTE_UNUSED,
@@ -374,10 +375,7 @@ int clone_requires_colors(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_U
 void clone_switchin(magic_api *api ATTRIBUTE_UNUSED,
                     int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas ATTRIBUTE_UNUSED)
 {
-  clone_last =
-    SDL_CreateRGBSurface(0, canvas->w, canvas->h,
-                         canvas->format->BitsPerPixel, canvas->format->Rmask,
-                         canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+  clone_last = SDL_CreateSurface(canvas->w, canvas->h, canvas->format);
 
   clone_state = CLONE_READY_TO_START;
 }
@@ -389,7 +387,7 @@ void clone_switchout(magic_api *api, int which ATTRIBUTE_UNUSED, int mode ATTRIB
   done_cloning(api, canvas, &update_rect);
 
   if (clone_last != NULL)
-    SDL_FreeSurface(clone_last);
+    SDL_DestroySurface(clone_last);
 }
 
 int clone_modes(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)

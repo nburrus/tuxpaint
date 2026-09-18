@@ -23,7 +23,7 @@
 #ifndef __ANDROID_PRINT_H__
 #define __ANDROID_PRINT_H__
 
-#include "SDL.h"
+#include <SDL3/SDL.h>
 
 extern const char *SurfacePrint(SDL_Surface * surface);
 extern int IsPrinterAvailable(void);

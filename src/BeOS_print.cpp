@@ -94,7 +94,7 @@ BBitmap *SurfaceToBBitmap(SDL_Surface * surf)
       dst += linesize;
     }
 
-  SDL_FreeSurface(surf32);      /* Free temp surface */
+  SDL_DestroySurface(surf32);      /* Free temp surface */
 
   return bitmap;
 }

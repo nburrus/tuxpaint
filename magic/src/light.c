@@ -1,3 +1,4 @@
+
 /*
   light.c
 
@@ -30,14 +31,14 @@
 #include <string.h>
 #include <stdlib.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 #include "math.h"
 
 /* Our globals: */
 
-static Mix_Chunk *light1_snd, *light2_snd;
+static MIX_Audio *light1_snd, *light2_snd;
 static float light_h, light_s, light_v;
 static int light_radius = 8;
 
@@ -83,10 +84,10 @@ int light_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 c
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/light1.ogg", api->data_directory);
-  light1_snd = Mix_LoadWAV(fname);
+  light1_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/light2.ogg", api->data_directory);
-  light2_snd = Mix_LoadWAV(fname);
+  light2_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -142,16 +143,17 @@ static void do_light(void *ptr, int which ATTRIBUTE_UNUSED,
   Uint8 r, g, b;
   float h, s, v, new_h, new_s, new_v;
   float adj;
+  int light_radius_p = max(1, (int)(light_radius * api->pressure));
 
-  for (yy = -light_radius; yy < light_radius; yy++)
+  for (yy = -light_radius_p; yy < light_radius_p; yy++)
   {
-    for (xx = -light_radius; xx < light_radius; xx++)
+    for (xx = -light_radius_p; xx < light_radius_p; xx++)
     {
-      if (api->in_circle(xx, yy, light_radius))
+      if (api->in_circle(xx, yy, light_radius_p))
       {
         pix = api->getpixel(canvas, x + xx, y + yy);
 
-        SDL_GetRGB(pix, canvas->format, &r, &g, &b);
+        SDL_GetRGB(pix, SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), &r, &g, &b);
 
         adj = sqrt(light_radius - sqrt((xx * xx) + (yy * yy))) / 64.0;
         // adj = (((float)light_radius - 0.01) - sqrt(abs(xx * yy))) / (16.0 * (float)light_radius);
@@ -187,7 +189,8 @@ static void do_light(void *ptr, int which ATTRIBUTE_UNUSED,
 
         api->hsvtorgb(new_h, new_s, new_v, &r, &g, &b);
 
-        api->putpixel(canvas, x + xx, y + yy, SDL_MapRGB(canvas->format, r, g, b));
+        api->putpixel(canvas, x + xx, y + yy,
+                      SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b));
       }
     }
   }
@@ -241,9 +244,9 @@ void light_release(magic_api *api, int which ATTRIBUTE_UNUSED,
 void light_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (light1_snd != NULL)
-    Mix_FreeChunk(light1_snd);
+    MIX_DestroyAudio(light1_snd);
   if (light2_snd != NULL)
-    Mix_FreeChunk(light2_snd);
+    MIX_DestroyAudio(light2_snd);
 }
 
 // Record the color from Tux Paint:

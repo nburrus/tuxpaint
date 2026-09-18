@@ -31,9 +31,10 @@
 // sound only plays on release
 // also same sound for both tools
 
+#include <stdio.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 #include <math.h>               //for sin, cos, ...
 
 static int ROSETTE_R = 8;       //circle's diameter
@@ -47,7 +48,7 @@ struct rosette_rgb
 
 struct rosette_rgb rosette_colors;
 
-Mix_Chunk *rosette_snd;
+MIX_Audio *rosette_snd;
 
 //                              Housekeeping functions
 
@@ -103,7 +104,7 @@ int rosette_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/picasso.ogg", api->data_directory);
-  rosette_snd = Mix_LoadWAV(fname);
+  rosette_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -166,7 +167,7 @@ void rosette_release(magic_api *api ATTRIBUTE_UNUSED,
 
 void rosette_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
-  Mix_FreeChunk(rosette_snd);
+  MIX_DestroyAudio(rosette_snd);
 }
 
 // Interactivity functions
@@ -177,11 +178,14 @@ void rosette_circle(void *ptr, int which ATTRIBUTE_UNUSED,
   magic_api *api = (magic_api *) ptr;
 
   int xx, yy;
+  int ROSETTE_R_P = max(1, (int)(ROSETTE_R * api->pressure));
 
-  for (yy = y - ROSETTE_R; yy < y + ROSETTE_R; yy++)
-    for (xx = x - ROSETTE_R; xx < x + ROSETTE_R; xx++)
-      if (api->in_circle(xx - x, yy - y, ROSETTE_R / 2))
-        api->putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, rosette_colors.r, rosette_colors.g, rosette_colors.b));
+  for (yy = y - ROSETTE_R_P; yy < y + ROSETTE_R_P; yy++)
+    for (xx = x - ROSETTE_R_P; xx < x + ROSETTE_R_P; xx++)
+      if (api->in_circle(xx - x, yy - y, ROSETTE_R_P / 2))
+        api->putpixel(canvas, xx, yy,
+                      SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
+                                 rosette_colors.r, rosette_colors.g, rosette_colors.b));
 
 }
 

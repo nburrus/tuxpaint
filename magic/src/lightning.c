@@ -7,15 +7,16 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <libintl.h>
 #include <math.h>
 
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
-Mix_Chunk *snd_effect;
+MIX_Audio *snd_effect;
 float lightning_h, lightning_s, lightning_v;
 int sx, sy;
 
@@ -60,7 +61,7 @@ int lightning_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uin
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/lightning.ogg", api->data_directory);
-  snd_effect = Mix_LoadWAV(fname);
+  snd_effect = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -113,7 +114,7 @@ int lightning_modes(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 void lightning_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (snd_effect != NULL)
-    Mix_FreeChunk(snd_effect);
+    MIX_DestroyAudio(snd_effect);
 }
 
 
@@ -233,7 +234,8 @@ void lightning_draw_bolt(void *ptr, SDL_Surface *canvas,
           light_h = lightning_h;
           light_s = lightning_s;
 
-          SDL_GetRGB(api->getpixel(canvas, x + xx, y + yy), canvas->format, &r, &g, &b);
+          SDL_GetRGB(api->getpixel(canvas, x + xx, y + yy), SDL_GetPixelFormatDetails(canvas->format),
+                     SDL_GetSurfacePalette(canvas), &r, &g, &b);
           api->rgbtohsv(r, g, b, &h, &s, &v);
 
           adj = 1.0 - (sqrt((xx * xx) + (yy * yy)) / t);
@@ -258,7 +260,8 @@ void lightning_draw_bolt(void *ptr, SDL_Surface *canvas,
 
           api->hsvtorgb(new_h, new_s, new_v, &r, &g, &b);
 
-          api->putpixel(canvas, x + xx, y + yy, SDL_MapRGB(canvas->format, r, g, b));
+          api->putpixel(canvas, x + xx, y + yy,
+                        SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b));
         }
       }
     }

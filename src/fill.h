@@ -34,7 +34,7 @@
 #ifndef FILL_H
 #define FILL_H
 
-#include "SDL.h"
+#include <SDL3/SDL.h>
 
 int would_flood_fill(SDL_Surface * canvas, Uint32 cur_colr, Uint32 old_colr);
 void do_flood_fill(SDL_Surface * screen, SDL_Texture * texture,

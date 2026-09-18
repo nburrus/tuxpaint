@@ -28,9 +28,10 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 /* Our globals: */
 
@@ -45,7 +46,7 @@ static Uint32 ribbon_segment_color;
 static int ribbon_x[MAX_LENGTH], ribbon_y[MAX_LENGTH];
 static int ribbon_tail = 0, ribbon_head = 0;
 static double ribbon_old_angle;
-static Mix_Chunk *ribbon_snd;
+static MIX_Audio *ribbon_snd;
 
 int ribbon_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 Uint32 ribbon_api_version(void);
@@ -91,7 +92,7 @@ int ribbon_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/ribbon.ogg", api->data_directory);
-  ribbon_snd = Mix_LoadWAV(fname);
+  ribbon_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -211,7 +212,8 @@ void ribbon_drag(magic_api *api, int which, SDL_Surface *canvas,
       g = max(min(ribbon_g + brt, 255), 0);
       b = max(min(ribbon_b + brt, 255), 0);
 
-      ribbon_segment_color = SDL_MapRGB(canvas->format, r, g, b);
+      ribbon_segment_color =
+        SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b);
       api->line((void *)api, which, canvas, last, ox, oy, x, y, 1, ribbon_linecb);
       pt = pt2;
     }
@@ -244,7 +246,7 @@ void ribbon_release(magic_api *api ATTRIBUTE_UNUSED,
 void ribbon_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (ribbon_snd != NULL)
-    Mix_FreeChunk(ribbon_snd);
+    MIX_DestroyAudio(ribbon_snd);
 }
 
 // Record the color from Tux Paint:

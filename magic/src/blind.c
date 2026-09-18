@@ -27,9 +27,10 @@
   Last updated: October 7, 2024
 */
 
+#include <stdio.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 int BLIND_RADIUS = 16;
 int BLIND_OPAQUE = 20;
@@ -51,7 +52,7 @@ enum blind_tools
   BLIND_NUMTOOLS
 };
 
-Mix_Chunk *blind_snd;
+MIX_Audio *blind_snd;
 
 // Prototypes
 Uint32 blind_api_version(void);
@@ -105,7 +106,7 @@ int blind_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 c
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/blind.ogg", api->data_directory);
-  blind_snd = Mix_LoadWAV(fname);
+  blind_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -161,7 +162,7 @@ void blind_release(magic_api *api ATTRIBUTE_UNUSED,
 
 void blind_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
-  Mix_FreeChunk(blind_snd);
+  MIX_DestroyAudio(blind_snd);
 }
 
 // Interactivity functions
@@ -172,8 +173,8 @@ void blind_paint_blind(void *ptr_to_api, int which_tool ATTRIBUTE_UNUSED,
   magic_api *api = (magic_api *) ptr_to_api;
 
   api->putpixel(canvas, x, y,
-                SDL_MapRGB(canvas->format, (blind_r + blind_light) / 2,
-                           (blind_g + blind_light) / 2, (blind_b + blind_light) / 2));
+                SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
+                           (blind_r + blind_light) / 2, (blind_g + blind_light) / 2, (blind_b + blind_light) / 2));
 }
 
 /* void blind_do_blind(void * ptr_to_api, int which_tool,

@@ -28,11 +28,11 @@
 #include <stdio.h>
 #include <string.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
-#include "SDL2_rotozoom.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
+#include <SDL3_gfx/SDL3_rotozoom.h>
 
-static Mix_Chunk *rotate_snd_drag, *rotate_snd_release;
+static MIX_Audio *rotate_snd_drag, *rotate_snd_release;
 SDL_Surface *rotate_snapshot = NULL;
 Uint32 rotate_color;
 float rotate_last_angle = 0.0;
@@ -81,10 +81,10 @@ int rotate_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/rotate-drag.ogg", api->data_directory);
-  rotate_snd_drag = Mix_LoadWAV(fname);
+  rotate_snd_drag = MIX_LoadAudio(api->mmixer, fname, 0);
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/rotate-release.ogg", api->data_directory);
-  rotate_snd_release = Mix_LoadWAV(fname);
+  rotate_snd_release = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -144,7 +144,7 @@ float do_rotate(SDL_Surface *canvas, int x, int y, int smoothing_flag)
 
   /* Draw background color on canvas */
   /* ------------------------------- */
-  SDL_FillRect(canvas, NULL, rotate_color);
+  SDL_FillSurfaceRect(canvas, NULL, rotate_color);
 
   /* Place rotated version in the center of the live canvas */
   /* ------------------------------------------------------ */
@@ -153,7 +153,7 @@ float do_rotate(SDL_Surface *canvas, int x, int y, int smoothing_flag)
   dest.w = new_surf->w;
   dest.h = new_surf->h;
   SDL_BlitSurface(new_surf, NULL, canvas, &dest);
-  SDL_FreeSurface(new_surf);
+  SDL_DestroySurface(new_surf);
   /* Return the angle we ended up at */
   return angle_rad;
 }
@@ -240,14 +240,14 @@ void rotate_release(magic_api *api ATTRIBUTE_UNUSED,
 void rotate_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (rotate_snd_drag != NULL)
-    Mix_FreeChunk(rotate_snd_drag);
+    MIX_DestroyAudio(rotate_snd_drag);
 
   if (rotate_snd_release != NULL)
-    Mix_FreeChunk(rotate_snd_release);
+    MIX_DestroyAudio(rotate_snd_release);
 
   if (rotate_snapshot != NULL)
   {
-    SDL_FreeSurface(rotate_snapshot);
+    SDL_DestroySurface(rotate_snapshot);
     rotate_snapshot = NULL;
   }
 }
@@ -257,7 +257,7 @@ void rotate_set_color(magic_api *api ATTRIBUTE_UNUSED,
                       SDL_Surface *last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b, SDL_Rect *update_rect)
 {
   /* Record the new color */
-  rotate_color = SDL_MapRGB(canvas->format, r, g, b);
+  rotate_color = SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b);
 
   /* If we've been rotating the canvas, go ahead and
    * re-rotate it at the same angle (using canvas center as
@@ -282,10 +282,7 @@ void rotate_switchin(magic_api *api ATTRIBUTE_UNUSED,
                      int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas)
 {
   if (rotate_snapshot == NULL)
-    rotate_snapshot =
-      SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->w, canvas->h,
-                           canvas->format->BitsPerPixel,
-                           canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+    rotate_snapshot = SDL_CreateSurface(canvas->w, canvas->h, canvas->format);
 
   if (rotate_snapshot != NULL)
   {

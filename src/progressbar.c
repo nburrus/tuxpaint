@@ -76,7 +76,7 @@ void show_progress_bar_(SDL_Surface *screen, SDL_Texture *texture, SDL_Renderer 
 
     /* Docs says one should clear the renderer, even if this means a refresh of the whole thing. */
     SDL_RenderClear(renderer);
-    SDL_RenderCopy(renderer, texture, NULL, NULL);
+    SDL_RenderTexture(renderer, texture, NULL, NULL);
     SDL_RenderPresent(renderer);
   }
   oldtime = newtime;

@@ -29,12 +29,12 @@
 #include <stdio.h>
 #include <string.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 /* Our globals: */
 
-static Mix_Chunk *metalpaint_snd;
+static MIX_Audio *metalpaint_snd;
 static Uint8 metalpaint_r, metalpaint_g, metalpaint_b;
 static int metalpaint_size = 8;
 
@@ -78,7 +78,7 @@ int metalpaint_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Ui
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/metalpaint.wav", api->data_directory);
-  metalpaint_snd = Mix_LoadWAV(fname);
+  metalpaint_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -143,10 +143,11 @@ static void do_metalpaint(void *ptr, int which ATTRIBUTE_UNUSED,
   int xx, yy;
   int n;
   Uint8 r, g, b;
+  int  _metalpaint_size = metalpaint_size  * api->pressure;
 
-  for (yy = -metalpaint_size; yy < metalpaint_size; yy++)
+  for (yy = -_metalpaint_size; yy < _metalpaint_size; yy++)
   {
-    for (xx = -metalpaint_size; xx < metalpaint_size; xx++)
+    for (xx = -_metalpaint_size; xx < _metalpaint_size; xx++)
     {
       n = metalpaint_gradient[((x + xx + y + yy) / 4) % METALPAINT_CYCLE];
 
@@ -154,7 +155,8 @@ static void do_metalpaint(void *ptr, int which ATTRIBUTE_UNUSED,
       g = (metalpaint_g * n) / 255;
       b = (metalpaint_b * n) / 255;
 
-      api->putpixel(canvas, x + xx, y + yy, SDL_MapRGB(canvas->format, r, g, b));
+      api->putpixel(canvas, x + xx, y + yy,
+                    SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b));
     }
   }
 }
@@ -208,7 +210,7 @@ void metalpaint_release(magic_api *api ATTRIBUTE_UNUSED,
 void metalpaint_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (metalpaint_snd != NULL)
-    Mix_FreeChunk(metalpaint_snd);
+    MIX_DestroyAudio(metalpaint_snd);
 }
 
 // Record the color from Tux Paint:

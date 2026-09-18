@@ -7,13 +7,14 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <libintl.h>
 #include <math.h>
 
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 /* For when Tux Paint is run with "--nomagicsizes", we'll present two tools */
 
@@ -35,7 +36,7 @@ char *img_filenames[NUM_SIZES] = {
 int googlyeyes_limited = 0;
 int googlyeyes_sizes;
 int googlyeyes_size;
-Mix_Chunk *snd_effect = NULL;
+MIX_Audio *snd_effect = NULL;
 SDL_Surface **googlyeyes_img_bkgd = NULL;
 SDL_Surface **googlyeyes_img_pupil = NULL;
 SDL_Surface **googlyeyes_img_reflection = NULL;
@@ -83,7 +84,7 @@ int googlyeyes_init(magic_api *api, Uint8 disabled_features, Uint8 complexity_le
 
   /* Load sound effect */
   snprintf(fname, sizeof(fname), "%ssounds/magic/googlyeyes.ogg", api->data_directory);
-  snd_effect = Mix_LoadWAV(fname);
+  snd_effect = MIX_LoadAudio(api->mmixer, fname, 0);
 
   /* Init the images */
   if (googlyeyes_limited)
@@ -260,18 +261,18 @@ void googlyeyes_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   int i;
 
   if (snd_effect != NULL)
-    Mix_FreeChunk(snd_effect);
+    MIX_DestroyAudio(snd_effect);
 
   for (i = 0; i < googlyeyes_sizes; i++)
   {
     if (googlyeyes_img_bkgd[i] != NULL)
-      SDL_FreeSurface(googlyeyes_img_bkgd[i]);
+      SDL_DestroySurface(googlyeyes_img_bkgd[i]);
 
     if (googlyeyes_img_pupil[i] != NULL)
-      SDL_FreeSurface(googlyeyes_img_pupil[i]);
+      SDL_DestroySurface(googlyeyes_img_pupil[i]);
 
     if (googlyeyes_img_reflection[i] != NULL)
-      SDL_FreeSurface(googlyeyes_img_reflection[i]);
+      SDL_DestroySurface(googlyeyes_img_reflection[i]);
   }
 
   free(googlyeyes_img_bkgd);

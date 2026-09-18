@@ -28,13 +28,13 @@
 // plan to rip this out as soon as it is considered stable
 //#define THREADED_FONTS
 #define FORKED_FONTS
-#if defined(WIN32) || defined(__BEOS__) || defined (__OS2__) || defined(__ANDROID__)
+#if defined(WIN32) || defined(__BEOS__) || defined (SDL_PLATFORM_OS2) || defined(__ANDROID__)
 #undef FORKED_FONTS
 #endif
 
-#include "SDL.h"
-#include "SDL_ttf.h"
-#include "SDL2_Pango.h"
+#include <SDL3/SDL.h>
+#include <SDL3_ttf/SDL_ttf.h>
+#include "SDL3_Pango.h"
 
 #include "i18n.h"
 
@@ -60,8 +60,8 @@ extern const char *PANGO_DEFAULT_FONT, *PANGO_DEFAULT_FONT_FALLBACK;
 
 /* Disable threaded font loading on Windows */
 #if !defined(FORKED_FONTS) && !defined(WIN32)
-#include "SDL_thread.h"
-#include "SDL_mutex.h"
+#include <SDL3/SDL_thread.h>
+#include "SDL_Mutex.h"
 #endif
 
 extern SDL_Thread *font_thread;

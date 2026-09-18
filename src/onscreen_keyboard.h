@@ -5,25 +5,25 @@
 
 #include "wchar.h"
 #include "stdio.h"
-#include "SDL.h"
-#include "SDL_ttf.h"
+#include <SDL3/SDL.h>
+#include <SDL3_ttf/SDL_ttf.h>
 /* after file:///usr/share/doc/libsdl1.2-dev/docs/html/sdlkey.html
 
 Table 8-2. SDL modifier definitions
 
 SDL Modifier	Meaning
-KMOD_NONE	No modifiers applicable
-KMOD_NUM	Numlock is down
-KMOD_CAPS	Capslock is down
-KMOD_LCTRL	Left Control is down
-KMOD_RCTRL	Right Control is down
-KMOD_RSHIFT	Right Shift is down
-KMOD_LSHIFT	Left Shift is down
-KMOD_RALT	Right Alt is down
-KMOD_LALT	Left Alt is down
-KMOD_CTRL	A Control key is down
-KMOD_SHIFT	A Shift key is down
-KMOD_ALT	An Alt key is down
+SDL_KMOD_NONE	No modifiers applicable
+SDL_KMOD_NUM	Numlock is down
+SDL_KMOD_CAPS	Capslock is down
+SDL_KMOD_LCTRL	Left Control is down
+SDL_KMOD_RCTRL	Right Control is down
+SDL_KMOD_RSHIFT	Right Shift is down
+SDL_KMOD_LSHIFT	Left Shift is down
+SDL_KMOD_RALT	Right Alt is down
+SDL_KMOD_LALT	Left Alt is down
+SDL_KMOD_CTRL	A Control key is down
+SDL_KMOD_SHIFT	A Shift key is down
+SDL_KMOD_ALT	An Alt key is down
 
 */
 

@@ -17,12 +17,14 @@
 /* ---------------------------------------------------------------------- */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #include <string.h>
 #include <libintl.h>
 
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 /* Each tool comes in two varieties:
  * + Use the chosen color for the non-white pixels
@@ -66,8 +68,7 @@ char *dither_descr[NUM_TOOLS][2] = {
 
   /* Bayer 4x4 */
   {
-   gettext_noop
-   ("Click and drag to replace parts of your image with an ordered dithered pattern of dots in your chosen color."),
+   gettext_noop("Click and drag to replace parts of your image with an ordered dithered pattern of dots in your chosen color."),
    gettext_noop("Click to replace your entire image with an ordered dithered pattern of dots in your chosen color."),
    },
   {
@@ -98,7 +99,7 @@ char *dither_snd_filenames[NUM_TOOLS] = {
   "ordered_dither_keep_color.ogg",
 };
 
-Mix_Chunk *snd_effects[NUM_TOOLS];
+MIX_Audio *snd_effects[NUM_TOOLS];
 
 #define DITHER_SIZE_COUNT 4
 #define DITHER_SIZE_DEFAULT 2
@@ -156,7 +157,7 @@ int dither_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
   for (i = 0; i < NUM_TOOLS; i++)
   {
     snprintf(filename, sizeof(filename), "%ssounds/magic/%s", api->data_directory, dither_snd_filenames[i]);
-    snd_effects[i] = Mix_LoadWAV(filename);
+    snd_effects[i] = MIX_LoadAudio(api->mmixer, filename, 0);
   }
 
   for (i = 0; i < NUM_TOOLS; i++)
@@ -249,7 +250,7 @@ void dither_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   {
     if (snd_effects[i] != NULL)
     {
-      Mix_FreeChunk(snd_effects[i]);
+      MIX_DestroyAudio(snd_effects[i]);
     }
   }
 
@@ -285,7 +286,8 @@ dither_click(magic_api *api, int which, int mode,
       {
         dither_touched[yy * canvas->w + xx] = 1;
 
-        SDL_GetRGB(api->getpixel(snapshot, xx, yy), snapshot->format, &r, &g, &b);
+        SDL_GetRGB(api->getpixel(snapshot, xx, yy), SDL_GetPixelFormatDetails(snapshot->format),
+                   SDL_GetSurfacePalette(snapshot), &r, &g, &b);
         dither_vals[yy * canvas->w + xx] = rgb_to_thresh(api, r, g, b);
 
         if (xx == 0)
@@ -358,10 +360,10 @@ int atk_dither_y_pos[6] = { 0, 0, 1, 1, 1, 2 };
 
 /* Bayer 4x4 ordered dithering pattern */
 int bayer[] = {
-  1, 9, 3, 11,
-  13, 5, 15, 7,
-  4, 12, 2, 10,
-  16, 8, 14, 6
+   1,  9,  3, 11,
+  13,  5, 15,  7,
+   4, 12,  2, 10,
+  16,  8, 14,  6
 };
 
 void dither_release(magic_api *api, int which,
@@ -379,8 +381,7 @@ void dither_release(magic_api *api, int which,
       {
         val = dither_vals[y * canvas->w + x];
 
-        if (which == TOOL_DITHER_B4X4_VIA_COLOR || which == TOOL_DITHER_B4X4_KEEP_COLOR)
-        {
+        if (which == TOOL_DITHER_B4X4_VIA_COLOR || which == TOOL_DITHER_B4X4_KEEP_COLOR) {
           /* Bayer 4x4 -- Use the ordered dither look-up */
           val = val * bayer[((y % 4) * 4) + (x % 4)];
         }
@@ -399,7 +400,8 @@ void dither_release(magic_api *api, int which,
           }
           else if (which == TOOL_DITHER_ATK_KEEP_COLOR || which == TOOL_DITHER_B4X4_KEEP_COLOR)
           {
-            SDL_GetRGB(api->getpixel(snapshot, x, y), snapshot->format, &r, &g, &b);
+            SDL_GetRGB(api->getpixel(snapshot, x, y), SDL_GetPixelFormatDetails(snapshot->format),
+                       SDL_GetSurfacePalette(snapshot), &r, &g, &b);
             if (r <= 32 && g <= 32 && b <= 32)
             {
               api->putpixel(canvas, x, y, dither_black);
@@ -408,15 +410,16 @@ void dither_release(magic_api *api, int which,
             {
               api->rgbtohsv(r, g, b, &h, &s, &v);
               api->hsvtorgb(floor(h / 2.0) * 2.0, min(s + 0.5, 1.0), v * 0.66, &r, &g, &b);
-              api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, r, g, b));
+              api->putpixel(canvas, x, y,
+                            SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g,
+                                       b));
             }
           }
 
           atk_err = val;
         }
 
-        if (which == TOOL_DITHER_ATK_VIA_COLOR || which == TOOL_DITHER_ATK_KEEP_COLOR)
-        {
+        if (which == TOOL_DITHER_ATK_VIA_COLOR || which == TOOL_DITHER_ATK_KEEP_COLOR) {
           /* Atkinson -- Diffuse */
           for (i = 0; i < 6; i++)
           {
@@ -454,12 +457,12 @@ void dither_set_color(magic_api *api ATTRIBUTE_UNUSED,
 {
   if (r <= 240 || g <= 240 || b <= 240)
   {
-    dither_color = SDL_MapRGB(canvas->format, r, g, b);
+    dither_color = SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b);
   }
   else
   {
     /* If the chosen color is very bright or white, fall back to black/grey/white */
-    dither_color = SDL_MapRGB(canvas->format, 0, 0, 0);
+    dither_color = SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), 0, 0, 0);
   }
 }
 
@@ -479,7 +482,7 @@ void dither_line_callback(void *pointer, int which, SDL_Surface *canvas, SDL_Sur
   Uint8 r, g, b, thresh;
   float val;
 
-  dither_size = dither_sizes[which];
+  dither_size = max(1, (int)(dither_sizes[which] * api->pressure));
 
   if (dither_touched == NULL)
     return;
@@ -497,13 +500,16 @@ void dither_line_callback(void *pointer, int which, SDL_Surface *canvas, SDL_Sur
           {
             dither_touched[(y + yy) * canvas->w + (x + xx)] = 1;
 
-            SDL_GetRGB(api->getpixel(snapshot, x + xx, y + yy), snapshot->format, &r, &g, &b);
+            SDL_GetRGB(api->getpixel(snapshot, x + xx, y + yy), SDL_GetPixelFormatDetails(snapshot->format),
+                       SDL_GetSurfacePalette(snapshot), &r, &g, &b);
             val = rgb_to_thresh(api, r, g, b);
             dither_vals[(y + yy) * canvas->w + (x + xx)] = val;
 
             /* Just draw a simple B/W threshold effect while interacting */
             thresh = (val < 0.5 ? 0 : 255);
-            api->putpixel(canvas, x + xx, y + yy, SDL_MapRGB(canvas->format, thresh, thresh, thresh));
+            api->putpixel(canvas, x + xx, y + yy,
+                          SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
+                                     thresh, thresh, thresh));
           }
         }
       }
@@ -524,8 +530,8 @@ void dither_switchin(magic_api *api ATTRIBUTE_UNUSED,
     dither_vals = (float *)malloc(sizeof(float) * canvas->h * canvas->w);
   }
 
-  dither_white = SDL_MapRGB(canvas->format, 255, 255, 255);
-  dither_black = SDL_MapRGB(canvas->format, 0, 0, 0);
+  dither_white = SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), 255, 255, 255);
+  dither_black = SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), 0, 0, 0);
 }
 
 void dither_switchout(magic_api *api ATTRIBUTE_UNUSED,
@@ -533,12 +539,11 @@ void dither_switchout(magic_api *api ATTRIBUTE_UNUSED,
 {
 }
 
-float rgb_to_thresh(magic_api *api, Uint8 r, Uint8 g, Uint8 b)
-{
-  float fr, fg, fb;
+float rgb_to_thresh(magic_api * api, Uint8 r, Uint8 g, Uint8 b) {
+    float fr, fg, fb;
 
-  fr = api->sRGB_to_linear(r);
-  fg = api->sRGB_to_linear(g);
-  fb = api->sRGB_to_linear(b);
-  return (0.2126 * fr + 0.7152 * fg + 0.0722 * fb);
+    fr = api->sRGB_to_linear(r);
+    fg = api->sRGB_to_linear(g);
+    fb = api->sRGB_to_linear(b);
+    return (0.2126 * fr + 0.7152 * fg + 0.0722 * fb);
 }

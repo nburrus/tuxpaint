@@ -210,6 +210,13 @@ joystick-btn-save,     MULTI(joystick_button_save)
 joystick-btn-pgsetup,  MULTI(joystick_button_pagesetup)
 joystick-btn-print,    MULTI(joystick_button_print)
 joystick-buttons-ignore,    MULTI(joystick_buttons_ignore)
+pressure-enable,       NEGBOOL(pressure_disable)
+pressure-disable,      POSBOOL(pressure_disable)
+pressure-min-opacity,  MULTI(pressure_min_opacity)
+pressure-min-width,    MULTI(pressure_min_width)
+pressure-min-threshold,     MULTI(pressure_min_threshold)
+pressure-max-threshold,     MULTI(pressure_max_threshold)
+pressure-smooth,       MULTI(pressure_smooth)
 %%
 
 void parse_one_option(struct cfginfo *restrict tmpcfg, const char *str, const char *opt, const char *restrict src)

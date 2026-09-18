@@ -29,8 +29,8 @@
 #include <stdio.h>
 #include <string.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 #include "SDL2_gfxPrimitives.h"
 
 enum

@@ -105,7 +105,7 @@ extern char *strcasestr(const char *haystack, const char *needle);
 #include "ios.h"
 #endif
 
-#ifdef __HAIKU__
+#ifdef SDL_PLATFORM_HAIKU
 #include <FindDirectory.h>
 #include <fs_info.h>
 #define _POSIX_PRIORITY_SCHEDULING
@@ -131,7 +131,7 @@ static const char *problemFontExtensions[] = {
 #include <sys/poll.h>
 #include <sys/wait.h>
 
-#if defined(_POSIX_PRIORITY_SCHEDULING) && !defined(__OS2__)
+#if defined(_POSIX_PRIORITY_SCHEDULING) && !defined(SDL_PLATFORM_OS2)
 #include <sched.h>
 #else
 #define sched_yield()
@@ -160,12 +160,12 @@ SDL_Thread *font_thread;
 #error "---------------------------------------------------"
 #endif
 
-#include "SDL2_Pango.h"
+#include "SDL3_Pango.h"
 #if !defined(SDL_PANGO_H)
 #error "---------------------------------------------------"
-#error "If you installed SDL2_Pango from a package, be sure"
+#error "If you installed SDL3_Pango from a package, be sure"
 #error "to get the development package, as well!"
-#error "(e.g., 'SDL2_Pango-2.1.5-dev.rpm')"
+#error "(e.g., 'SDL3_Pango-2.1.5-dev.rpm')"
 #error "---------------------------------------------------"
 #endif
 
@@ -206,7 +206,7 @@ int button_label_y_nudge;
 static void reliable_read(int fd, void *buf, size_t count);
 #endif
 
-int compare_fontconfig_includes(const void *a, const void *b);
+int compare_fontconfig_includes(const void * a, const void * b);
 
 const char *PANGO_DEFAULT_FONT = "DejaVu Sans";
 const char *PANGO_DEFAULT_FONT_FALLBACK = NULL;
@@ -251,7 +251,7 @@ void TuxPaint_Font_CloseFont(TuxPaint_Font *tpf)
   if (tpf->typ == FONT_TYPE_PANGO)
     if (tpf->pango_context)
     {
-#ifndef __APPLE__               //EP added ifdef because SDLPango_FreeContext sometimes crashed with "pointer being freed was not allocated"
+#ifndef SDL_PLATFORM_APPLE      //EP added ifdef because SDLPango_FreeContext sometimes crashed with "pointer being freed was not allocated"
       SDLPango_FreeContext(tpf->pango_context);
 #endif
       tpf->pango_context = NULL;
@@ -300,7 +300,7 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
     printf("%s:%d - Creating Pango context: \"%s\"\n", __FILE__, __LINE__, desc);
 #endif
 
-#ifdef __APPLE__
+#ifdef SDL_PLATFORM_APPLE
     /*
      * SDLPango_CreateContext_GivenFontDesc() defaults to ASCII character set
      * (at least on the macOS) unless the CHARSET environment varaible is set.
@@ -374,7 +374,7 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
       return NULL;
     }
 
-    familyname = (char *)TTF_FontFaceFamilyName(ttf_font);      /* N.B.: I don't believe we're supposed to free() this... -bjk 2021.10.26 */
+    familyname = (char *)TTF_GetFontFamilyName(ttf_font);       /* N.B.: I don't believe we're supposed to free() this... -bjk 2021.10.26 */
     (void)familyname;           // avoid compiler complaints if ALWAYS_LOAD_FONT_WITH_PANGO is not set, and DEBUG is not set
 
 #ifdef DEBUG
@@ -414,7 +414,7 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
 #ifdef DEBUG
     printf("%s:%d - Succeeded loading %s via SDL_ttf\n", __FILE__, __LINE__, ttffilename);
 #endif
-    tpf->height = TTF_FontHeight(tpf->ttf_font);
+    tpf->height = TTF_GetFontHeight(tpf->ttf_font);
 
 #ifdef DEBUG
     printf
@@ -1016,12 +1016,10 @@ static void loadfonts(SDL_Surface *screen, SDL_Texture *texture, SDL_Renderer *r
 #define MAX_FONCCONF_CONF_PATHS 256
 #define MAX_FONTCONF_INCLUDE_PATHS 100
 
-int compare_fontconfig_includes(const void *a, const void *b)
-{
-  const char *aa = *(const char **)a;
-  const char *bb = *(const char **)b;
-
-  return strcmp(aa, bb);
+int compare_fontconfig_includes(const void * a, const void * b) {
+  const char* aa = *(const char**)a;
+  const char* bb = *(const char**)b;
+  return strcmp(aa,bb);
 }
 
 
@@ -1056,7 +1054,7 @@ int compare_fontconfig_includes(const void *a, const void *b)
     loadfonts(screen, texture, renderer, "/boot/home/config/font/ttffonts");
     loadfonts(screen, texture, renderer, "/usr/share/fonts");
     loadfonts(screen, texture, renderer, "/usr/X11R6/lib/X11/fonts");
-#elif defined(__HAIKU__)
+#elif defined(SDL_PLATFORM_HAIKU)
     /* Haiku: Look for fonts in various places, via "find_directory()" */
     dev_t volume = dev_for_path("/boot");
     char buffer[B_PATH_NAME_LENGTH + B_FILE_NAME_LENGTH];
@@ -1070,7 +1068,7 @@ int compare_fontconfig_includes(const void *a, const void *b)
     loadfonts(screen, texture, renderer, buffer);
     result = find_directory(B_USER_NONPACKAGED_FONTS_DIRECTORY, volume, false, buffer, sizeof(buffer));
     loadfonts(screen, texture, renderer, buffer);
-#elif defined(__APPLE__)
+#elif defined(SDL_PLATFORM_APPLE)
     /* Apple: Look for fonts in various system locations and HOME */
     loadfonts(screen, texture, renderer, "/System/Library/Fonts");
     loadfonts(screen, texture, renderer, "/Library/Fonts");
@@ -1104,15 +1102,15 @@ int compare_fontconfig_includes(const void *a, const void *b)
     /* See what dirs fontconfig configuration files point to,
        and try loading fonts from those locations */
 
-#if defined(__APPLE__)
+#if defined(SDL_PLATFORM_APPLE)
     /* Apple: Look for fonts.conf in $FONTCONFIG_PATH */
     num_fontconfig_config_paths = 1;
     fontconfig_config_paths[0] = malloc(1024);
     snprintf(fontconfig_config_paths[0], 1024, "%s/fonts.conf", getenv("FONTCONFIG_PATH"));
 
     /* FIXME: Apple: Look for the fonts.conf that we ship with Tux Paint for macOS */
-#elif defined(__HAIKU__)
-    /* Haiku: Look for fonts.conf in a known system directory */
+#elif defined(SDL_PLATFORM_HAIKU)
+      /* Haiku: Look for fonts.conf in a known system directory */
     num_fontconfig_config_paths = 1;
     fontconfig_config_paths[0] = malloc(1024);
     snprintf(fontconfig_config_paths[0], 1024, "/boot/system/settings/fonts/fonts.conf");
@@ -1318,9 +1316,7 @@ int compare_fontconfig_includes(const void *a, const void *b)
 
                     /* Try to load fonts from the location found in the fonts.conf's <dir> tag */
                     loadfonts(screen, texture, renderer, (char *)path_str);
-                  }
-                  else
-                  {
+                  } else {
                     /* It was an "<include>" tag... */
                     int res, ign_missing;
                     xmlChar *ignore_missing;
@@ -1338,16 +1334,15 @@ int compare_fontconfig_includes(const void *a, const void *b)
                     if (res)
                     {
                       if (!ign_missing)
-                        fprintf(stderr,
-                                "Warning: FontConfig file '%s' tried to <include> '%s', which cannot be accessed: %s\n",
-                                fontconfig_config_paths[i], path_str, strerror(errno));
+                        fprintf(stderr, "Warning: FontConfig file '%s' tried to <include> '%s', which cannot be accessed: %s\n",
+                          fontconfig_config_paths[i], path_str, strerror(errno));
                     }
                     else
                     {
-                      char *include_paths[MAX_FONTCONF_INCLUDE_PATHS];
+                      char * include_paths[MAX_FONTCONF_INCLUDE_PATHS];
                       int num_include_paths, j, k, skip;
-                      DIR *dir;
-                      struct dirent *f;
+                      DIR * dir;
+                      struct dirent * f;
 
                       if ((sbuf.st_mode & S_IFMT) == S_IFDIR)
                       {
@@ -1355,29 +1350,19 @@ int compare_fontconfig_includes(const void *a, const void *b)
                         num_include_paths = 0;
 
                         dir = opendir(path_str);
-                        if (!dir)
-                        {
-                          fprintf(stderr, "Warning: Cannot open dir %s to look for FontConfig files: %s\n", path_str,
-                                  strerror(errno));
-                        }
-                        else
-                        {
-                          while ((f = readdir(dir)))
-                          {
-                            if (f->d_name[0] >= '0' && f->d_name[0] <= '9')
-                            {
+                        if (!dir) {
+                          fprintf(stderr, "Warning: Cannot open dir %s to look for FontConfig files: %s\n", path_str, strerror(errno));
+                        } else {
+                          while ((f = readdir(dir))) {
+                            if (f->d_name[0] >= '0' && f->d_name[0] <= '9') {
                               /* Starts with a digit */
-                              if (strstr(f->d_name, ".conf") == (f->d_name + strlen(f->d_name) - 5))
-                              {
+                              if (strstr(f->d_name, ".conf") ==
+                                  (f->d_name + strlen(f->d_name) - 5)) {
                                 /* Ends in ".conf" */
-                                if (num_include_paths == MAX_FONTCONF_INCLUDE_PATHS)
-                                {
-                                  fprintf(stderr, "Warning: FontConfig config file <include> limit reached in %s: %d\n",
-                                          path_str, MAX_FONTCONF_INCLUDE_PATHS);
-                                }
-                                else
-                                {
-                                  include_paths[num_include_paths] = (char *)malloc(1024);
+                                if (num_include_paths == MAX_FONTCONF_INCLUDE_PATHS) {
+                                  fprintf(stderr, "Warning: FontConfig config file <include> limit reached in %s: %d\n", path_str, MAX_FONTCONF_INCLUDE_PATHS);
+                                } else {
+                                  include_paths[num_include_paths] = (char *) malloc(1024);
                                   snprintf(include_paths[num_include_paths], 1024, "%s/%s", path_str, f->d_name);
                                   num_include_paths++;
                                 }
@@ -1398,29 +1383,20 @@ int compare_fontconfig_includes(const void *a, const void *b)
                       }
 
                       /* Make sure we don't get stuck in a recursive loop! */
-                      for (j = 0; j < num_include_paths; j++)
-                      {
+                      for (j = 0; j < num_include_paths; j++) {
                         skip = 0;
-                        for (k = 0; k < num_fontconfig_config_paths && skip == 0; k++)
-                        {
-                          if (strcmp(fontconfig_config_paths[k], include_paths[j]) == 0)
-                          {
-                            fprintf(stderr,
-                                    "Warning: FontConfig file '%s' tried to <include> '%s', which we've already seen; skipping!\n",
-                                    fontconfig_config_paths[i], include_paths[j]);
+                        for (k = 0; k < num_fontconfig_config_paths && skip == 0; k++) {
+                          if (strcmp(fontconfig_config_paths[k], include_paths[j]) == 0) {
+                            fprintf(stderr, "Warning: FontConfig file '%s' tried to <include> '%s', which we've already seen; skipping!\n",
+                              fontconfig_config_paths[i], include_paths[j]);
                             skip = 1;
                           }
                         }
 
-                        if (!skip)
-                        {
-                          if (num_fontconfig_config_paths == MAX_FONCCONF_CONF_PATHS)
-                          {
-                            fprintf(stderr, "Warning: Reached limit of FontConfig config files we can parse (%d)\n",
-                                    MAX_FONCCONF_CONF_PATHS);
-                          }
-                          else
-                          {
+                        if (!skip) {
+                          if (num_fontconfig_config_paths == MAX_FONCCONF_CONF_PATHS) {
+                            fprintf(stderr, "Warning: Reached limit of FontConfig config files we can parse (%d)\n", MAX_FONCCONF_CONF_PATHS);
+                          } else {
                             fontconfig_config_paths[num_fontconfig_config_paths] = strdup(include_paths[j]);
                             num_fontconfig_config_paths++;
                           }
@@ -1457,7 +1433,7 @@ int compare_fontconfig_includes(const void *a, const void *b)
   free(homedirdir);
 #endif
 
-#ifdef __APPLE__
+#ifdef SDL_PLATFORM_APPLE
   homedirdir = malloc(snprintf(NULL, 0, "%s/fonts", apple_globalPreferencesPath()) + 1);
   if (homedirdir)
   {
@@ -1508,7 +1484,7 @@ void run_font_scanner(SDL_Surface *screen, SDL_Texture *texture,
     close(sv[1]);
     return;
   }
-#ifndef __HAIKU__
+#ifndef SDL_PLATFORM_HAIKU
   /* be nice, letting the main thread get the CPU */
   if (nice(42) == -1)
   {
@@ -1524,7 +1500,7 @@ void run_font_scanner(SDL_Surface *screen, SDL_Texture *texture,
   progress_bar_disabled = 1;
   reliable_read(font_socket_fd, &no_system_fonts, sizeof no_system_fonts);
   sched_yield();                // try to let the parent run right now
-  SDL_Init(SDL_INIT_NOPARACHUTE);
+  SDL_Init(0);
   TTF_Init();
   load_user_fonts(screen, texture, renderer, NULL, locale);
 
@@ -1886,6 +1862,8 @@ static int do_surfcmp(const SDL_Surface *const *const v1, const SDL_Surface *con
   int width;
   int cmp;
   int i;
+  const SDL_PixelFormatDetails *const det1 = SDL_GetPixelFormatDetails(s1->format);
+  const SDL_PixelFormatDetails *const det2 = SDL_GetPixelFormatDetails(s2->format);
 
   if (s1 == s2)
   {
@@ -1899,11 +1877,11 @@ static int do_surfcmp(const SDL_Surface *const *const v1, const SDL_Surface *con
     was_bad_font = 1;
     return 0;
   }
-  if (s1->format->BytesPerPixel != s2->format->BytesPerPixel)
+  if (det1->bytes_per_pixel != det2->bytes_per_pixel)
   {
     /* The SDL_Surfaces are in different bit depths!? */
     was_bad_font = 1;
-    return s1->format->BytesPerPixel - s2->format->BytesPerPixel;
+    return det1->bytes_per_pixel - det2->bytes_per_pixel;
   }
 
   /* If they are different shapes, sort by their shape
@@ -1919,7 +1897,7 @@ static int do_surfcmp(const SDL_Surface *const *const v1, const SDL_Surface *con
     const char *const c1 = (char *const)s1->pixels;
     const char *const c2 = (char *const)s2->pixels;
 
-    width = s1->format->BytesPerPixel * s1->w;
+    width = det1->bytes_per_pixel * s1->w;
     if (width == s1->pitch)
     {
       /* Same width, just compare scanline */
@@ -1990,7 +1968,7 @@ int charset_works(TuxPaint_Font *font, const char *s)
 
     if (font->typ == FONT_TYPE_TTF)
     {
-      tmp_surf = TTF_RenderUTF8_Blended(font->ttf_font, c, black);
+      tmp_surf = TTF_RenderText_Blended(font->ttf_font, c, strlen(c), black);
     }
 
     if (!tmp_surf)
@@ -2010,7 +1988,7 @@ out:
       fprintf(stderr, "TRYING TO RE-FREE!");
     else
     {
-      SDL_FreeSurface(surfs[count]);
+      SDL_DestroySurface(surfs[count]);
       surfs[count] = NULL;
     }
   }
@@ -2055,7 +2033,7 @@ const char *TuxPaint_Font_FontFaceFamilyName(TuxPaint_Font *tpf)
   }
 
   if (tpf->typ == FONT_TYPE_TTF)
-    return (TTF_FontFaceFamilyName(tpf->ttf_font));
+    return (TTF_GetFontFamilyName(tpf->ttf_font));
 
 #ifdef DEBUG
   printf("%s:%d - TuxPaint_Font_FontFaceFamilyName() is confused\n", __FILE__, __LINE__);
@@ -2084,7 +2062,7 @@ const char *TuxPaint_Font_FontFaceStyleName(TuxPaint_Font *tpf)
   }
 
   if (tpf->typ == FONT_TYPE_TTF)
-    return (TTF_FontFaceStyleName(tpf->ttf_font));
+    return (TTF_GetFontStyleName(tpf->ttf_font));
 
 #ifdef DEBUG
   printf("%s:%d - TuxPaint_Font_FontFaceStyleName() is confused\n", __FILE__, __LINE__);

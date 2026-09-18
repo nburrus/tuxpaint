@@ -27,10 +27,11 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 #define REPEAT_CNT 3
 #define SIN_60DEG 0.866025403784439
@@ -42,7 +43,7 @@ enum
   NUM_TOOLS
 };
 
-static Mix_Chunk *tessell_snd;
+static MIX_Audio *tessell_snd;
 static int tessell_radius = 16, tessell_width, tessell_height;
 static Uint32 tessell_color;
 
@@ -87,7 +88,7 @@ int tessell_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/tessellation.ogg", api->data_directory);
-  tessell_snd = Mix_LoadWAV(fname);
+  tessell_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -140,12 +141,13 @@ static void do_tessell_circle(void *ptr, int which,
 {
   int xx, yy, rx, ry, sx, sy;
   magic_api *api = (magic_api *) ptr;
+  int tessell_radius_p = max(1, (int)(tessell_radius * api->pressure));
 
-  for (yy = -tessell_radius; yy <= tessell_radius; yy++)
+  for (yy = -tessell_radius_p; yy <= tessell_radius_p; yy++)
   {
-    for (xx = -tessell_radius; xx <= tessell_radius; xx++)
+    for (xx = -tessell_radius_p; xx <= tessell_radius_p; xx++)
     {
-      if (api->in_circle(xx, yy, tessell_radius))
+      if (api->in_circle(xx, yy, tessell_radius_p))
       {
         for (ry = -REPEAT_CNT; ry <= REPEAT_CNT; ry++)
         {
@@ -204,7 +206,7 @@ void tessell_release(magic_api *api ATTRIBUTE_UNUSED,
 void tessell_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (tessell_snd != NULL)
-    Mix_FreeChunk(tessell_snd);
+    MIX_DestroyAudio(tessell_snd);
 }
 
 void tessell_set_color(magic_api *api ATTRIBUTE_UNUSED,
@@ -213,7 +215,7 @@ void tessell_set_color(magic_api *api ATTRIBUTE_UNUSED,
                        SDL_Surface *last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g,
                        Uint8 b, SDL_Rect *update_rect ATTRIBUTE_UNUSED)
 {
-  tessell_color = SDL_MapRGB(canvas->format, r, g, b);
+  tessell_color = SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b);
 }
 
 int tessell_requires_colors(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)

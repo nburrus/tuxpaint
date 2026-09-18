@@ -66,7 +66,7 @@ const char *SurfacePrint(SDL_Surface *surface)
                                                     mSurfaceArray, surface->w, surface->h,
                                                     mConfig);
 
-  jobject mContext = (jobject) SDL_AndroidGetActivity();
+  jobject mContext = (jobject) SDL_GetAndroidActivity();
   jclass mPrintClass = (*mEnv)->FindClass(mEnv, "androidx/print/PrintHelper");
 
   // sometimes android v4 support library may be not ready

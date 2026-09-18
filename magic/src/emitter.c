@@ -30,9 +30,9 @@
 #include <string.h>
 #include <stdlib.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
-#include "SDL2_rotozoom.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
+#include <SDL3_gfx/SDL3_rotozoom.h>
 
 #define EMITTER_QUEUE_SIZE 64
 #define EMITTER_QUEUE_SIZE_SCALE 8
@@ -101,7 +101,7 @@ int emitter_duplicate[NUM_EMITTERS] = {
 
 /* Our globals: */
 
-static Mix_Chunk *emitter_snds[NUM_EMITTERS];
+static MIX_Audio *emitter_snds[NUM_EMITTERS];
 int last_x, last_y;
 Uint8 emitter_r, emitter_g, emitter_b;
 int emitter_max_trail_length;
@@ -157,7 +157,7 @@ int emitter_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
   for (i = 0; i < NUM_EMITTERS; i++)
   {
     snprintf(fname, sizeof(fname), "%ssounds/magic/emitter%d.ogg", api->data_directory, i);
-    emitter_snds[i] = Mix_LoadWAV(fname);
+    emitter_snds[i] = MIX_LoadAudio(api->mmixer, fname, 0);
   }
 
   for (i = 0; i < NUM_EMITTERS; i++)
@@ -177,22 +177,21 @@ int emitter_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
       return (0);
     }
 
+    const SDL_PixelFormatDetails *format_details = SDL_GetPixelFormatDetails(surf->format);
+
     if (emitter_frames[i] == 1)
     {
       emitter_images[i][0][0] = surf;
     }
     else
     {
+      amask = ~(format_details->Rmask | format_details->Gmask | format_details->Bmask);
       for (j = 0; j < emitter_frames[i]; j++)
       {
-        amask = ~(surf->format->Rmask | surf->format->Gmask | surf->format->Bmask);
-
         emitter_images[i][0][j] =
-          SDL_CreateRGBSurface(SDL_SWSURFACE,
-                               surf->w / emitter_frames[i],
-                               surf->h,
-                               surf->format->BitsPerPixel,
-                               surf->format->Rmask, surf->format->Gmask, surf->format->Bmask, amask);
+          SDL_CreateSurface(surf->w / emitter_frames[i], surf->h,
+                            SDL_GetPixelFormatForMasks(format_details->bits_per_pixel, format_details->Rmask,
+                                                       format_details->Gmask, format_details->Bmask, amask));
 
         src.x = (surf->w / emitter_frames[i]) * j;
         src.y = 0;
@@ -201,7 +200,7 @@ int emitter_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
 
         SDL_BlitSurface(surf, &src, emitter_images[i][0][j], NULL);
       }
-      SDL_FreeSurface(surf);
+      SDL_DestroySurface(surf);
     }
 
     for (j = 1; j < EMITTER_QUEUE_SIZE; j++)
@@ -379,6 +378,7 @@ void emitter_drag(magic_api *api, int which, SDL_Surface *canvas,
     {
       Uint32 amask;
       SDL_Surface *tmpSurf2;
+      const SDL_PixelFormatDetails *format_details;
       Uint8 r, g, b, a;
 
       dest.x = emitter_queue_x[i] - tmpSurf->w / 2;
@@ -389,14 +389,13 @@ void emitter_drag(magic_api *api, int which, SDL_Surface *canvas,
       dest.x += (rand() % 4) - 2;
       dest.y += (rand() % 4) - 2;
 
-      amask = ~(tmpSurf->format->Rmask | tmpSurf->format->Gmask | tmpSurf->format->Bmask);
+      format_details = SDL_GetPixelFormatDetails(tmpSurf->format);
+      amask = ~(format_details->Rmask | format_details->Gmask | format_details->Bmask);
 
       tmpSurf2 =
-        SDL_CreateRGBSurface(SDL_SWSURFACE,
-                             tmpSurf->w,
-                             tmpSurf->h,
-                             tmpSurf->format->BitsPerPixel,
-                             tmpSurf->format->Rmask, tmpSurf->format->Gmask, tmpSurf->format->Bmask, amask);
+        SDL_CreateSurface(tmpSurf->w, tmpSurf->h,
+                          SDL_GetPixelFormatForMasks(format_details->bits_per_pixel, format_details->Rmask,
+                                                     format_details->Gmask, format_details->Bmask, amask));
 
       if (tmpSurf2 != NULL)
       {
@@ -407,23 +406,24 @@ void emitter_drag(magic_api *api, int which, SDL_Surface *canvas,
         {
           for (x = 0; x < tmpSurf->w; x++)
           {
-            SDL_GetRGBA(api->getpixel(tmpSurf, x, y), tmpSurf->format, &r, &g, &b, &a);
+            SDL_GetRGBA(api->getpixel(tmpSurf, x, y), SDL_GetPixelFormatDetails(tmpSurf->format),
+                        SDL_GetSurfacePalette(tmpSurf), &r, &g, &b, &a);
             api->putpixel(tmpSurf2, x, y,
-                          SDL_MapRGBA(tmpSurf2->format, (r + emitter_r) >> 1,
-                                      (g + emitter_g) >> 1, (b + emitter_b) >> 1, a));
+                          SDL_MapRGBA(SDL_GetPixelFormatDetails(tmpSurf2->format), SDL_GetSurfacePalette(tmpSurf2),
+                                      (r + emitter_r) >> 1, (g + emitter_g) >> 1, (b + emitter_b) >> 1, a));
           }
         }
         SDL_UnlockSurface(tmpSurf2);
         SDL_UnlockSurface(tmpSurf);
 
         SDL_BlitSurface(tmpSurf2, NULL, canvas, &dest);
-        SDL_FreeSurface(tmpSurf2);
+        SDL_DestroySurface(tmpSurf2);
       }
     }
 
     if (emitter_rotate[which] != 0 && tmpSurf != NULL)
     {
-      SDL_FreeSurface(tmpSurf);
+      SDL_DestroySurface(tmpSurf);
     }
   }
 
@@ -457,10 +457,20 @@ void emitter_release(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED
 
 void emitter_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
-  int i;
+  int i, j, k;
 
   for (i = 0; i < NUM_EMITTERS; i++)
-    Mix_FreeChunk(emitter_snds[i]);
+  {
+    MIX_DestroyAudio(emitter_snds[i]);
+      for (j = 0; j < EMITTER_QUEUE_SIZE; j++)
+      {
+	for (k = 0; k < emitter_frames[i]; k++)
+	  if (emitter_images[i][j][k] != NULL)
+	    SDL_DestroySurface(emitter_images[i][j][k]);
+	if (emitter_images[i][j] != NULL)
+	  free(emitter_images[i][j]);
+      }
+  }
 }
 
 void emitter_set_color(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,

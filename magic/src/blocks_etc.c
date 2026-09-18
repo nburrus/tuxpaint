@@ -30,7 +30,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
+#include <SDL3_image/SDL_image.h>
 
 /* What tools we contain: */
 
@@ -47,7 +47,7 @@ static int EFFECT_REZ = 4;
 
 /* Our globals: */
 
-static Mix_Chunk *snd_effect[NUM_TOOLS];
+static MIX_Audio *snd_effect[NUM_TOOLS];
 
 
 /* Our function prototypes: */
@@ -86,13 +86,13 @@ int blocks_etc_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Ui
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/blocks.wav", api->data_directory);
-  snd_effect[0] = Mix_LoadWAV(fname);
+  snd_effect[0] = MIX_LoadAudio(api->mmixer, fname, 0);
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/chalk.wav", api->data_directory);
-  snd_effect[1] = Mix_LoadWAV(fname);
+  snd_effect[1] = MIX_LoadAudio(api->mmixer, fname, 0);
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/drip.wav", api->data_directory);
-  snd_effect[2] = Mix_LoadWAV(fname);
+  snd_effect[2] = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -219,6 +219,7 @@ static void blocks_etc_linecb(void *ptr, int which, SDL_Surface *canvas, SDL_Sur
   SDL_Rect src, dest;
   Uint8 r, g, b;
   Uint32 colr;
+  float p = api->pressure;
 
   if (which == TOOL_BLOCKS)
   {
@@ -229,9 +230,9 @@ static void blocks_etc_linecb(void *ptr, int which, SDL_Surface *canvas, SDL_Sur
 
     if (!api->touched(x, y))
     {
-      for (yy = y - (EFFECT_REZ * 2); yy < y + (EFFECT_REZ * 2); yy = yy + EFFECT_REZ)
+      for (yy = y - (EFFECT_REZ * 2) * p; yy < y + (EFFECT_REZ * 2) * p; yy = yy + EFFECT_REZ)
       {
-        for (xx = x - (EFFECT_REZ * 2); xx < x + (EFFECT_REZ * 2); xx = xx + EFFECT_REZ)
+        for (xx = x - (EFFECT_REZ * 2) * p; xx < x + (EFFECT_REZ * 2) * p; xx = xx + EFFECT_REZ)
         {
           Uint32 pix[(EFFECT_REZ * EFFECT_REZ)];
           Uint32 p_or = 0;
@@ -249,7 +250,7 @@ static void blocks_etc_linecb(void *ptr, int which, SDL_Surface *canvas, SDL_Sur
           }
           if (p_or == p_and)    // if all pixels the same already
           {
-            SDL_GetRGB(p_or, last->format, &r, &g, &b);
+            SDL_GetRGB(p_or, SDL_GetPixelFormatDetails(last->format), SDL_GetSurfacePalette(last), &r, &g, &b);
           }
           else                  // nope, must average them
           {
@@ -260,7 +261,7 @@ static void blocks_etc_linecb(void *ptr, int which, SDL_Surface *canvas, SDL_Sur
             i = (EFFECT_REZ * EFFECT_REZ);
             while (i--)
             {
-              SDL_GetRGB(pix[i], last->format, &r, &g, &b);
+              SDL_GetRGB(pix[i], SDL_GetPixelFormatDetails(last->format), SDL_GetSurfacePalette(last), &r, &g, &b);
               r_sum += api->sRGB_to_linear(r);
               g_sum += api->sRGB_to_linear(g);
               b_sum += api->sRGB_to_linear(b);
@@ -277,16 +278,18 @@ static void blocks_etc_linecb(void *ptr, int which, SDL_Surface *canvas, SDL_Sur
           dest.w = EFFECT_REZ;
           dest.h = EFFECT_REZ;
 
-          SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, r, g, b));
+          SDL_FillSurfaceRect(canvas, &dest,
+                              SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g,
+                                         b));
         }
       }
     }
   }
   else if (which == TOOL_CHALK)
   {
-    for (yy = y - (EFFECT_REZ * 2); yy <= y + (EFFECT_REZ * 2); yy = yy + EFFECT_REZ)
+    for (yy = y - (EFFECT_REZ * 2) * p; yy <= y + (EFFECT_REZ * 2) * p; yy = yy + EFFECT_REZ)
     {
-      for (xx = x - (EFFECT_REZ * 2); xx <= x + (EFFECT_REZ * 2); xx = xx + EFFECT_REZ)
+      for (xx = x - (EFFECT_REZ * 2) * p; xx <= x + (EFFECT_REZ * 2) * p; xx = xx + EFFECT_REZ)
       {
         dest.x = xx + ((rand() % (EFFECT_REZ + 1)) - (EFFECT_REZ / 2));
         dest.y = yy + ((rand() % (EFFECT_REZ + 1)) - (EFFECT_REZ / 2));
@@ -294,13 +297,13 @@ static void blocks_etc_linecb(void *ptr, int which, SDL_Surface *canvas, SDL_Sur
         dest.h = (rand() % EFFECT_REZ) + (EFFECT_REZ / 2);
 
         colr = api->getpixel(last, clamp(0, xx, canvas->w - 1), clamp(0, yy, canvas->h - 1));
-        SDL_FillRect(canvas, &dest, colr);
+        SDL_FillSurfaceRect(canvas, &dest, colr);
       }
     }
   }
   else if (which == TOOL_DRIP)
   {
-    for (xx = x - (EFFECT_REZ * 2); xx <= x + (EFFECT_REZ * 2); xx++)
+    for (xx = x - (EFFECT_REZ * 2) * p; xx <= x + (EFFECT_REZ * 2) * p; xx++)
     {
       h = (rand() % (EFFECT_REZ * 2)) + (EFFECT_REZ * 2);
 
@@ -412,10 +415,10 @@ void blocks_etc_release(magic_api *api ATTRIBUTE_UNUSED,
 void blocks_etc_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (snd_effect[0] != NULL)
-    Mix_FreeChunk(snd_effect[0]);
+    MIX_DestroyAudio(snd_effect[0]);
 
   if (snd_effect[1] != NULL)
-    Mix_FreeChunk(snd_effect[1]);
+    MIX_DestroyAudio(snd_effect[1]);
 }
 
 // Record the color from Tux Paint:

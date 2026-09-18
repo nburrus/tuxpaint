@@ -24,7 +24,7 @@
 #ifndef __IOS_PRINT_H__
 #define __IOS_PRINT_H__
 
-#include "SDL.h"
+#include <SDL3/SDL.h>
 
 
 int DisplayPageSetup(const SDL_Surface * surface);

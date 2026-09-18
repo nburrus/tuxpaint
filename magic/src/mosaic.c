@@ -30,11 +30,12 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <libintl.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 #include <math.h>
 #include <limits.h>
 #include <time.h>
@@ -86,7 +87,7 @@ enum
   mosaic_NUM_TOOLS
 };
 
-static Mix_Chunk *mosaic_snd_effect[mosaic_NUM_TOOLS];
+static MIX_Audio *mosaic_snd_effect[mosaic_NUM_TOOLS];
 static SDL_Surface *canvas_noise;
 static SDL_Surface *canvas_blur;
 static SDL_Surface *canvas_sharp;
@@ -131,7 +132,7 @@ int mosaic_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
   for (i = 0; i < mosaic_NUM_TOOLS; i++)
   {
     snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, mosaic_snd_filenames[i]);
-    mosaic_snd_effect[i] = Mix_LoadWAV(fname);
+    mosaic_snd_effect[i] = MIX_LoadAudio(api->mmixer, fname, 0);
   }
 
   return (1);
@@ -188,17 +189,14 @@ static void do_mosaic_full(void *ptr, SDL_Surface *canvas,
 
   magic_api *api = (magic_api *) ptr;
 
+  const SDL_PixelFormatDetails *format_details = SDL_GetPixelFormatDetails(canvas->format);
   int x, y;
 
-  Uint32 amask = ~(canvas->format->Rmask | canvas->format->Gmask | canvas->format->Bmask);
-  SDL_Surface *mosaic_temp = SDL_CreateRGBSurface(SDL_SWSURFACE,
-                                                  canvas->w,
-                                                  canvas->h,
-                                                  canvas->format->BitsPerPixel,
-                                                  canvas->format->Rmask,
-                                                  canvas->format->Gmask,
-                                                  canvas->format->Bmask,
-                                                  amask);
+  Uint32 amask = ~(format_details->Rmask | format_details->Gmask | format_details->Bmask);
+  SDL_Surface *mosaic_temp = SDL_CreateSurface(canvas->w, canvas->h,
+                                               SDL_GetPixelFormatForMasks(format_details->bits_per_pixel,
+                                                                          format_details->Rmask, format_details->Gmask,
+                                                                          format_details->Bmask, amask));
 
 
 
@@ -222,7 +220,7 @@ static void do_mosaic_full(void *ptr, SDL_Surface *canvas,
       mosaic_sharpen_pixel(api, canvas, mosaic_temp, x, y);
     }
   }
-  SDL_FreeSurface(mosaic_temp);
+  SDL_DestroySurface(mosaic_temp);
 }
 
 /* Paint the brush, noise is yet done at switchin, 
@@ -233,21 +231,22 @@ void mosaic_paint(void *ptr_to_api, int which ATTRIBUTE_UNUSED,
   int i, j, pix_row_pos;
 
   magic_api *api = (magic_api *) ptr_to_api;
+  int mosaic_RADIUS_p = mosaic_RADIUS * api->pressure;
 
-  for (j = max(0, y - mosaic_RADIUS - 2); j < min(canvas->h, y + mosaic_RADIUS + 2); j++)
+  for (j = max(0, y - mosaic_RADIUS_p - 2); j < min(canvas->h, y + mosaic_RADIUS_p + 2); j++)
   {
     pix_row_pos = j * canvas->w;
-    for (i = max(0, x - mosaic_RADIUS - 2); i < min(canvas->w, x + mosaic_RADIUS + 2); i++)
-      if (!mosaic_blured[pix_row_pos + i] && api->in_circle(i - x, j - y, mosaic_RADIUS + 2))
+    for (i = max(0, x - mosaic_RADIUS_p - 2); i < min(canvas->w, x + mosaic_RADIUS_p + 2); i++)
+      if (!mosaic_blured[pix_row_pos + i] && api->in_circle(i - x, j - y, mosaic_RADIUS_p + 2))
       {
         mosaic_blur_pixel(api, canvas_blur, canvas_noise, i, j);
         mosaic_blured[pix_row_pos + i] = 1;     /* Track what are yet blured */
       }
   }
 
-  for (i = x - mosaic_RADIUS; i < x + mosaic_RADIUS; i++)
-    for (j = y - mosaic_RADIUS; j < y + mosaic_RADIUS; j++)
-      if (api->in_circle(i - x, j - y, mosaic_RADIUS))
+  for (i = x - mosaic_RADIUS_p; i < x + mosaic_RADIUS_p; i++)
+    for (j = y - mosaic_RADIUS_p; j < y + mosaic_RADIUS_p; j++)
+      if (api->in_circle(i - x, j - y, mosaic_RADIUS_p))
         if (!api->touched(i, j))
         {
           mosaic_sharpen_pixel(api, canvas_sharp, canvas_blur, i, j);
@@ -309,7 +308,7 @@ void mosaic_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   {
     if (mosaic_snd_effect[i] != NULL)
     {
-      Mix_FreeChunk(mosaic_snd_effect[i]);
+      MIX_DestroyAudio(mosaic_snd_effect[i]);
     }
   }
 }
@@ -339,12 +338,15 @@ static void mosaic_noise_pixel(void *ptr, SDL_Surface *canvas, int noise_AMOUNT,
   double temp2[3];
   int k;
 
-  SDL_GetRGB(api->getpixel(canvas, x, y), canvas->format, &temp[0], &temp[1], &temp[2]);
+  SDL_GetRGB(api->getpixel(canvas, x, y), SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
+             &temp[0], &temp[1], &temp[2]);
   for (k = 0; k < 3; k++)
   {
     temp2[k] = clamp(0.0, (int)temp[k] - (rand() % noise_AMOUNT) + noise_AMOUNT / 2.0, 255.0);
   }
-  api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, temp2[0], temp2[1], temp2[2]));
+  api->putpixel(canvas, x, y,
+                SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), temp2[0], temp2[1],
+                           temp2[2]));
 }
 
 //Blur a pixel
@@ -373,7 +375,8 @@ static void mosaic_blur_pixel(void *ptr, SDL_Surface *canvas, SDL_Surface *last,
     for (j = -2; j < 3; j++)
     {
       //Add the pixels around the current one wieghted 
-      SDL_GetRGB(api->getpixel(last, x + i, y + j), last->format, &temp[0], &temp[1], &temp[2]);
+      SDL_GetRGB(api->getpixel(last, x + i, y + j), SDL_GetPixelFormatDetails(last->format),
+                 SDL_GetSurfacePalette(last), &temp[0], &temp[1], &temp[2]);
       for (k = 0; k < 3; k++)
       {
         blurValue[k] += temp[k] * weight[i + 2][j + 2];
@@ -384,7 +387,9 @@ static void mosaic_blur_pixel(void *ptr, SDL_Surface *canvas, SDL_Surface *last,
   {
     blurValue[k] /= 273;
   }
-  api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, blurValue[0], blurValue[1], blurValue[2]));
+  api->putpixel(canvas, x, y,
+                SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), blurValue[0],
+                           blurValue[1], blurValue[2]));
 }
 
 //Sharpen a pixel
@@ -416,7 +421,8 @@ static void mosaic_sharpen_pixel(void *ptr, SDL_Surface *canvas, SDL_Surface *la
     for (j = -1; j < 2; j++)
     {
       //No need to check if inside canvas, getpixel does it for us.
-      SDL_GetRGB(api->getpixel(last, x + i, y + j), last->format, &r1, &g1, &b1);
+      SDL_GetRGB(api->getpixel(last, x + i, y + j), SDL_GetPixelFormatDetails(last->format),
+                 SDL_GetSurfacePalette(last), &r1, &g1, &b1);
       grey = mosaic_grey(r1, g1, b1);
       sobel_1 += grey * sobel_weights_1[i + 1][j + 1];
       sobel_2 += grey * sobel_weights_2[i + 1][j + 1];
@@ -426,11 +432,11 @@ static void mosaic_sharpen_pixel(void *ptr, SDL_Surface *canvas, SDL_Surface *la
   temp = sqrt(sobel_1 * sobel_1 + sobel_2 * sobel_2);
   temp = (temp / 1443) * 255.0;
 
-  SDL_GetRGB(api->getpixel(last, x, y), last->format, &r1, &g1, &b1);
+  SDL_GetRGB(api->getpixel(last, x, y), SDL_GetPixelFormatDetails(last->format), SDL_GetSurfacePalette(last), &r1, &g1,
+             &b1);
   api->putpixel(canvas, x, y,
-                SDL_MapRGB(canvas->format,
-                           clamp(0.0, r1 + mosaic_SHARPEN * temp, 255.0),
-                           clamp(0.0, g1 + mosaic_SHARPEN * temp, 255.0),
+                SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
+                           clamp(0.0, r1 + mosaic_SHARPEN * temp, 255.0), clamp(0.0, g1 + mosaic_SHARPEN * temp, 255.0),
                            clamp(0.0, b1 + mosaic_SHARPEN * temp, 255.0)));
 
 }
@@ -439,6 +445,7 @@ void mosaic_switchin(magic_api *api, int which ATTRIBUTE_UNUSED, int mode ATTRIB
 {
   int y, x;
   Uint32 amask;
+  const SDL_PixelFormatDetails *format_details;
 
   mosaic_blured = (Uint8 *) malloc(sizeof(Uint8) * (canvas->w * canvas->h));
   if (mosaic_blured == NULL)
@@ -447,13 +454,12 @@ void mosaic_switchin(magic_api *api, int which ATTRIBUTE_UNUSED, int mode ATTRIB
     exit(1);
   }
 
-  amask = ~(canvas->format->Rmask | canvas->format->Gmask | canvas->format->Bmask);
+  format_details = SDL_GetPixelFormatDetails(canvas->format);
+  amask = ~(format_details->Rmask | format_details->Gmask | format_details->Bmask);
 
-  canvas_noise = SDL_CreateRGBSurface(SDL_SWSURFACE,
-                                      canvas->w,
-                                      canvas->h,
-                                      canvas->format->BitsPerPixel,
-                                      canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, amask);
+  canvas_noise = SDL_CreateSurface(canvas->w, canvas->h,
+                                   SDL_GetPixelFormatForMasks(format_details->bits_per_pixel, format_details->Rmask,
+                                                              format_details->Gmask, format_details->Bmask, amask));
 
   SDL_BlitSurface(canvas, NULL, canvas_noise, NULL);
 
@@ -465,26 +471,22 @@ void mosaic_switchin(magic_api *api, int which ATTRIBUTE_UNUSED, int mode ATTRIB
     }
   }
 
-  canvas_blur = SDL_CreateRGBSurface(SDL_SWSURFACE,
-                                     canvas->w,
-                                     canvas->h,
-                                     canvas->format->BitsPerPixel,
-                                     canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, amask);
+  canvas_blur = SDL_CreateSurface(canvas->w, canvas->h,
+                                  SDL_GetPixelFormatForMasks(format_details->bits_per_pixel, format_details->Rmask,
+                                                             format_details->Gmask, format_details->Bmask, amask));
 
-  canvas_sharp = SDL_CreateRGBSurface(SDL_SWSURFACE,
-                                      canvas->w,
-                                      canvas->h,
-                                      canvas->format->BitsPerPixel,
-                                      canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, amask);
+  canvas_sharp = SDL_CreateSurface(canvas->w, canvas->h,
+                                   SDL_GetPixelFormatForMasks(format_details->bits_per_pixel, format_details->Rmask,
+                                                              format_details->Gmask, format_details->Bmask, amask));
   reset_mosaic_blured(canvas);
 }
 
 void mosaic_switchout(magic_api *api ATTRIBUTE_UNUSED,
                       int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas ATTRIBUTE_UNUSED)
 {
-  SDL_FreeSurface(canvas_noise);
-  SDL_FreeSurface(canvas_blur);
-  SDL_FreeSurface(canvas_sharp);
+  SDL_DestroySurface(canvas_noise);
+  SDL_DestroySurface(canvas_blur);
+  SDL_DestroySurface(canvas_sharp);
   free(mosaic_blured);
 }
 

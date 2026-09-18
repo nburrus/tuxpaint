@@ -29,11 +29,12 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <libintl.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 #include <math.h>
 #include <limits.h>
 #include <time.h>
@@ -53,7 +54,7 @@ enum
   toothpaste_NUM_TOOLS
 };
 
-static Mix_Chunk *toothpaste_snd_effect[toothpaste_NUM_TOOLS];
+static MIX_Audio *toothpaste_snd_effect[toothpaste_NUM_TOOLS];
 
 const char *toothpaste_snd_filenames[toothpaste_NUM_TOOLS] = {
   "toothpaste.ogg",
@@ -124,7 +125,7 @@ int toothpaste_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Ui
   for (i = 0; i < toothpaste_NUM_TOOLS; i++)
   {
     snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, toothpaste_snd_filenames[i]);
-    toothpaste_snd_effect[i] = Mix_LoadWAV(fname);
+    toothpaste_snd_effect[i] = MIX_LoadAudio(api->mmixer, fname, 0);
   }
 
   return (toothpaste_setup_weights(api));
@@ -209,6 +210,7 @@ static void do_toothpaste(void *ptr, int which ATTRIBUTE_UNUSED,
 {
   magic_api *api = (magic_api *) ptr;
   int xx, yy;
+  int toothpaste_RADIUS_P = max(3, (int)(toothpaste_RADIUS * api->pressure));
 
   if (toothpaste_weights == NULL)
     return;
@@ -217,11 +219,11 @@ static void do_toothpaste(void *ptr, int which ATTRIBUTE_UNUSED,
   float h, s, v;
   Uint8 r, g, b;
 
-  for (yy = y - toothpaste_RADIUS; yy < y + toothpaste_RADIUS; yy++)
+  for (yy = y - toothpaste_RADIUS_P; yy < y + toothpaste_RADIUS_P; yy++)
   {
-    for (xx = x - toothpaste_RADIUS; xx < x + toothpaste_RADIUS; xx++)
+    for (xx = x - toothpaste_RADIUS_P; xx < x + toothpaste_RADIUS_P; xx++)
     {
-      if (api->in_circle(xx - x, yy - y, toothpaste_RADIUS) && !api->touched(xx, yy))
+      if (api->in_circle(xx - x, yy - y, toothpaste_RADIUS_P) && !api->touched(xx, yy))
       {
 
         api->rgbtohsv(toothpaste_r, toothpaste_g, toothpaste_b, &h, &s, &v);
@@ -229,7 +231,8 @@ static void do_toothpaste(void *ptr, int which ATTRIBUTE_UNUSED,
                       toothpaste_weights[(yy - y +
                                           toothpaste_RADIUS) *
                                          ((toothpaste_RADIUS * 2) - 1) + (xx - x + toothpaste_RADIUS)], &r, &g, &b);
-        api->putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));
+        api->putpixel(canvas, xx, yy,
+                      SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b));
 
       }
     }
@@ -280,7 +283,7 @@ void toothpaste_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   {
     if (toothpaste_snd_effect[i] != NULL)
     {
-      Mix_FreeChunk(toothpaste_snd_effect[i]);
+      MIX_DestroyAudio(toothpaste_snd_effect[i]);
     }
   }
   if (toothpaste_weights != NULL)

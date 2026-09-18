@@ -42,7 +42,7 @@ int hide_cursor = 1;
 int hide_cursor;
 #endif
 
-#if defined(NOKIA_770) || defined(__BEOS__) || defined(__HAIKU__)
+#if defined(NOKIA_770) || defined(__BEOS__) || defined(SDL_PLATFORM_HAIKU)
 // Fancy cursors on BeOS are buggy in SDL
 int no_fancy_cursors = 1;
 #else
@@ -97,7 +97,7 @@ void free_cursor(SDL_Cursor **cursor)
 {
   if (*cursor)
   {
-    SDL_FreeCursor(*cursor);
+    SDL_DestroyCursor(*cursor);
     *cursor = NULL;
   }
 }

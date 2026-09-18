@@ -25,7 +25,7 @@
 #define __MACOS_H__
 
 
-#define KMOD_CTRL   KMOD_GUI    /* Anywhere Linux/Windows uses CTRL, use CMD on macOS */
+#define SDL_KMOD_CTRL   SDL_KMOD_GUI    /* Anywhere Linux/Windows uses CTRL, use CMD on macOS */
 
 
 void apple_init(void);

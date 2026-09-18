@@ -35,11 +35,12 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <libintl.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 #include <math.h>
 #include <limits.h>
 #include <time.h>
@@ -60,7 +61,7 @@ enum
   snow_NUM_TOOLS
 };
 
-static Mix_Chunk *snow_snd_effect[snow_NUM_TOOLS];
+static MIX_Audio *snow_snd_effect[snow_NUM_TOOLS];
 
 const char *snow_snd_filenames[snow_NUM_TOOLS] = {
   "snowball.ogg",
@@ -142,7 +143,7 @@ int snow_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 co
   for (i = 0; i < snow_NUM_TOOLS; i++)
   {
     snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, snow_snd_filenames[i]);
-    snow_snd_effect[i] = Mix_LoadWAV(fname);
+    snow_snd_effect[i] = MIX_LoadAudio(api->mmixer, fname, 0);
   }
   return (1);
 }
@@ -204,8 +205,11 @@ static void do_snow(void *ptr, SDL_Surface *canvas, SDL_Surface *last, int which
         {
           if (api->in_circle(x, y, snow_RADIUS))
           {
-            SDL_GetRGB(api->getpixel(last, centre_x + x, centre_y + y), last->format, &r, &g, &b);
-            api->putpixel(canvas, centre_x + x, centre_y + y, SDL_MapRGB(canvas->format, 255, 255, 255));
+            SDL_GetRGB(api->getpixel(last, centre_x + x, centre_y + y), SDL_GetPixelFormatDetails(last->format),
+                       SDL_GetSurfacePalette(last), &r, &g, &b);
+            api->putpixel(canvas, centre_x + x, centre_y + y,
+                          SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), 255, 255,
+                                     255));
           }
         }
       }
@@ -269,16 +273,16 @@ void snow_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   {
     if (snow_snd_effect[i] != NULL)
     {
-      Mix_FreeChunk(snow_snd_effect[i]);
+      MIX_DestroyAudio(snow_snd_effect[i]);
     }
   }
   if (snow_flake1 != NULL)
   {
-    SDL_FreeSurface(snow_flake1);
+    SDL_DestroySurface(snow_flake1);
   }
   if (snow_flake2 != NULL)
   {
-    SDL_FreeSurface(snow_flake2);
+    SDL_DestroySurface(snow_flake2);
   }
 }
 

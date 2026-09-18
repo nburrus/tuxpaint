@@ -36,8 +36,8 @@
 #include <string.h>
 #include <libintl.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 #include <math.h>
 #include <limits.h>
 
@@ -57,7 +57,7 @@ static int tint_max = 0;
 
 static int tint_RADIUS = 16;
 
-static Mix_Chunk *tint_snd_effect[tint_NUM_TOOLS];
+static MIX_Audio *tint_snd_effect[tint_NUM_TOOLS];
 
 const char *tint_snd_filenames[tint_NUM_TOOLS] = {
   "tint.wav",
@@ -131,7 +131,7 @@ int tint_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 co
   for (i = 0; i < tint_NUM_TOOLS; i++)
   {
     snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, tint_snd_filenames[i]);
-    tint_snd_effect[i] = Mix_LoadWAV(fname);
+    tint_snd_effect[i] = MIX_LoadAudio(api->mmixer, fname, 0);
   }
   return (1);
 }
@@ -187,7 +187,8 @@ static void do_tint_pixel(void *ptr, int which, SDL_Surface *canvas, SDL_Surface
   Uint8 r, g, b;
   float h, s, v;
 
-  SDL_GetRGB(api->getpixel(last, x, y), last->format, &r, &g, &b);
+  SDL_GetRGB(api->getpixel(last, x, y), SDL_GetPixelFormatDetails(last->format), SDL_GetSurfacePalette(last), &r, &g,
+             &b);
   {
 
     int greyValue = tint_grey(r, g, b);
@@ -196,7 +197,8 @@ static void do_tint_pixel(void *ptr, int which, SDL_Surface *canvas, SDL_Surface
     {
       api->rgbtohsv(tint_r, tint_g, tint_b, &h, &s, &v);
       api->hsvtorgb(h, s, greyValue / 255.0, &r, &g, &b);
-      api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, r, g, b));
+      api->putpixel(canvas, x, y,
+                    SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b));
     }
     else if (which == TOOL_THRESHOLD)
     {
@@ -204,11 +206,15 @@ static void do_tint_pixel(void *ptr, int which, SDL_Surface *canvas, SDL_Surface
 
       if (greyValue < thresholdValue)
       {
-        api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, tint_r, tint_g, tint_b));
+        api->putpixel(canvas, x, y,
+                      SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), tint_r,
+                                 tint_g, tint_b));
       }
       else
       {
-        api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, 255, 255, 255));
+        api->putpixel(canvas, x, y,
+                      SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), 255, 255,
+                                 255));
       }
     }
   }
@@ -232,12 +238,13 @@ static void do_tint_brush(void *ptr, int which, SDL_Surface *canvas, SDL_Surface
 {
   int xx, yy;
   magic_api *api = (magic_api *) ptr;
+  int tint_RADIUS_p = max(1, (int)(tint_RADIUS * api->pressure));
 
-  for (yy = y - tint_RADIUS; yy < y + tint_RADIUS; yy++)
+  for (yy = y - tint_RADIUS_p; yy < y + tint_RADIUS_p; yy++)
   {
-    for (xx = x - tint_RADIUS; xx < x + tint_RADIUS; xx++)
+    for (xx = x - tint_RADIUS_p; xx < x + tint_RADIUS_p; xx++)
     {
-      if (api->in_circle(xx - x, yy - y, tint_RADIUS) && !api->touched(xx, yy))
+      if (api->in_circle(xx - x, yy - y, tint_RADIUS_p) && !api->touched(xx, yy))
       {
         do_tint_pixel(api, which, canvas, last, xx, yy);
       }
@@ -311,7 +318,7 @@ void tint_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   {
     if (tint_snd_effect[i] != NULL)
     {
-      Mix_FreeChunk(tint_snd_effect[i]);
+      MIX_DestroyAudio(tint_snd_effect[i]);
     }
   }
 }
@@ -344,7 +351,8 @@ void tint_switchin(magic_api *api, int which ATTRIBUTE_UNUSED, int mode ATTRIBUT
   {
     for (x = 0; x < canvas->w; x++)
     {
-      SDL_GetRGB(api->getpixel(canvas, x, y), canvas->format, &r1, &g1, &b1);
+      SDL_GetRGB(api->getpixel(canvas, x, y), SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
+                 &r1, &g1, &b1);
       {
         int greyValue = tint_grey(r1, g1, b1);
 

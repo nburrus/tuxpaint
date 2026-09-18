@@ -29,8 +29,8 @@
 #include <stdio.h>
 #include <string.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 /* What tools we contain: */
 
@@ -41,7 +41,7 @@ enum
   NUM_TOOLS
 };
 
-static Mix_Chunk *snd_effects[NUM_TOOLS];
+static MIX_Audio *snd_effects[NUM_TOOLS];
 
 /* Prototypes */
 TX_EXTERN int mirror_f_init(magic_api *, Uint8 disabled_features, Uint8 complexity_level);
@@ -75,10 +75,10 @@ TX_EXTERN int mirror_f_init(magic_api *api,
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/mirror.wav", api->data_directory);
-  snd_effects[TOOL_MIRROR] = Mix_LoadWAV(fname);
+  snd_effects[TOOL_MIRROR] = MIX_LoadAudio(api->mmixer, fname, 0);
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/flip.wav", api->data_directory);
-  snd_effects[TOOL_FLIP] = Mix_LoadWAV(fname);
+  snd_effects[TOOL_FLIP] = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -222,9 +222,9 @@ TX_EXTERN void mirror_f_click(magic_api *api, int which,
 TX_EXTERN void mirror_f_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (snd_effects[0] != NULL)
-    Mix_FreeChunk(snd_effects[0]);
+    MIX_DestroyAudio(snd_effects[0]);
   if (snd_effects[1] != NULL)
-    Mix_FreeChunk(snd_effects[1]);
+    MIX_DestroyAudio(snd_effects[1]);
 }
 
 // We don't use colors:

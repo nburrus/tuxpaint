@@ -15,13 +15,14 @@ FIXME:
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#include "SDL_image.h"
+#include <SDL3_image/SDL_image.h>
 
 #include "tp_magic_api.h"
 
-Mix_Chunk *realrainbow_snd;
+MIX_Audio *realrainbow_snd;
 int realrainbow_x1, realrainbow_y1, realrainbow_x2, realrainbow_y2;
 SDL_Rect realrainbow_rect;
 SDL_Surface *realrainbow_colors[2];
@@ -78,7 +79,7 @@ int realrainbow_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, U
     return (0);
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/realrainbow.ogg", api->data_directory);
-  realrainbow_snd = Mix_LoadWAV(fname);
+  realrainbow_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -139,11 +140,11 @@ int realrainbow_requires_colors(magic_api *api ATTRIBUTE_UNUSED, int which ATTRI
 void realrainbow_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (realrainbow_colors[0] != NULL)
-    SDL_FreeSurface(realrainbow_colors[0]);
+    SDL_DestroySurface(realrainbow_colors[0]);
   if (realrainbow_colors[1] != NULL)
-    SDL_FreeSurface(realrainbow_colors[1]);
+    SDL_DestroySurface(realrainbow_colors[1]);
   if (realrainbow_snd != NULL)
-    Mix_FreeChunk(realrainbow_snd);
+    MIX_DestroyAudio(realrainbow_snd);
 }
 
 void realrainbow_set_color(magic_api *api ATTRIBUTE_UNUSED,
@@ -352,8 +353,9 @@ void realrainbow_arc(magic_api *api, int which, SDL_Surface *canvas,
       colorindex = realrainbow_colors[which]->h - 1 - (((rr - r + (thick / 2)) * realrainbow_colors[which]->h) / thick);
 
       SDL_GetRGBA(api->getpixel(realrainbow_colors[which], 0, colorindex),
-                  realrainbow_colors[which]->format, &realrainbow_blendr,
-                  &realrainbow_blendg, &realrainbow_blendb, &realrainbow_blenda);
+                  SDL_GetPixelFormatDetails(realrainbow_colors[which]->format),
+                  SDL_GetSurfacePalette(realrainbow_colors[which]), &realrainbow_blendr, &realrainbow_blendg,
+                  &realrainbow_blendb, &realrainbow_blenda);
 
       if (!fulldraw)
         realrainbow_blenda = 255;
@@ -383,13 +385,15 @@ static void realrainbow_linecb(void *ptr, int which ATTRIBUTE_UNUSED,
   Uint8 origr, origg, origb;
   Uint8 newr, newg, newb;
 
-  SDL_GetRGB(api->getpixel(last, x, y), last->format, &origr, &origg, &origb);
+  SDL_GetRGB(api->getpixel(last, x, y), SDL_GetPixelFormatDetails(last->format), SDL_GetSurfacePalette(last), &origr,
+             &origg, &origb);
 
   newr = ((realrainbow_blendr * realrainbow_blenda) / 255) + ((origr * (255 - realrainbow_blenda)) / 255);
   newg = ((realrainbow_blendg * realrainbow_blenda) / 255) + ((origg * (255 - realrainbow_blenda)) / 255);
   newb = ((realrainbow_blendb * realrainbow_blenda) / 255) + ((origb * (255 - realrainbow_blenda)) / 255);
 
-  api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, newr, newg, newb));
+  api->putpixel(canvas, x, y,
+                SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), newr, newg, newb));
 }
 
 

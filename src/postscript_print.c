@@ -91,7 +91,9 @@ int do_ps_save(FILE *fi, const char *restrict const fname, SDL_Surface *surf, co
   Uint8 r, g, b;
   char buf[256];
 
-  Uint32(*getpixel) (SDL_Surface *, int, int) = getpixels[surf->format->BytesPerPixel];
+  const SDL_PixelFormatDetails *format_details = SDL_GetPixelFormatDetails(surf->format);
+
+  Uint32(*getpixel) (SDL_Surface *, int, int) = getpixels[format_details->bytes_per_pixel];
   int printed_img_w, printed_img_h;
   time_t t = time(NULL);
   int rotate;
@@ -264,7 +266,8 @@ int do_ps_save(FILE *fi, const char *restrict const fname, SDL_Surface *surf, co
     {
       for (x = 0; x < img_w; x++)
       {
-        SDL_GetRGB(getpixel(surf, x, y), surf->format, &r, &g, &b);
+        SDL_GetRGB(getpixel(surf, x, y), SDL_GetPixelFormatDetails(surf->format), SDL_GetSurfacePalette(surf), &r, &g,
+                   &b);
         fprintf(fi, "%02x", (plane == 0 ? r : (plane == 1 ? g : b)));
 
         cur_line_len++;
@@ -293,7 +296,7 @@ int do_ps_save(FILE *fi, const char *restrict const fname, SDL_Surface *surf, co
     pid_t child_pid, w;
     int status;
 
-#ifdef __APPLE__
+#ifdef SDL_PLATFORM_APPLE
     /* macOS does not always reset errno so Tux Paint thinks print never
      * succeeds - let's reset before calling pclose() on macOS */
     errno = 0;

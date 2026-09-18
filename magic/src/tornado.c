@@ -34,8 +34,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 /* Our globals: */
 
@@ -48,7 +48,7 @@ enum
   LEAFSIDE_LEFT_UP
 };
 
-static Mix_Chunk /* * tornado_click_snd, */  * tornado_release_snd;
+static MIX_Audio /* * tornado_click_snd, */  * tornado_release_snd;
 static Uint8 tornado_r, tornado_g, tornado_b;
 static int tornado_min_x, tornado_max_x, tornado_bottom_x, tornado_bottom_y;
 static int tornado_side_first;
@@ -116,11 +116,11 @@ int tornado_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
 /*
   snprintf(fname, sizeof(fname), "%ssounds/magic/tornado_click.ogg",
 	    api->data_directory);
-  tornado_click_snd = Mix_LoadWAV(fname);
+  tornado_click_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 */
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/tornado_release.ogg", api->data_directory);
-  tornado_release_snd = Mix_LoadWAV(fname);
+  tornado_release_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   snprintf(fname, sizeof(fname), "%simages/magic/tornado_base.png", api->data_directory);
   tornado_base = IMG_Load(fname);
@@ -298,7 +298,7 @@ static void tornado_drawtornado(magic_api *api, SDL_Surface *canvas, int x, int 
   dest.y = y - (aux_surf->h / 2);
 
   SDL_BlitSurface(aux_surf, NULL, canvas, &dest);
-  SDL_FreeSurface(aux_surf);
+  SDL_DestroySurface(aux_surf);
 }
 
 static void tornado_drawbase(magic_api *api ATTRIBUTE_UNUSED, SDL_Surface *canvas)
@@ -316,8 +316,8 @@ static Uint32 tornado_mess(Uint32 pixel, SDL_Surface *canvas)
   Uint8 r, g, b, a;
   float f = (float)rand() * 255 / RAND_MAX;
 
-  SDL_GetRGBA(pixel, canvas->format, &r, &g, &b, &a);
-  return (SDL_MapRGBA(canvas->format,
+  SDL_GetRGBA(pixel, SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), &r, &g, &b, &a);
+  return (SDL_MapRGBA(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
                       (tornado_r + r + (Uint8) f * 2) / 4,
                       (tornado_g + g + (Uint8) f * 2) / 4, (tornado_b + b + (Uint8) f * 2) / 4, a));
 }
@@ -381,7 +381,9 @@ static void tornado_drawstalk(magic_api *api, SDL_Surface *canvas,
       dest.y = curve[i].y;
       dest.w = 2;
       dest.h = 2;
-      SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, 0, 0, 0));
+      SDL_FillSurfaceRect(canvas, &dest,
+                          SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), 0, 0,
+                                     0));
     }
     else
     {
@@ -433,18 +435,18 @@ void tornado_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
 /*
   if (tornado_click_snd != NULL)
-    Mix_FreeChunk(tornado_click_snd);
+    MIX_DestroyAudio(tornado_click_snd);
 */
 
   if (tornado_release_snd != NULL)
-    Mix_FreeChunk(tornado_release_snd);
+    MIX_DestroyAudio(tornado_release_snd);
 
   if (tornado_base != NULL)
-    SDL_FreeSurface(tornado_base);
+    SDL_DestroySurface(tornado_base);
   if (tornado_cloud != NULL)
-    SDL_FreeSurface(tornado_cloud);
+    SDL_DestroySurface(tornado_cloud);
   if (tornado_cloud_colorized != NULL)
-    SDL_FreeSurface(tornado_cloud_colorized);
+    SDL_DestroySurface(tornado_cloud_colorized);
 }
 
 // Record the color from Tux Paint:
@@ -533,21 +535,19 @@ static void tornado_colorize_cloud(magic_api *api)
   Uint32 amask;
   int x, y;
   Uint8 r, g, b, a;
+  const SDL_PixelFormatDetails *format_details = SDL_GetPixelFormatDetails(tornado_cloud->format);
 
   if (tornado_cloud_colorized != NULL)
-    SDL_FreeSurface(tornado_cloud_colorized);
+    SDL_DestroySurface(tornado_cloud_colorized);
 
   /* Create a surface to render into: */
 
-  amask = ~(tornado_cloud->format->Rmask | tornado_cloud->format->Gmask | tornado_cloud->format->Bmask);
+  amask = ~(format_details->Rmask | format_details->Gmask | format_details->Bmask);
 
   tornado_cloud_colorized =
-    SDL_CreateRGBSurface(SDL_SWSURFACE,
-                         tornado_cloud->w,
-                         tornado_cloud->h,
-                         tornado_cloud->format->BitsPerPixel,
-                         tornado_cloud->format->Rmask,
-                         tornado_cloud->format->Gmask, tornado_cloud->format->Bmask, amask);
+    SDL_CreateSurface(tornado_cloud->w, tornado_cloud->h,
+                      SDL_GetPixelFormatForMasks(format_details->bits_per_pixel, format_details->Rmask,
+                                                 format_details->Gmask, format_details->Bmask, amask));
 
   /* Render the new cloud: */
 
@@ -558,11 +558,13 @@ static void tornado_colorize_cloud(magic_api *api)
   {
     for (x = 0; x < tornado_cloud->w; x++)
     {
-      SDL_GetRGBA(api->getpixel(tornado_cloud, x, y), tornado_cloud->format, &r, &g, &b, &a);
+      SDL_GetRGBA(api->getpixel(tornado_cloud, x, y), format_details, SDL_GetSurfacePalette(tornado_cloud), &r, &g, &b,
+                  &a);
 
       api->putpixel(tornado_cloud_colorized, x, y,
-                    SDL_MapRGBA(tornado_cloud_colorized->format,
-                                (tornado_r + r * 2) / 3, (tornado_g + g * 2) / 3, (tornado_b + b * 2) / 3, a));
+                    SDL_MapRGBA(SDL_GetPixelFormatDetails(tornado_cloud_colorized->format),
+                                SDL_GetSurfacePalette(tornado_cloud_colorized), (tornado_r + r * 2) / 3,
+                                (tornado_g + g * 2) / 3, (tornado_b + b * 2) / 3, a));
     }
   }
 

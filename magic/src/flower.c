@@ -31,8 +31,8 @@
 #include <stdlib.h>
 #include <math.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 /* Our globals: */
 
@@ -53,7 +53,7 @@ enum
 
 static int flower_cur_size = DEFAULT_SIZE;
 
-static Mix_Chunk *flower_click_snd, *flower_release_snd;
+static MIX_Audio *flower_click_snd, *flower_release_snd;
 static Uint8 flower_r, flower_g, flower_b;
 static int flower_min_x, flower_max_x, flower_bottom_x, flower_bottom_y;
 static int flower_side_first;
@@ -122,10 +122,10 @@ int flower_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
   int h;
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/flower_click.ogg", api->data_directory);
-  flower_click_snd = Mix_LoadWAV(fname);
+  flower_click_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/flower_release.ogg", api->data_directory);
-  flower_release_snd = Mix_LoadWAV(fname);
+  flower_release_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   snprintf(fname, sizeof(fname), "%simages/magic/flower_base.png", api->data_directory);
   tmp_surf = IMG_Load(fname);
@@ -430,7 +430,9 @@ static void flower_drawstalk(magic_api *api ATTRIBUTE_UNUSED,
       dest.h = 2 * ((flower_petals->w / 32) + 1);
     }
 
-    SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, 42, 177, 42));
+    SDL_FillSurfaceRect(canvas, &dest,
+                        SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), 42, 177,
+                                   42));
 
 
     /* When we're done (final render), we can add some random leaves: */
@@ -544,26 +546,26 @@ static void flower_drawstalk(magic_api *api ATTRIBUTE_UNUSED,
 void flower_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (flower_click_snd != NULL)
-    Mix_FreeChunk(flower_click_snd);
+    MIX_DestroyAudio(flower_click_snd);
 
   if (flower_release_snd != NULL)
-    Mix_FreeChunk(flower_release_snd);
+    MIX_DestroyAudio(flower_release_snd);
 
   if (flower_base != NULL)
-    SDL_FreeSurface(flower_base);
+    SDL_DestroySurface(flower_base);
   if (flower_leaf != NULL)
-    SDL_FreeSurface(flower_leaf);
+    SDL_DestroySurface(flower_leaf);
   if (flower_petals != NULL)
-    SDL_FreeSurface(flower_petals);
+    SDL_DestroySurface(flower_petals);
   if (flower_petals_colorized != NULL)
-    SDL_FreeSurface(flower_petals_colorized);
+    SDL_DestroySurface(flower_petals_colorized);
 
   if (flower_base_full != NULL)
-    SDL_FreeSurface(flower_base_full);
+    SDL_DestroySurface(flower_base_full);
   if (flower_leaf_full != NULL)
-    SDL_FreeSurface(flower_leaf_full);
+    SDL_DestroySurface(flower_leaf_full);
   if (flower_petals_full != NULL)
-    SDL_FreeSurface(flower_petals_full);
+    SDL_DestroySurface(flower_petals_full);
 }
 
 // Record the color from Tux Paint:
@@ -652,24 +654,22 @@ static void flower_colorize_petals(magic_api *api)
   Uint32 amask;
   int x, y;
   Uint8 r, g, b, a;
+  const SDL_PixelFormatDetails *format_details = SDL_GetPixelFormatDetails(flower_petals->format);
 
   if (flower_petals_colorized != NULL)
-    SDL_FreeSurface(flower_petals_colorized);
+    SDL_DestroySurface(flower_petals_colorized);
 
   if (flower_petals == NULL)    // Abort!
     return;
 
   /* Create a surface to render into: */
 
-  amask = ~(flower_petals->format->Rmask | flower_petals->format->Gmask | flower_petals->format->Bmask);
+  amask = ~(format_details->Rmask | format_details->Gmask | format_details->Bmask);
 
   flower_petals_colorized =
-    SDL_CreateRGBSurface(SDL_SWSURFACE,
-                         flower_petals->w,
-                         flower_petals->h,
-                         flower_petals->format->BitsPerPixel,
-                         flower_petals->format->Rmask,
-                         flower_petals->format->Gmask, flower_petals->format->Bmask, amask);
+    SDL_CreateSurface(flower_petals->w, flower_petals->h,
+                      SDL_GetPixelFormatForMasks(format_details->bits_per_pixel, format_details->Rmask,
+                                                 format_details->Gmask, format_details->Bmask, amask));
 
   /* Render the new petals: */
 
@@ -680,14 +680,18 @@ static void flower_colorize_petals(magic_api *api)
   {
     for (x = 0; x < flower_petals->w; x++)
     {
-      SDL_GetRGBA(api->getpixel(flower_petals, x, y), flower_petals->format, &r, &g, &b, &a);
+      SDL_GetRGBA(api->getpixel(flower_petals, x, y), SDL_GetPixelFormatDetails(flower_petals->format),
+                  SDL_GetSurfacePalette(flower_petals), &r, &g, &b, &a);
 
       api->putpixel(flower_petals_colorized, x, y,
-                    SDL_MapRGBA(flower_petals_colorized->format, flower_r, flower_g, flower_b, a));
+                    SDL_MapRGBA(SDL_GetPixelFormatDetails(flower_petals_colorized->format),
+                                SDL_GetSurfacePalette(flower_petals_colorized), flower_r, flower_g, flower_b, a));
 
       if (api->in_circle((x - flower_petals->w / 2), (y - flower_petals->h / 2), (flower_petals->w / 4)))
       {
-        api->putpixel(flower_petals_colorized, x, y, SDL_MapRGBA(flower_petals_colorized->format, 0xFF, 0xFF, 0x00, a));
+        api->putpixel(flower_petals_colorized, x, y,
+                      SDL_MapRGBA(SDL_GetPixelFormatDetails(flower_petals_colorized->format),
+                                  SDL_GetSurfacePalette(flower_petals_colorized), 0xFF, 0xFF, 0x00, a));
       }
     }
   }
@@ -734,19 +738,19 @@ void flower_set_size(magic_api *api, int which ATTRIBUTE_UNUSED,
   width = (scale * flower_base_full->w) / 100;
   height = (scale * flower_base_full->h) / 100;
   if (flower_base != NULL)
-    SDL_FreeSurface(flower_base);
+    SDL_DestroySurface(flower_base);
   flower_base = api->scale(flower_base_full, width, height, 1);
 
   width = (scale * flower_leaf_full->w) / 100;
   height = (scale * flower_leaf_full->h) / 100;
   if (flower_leaf != NULL)
-    SDL_FreeSurface(flower_leaf);
+    SDL_DestroySurface(flower_leaf);
   flower_leaf = api->scale(flower_leaf_full, width, height, 1);
 
   width = (scale * flower_petals_full->w) / 100;
   height = (scale * flower_petals_full->h) / 100;
   if (flower_petals != NULL)
-    SDL_FreeSurface(flower_petals);
+    SDL_DestroySurface(flower_petals);
   flower_petals = api->scale(flower_petals_full, width, height, 1);
 
   flower_colorize_petals(api);

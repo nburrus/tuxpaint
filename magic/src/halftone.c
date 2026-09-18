@@ -13,8 +13,8 @@
 #include <math.h>
 
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 #define deg_cos(x) cos((x) * M_PI / 180.0)
 #define deg_sin(x) sin((x) * M_PI / 180.0)
@@ -56,7 +56,7 @@ const char *descs[NUM_TOOLS][2] = {
    },
 };
 
-Mix_Chunk *snd_effect[NUM_TOOLS];
+MIX_Audio *snd_effect[NUM_TOOLS];
 
 static SDL_Surface *canvas_backup, *square;
 
@@ -109,7 +109,7 @@ int halftone_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint
   {
     snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, snd_filenames[i]);
 
-    snd_effect[i] = Mix_LoadWAV(fname);
+    snd_effect[i] = MIX_LoadAudio(api->mmixer, fname, 0);
   }
 
 
@@ -180,12 +180,12 @@ void halftone_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   {
     if (snd_effect[i] != NULL)
     {
-      Mix_FreeChunk(snd_effect[i]);
+      MIX_DestroyAudio(snd_effect[i]);
     }
   }
 
-  SDL_FreeSurface(canvas_backup);
-  SDL_FreeSurface(square);
+  SDL_DestroySurface(canvas_backup);
+  SDL_DestroySurface(square);
 }
 
 void halftone_click(magic_api *api, int which, int mode,
@@ -302,8 +302,8 @@ void halftone_line_callback(void *ptr, int which ATTRIBUTE_UNUSED,
   float cmyk[4];
 
   /* Start the pixel with white */
-  pixel = SDL_MapRGB(square->format, 255, 255, 255);
-  SDL_FillRect(square, NULL, pixel);
+  pixel = SDL_MapRGB(SDL_GetPixelFormatDetails(square->format), SDL_GetSurfacePalette(square), 255, 255, 255);
+  SDL_FillSurfaceRect(square, NULL, pixel);
 
   /* Lock to a grid, centered around mouse */
   x = (x / GRID_SIZE) * GRID_SIZE + (GRID_SIZE / 2);
@@ -321,7 +321,8 @@ void halftone_line_callback(void *ptr, int which ATTRIBUTE_UNUSED,
   {
     for (yyy = -(GRID_SIZE / 2); yyy < (GRID_SIZE / 2); yyy++)
     {
-      SDL_GetRGB(api->getpixel(canvas_backup, x + xxx, y + yyy), canvas_backup->format, &r, &g, &b);
+      SDL_GetRGB(api->getpixel(canvas_backup, x + xxx, y + yyy), SDL_GetPixelFormatDetails(canvas_backup->format),
+                 SDL_GetSurfacePalette(canvas_backup), &r, &g, &b);
       total_r += r;
       total_g += g;
       total_b += b;
@@ -364,10 +365,11 @@ void halftone_line_callback(void *ptr, int which ATTRIBUTE_UNUSED,
           /* Additively blend with whatever we have in the
              'square' buffer (which starts as white)
              (since the target is RGB, we use `min()`) */
-          SDL_GetRGB(api->getpixel(square, sqx, sqy), square->format, &or, &og, &ob);
+          SDL_GetRGB(api->getpixel(square, sqx, sqy), SDL_GetPixelFormatDetails(square->format),
+                     SDL_GetSurfacePalette(square), &or, &og, &ob);
           pixel =
-            SDL_MapRGB(square->format, min((Uint8) (r * 2.0), or),
-                       min((Uint8) (g * 2.0), og), min((Uint8) (b * 2.0), ob));
+            SDL_MapRGB(SDL_GetPixelFormatDetails(square->format), SDL_GetSurfacePalette(square),
+                       min((Uint8) (r * 2.0), or), min((Uint8) (g * 2.0), og), min((Uint8) (b * 2.0), ob));
           api->putpixel(square, sqx, sqy, pixel);
         }
       }
@@ -387,18 +389,12 @@ void halftone_switchin(magic_api *api, int which ATTRIBUTE_UNUSED, int mode ATTR
 {
   if (canvas_backup == NULL)
   {
-    canvas_backup =
-      SDL_CreateRGBSurface(SDL_SWSURFACE, api->canvas_w, api->canvas_h,
-                           canvas->format->BitsPerPixel,
-                           canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+    canvas_backup = SDL_CreateSurface(api->canvas_w, api->canvas_h, canvas->format);
   }
 
   if (square == NULL)
   {
-    square =
-      SDL_CreateRGBSurface(SDL_SWSURFACE, GRID_SIZE, GRID_SIZE,
-                           canvas->format->BitsPerPixel,
-                           canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+    square = SDL_CreateSurface(GRID_SIZE, GRID_SIZE, canvas->format);
   }
 
   SDL_BlitSurface(canvas, NULL, canvas_backup, NULL);

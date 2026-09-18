@@ -35,7 +35,7 @@
 
 #include <stdio.h>
 #include <sys/wait.h>
-#include "SDL2/SDL.h"
+#include <SDL3/SDL.h>
 #include "compiler.h"
 
 

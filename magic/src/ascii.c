@@ -35,9 +35,10 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 enum
 {
@@ -60,7 +61,7 @@ char *ascii_tool_filenames[NUM_TOOLS + 1] = {
   "color_computer",
 };
 
-static Mix_Chunk *ascii_snd[NUM_TOOLS];
+static MIX_Audio *ascii_snd[NUM_TOOLS];
 
 /* For each variation, we'll have a bitmap with an arbitrary number
  * of potentially-proportionally-spaced characters (which we'll treat
@@ -158,7 +159,7 @@ int ascii_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 c
   {
     /* Load our sound */
     snprintf(fname, sizeof(fname), "%ssounds/magic/ascii-%s.ogg", api->data_directory, ascii_tool_filenames[i]);
-    ascii_snd[i] = Mix_LoadWAV(fname);
+    ascii_snd[i] = MIX_LoadAudio(api->mmixer, fname, 0);
 
     /* Load and process our bitmap "font" */
     snprintf(fname, sizeof(fname), "%simages/magic/ascii-%s.png", api->data_directory, ascii_tool_filenames[i]);
@@ -171,7 +172,8 @@ int ascii_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 c
     }
 
     clear_pixel = api->getpixel(ascii_bitmap[i], 0, 0);
-    SDL_GetRGB(clear_pixel, ascii_bitmap[i]->format, &clear_r, &clear_g, &clear_b);
+    SDL_GetRGB(clear_pixel, SDL_GetPixelFormatDetails(ascii_bitmap[i]->format), SDL_GetSurfacePalette(ascii_bitmap[i]),
+               &clear_r, &clear_g, &clear_b);
     DEBUG_PRINTF("%s; clear pixel %d (%d,%d,%d)\n", fname, clear_pixel, clear_r, clear_g, clear_b);
     clear_brightness = (clear_r + clear_g + clear_b) / 3;
     ascii_clear_r[i] = clear_r;
@@ -209,7 +211,8 @@ int ascii_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 c
           if (pixel != clear_pixel)
           {
             all_clear = 0;
-            SDL_GetRGB(pixel, ascii_bitmap[i]->format, &r, &g, &b);
+            SDL_GetRGB(pixel, SDL_GetPixelFormatDetails(ascii_bitmap[i]->format),
+                       SDL_GetSurfacePalette(ascii_bitmap[i]), &r, &g, &b);
             if (r == 255 && g == 0 && b == 255)
             {
               /* Magenta counts as a connecting pixel, but we
@@ -263,7 +266,8 @@ int ascii_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 c
         for (x = ascii_char_x[i][j]; x < ascii_char_x[i][j + 1]; x++)
         {
           pixel = api->getpixel(ascii_bitmap[i], x, y);
-          SDL_GetRGB(pixel, ascii_bitmap[i]->format, &r, &g, &b);
+          SDL_GetRGB(pixel, SDL_GetPixelFormatDetails(ascii_bitmap[i]->format), SDL_GetSurfacePalette(ascii_bitmap[i]),
+                     &r, &g, &b);
 
           DEBUG_PRINTF("%3d (%3d) ", (r + g + b) / 3, get_bright(api, r, g, b));
           bright += get_bright(api, r, g, b);
@@ -417,14 +421,14 @@ void ascii_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   for (i = 0; i < NUM_TOOLS; i++)
   {
     if (ascii_snd[i] != NULL)
-      Mix_FreeChunk(ascii_snd[i]);
+      MIX_DestroyAudio(ascii_snd[i]);
     if (ascii_bitmap[i] != NULL)
-      SDL_FreeSurface(ascii_bitmap[i]);
+      SDL_DestroySurface(ascii_bitmap[i]);
   }
 
   if (ascii_snapshot != NULL)
   {
-    SDL_FreeSurface(ascii_snapshot);
+    SDL_DestroySurface(ascii_snapshot);
     ascii_snapshot = NULL;
   }
 }
@@ -460,10 +464,7 @@ void ascii_switchin(magic_api *api ATTRIBUTE_UNUSED,
                     int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas ATTRIBUTE_UNUSED)
 {
   if (ascii_snapshot == NULL)
-    ascii_snapshot = SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->w, canvas->h,
-                                          canvas->format->BitsPerPixel,
-                                          canvas->format->Rmask,
-                                          canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+    ascii_snapshot = SDL_CreateSurface(canvas->w, canvas->h, canvas->format);
 
   if (ascii_snapshot != NULL)
   {
@@ -519,6 +520,7 @@ void do_ascii_effect(void *ptr, int which, SDL_Surface *canvas, SDL_Surface *las
   Uint8 clear_brightness;
   SDL_Rect src, dest;
   int computer_color = 0;
+  int ascii_size_p = max(1, (int)(ascii_size * api->pressure));
 
   if (which == TOOL_COMPUTER_COLOR)
   {
@@ -532,14 +534,15 @@ void do_ascii_effect(void *ptr, int which, SDL_Surface *canvas, SDL_Surface *las
   x = (x / w) * w;
   y = (y / h) * h;
 
-  for (sy = y - (h * (ascii_size - 1)); sy <= y + (h * (ascii_size - 1)); sy += h)
+  for (sy = y - (h * (ascii_size_p - 1)); sy <= y + (h * (ascii_size_p - 1)); sy += h)
   {
-    for (sx = x - (w * (ascii_size - 1)); sx <= x + (w * (ascii_size - 1)); sx += w)
+    for (sx = x - (w * (ascii_size_p - 1)); sx <= x + (w * (ascii_size_p - 1)); sx += w)
     {
       if (!api->touched(sx, sy))
       {
         clear_pixel = api->getpixel(ascii_bitmap[which], 0, 0);
-        SDL_GetRGB(clear_pixel, ascii_bitmap[which]->format, &r, &g, &b);
+        SDL_GetRGB(clear_pixel, SDL_GetPixelFormatDetails(ascii_bitmap[which]->format),
+                   SDL_GetSurfacePalette(ascii_bitmap[which]), &r, &g, &b);
         clear_brightness = ((r + g + b) / 3.0);
 
         brightness = 0;
@@ -550,7 +553,8 @@ void do_ascii_effect(void *ptr, int which, SDL_Surface *canvas, SDL_Surface *las
         {
           for (xx = sx; xx < sx + w; xx++)
           {
-            SDL_GetRGB(api->getpixel(ascii_snapshot, xx, yy), ascii_snapshot->format, &r, &g, &b);
+            SDL_GetRGB(api->getpixel(ascii_snapshot, xx, yy), SDL_GetPixelFormatDetails(ascii_snapshot->format),
+                       SDL_GetSurfacePalette(ascii_snapshot), &r, &g, &b);
             brightness += get_bright(api, r, g, b);
 
             if (computer_color)
@@ -570,7 +574,7 @@ void do_ascii_effect(void *ptr, int which, SDL_Surface *canvas, SDL_Surface *las
         dest.w = w;
         dest.h = h;
 
-        SDL_FillRect(canvas, &dest, clear_pixel);
+        SDL_FillSurfaceRect(canvas, &dest, clear_pixel);
 
 
         if (brightness != clear_brightness)
@@ -693,7 +697,9 @@ void do_ascii_effect(void *ptr, int which, SDL_Surface *canvas, SDL_Surface *las
           dest.y = sy;
           dest.w = ww;
           dest.h = h;
-          SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, rr, gg, bb));
+          SDL_FillSurfaceRect(canvas, &dest,
+                              SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), rr,
+                                         gg, bb));
 
           src.x = ascii_char_x[which][n];
           src.y = 0;

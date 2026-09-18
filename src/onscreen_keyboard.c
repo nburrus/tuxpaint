@@ -30,9 +30,10 @@
 #define DEBUG_OSK_COMPOSEMAP
 #endif
 
-#include "SDL2_rotozoom.h"
+#include <stdlib.h>
+#include <SDL3_gfx/SDL3_rotozoom.h>
 
-#if !defined(_SDL2_rotozoom_h)
+#if !defined(_SDL3_rotozoom_h)
 #error "---------------------------------------------------"
 #error "If you installed SDL_gfx from a package, be sure"
 #error "to get the development package, as well!"
@@ -77,7 +78,7 @@ static SDL_Surface *SDL_DisplayFormatAlpha(SDL_Surface *surface)
 {
   SDL_Surface *tmp;
 
-  tmp = SDL_ConvertSurfaceFormat(surface, SDL_PIXELFORMAT_ARGB8888, 0);
+  tmp = SDL_ConvertSurface(surface, SDL_PIXELFORMAT_ARGB8888);
   return (tmp);
 }
 
@@ -189,11 +190,12 @@ struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas,
     oskpaste = SDL_DisplayFormatAlpha(BLANK_oskpaste);
   }
 
-  surface = SDL_CreateRGBSurface(canvas->flags,
-                                 layout->width * button_up->w,
-                                 layout->height * button_up->h,
-                                 canvas->format->BitsPerPixel,
-                                 canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, 0);
+  const SDL_PixelFormatDetails *format_details = SDL_GetPixelFormatDetails(canvas->format);
+
+  surface = SDL_CreateSurface(layout->width * button_up->w,
+                              layout->height * button_up->h,
+                              SDL_GetPixelFormatForMasks(format_details->bits_per_pixel, format_details->Rmask,
+                                                         format_details->Gmask, format_details->Bmask, 0));
   if (!surface)
   {
     fprintf(stderr, "Error creating the onscreen keyboard surface\n");
@@ -247,9 +249,10 @@ struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas,
   keyboard->BLANK_oskshift = BLANK_oskshift;
   keyboard->BLANK_oskpaste = BLANK_oskpaste;
 
-  SDL_FillRect(surface, NULL,
-               SDL_MapRGB(surface->format, keyboard->layout->bgcolor.r,
-                          keyboard->layout->bgcolor.g, keyboard->layout->bgcolor.b));
+  SDL_FillSurfaceRect(surface, NULL,
+                      SDL_MapRGB(SDL_GetPixelFormatDetails(surface->format), SDL_GetSurfacePalette(surface),
+                                 keyboard->layout->bgcolor.r, keyboard->layout->bgcolor.g,
+                                 keyboard->layout->bgcolor.b));
 
   keybd_prepare(keyboard);
 
@@ -1231,11 +1234,11 @@ static SDL_Surface *stretch_surface(SDL_Surface *orig, int width)
   orig_rect.w = 1;
   orig_rect.h = orig->h;
 
-  dest = SDL_CreateRGBSurface(orig->flags,
-                              width,
-                              orig->h,
-                              orig->format->BitsPerPixel,
-                              orig->format->Rmask, orig->format->Gmask, orig->format->Bmask, 0);
+  const SDL_PixelFormatDetails *orig_format_details = SDL_GetPixelFormatDetails(orig->format);
+
+  dest = SDL_CreateSurface(width, orig->h,
+                           SDL_GetPixelFormatForMasks(orig_format_details->bits_per_pixel, orig_format_details->Rmask,
+                                                      orig_format_details->Gmask, orig_format_details->Bmask, 0));
 
   SDL_BlitSurface(orig, NULL, dest, NULL);
   rect.y = 0;
@@ -1350,7 +1353,7 @@ static void draw_key(osk_key key, on_screen_keyboard *keyboard, int hot)
 
   apply_surface(key.x, key.y, skey, keyboard->surface, NULL);
 
-  SDL_FreeSurface(skey);
+  SDL_DestroySurface(skey);
   free(text);
   label_key(key, keyboard);
 }
@@ -1370,20 +1373,20 @@ static void label_key(osk_key key, on_screen_keyboard *keyboard)
 
   /* FIXME There MUST be a simpler way to do this. Pere 2011/8/3 */
   /* First the plain ones */
-  if (modstate == KMOD_NONE || (modstate == (KMOD_NONE | KMOD_LALT)))
+  if (modstate == SDL_KMOD_NONE || (modstate == (SDL_KMOD_NONE | SDL_KMOD_LALT)))
     text = strdup(key.plain_label);
 
-  else if (modstate == KMOD_SHIFT)
+  else if (modstate == SDL_KMOD_SHIFT)
   {
     text = strdup(key.top_label);
   }
 
-  else if (modstate == KMOD_RALT)
+  else if (modstate == SDL_KMOD_RALT)
   {
     text = strdup(key.altgr_label);
   }
 
-  else if (modstate == KMOD_CAPS)
+  else if (modstate == SDL_KMOD_CAPS)
   {
     if (key.shiftcaps == 1)
       text = strdup(key.top_label);
@@ -1393,9 +1396,9 @@ static void label_key(osk_key key, on_screen_keyboard *keyboard)
   }
 
   /* Now the combined ones */
-  else if (modstate & KMOD_RALT && modstate & KMOD_SHIFT)
+  else if (modstate & SDL_KMOD_RALT && modstate & SDL_KMOD_SHIFT)
   {
-    if (modstate & KMOD_CAPS)
+    if (modstate & SDL_KMOD_CAPS)
     {
       if (key.shiftcaps)
         text = strdup(key.altgr_label);
@@ -1408,7 +1411,7 @@ static void label_key(osk_key key, on_screen_keyboard *keyboard)
     }
   }
 
-  else if (modstate & KMOD_RALT && modstate & KMOD_CAPS && !(modstate & KMOD_SHIFT))
+  else if (modstate & SDL_KMOD_RALT && modstate & SDL_KMOD_CAPS && !(modstate & SDL_KMOD_SHIFT))
   {
     if (key.shiftcaps)
       text = strdup(key.shift_altgr_label);
@@ -1416,7 +1419,7 @@ static void label_key(osk_key key, on_screen_keyboard *keyboard)
       text = strdup(key.altgr_label);
   }
 
-  else if (modstate & KMOD_SHIFT && modstate & KMOD_CAPS)
+  else if (modstate & SDL_KMOD_SHIFT && modstate & SDL_KMOD_CAPS)
   {
     if (key.shiftcaps == 1)
       text = strdup(key.plain_label);
@@ -1456,10 +1459,10 @@ static void label_key(osk_key key, on_screen_keyboard *keyboard)
 
   else if (strncmp("SPACE", text, 5) != 0 && strncmp("NULL", text, 4) != 0)
   {
-    messager = TTF_RenderUTF8_Blended(keyboard->osk_fonty, text, keyboard->layout->fgcolor);
+    messager = TTF_RenderText_Blended(keyboard->osk_fonty, text, strlen(text), keyboard->layout->fgcolor);
 
     apply_surface(key.x + 5, key.y, messager, keyboard->surface, NULL);
-    SDL_FreeSurface(messager);
+    SDL_DestroySurface(messager);
   }
   free(text);
 }
@@ -1547,20 +1550,20 @@ static char *find_keysym(osk_key key, on_screen_keyboard *keyboard)
 
   /* FIXME There MUST be a simpler way to do this. Pere 2011/8/3 */
   /* First the plain ones */
-  if (modstate == KMOD_NONE || (modstate == (KMOD_NONE | KMOD_LALT)))
+  if (modstate == SDL_KMOD_NONE || (modstate == (SDL_KMOD_NONE | SDL_KMOD_LALT)))
     keysym = keysyms.plain;
 
-  else if (modstate == KMOD_SHIFT)
+  else if (modstate == SDL_KMOD_SHIFT)
   {
     keysym = keysyms.caps;
   }
 
-  else if (modstate == KMOD_RALT)
+  else if (modstate == SDL_KMOD_RALT)
   {
     keysym = keysyms.altgr;
   }
 
-  else if (modstate == KMOD_CAPS)
+  else if (modstate == SDL_KMOD_CAPS)
   {
     if (key.shiftcaps == 1)
       keysym = keysyms.caps;
@@ -1569,9 +1572,9 @@ static char *find_keysym(osk_key key, on_screen_keyboard *keyboard)
   }
 
   /* Now the combined ones */
-  else if (modstate & KMOD_RALT && modstate & KMOD_SHIFT)
+  else if (modstate & SDL_KMOD_RALT && modstate & SDL_KMOD_SHIFT)
   {
-    if (modstate & KMOD_CAPS)
+    if (modstate & SDL_KMOD_CAPS)
     {
       if (key.shiftcaps)
         keysym = keysyms.altgr;
@@ -1584,7 +1587,7 @@ static char *find_keysym(osk_key key, on_screen_keyboard *keyboard)
     }
   }
 
-  else if (modstate & KMOD_RALT && modstate & KMOD_CAPS && !(modstate & KMOD_SHIFT))
+  else if (modstate & SDL_KMOD_RALT && modstate & SDL_KMOD_CAPS && !(modstate & SDL_KMOD_SHIFT))
   {
     if (key.shiftcaps)
       keysym = keysyms.shiftaltgr;
@@ -1592,7 +1595,7 @@ static char *find_keysym(osk_key key, on_screen_keyboard *keyboard)
       keysym = keysyms.altgr;
   }
 
-  else if (modstate & KMOD_SHIFT && modstate & KMOD_CAPS)
+  else if (modstate & SDL_KMOD_SHIFT && modstate & SDL_KMOD_CAPS)
   {
     if (key.shiftcaps == 1)
       keysym = keysyms.plain;
@@ -1613,7 +1616,7 @@ static int handle_keymods(char *keysym, osk_key *key, on_screen_keyboard *keyboa
 
   if (strncmp("Shift", keysym, 5) == 0)
   {
-    if (mod & KMOD_SHIFT)
+    if (mod & SDL_KMOD_SHIFT)
     {
       keyboard->modifiers = mod & 0xFFF0;
       key->stick = 0;
@@ -1621,7 +1624,7 @@ static int handle_keymods(char *keysym, osk_key *key, on_screen_keyboard *keyboa
     }
     else
     {
-      keyboard->modifiers = mod | KMOD_SHIFT;
+      keyboard->modifiers = mod | SDL_KMOD_SHIFT;
       key->stick = 1;
       keyboard->kmdf.shift = key;
     }
@@ -1629,11 +1632,11 @@ static int handle_keymods(char *keysym, osk_key *key, on_screen_keyboard *keyboa
   }
   else if (strncmp("Alt_L", keysym, 5) == 0)
   {
-    ev.key.keysym.sym = SDLK_LALT;
-    ev.text.text[0] = 0;        // FIXME is 0 the right value here?
-    ev.type = SDL_KEYDOWN;
+    ev.key.key = SDLK_LALT;
+    ev.text.text = strdup("0"); // FIXME is 0 the right value here?
+    ev.type = SDL_EVENT_KEY_DOWN;
     SDL_PushEvent(&ev);
-    ev.type = SDL_KEYUP;
+    ev.type = SDL_EVENT_KEY_UP;
     SDL_PushEvent(&ev);
 
     return 1;
@@ -1643,14 +1646,14 @@ static int handle_keymods(char *keysym, osk_key *key, on_screen_keyboard *keyboa
   else if (strncmp("ISO_Level3_Shift", keysym, 16) == 0 ||
            strncmp("ISO_Next_Group", keysym, 14) == 0 || strncmp("ALT_R", keysym, 5) == 0)
   {
-    if (mod & KMOD_RALT)
+    if (mod & SDL_KMOD_RALT)
     {
       keyboard->modifiers = mod & 0xF0FF;
       keyboard->kmdf.altgr->stick = 0;
     }
     else
     {
-      keyboard->modifiers = mod | KMOD_RALT;
+      keyboard->modifiers = mod | SDL_KMOD_RALT;
       key->stick = 1;
       keyboard->kmdf.altgr = key;
 
@@ -1661,14 +1664,14 @@ static int handle_keymods(char *keysym, osk_key *key, on_screen_keyboard *keyboa
 
   else if (strncmp("Caps_Lock", keysym, 9) == 0)
   {
-    if (mod & KMOD_CAPS)
+    if (mod & SDL_KMOD_CAPS)
     {
       keyboard->modifiers = mod & 0x0FFF;
       key->stick = 0;
     }
     else
     {
-      keyboard->modifiers = mod | KMOD_CAPS;
+      keyboard->modifiers = mod | SDL_KMOD_CAPS;
       key->stick = 1;
     }
 
@@ -1676,12 +1679,12 @@ static int handle_keymods(char *keysym, osk_key *key, on_screen_keyboard *keyboa
     return 1;
   }
 
-  if (mod & KMOD_CAPS)
+  if (mod & SDL_KMOD_CAPS)
   {
-    keyboard->modifiers = KMOD_CAPS;
+    keyboard->modifiers = SDL_KMOD_CAPS;
   }
   else
-    keyboard->modifiers = KMOD_NONE;
+    keyboard->modifiers = SDL_KMOD_NONE;
 
   if (keyboard->kmdf.shift)
     keyboard->kmdf.shift->stick = 0;
@@ -1745,9 +1748,9 @@ struct osk_keyboard *osk_clicked(on_screen_keyboard *keyboard, int x, int y)
   printf("list: %s\n", keyboard->keyboard_list);
 #endif
 
-  event.key.keysym.mod = KMOD_NONE;
-  event.key.keysym.sym = 0;
-  event.text.text[0] = 0;
+  event.key.mod = SDL_KMOD_NONE;
+  event.key.key = 0;
+  event.text.text = strdup("0");
 
   key = find_key(keyboard, x, y);
 
@@ -1880,26 +1883,30 @@ struct osk_keyboard *osk_clicked(on_screen_keyboard *keyboard, int x, int y)
 
       if (wcsncmp(L"Return", ks, 6) == 0)
       {
-        event.key.keysym.sym = SDLK_RETURN;
-        event.text.text[0] = '\r';
-        event.text.text[1] = '\0';
+        event.key.key = SDLK_RETURN;
+        const char text[2] = { '\r', '\0' };
+        event.text.text = strdup(text); /* FIXME: Is strdup necessary here or text would survive until the event is consumed? */
+        //        event.text.text[1] = '\0';
       }
       else if (wcsncmp(L"Tab", ks, 3) == 0 || wcsncmp(L"ISO_Left_Tab", ks, 12) == 0)
       {
-        event.key.keysym.sym = SDLK_TAB;
-        event.text.text[0] = '\t';
-        event.text.text[1] = '\0';
+        event.key.key = SDLK_TAB;
+        const char text[2] = { '\t', '\0' };
+        event.text.text = strdup(text);
+        //        event.text.text[1] = '\0';
       }
       else if (wcsncmp(L"BackSpace", ks, 9) == 0)
       {
-        event.key.keysym.sym = SDLK_BACKSPACE;
-        event.text.text[0] = '\b';
-        event.text.text[1] = '\0';
+        event.key.key = SDLK_BACKSPACE;
+        const char text[2] = { '\b', '\0' };
+        event.text.text = text;
+        //        event.text.text[1] = '\0';
       }
       else if (wcsncmp(L"XF86Paste", ks, 9) == 0)
       {
-        event.key.keysym.sym = SDLK_PASTE;
-        event.text.text[0] = '\0';      // FIXME: Is this okay? -bjk 2024.12.25
+        event.key.key = SDLK_PASTE;
+        const char text[1] = { '\0' };
+        event.text.text = strdup(text); // FIXME: Is this okay? -bjk 2024.12.25
       }
       else if (wcsncmp(L"NoSymbol", ks, 8) == 0)
       {
@@ -1940,7 +1947,7 @@ struct osk_keyboard *osk_clicked(on_screen_keyboard *keyboard, int x, int y)
       }
 
       clear_dead_sticks(keyboard);
-      event.type = SDL_TEXTINPUT;
+      event.type = SDL_EVENT_TEXT_INPUT;
       SDL_PushEvent(&event);
       free(mnemo);
     }
@@ -2079,7 +2086,7 @@ void osk_free(on_screen_keyboard *keyboard)
     free(keyboard->last_key_pressed);
   if (keyboard->keyboard_list)
     free(keyboard->keyboard_list);
-  SDL_FreeSurface(keyboard->surface);
+  SDL_DestroySurface(keyboard->surface);
   set_key(NULL, &keyboard->keymodifiers.shift, 0);
   set_key(NULL, &keyboard->keymodifiers.altgr, 0);
   set_key(NULL, &keyboard->keymodifiers.compose, 0);
@@ -2096,7 +2103,7 @@ void osk_free(on_screen_keyboard *keyboard)
 /* { */
 /* 	int i; */
 /*     if (key_board != NULL) */
-/*         SDL_FreeSurface(key_board); */
+/*         SDL_DestroySurface(key_board); */
 
 /* 	 key_board = SDL_CreateRGBSurface(canvas->flags, */
 /* 				key_width * 19, */
@@ -2109,7 +2116,7 @@ void osk_free(on_screen_keyboard *keyboard)
 /*   		key_board_color_g = 255; */
 /*   		key_board_color_b = 255; */
 
-/*   	  SDL_FillRect(key_board, NULL, SDL_MapRGB(key_board->format, 255, 255, 255)); */
+/*   	  SDL_FillSurfaceRect(key_board, NULL, SDL_MapRGB(key_board->format, 255, 255, 255)); */
 /* 	  if (keybd_position == 0) */
 /* 	  { */
 /* 			initial_y = 400; */
@@ -2227,14 +2234,14 @@ void osk_free(on_screen_keyboard *keyboard)
 /* 		if (ide == 1) */
 /* 		{ */
 /* 			event.key.keysym.sym = SDLK_ESCAPE; */
-/* 			event.key.keysym.mod = KMOD_NONE; */
+/* 			event.key.keysym.mod = SDL_KMOD_NONE; */
 /* 			event.key.keysym.unicode = 27; */
 
 /* 		} */
 /* 		else if (ide == 2) */
 /* 		{ */
-/* 			event.key.keysym.sym = SDLK_BACKQUOTE; */
-/* 			event.key.keysym.mod = KMOD_NONE; */
+/* 			event.key.keysym.sym = SDLK_GRAVE; */
+/* 			event.key.keysym.mod = SDL_KMOD_NONE; */
 /* 			event.key.keysym.unicode = 96; */
 /* 		} */
 
@@ -2244,9 +2251,9 @@ void osk_free(on_screen_keyboard *keyboard)
 /* 		if (enter_flag == 0)  */
 /* 		{ */
 
-                  /* event.key.type=SDL_KEYDOWN; */
+                  /* event.key.type=SDL_EVENT_KEY_DOWN; */
                   /* SDL_PushEvent(&event); */
-                  /* event.key.type=SDL_KEYUP; */
+                  /* event.key.type=SDL_EVENT_KEY_UP; */
                   /* SDL_PushEvent(&event); */
 
 

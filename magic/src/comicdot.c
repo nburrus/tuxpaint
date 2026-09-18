@@ -28,10 +28,10 @@
 #include <stdio.h>
 #include <string.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
-static Mix_Chunk *comicdot_snd;
+static MIX_Audio *comicdot_snd;
 static int comicdot_radius = 16;
 static int comicdot_r, comicdot_g, comicdot_b;
 
@@ -85,7 +85,7 @@ int comicdot_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint
   int i;
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/comic_dots.ogg", api->data_directory);
-  comicdot_snd = Mix_LoadWAV(fname);
+  comicdot_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   /* Load base pattern image */
   snprintf(fname, sizeof(fname), "%simages/magic/comicdot-pattern.png", api->data_directory);
@@ -167,8 +167,10 @@ static void do_comicdot(void *ptr, int which, SDL_Surface *canvas, SDL_Surface *
   offx = (((comicdot_r + comicdot_g) / 2) * pat->w) / 255;
   offy = (((comicdot_b - comicdot_g) / 2) * pat->h) / 255;
 
-  SDL_GetRGB(api->getpixel(last, x, y), last->format, &r1, &g1, &b1);
-  SDL_GetRGB(api->getpixel(pat, (x + offx) % pat->w, (y + offy) % pat->h), pat->format, &n, &_, &_);
+  SDL_GetRGB(api->getpixel(last, x, y), SDL_GetPixelFormatDetails(last->format), SDL_GetSurfacePalette(last), &r1, &g1,
+             &b1);
+  SDL_GetRGB(api->getpixel(pat, (x + offx) % pat->w, (y + offy) % pat->h), SDL_GetPixelFormatDetails(pat->format),
+             SDL_GetSurfacePalette(pat), &n, &_, &_);
   r = ((r1 * n) + (comicdot_r * (255 - n))) / 255;
   g = ((g1 * n) + (comicdot_g * (255 - n))) / 255;
   b = ((b1 * n) + (comicdot_b * (255 - n))) / 255;
@@ -180,7 +182,7 @@ static void do_comicdot(void *ptr, int which, SDL_Surface *canvas, SDL_Surface *
   //nb = (b1 * b) / 255;
   //pixel = SDL_MapRGB(canvas->format, nr, ng, nb);
 
-  pixel = SDL_MapRGB(canvas->format, r, g, b);
+  pixel = SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b);
 
   api->putpixel(canvas, x, y, pixel);
 }
@@ -190,12 +192,13 @@ static void do_comicdot_circle(void *ptr, int which ATTRIBUTE_UNUSED,
 {
   magic_api *api = (magic_api *) ptr;
   int xx, yy;
+  int comicdot_radius_p = max(1, (int)(comicdot_radius * api->pressure));
 
-  for (yy = -comicdot_radius; yy < comicdot_radius; yy++)
+  for (yy = -comicdot_radius_p; yy < comicdot_radius_p; yy++)
   {
-    for (xx = -comicdot_radius; xx < comicdot_radius; xx++)
+    for (xx = -comicdot_radius_p; xx < comicdot_radius_p; xx++)
     {
-      if (api->in_circle(xx, yy, comicdot_radius))
+      if (api->in_circle(xx, yy, comicdot_radius_p))
       {
         if (!api->touched(xx + x, yy + y))
           do_comicdot(api, which, canvas, last, x + xx, y + yy);
@@ -270,13 +273,13 @@ void comicdot_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   int i;
 
   if (comicdot_snd != NULL)
-    Mix_FreeChunk(comicdot_snd);
+    MIX_DestroyAudio(comicdot_snd);
 
   for (i = 0; i < NUM_COMICDOT_SIZES; i++)
   {
     if (comicdot_pattern[i] != NULL)
     {
-      SDL_FreeSurface(comicdot_pattern[i]);
+      SDL_DestroySurface(comicdot_pattern[i]);
       comicdot_pattern[i] = NULL;
     }
   }

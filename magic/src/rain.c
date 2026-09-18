@@ -29,11 +29,12 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <libintl.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 #include <math.h>
 #include <limits.h>
 #include <time.h>
@@ -53,7 +54,7 @@ enum
   rain_NUM_TOOLS
 };
 
-static Mix_Chunk *rain_snd_effect[rain_NUM_TOOLS];
+static MIX_Audio *rain_snd_effect[rain_NUM_TOOLS];
 
 const char *rain_snd_filenames[rain_NUM_TOOLS] = {
   "rain.ogg",
@@ -88,7 +89,7 @@ char *rain_get_name(magic_api * api, int which);
 int rain_get_group(magic_api * api, int which);
 int rain_get_order(int which);
 char *rain_get_description(magic_api * api, int which, int mode);
-static void do_rain_drop(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y);
+static void do_rain_drop(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int mode, int x, int y);
 static void rain_linecb(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y);
 void rain_drag(magic_api * api, int which, SDL_Surface * canvas,
                SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect);
@@ -134,7 +135,7 @@ int rain_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 co
   for (i = 0; i < rain_NUM_TOOLS; i++)
   {
     snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, rain_snd_filenames[i]);
-    rain_snd_effect[i] = Mix_LoadWAV(fname);
+    rain_snd_effect[i] = MIX_LoadAudio(api->mmixer, fname, 0);
   }
 
   return (1);
@@ -180,24 +181,32 @@ char *rain_get_description(magic_api *api ATTRIBUTE_UNUSED, int which, int mode)
 
 // Do the effect:
 static void do_rain_drop(void *ptr, int which ATTRIBUTE_UNUSED,
-                         SDL_Surface *canvas, SDL_Surface *last ATTRIBUTE_UNUSED, int x, int y)
+                         SDL_Surface *canvas, SDL_Surface *last ATTRIBUTE_UNUSED, int mode, int x, int y)
 {
   magic_api *api = (magic_api *) ptr;
 
   int xx, yy;
   Uint8 r, g, b;
+  int rain_SIZE_P;
 
-  for (yy = y - rain_SIZE / 2; yy < y + rain_SIZE / 2; yy++)
+  if (mode == MODE_PAINT && api->pressure < 1.0)    
+    rain_SIZE_P = max(2, (int)(rain_SIZE * api->pressure));
+  else
+    rain_SIZE_P = rain_SIZE;
+
+  for (yy = y - rain_SIZE_P / 2; yy < y + rain_SIZE_P / 2; yy++)
   {
-    for (xx = x - rain_SIZE; xx < x + rain_SIZE; xx++)
+    for (xx = x - rain_SIZE_P; xx < x + rain_SIZE_P; xx++)
     {
-      if (rain_inRainShape(xx - x, yy - y + rain_SIZE / 2, rain_SIZE))
+      if (rain_inRainShape(xx - x, yy - y + rain_SIZE_P / 2, rain_SIZE_P))
       {
         //api->rgbtohsv(rain_r, rain_g, rain_b, &h, &s, &v);
         //api->hsvtorgb(h, s, rain_weights[(yy-y)*((rain_SIZE*2) -1)+(xx-x)], &r, &g, &b);
-        SDL_GetRGB(api->getpixel(canvas, xx, yy), canvas->format, &r, &g, &b);
+        SDL_GetRGB(api->getpixel(canvas, xx, yy), SDL_GetPixelFormatDetails(canvas->format),
+                   SDL_GetSurfacePalette(canvas), &r, &g, &b);
         api->putpixel(canvas, xx, yy,
-                      SDL_MapRGB(canvas->format, clamp(0, r - 50, 255), clamp(0, g - 50, 255), clamp(0, b + 200, 255)));
+                      SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
+                                 clamp(0, r - 50, 255), clamp(0, g - 50, 255), clamp(0, b + 200, 255)));
       }
     }
   }
@@ -250,7 +259,7 @@ void rain_click(magic_api *api, int which, int mode,
 
   if (mode == MODE_PAINT)
   {
-    do_rain_drop(api, which, canvas, last, x, y);
+    do_rain_drop(api, which, canvas, last, mode, x, y);
 
     update_rect->x = x - rain_SIZE;
     update_rect->y = y - rain_SIZE;
@@ -266,7 +275,7 @@ void rain_click(magic_api *api, int which, int mode,
 
     for (i = 0; i < rain_AMOUNT; i++)
     {
-      do_rain_drop(api, which, canvas, last, rand() % canvas->w, rand() % canvas->h);
+      do_rain_drop(api, which, canvas, last, mode, rand() % canvas->w, rand() % canvas->h);
     }
 
     update_rect->x = 0;
@@ -297,7 +306,7 @@ void rain_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   {
     if (rain_snd_effect[i] != NULL)
     {
-      Mix_FreeChunk(rain_snd_effect[i]);
+      MIX_DestroyAudio(rain_snd_effect[i]);
     }
   }
 }

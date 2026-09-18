@@ -31,14 +31,15 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 /* Our globals: */
 
-static Mix_Chunk *smudge_snd;
+static MIX_Audio *smudge_snd;
 static Uint8 smudge_r, smudge_g, smudge_b;
 static int smudge_radius = 16;
 
@@ -75,7 +76,7 @@ int smudge_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/smudge.wav", api->data_directory);
-  smudge_snd = Mix_LoadWAV(fname);
+  smudge_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -146,6 +147,7 @@ static void do_smudge(void *ptr, int which, SDL_Surface *canvas, SDL_Surface *la
 {
   magic_api *api = (magic_api *) ptr;
   static double state[256][256][3];
+  int smudge_radius_p = max(1, (int)(smudge_radius * api->pressure));
   unsigned i = (smudge_radius * 2) * (smudge_radius * 2);
   double rate = api->button_down()? 0.5 : 0.0;
   Uint8 r, g, b;
@@ -154,19 +156,18 @@ static void do_smudge(void *ptr, int which, SDL_Surface *canvas, SDL_Surface *la
   if (which == 1)
   {
     /* Wet paint */
-    for (yy = -(smudge_radius / 2); yy < (smudge_radius / 2); yy++)
-      for (xx = -(smudge_radius / 2); xx < (smudge_radius / 2); xx++)
-        if (api->in_circle(xx, yy, (smudge_radius / 2)))
+    for (yy = -(smudge_radius_p / 2); yy < (smudge_radius_p / 2); yy++)
+      for (xx = -(smudge_radius_p / 2); xx < (smudge_radius_p / 2); xx++)
+        if (api->in_circle(xx, yy, (smudge_radius_p / 2)))
         {
-          SDL_GetRGB(api->getpixel(last, x + xx, y + yy), last->format, &r, &g, &b);
+          SDL_GetRGB(api->getpixel(last, x + xx, y + yy), SDL_GetPixelFormatDetails(last->format),
+                     SDL_GetSurfacePalette(last), &r, &g, &b);
           strength = (abs(xx * yy) / (smudge_radius / 2)) + 1;
-          api->putpixel(canvas, x + xx, y + yy, SDL_MapRGB(canvas->format,
-                                                           (smudge_r +
-                                                            r * strength) /
-                                                           (strength + 1),
-                                                           (smudge_g +
-                                                            g * strength) /
-                                                           (strength + 1), (smudge_b + b * strength) / (strength + 1)));
+          api->putpixel(canvas, x + xx, y + yy,
+                        SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
+                                   (smudge_r + r * strength) / (strength + 1),
+                                   (smudge_g + g * strength) / (strength + 1),
+                                   (smudge_b + b * strength) / (strength + 1)));
         }
   }
 
@@ -183,14 +184,16 @@ static void do_smudge(void *ptr, int which, SDL_Surface *canvas, SDL_Surface *la
       continue;
     // it is on the circle, so grab it
 
-    SDL_GetRGB(api->getpixel(canvas, x + ix - smudge_radius, y + iy - smudge_radius), last->format, &r, &g, &b);
+    SDL_GetRGB(api->getpixel(canvas, x + ix - smudge_radius, y + iy - smudge_radius),
+               SDL_GetPixelFormatDetails(last->format), SDL_GetSurfacePalette(last), &r, &g, &b);
     state[ix][iy][0] = rate * state[ix][iy][0] + (1.0 - rate) * api->sRGB_to_linear(r);
     state[ix][iy][1] = rate * state[ix][iy][1] + (1.0 - rate) * api->sRGB_to_linear(g);
     state[ix][iy][2] = rate * state[ix][iy][2] + (1.0 - rate) * api->sRGB_to_linear(b);
 
-    // opacity 100% --> new data not blended w/ existing data
-    api->putpixel(canvas, x + ix - smudge_radius, y + iy - smudge_radius,
-                  SDL_MapRGB(canvas->format,
+    if ((ix - smudge_radius_p) * (ix - smudge_radius_p) + (iy - smudge_radius_p) * (iy - smudge_radius_p) <= (smudge_radius_p * 75) / 10)
+      // opacity 100% --> new data not blended w/ existing data
+      api->putpixel(canvas, x + ix - smudge_radius, y + iy - smudge_radius,
+                  SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
                              api->linear_to_sRGB(state[ix][iy][0]),
                              api->linear_to_sRGB(state[ix][iy][1]), api->linear_to_sRGB(state[ix][iy][2])));
   }
@@ -245,7 +248,7 @@ void smudge_release(magic_api *api ATTRIBUTE_UNUSED,
 void smudge_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (smudge_snd != NULL)
-    Mix_FreeChunk(smudge_snd);
+    MIX_DestroyAudio(smudge_snd);
 }
 
 // Record the color from Tux Paint:

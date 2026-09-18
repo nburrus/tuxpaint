@@ -33,8 +33,8 @@
 #include <string.h>             // For "strdup()"
 
 #include "tp_magic_api.h"       // Tux Paint "Magic" tool API header
-#include "SDL_image.h"          // For IMG_Load(), to load our PNG icon
-#include "SDL_mixer.h"          // For Mix_LoadWAV(), to load our sound effects
+#include <SDL3_image/SDL_image.h>       // For IMG_Load(), to load our PNG icon
+#include <SDL3_mixer/SDL_mixer.h>       // For MIX_LoadAudio(api->mmixer, , 0), to load our sound effects
 
 
 
@@ -42,7 +42,7 @@
 /* --------------------- */
 
 /* Sound effects: */
-static Mix_Chunk *snd_effect;
+static MIX_Audio *snd_effect;
 static int distortion_radius = 8;
 
 
@@ -106,7 +106,7 @@ int distortion_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Ui
 
   // Try to load the file!
 
-  snd_effect = Mix_LoadWAV(fname);
+  snd_effect = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -178,7 +178,7 @@ int distortion_requires_colors(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIB
 
 void distortion_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
-  Mix_FreeChunk(snd_effect);
+  MIX_DestroyAudio(snd_effect);
 }
 
 
@@ -200,6 +200,7 @@ void distortion_drag(magic_api *api, int which, SDL_Surface *canvas,
                      SDL_Surface *snapshot, int ox, int oy, int x, int y, SDL_Rect *update_rect)
 {
   api->line((void *)api, which, canvas, snapshot, ox, oy, x, y, 1, distortion_line_callback);
+  float dr = api->pressure * distortion_radius;
 
 
   if (ox > x)
@@ -218,10 +219,10 @@ void distortion_drag(magic_api *api, int which, SDL_Surface *canvas,
   }
 
 
-  update_rect->x = ox - distortion_radius;
-  update_rect->y = oy - distortion_radius;
-  update_rect->w = (x + distortion_radius) - update_rect->x;
-  update_rect->h = (y + distortion_radius) - update_rect->y;
+  update_rect->x = ox - dr;
+  update_rect->y = oy - dr;
+  update_rect->w = (x + dr) - update_rect->x;
+  update_rect->h = (y + dr) - update_rect->y;
 
 
   api->playsound(snd_effect, (x * 255) / canvas->w,     // pan

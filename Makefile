@@ -13,7 +13,7 @@
 
 VER_VERSION:=0.9.36
 
-# We are always SDL2 now, so don't need "-sdl2"
+# We are always SDL3 now, so don't need "-sdl2"
 VER_FLAVOR:=""
 
 # Set to yes if you don't want to install in current live system
@@ -131,17 +131,13 @@ ifdef HOST
 endif
 
 # change to sdl-console to build a console version on Windows
-SDL_PCNAME:=sdl2
+SDL_PCNAME:=sdl3
 
 WINDRES:=windres
 PKG_CONFIG:=pkg-config
 ifdef PKG_CONFIG_LIBDIR
   # Cross compilation override
   PKG_CONFIG:=PKG_CONFIG_LIBDIR=$(PKG_CONFIG_LIBDIR) $(PKG_CONFIG)
-endif
-
-ifeq ($(OS),windows)
-include win32/source-profile.mk
 endif
 
 # test if a pkg-config library exists or can be linked manually
@@ -177,7 +173,7 @@ linux_SO_TYPE:=so
 netbsd_SO_TYPE:=so
 SO_TYPE:=$($(OS)_SO_TYPE)
 
-windows_LIBMINGW:=$(WIN32_SOURCE_LIBDIR) -lmingw32
+windows_LIBMINGW:=-L/usr/local/lib -lmingw32
 LIBMINGW:=$($(OS)_LIBMINGW)
 
 windows_EXE_EXT:=.exe
@@ -331,29 +327,29 @@ CURSOR_SHAPES:=LARGE
 
 # Libraries, paths, and flags:
 SDL_LIBS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs)
-SDL_LIBS+=$(call linktest,SDL2_image,-lSDL2_image,$(SDL_LIBS))
-SDL_LIBS+=$(call linktest,SDL2_ttf,-lSDL2_ttf,$(SDL_LIBS))
-SDL_LIBS+=$(shell $(PKG_CONFIG) SDL2_gfx --libs)
+SDL_LIBS+=$(call linktest,SDL3_image,-lSDL3_image,$(SDL_LIBS))
+SDL_LIBS+=$(call linktest,SDL3_ttf,-lSDL3_ttf,$(SDL_LIBS))
+SDL_LIBS+=$(shell $(PKG_CONFIG) SDL3_gfx --libs)
 SDL_LIBS+=$(call linktest,zlib,-lz,)
 SDL_LIBS+=$(call linktest,libpng,$(PNG),)
 
 # Sound support
-SDL_MIXER_LIB:=$(call linktest,SDL2_mixer,-lSDL2_mixer,$(SDL_LIBS))
-NOSOUNDFLAG:=$(if $(SDL_MIXER_LIB),,-DNOSOUND$(warning -lSDL2_Mixer failed, no sound for you!))
+SDL_MIXER_LIB:=$(call linktest,SDL3_mixer,-lSDL3_mixer,$(SDL_LIBS))
+NOSOUNDFLAG:=$(if $(SDL_MIXER_LIB),,-DNOSOUND$(warning -lSDL3_Mixer failed, no sound for you!))
 
-# SDL2_Pango is used to render text (and is needed for complex scripts like Thai and Arabic)
-SDL2_PANGO_LIB:=$(call linktest,SDL2_Pango,-lSDL2_Pango,$(SDL_LIBS))
-SDL2_PANGO_CFLAGS:=$(shell $(PKG_CONFIG) --cflags SDL2_Pango)
+# SDL3_Pango is used to render text (and is needed for complex scripts like Thai and Arabic)
+SDL3_PANGO_LIB:=$(call linktest,SDL3_Pango,-lSDL3_Pango,$(SDL_LIBS))
+SDL3_PANGO_CFLAGS:=$(shell $(PKG_CONFIG) --cflags SDL3_Pango)
 
 # Pango itself is needed for direct and indirect access to some Pango functions
 PANGO_LIB:=$(call linktest,pango,-lpango,$(SDL_LIBS))
 PANGO_LIB+=$(call linktest,pangoft2,-lpangoft2,$(SDL_LIBS))
 PANGO_CFLAGS:=$(shell $(PKG_CONFIG) --cflags pango)
 
-SDL_LIBS+=$(SDL_MIXER_LIB) $(SDL2_PANGO_LIB) $(PANGO_LIB)
+SDL_LIBS+=$(SDL_MIXER_LIB) $(SDL3_PANGO_LIB) $(PANGO_LIB)
 
 SDL_CFLAGS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --cflags)
-SDL_CFLAGS+=$(shell $(PKG_CONFIG) SDL2_gfx --cflags)
+SDL_CFLAGS+=$(shell $(PKG_CONFIG) sdl3-gfx --cflags)
 
 # New one: -lrsvg-2 -lcairo
 # Old one: -lcairo -lsvg -lsvg-cairo
@@ -379,7 +375,7 @@ endif
 
 ifeq ($(hack),1)
 hack:
-	@echo 'SDL2_PANGO_LIB is' $(SDL2_PANGO_LIB)
+	@echo 'SDL3_PANGO_LIB is' $(SDL3_PANGO_LIB)
 	@echo 'PANGO_LIB      is' $(PANGO_LIB)
 	@echo 'SDL_MIXER_LIB  is' $(SDL_MIXER_LIB)
 	@echo 'SVG_LIB        is' $(SVG_LIB)
@@ -407,7 +403,7 @@ CFLAGS:=$(CPPFLAGS) $(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
 	-Wstrict-prototypes -Wmissing-prototypes \
 	$(shell src/test-option.sh -Wstrict-aliasing=2) \
 	$(PANGO_CFLAGS) \
-	$(SDL2_PANGO_CFLAGS) \
+	$(SDL3_PANGO_CFLAGS) \
 	$(ARCH_CFLAGS)
 
 DEFS:=-DVER_DATE=\"$(VER_DATE)\" -DVER_VERSION=\"$(VER_VERSION)\" \
@@ -718,7 +714,7 @@ install-magic-plugin-dev:	src/tp_magic_api.h install-bin
 bdist-win32:
 	@-rm -f tuxpaint.exe
 	@-rm -f obj/*.o
-	$(MAKE) \
+	make \
 		PREFIX:=./win32/bdist \
 		DATA_PREFIX:=data \
 		DOC_PREFIX:=docs \
@@ -729,7 +725,7 @@ bdist-win32:
 		MAGIC_PREFIX:=plugins \
 		ARCH_DEFS:=-DBDIST_WIN32
 	strip -s tuxpaint.exe
-	$(MAKE) install \
+	make install \
 		PREFIX:=./win32/bdist \
 		BIN_PREFIX:=./win32/bdist \
 		DATA_PREFIX:=./win32/bdist/data \
@@ -1099,11 +1095,6 @@ install-bin:
 	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tuxpaint$(EXE_EXT)
 
 # Install tuxpaint-config and required Windows DLLs into the 'bdist' directory
-ifeq ($(OS):$(WIN32_SOURCE_BUILD),windows:1)
-.PHONY: install-dlls
-install-dlls: install-bin install-data install-magic-plugins
-	@python win32/install-source-runtime.py --dest "$(BIN_PREFIX)" --prefix "$(SOURCE_NATIVE)" --mingw "$(shell cygpath -m '$(MINGW_DIR)')" --config "$(TPCONF_PATH)/tuxpaint-config.exe"
-else
 .PHONY: install-dlls
 install-dlls:
 	@echo
@@ -1120,8 +1111,6 @@ install-dlls:
 	@mkdir -p $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders
 	@cp $(MINGW_DIR)/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.dll $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders
 	@strip -s $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.dll
-
-endif
 
 # Install symlink:
 .PHONY: install-haiku
@@ -1497,16 +1486,16 @@ obj:
 
 ######
 
-MAGIC_SDL_CPPFLAGS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) SDL2_gfx --cflags)
+MAGIC_SDL_CPPFLAGS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) SDL3_gfx --cflags)
 
 # FIXME: Expose SDL_rotozoom to Magic API? -bjk 2021.09.06
-windows_MAGIC_SDL_LIBS:=$(WIN32_SOURCE_LIBDIR) $(LIBMINGW) $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL2_image -lSDL2_ttf $(SDL_MIXER_LIB) -lSDL2_gfx
-os2_MAGIC_SDL_LIBS:=-L/@unixroot/usr/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL2_image -lSDL2_ttf $(SDL_MIXER_LIB)
-macos_MAGIC_SDL_LIBS:=-L/usr/local/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL2_image -lSDL2_ttf $(SDL_MIXER_LIB) -lSDL2_gfx
-ios_MAGIC_SDL_LIBS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL2_image -lSDL2_ttf $(SDL_MIXER_LIB) -lSDL2_gfx
-beos_MAGIC_SDL_LIBS:=-L/usr/local/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL2_image -lSDL2_ttf $(SDL_MIXER_LIB)
-linux_MAGIC_SDL_LIBS:=-L/usr/local/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) SDL2_gfx --libs) -lSDL2_image -lSDL2_ttf $(SDL_MIXER_LIB)
-netbsd_MAGIC_SDL_LIBS:=-L/usr/local/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL2_image -lSDL2_ttf $(SDL_MIXER_LIB)
+windows_MAGIC_SDL_LIBS:=-L/usr/local/lib $(LIBMINGW) $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL3_image -lSDL3_ttf $(SDL_MIXER_LIB) -lSDL3_gfx
+os2_MAGIC_SDL_LIBS:=-L/@unixroot/usr/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL3_image -lSDL3_ttf $(SDL_MIXER_LIB)
+macos_MAGIC_SDL_LIBS:=-L/usr/local/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL3_image -lSDL3_ttf $(SDL_MIXER_LIB) -lSDL3_gfx
+ios_MAGIC_SDL_LIBS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL3_image -lSDL3_ttf $(SDL_MIXER_LIB) -lSDL3_gfx
+beos_MAGIC_SDL_LIBS:=-L/usr/local/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL3_image -lSDL3_ttf $(SDL_MIXER_LIB)
+linux_MAGIC_SDL_LIBS:=-L/usr/local/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) SDL3_gfx --libs) -lSDL3_image -lSDL3_ttf $(SDL_MIXER_LIB)
+netbsd_MAGIC_SDL_LIBS:=-L/usr/local/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL3_image -lSDL3_ttf $(SDL_MIXER_LIB)
 MAGIC_SDL_LIBS:=$($(OS)_MAGIC_SDL_LIBS)
 
 windows_MAGIC_ARCH_LINKS=-lintl $(PNG)
@@ -1519,7 +1508,7 @@ netbsd_MAGIC_ARCH_LINKS:=-lintl $(PNG)
 MAGIC_ARCH_LINKS:=$($(OS)_MAGIC_ARCH_LINKS)
 
 windows_PLUGIN_LIBS:=$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)
-os2_PLUGIN_LIBS:=-lsdl2 -lsdl2_mixer -lSDL2_image
+os2_PLUGIN_LIBS:=-lsdl3 -lsdl3_mixer -lSDL3_image
 macos_PLUGIN_LIBS:=$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)
 ios_PLUGIN_LIBS:=$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)
 beos_PLUGIN_LIBS:="$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS) $(MAGIC_SDL_CPPFLAGS)"
@@ -1544,11 +1533,3 @@ magic-plugins:	src/tp_magic_api.h $(MAGIC_SO)
 test-png:	src/test-png.c
 	$(CC) $(PNG_CFLAGS) src/test-png.c -o test-png $(PNG)
 
-
-
-ifeq ($(OS):$(WIN32_SOURCE_BUILD),windows:1)
-.PHONY: win32-source-clean-magic
-bdist-win32: win32-source-clean-magic
-win32-source-clean-magic:
-	@rm -f magic/*.dll
-endif

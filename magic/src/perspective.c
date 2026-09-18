@@ -39,8 +39,8 @@
 #include <string.h>
 #include <libintl.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 #include <math.h>
 #include <limits.h>
 #include <time.h>
@@ -152,7 +152,7 @@ enum
 /* A copy of canvas at switchin, will be used to draw from it as snapshot changes at each click */
 static SDL_Surface *canvas_back = NULL;
 
-static Mix_Chunk *perspective_snd_effect[perspective_NUM_TOOLS + 1];
+static MIX_Audio *perspective_snd_effect[perspective_NUM_TOOLS + 1];
 
 const char *perspective_snd_filenames[perspective_NUM_TOOLS + 1] = {
   "perspective.ogg",
@@ -204,7 +204,7 @@ int perspective_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, U
   for (i = 0; i <= perspective_NUM_TOOLS; i++)
   {
     snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, perspective_snd_filenames[i]);
-    perspective_snd_effect[i] = Mix_LoadWAV(fname);
+    perspective_snd_effect[i] = MIX_LoadAudio(api->mmixer, fname, 0);
   }
   return (1);
 }
@@ -334,7 +334,9 @@ void perspective_drag(magic_api *api, int which, SDL_Surface *canvas,
         update_rect->w = canvas->w;
         update_rect->h = canvas->h;
 
-        SDL_FillRect(canvas, update_rect, SDL_MapRGB(canvas->format, perspective_r, perspective_g, perspective_b));
+        SDL_FillSurfaceRect(canvas, update_rect,
+                            SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
+                                       perspective_r, perspective_g, perspective_b));
       }
 
       new_h = max(1, old_h + click_y - y);
@@ -457,7 +459,7 @@ void perspective_click(magic_api *api, int which, int mode ATTRIBUTE_UNUSED,
       update_rect->w = canvas->w;
       update_rect->h = canvas->h;
 
-      SDL_FreeSurface(scaled_surf);
+      SDL_DestroySurface(scaled_surf);
 
       api->playsound(perspective_snd_effect[which], 127, 255);
     }
@@ -486,7 +488,9 @@ void perspective_release(magic_api *api, int which,
   update_rect->h = canvas->h;
 
   if (which == TOOL_ZOOM || which == TOOL_PERSPECTIVE)
-    SDL_FillRect(canvas, update_rect, SDL_MapRGB(canvas->format, perspective_r, perspective_g, perspective_b));
+    SDL_FillSurfaceRect(canvas, update_rect,
+                        SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
+                                   perspective_r, perspective_g, perspective_b));
 
   if (which == TOOL_PERSPECTIVE)
   {
@@ -543,11 +547,11 @@ void perspective_release(magic_api *api, int which,
       SDL_SetSurfaceBlendMode(scaled_surf, SDL_BLENDMODE_BLEND);
       SDL_SetSurfaceAlphaMod(scaled_surf, 24);
       SDL_BlitSurface(scaled_surf, NULL, aux1, &rrr);
-      SDL_FreeSurface(scaled_surf);
+      SDL_DestroySurface(scaled_surf);
     }
 
     SDL_BlitSurface(aux1, NULL, canvas, NULL);
-    SDL_FreeSurface(aux1);
+    SDL_DestroySurface(aux1);
     /*
        for (h = 0; h < (h2 - h1); h++)
        {
@@ -613,7 +617,9 @@ void perspective_release(magic_api *api, int which,
     update_rect->h = canvas->h;
 
     if (which == TOOL_ZOOM)
-      SDL_FillRect(canvas, update_rect, SDL_MapRGB(canvas->format, perspective_r, perspective_g, perspective_b));
+      SDL_FillSurfaceRect(canvas, update_rect,
+                          SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
+                                     perspective_r, perspective_g, perspective_b));
 
 
     if (new_h < canvas->h)
@@ -645,6 +651,7 @@ void perspective_release(magic_api *api, int which,
     else
     {
       int aux_h, aux_w;
+      const SDL_PixelFormatDetails *format_details = SDL_GetPixelFormatDetails(canvas->format);
 
       aux_h = canvas->h * canvas->h / new_h;
       aux_w = canvas->w * aux_h / canvas->h;
@@ -654,18 +661,16 @@ void perspective_release(magic_api *api, int which,
       update_rect->w = aux_w;
       update_rect->h = aux_h;
 
-      aux_surf = SDL_CreateRGBSurface(SDL_SWSURFACE,
-                                      aux_w,
-                                      aux_h,
-                                      canvas->format->BitsPerPixel,
-                                      canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, 0);
+      aux_surf = SDL_CreateSurface(aux_w, aux_h,
+                                   SDL_GetPixelFormatForMasks(format_details->bits_per_pixel, format_details->Rmask,
+                                                              format_details->Gmask, format_details->Bmask, 0));
 
       SDL_BlitSurface(canvas_back, update_rect, aux_surf, NULL);
       scaled_surf = api->scale(aux_surf, canvas->w, canvas->h, 0);
       SDL_BlitSurface(scaled_surf, NULL, canvas, NULL);
-      SDL_FreeSurface(aux_surf);
+      SDL_DestroySurface(aux_surf);
     }
-    SDL_FreeSurface(scaled_surf);
+    SDL_DestroySurface(scaled_surf);
 
     update_rect->x = update_rect->y = 0;
     update_rect->w = canvas->w;
@@ -693,9 +698,13 @@ void perspective_preview(magic_api *api, int which,
   update_rect->h = canvas->h;
 
   if (which == TOOL_ZOOM)
-    SDL_FillRect(canvas, update_rect, SDL_MapRGB(canvas->format, perspective_r, perspective_g, perspective_b));
+    SDL_FillSurfaceRect(canvas, update_rect,
+                        SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
+                                   perspective_r, perspective_g, perspective_b));
   else if (which == TOOL_TILEZOOM || which == TOOL_RUSH)
-    SDL_FillRect(canvas, update_rect, SDL_MapRGB(canvas->format, 128, 128, 128));
+    SDL_FillSurfaceRect(canvas, update_rect,
+                        SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), 128, 128,
+                                   128));
 
   ox_distance = otop_right_x - otop_left_x;
   oy_distance = obottom_left_y - otop_left_y;
@@ -771,7 +780,7 @@ void perspective_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   {
     if (perspective_snd_effect[i] != NULL)
     {
-      Mix_FreeChunk(perspective_snd_effect[i]);
+      MIX_DestroyAudio(perspective_snd_effect[i]);
     }
   }
 }
@@ -802,6 +811,7 @@ void perspective_switchin(magic_api *api ATTRIBUTE_UNUSED,
                           int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas)
 {
   Uint32 amask;
+  const SDL_PixelFormatDetails *format_details = SDL_GetPixelFormatDetails(canvas->format);
 
   new_w = canvas->w;
   new_h = canvas->h;
@@ -813,18 +823,16 @@ void perspective_switchin(magic_api *api ATTRIBUTE_UNUSED,
 
   bottom_left_y = obottom_left_y = bottom_right_y = obottom_right_y = canvas->h - otop_left_y;
 
-  black = SDL_MapRGBA(canvas->format, 0, 0, 0, 0);
-  white = SDL_MapRGBA(canvas->format, 255, 255, 255, 0);
+  black = SDL_MapRGBA(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), 0, 0, 0, 0);
+  white = SDL_MapRGBA(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), 255, 255, 255, 0);
 
-  amask = ~(canvas->format->Rmask | canvas->format->Gmask | canvas->format->Bmask);
+  amask = ~(format_details->Rmask | format_details->Gmask | format_details->Bmask);
 
   if (canvas_back == NULL)
   {
-    canvas_back = SDL_CreateRGBSurface(SDL_SWSURFACE,
-                                       canvas->w,
-                                       canvas->h,
-                                       canvas->format->BitsPerPixel,
-                                       canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, amask);
+    canvas_back = SDL_CreateSurface(canvas->w, canvas->h,
+                                    SDL_GetPixelFormatForMasks(format_details->bits_per_pixel, format_details->Rmask,
+                                                               format_details->Gmask, format_details->Bmask, amask));
   }
 
   if (canvas_back == NULL)
@@ -841,7 +849,7 @@ void perspective_switchout(magic_api *api ATTRIBUTE_UNUSED,
 {
   if (canvas_back != NULL)
   {
-    SDL_FreeSurface(canvas_back);
+    SDL_DestroySurface(canvas_back);
     canvas_back = NULL;
   }
 }

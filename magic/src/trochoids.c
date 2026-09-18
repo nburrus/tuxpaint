@@ -11,12 +11,14 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #include <string.h>
 #include <libintl.h>
 
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 #define deg_cos(x) cosf((float) (x) * M_PI / 180.0)
 #define deg_sin(x) sinf((float) (x) * M_PI / 180.0)
@@ -149,7 +151,7 @@ enum
   NUM_SNDS
 };
 
-Mix_Chunk *sound_effects[NUM_SNDS];
+MIX_Audio *sound_effects[NUM_SNDS];
 
 const char *sound_filenames[NUM_SNDS] = {
   "trochoids_drag.ogg",
@@ -226,7 +228,7 @@ int trochoids_init(magic_api *api, Uint8 disabled_features, Uint8 complexity_lev
   for (i = 0; i < NUM_SNDS; i++)
   {
     snprintf(filename, sizeof(filename), "%ssounds/magic/%s", api->data_directory, sound_filenames[i]);
-    sound_effects[i] = Mix_LoadWAV(filename);
+    sound_effects[i] = MIX_LoadAudio(api->mmixer, filename, 0);
   }
 
   return (1);
@@ -304,7 +306,7 @@ void trochoids_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   {
     if (sound_effects[i] != NULL)
     {
-      Mix_FreeChunk(sound_effects[i]);
+      MIX_DestroyAudio(sound_effects[i]);
     }
   }
 }
@@ -604,7 +606,7 @@ void trochoids_set_color(magic_api *api ATTRIBUTE_UNUSED,
                          SDL_Surface *snapshot ATTRIBUTE_UNUSED, Uint8 r,
                          Uint8 g, Uint8 b, SDL_Rect *update_rect ATTRIBUTE_UNUSED)
 {
-  trochoids_color = SDL_MapRGB(canvas->format, r, g, b);
+  trochoids_color = SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b);
 }
 
 

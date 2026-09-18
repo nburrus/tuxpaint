@@ -29,10 +29,10 @@
 #include <stdio.h>
 #include <string.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
-static Mix_Chunk *negative_snd;
+static MIX_Audio *negative_snd;
 static int negative_radius = 16;
 
 int negative_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
@@ -96,7 +96,7 @@ int negative_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/negative.wav", api->data_directory);
 
-  negative_snd = Mix_LoadWAV(fname);
+  negative_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -188,16 +188,20 @@ static void do_negative(void *ptr, int which, SDL_Surface *canvas, SDL_Surface *
   int xx, yy;
   Uint8 r, g, b, new_r, new_g, new_b;
   magic_api *api = (magic_api *) ptr;
+  int negative_radius_p = max(1, (int)(negative_radius * api->pressure));
 
-  for (yy = y - negative_radius; yy < y + negative_radius; yy++)
+  for (yy = y - negative_radius_p; yy < y + negative_radius_p; yy++)
   {
-    for (xx = x - negative_radius; xx < x + negative_radius; xx++)
+    for (xx = x - negative_radius_p; xx < x + negative_radius_p; xx++)
     {
-      if (api->in_circle(xx - x, yy - y, negative_radius))
+      if (api->in_circle(xx - x, yy - y, negative_radius_p))
       {
-        SDL_GetRGB(api->getpixel(last, xx, yy), last->format, &r, &g, &b);
+        SDL_GetRGB(api->getpixel(last, xx, yy), SDL_GetPixelFormatDetails(last->format), SDL_GetSurfacePalette(last),
+                   &r, &g, &b);
         negative_calc(api, which, r, g, b, &new_r, &new_g, &new_b);
-        api->putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, new_r, new_g, new_b));
+        api->putpixel(canvas, xx, yy,
+                      SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), new_r, new_g,
+                                 new_b));
       }
     }
   }
@@ -254,9 +258,12 @@ void negative_click(magic_api *api, int which, int mode,
     {
       for (xx = 0; xx < canvas->w; xx++)
       {
-        SDL_GetRGB(api->getpixel(last, xx, yy), last->format, &r, &g, &b);
+        SDL_GetRGB(api->getpixel(last, xx, yy), SDL_GetPixelFormatDetails(last->format), SDL_GetSurfacePalette(last),
+                   &r, &g, &b);
         negative_calc(api, which, r, g, b, &new_r, &new_g, &new_b);
-        api->putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, new_r, new_g, new_b));
+        api->putpixel(canvas, xx, yy,
+                      SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), new_r, new_g,
+                                 new_b));
       }
     }
 
@@ -282,7 +289,7 @@ void negative_release(magic_api *api ATTRIBUTE_UNUSED,
 void negative_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (negative_snd != NULL)
-    Mix_FreeChunk(negative_snd);
+    MIX_DestroyAudio(negative_snd);
 }
 
 // We don't use colors

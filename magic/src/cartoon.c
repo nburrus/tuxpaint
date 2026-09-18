@@ -31,13 +31,13 @@
 #include <stdlib.h>
 #include <math.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 
 /* Our globals: */
 
-static Mix_Chunk *cartoon_snd;
+static MIX_Audio *cartoon_snd;
 SDL_Surface *result_surf;
 static int cartoon_radius = 16;
 
@@ -80,7 +80,7 @@ int cartoon_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/cartoon.wav", api->data_directory);
-  cartoon_snd = Mix_LoadWAV(fname);
+  cartoon_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -144,7 +144,8 @@ void cartoon_apply_colors(magic_api *api, SDL_Surface *surf, int xx, int yy)
   Uint8 r, g, b;
   float hue, sat, val;
 
-  SDL_GetRGB(api->getpixel(surf, xx, yy), surf->format, &r, &g, &b);
+  SDL_GetRGB(api->getpixel(surf, xx, yy), SDL_GetPixelFormatDetails(surf->format), SDL_GetSurfacePalette(surf), &r, &g,
+             &b);
   api->rgbtohsv(r, g, b, &hue, &sat, &val);
 
   val = val - 0.5;
@@ -161,7 +162,9 @@ void cartoon_apply_colors(magic_api *api, SDL_Surface *surf, int xx, int yy)
   sat = floor(sat * 4) / 4;
 
   api->hsvtorgb(hue, sat, val, &r, &g, &b);
-  api->putpixel(result_surf, xx, yy, SDL_MapRGB(result_surf->format, r, g, b));
+  api->putpixel(result_surf, xx, yy,
+                SDL_MapRGB(SDL_GetPixelFormatDetails(result_surf->format), SDL_GetSurfacePalette(result_surf), r, g,
+                           b));
 }
 
 
@@ -170,9 +173,12 @@ void cartoon_apply_outline(magic_api *api, int xx, int yy)
   Uint8 r, g, b;
   Uint8 r1, g1, b1, r2, g2, b2;
 
-  SDL_GetRGB(api->getpixel(result_surf, xx, yy), result_surf->format, &r, &g, &b);
-  SDL_GetRGB(api->getpixel(result_surf, xx + 1, yy), result_surf->format, &r1, &g1, &b1);
-  SDL_GetRGB(api->getpixel(result_surf, xx + 1, yy + 1), result_surf->format, &r2, &g2, &b2);
+  SDL_GetRGB(api->getpixel(result_surf, xx, yy), SDL_GetPixelFormatDetails(result_surf->format),
+             SDL_GetSurfacePalette(result_surf), &r, &g, &b);
+  SDL_GetRGB(api->getpixel(result_surf, xx + 1, yy), SDL_GetPixelFormatDetails(result_surf->format),
+             SDL_GetSurfacePalette(result_surf), &r1, &g1, &b1);
+  SDL_GetRGB(api->getpixel(result_surf, xx + 1, yy + 1), SDL_GetPixelFormatDetails(result_surf->format),
+             SDL_GetSurfacePalette(result_surf), &r2, &g2, &b2);
 
   if (abs(((r + g + b) / 3) - (r1 + g1 + b1) / 3) > OUTLINE_THRESH
       || abs(((r + g + b) / 3) - (r2 + g2 + b2) / 3) >
@@ -181,9 +187,15 @@ void cartoon_apply_outline(magic_api *api, int xx, int yy)
       || abs(b - b1) > OUTLINE_THRESH
       || abs(r - r2) > OUTLINE_THRESH || abs(g - g2) > OUTLINE_THRESH || abs(b - b2) > OUTLINE_THRESH)
   {
-    api->putpixel(result_surf, xx - 1, yy, SDL_MapRGB(result_surf->format, 0, 0, 0));
-    api->putpixel(result_surf, xx, yy - 1, SDL_MapRGB(result_surf->format, 0, 0, 0));
-    api->putpixel(result_surf, xx - 1, yy - 1, SDL_MapRGB(result_surf->format, 0, 0, 0));
+    api->putpixel(result_surf, xx - 1, yy,
+                  SDL_MapRGB(SDL_GetPixelFormatDetails(result_surf->format), SDL_GetSurfacePalette(result_surf), 0, 0,
+                             0));
+    api->putpixel(result_surf, xx, yy - 1,
+                  SDL_MapRGB(SDL_GetPixelFormatDetails(result_surf->format), SDL_GetSurfacePalette(result_surf), 0, 0,
+                             0));
+    api->putpixel(result_surf, xx - 1, yy - 1,
+                  SDL_MapRGB(SDL_GetPixelFormatDetails(result_surf->format), SDL_GetSurfacePalette(result_surf), 0, 0,
+                             0));
   }
 }
 
@@ -193,12 +205,13 @@ static void do_cartoon(void *ptr, int which ATTRIBUTE_UNUSED,
 {
   magic_api *api = (magic_api *) ptr;
   int xx, yy;
+  int cartoon_radius_p = max(1, (int)(cartoon_radius * api->pressure));
 
-  for (yy = y - cartoon_radius; yy < y + cartoon_radius; yy = yy + 1)
+  for (yy = y - cartoon_radius_p; yy < y + cartoon_radius_p; yy = yy + 1)
   {
-    for (xx = x - cartoon_radius; xx < x + cartoon_radius; xx = xx + 1)
+    for (xx = x - cartoon_radius_p; xx < x + cartoon_radius_p; xx = xx + 1)
     {
-      if (api->in_circle(xx - x, yy - y, cartoon_radius))
+      if (api->in_circle(xx - x, yy - y, cartoon_radius_p))
       {
         api->putpixel(canvas, xx, yy, api->getpixel(result_surf, xx, yy));
       }
@@ -295,7 +308,7 @@ void cartoon_release(magic_api *api ATTRIBUTE_UNUSED,
 void cartoon_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (cartoon_snd != NULL)
-    Mix_FreeChunk(cartoon_snd);
+    MIX_DestroyAudio(cartoon_snd);
 }
 
 // Record the color from Tux Paint:
@@ -319,20 +332,20 @@ void cartoon_switchin(magic_api *api ATTRIBUTE_UNUSED,
 {
   Uint32 amask;
 
-  amask = ~(canvas->format->Rmask | canvas->format->Gmask | canvas->format->Bmask);
+  const SDL_PixelFormatDetails *format_details = SDL_GetPixelFormatDetails(canvas->format);
 
-  result_surf = SDL_CreateRGBSurface(SDL_SWSURFACE,
-                                     canvas->w,
-                                     canvas->h,
-                                     canvas->format->BitsPerPixel,
-                                     canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, amask);
+  amask = ~(format_details->Rmask | format_details->Gmask | format_details->Bmask);
+
+  result_surf = SDL_CreateSurface(canvas->w, canvas->h,
+                                  SDL_GetPixelFormatForMasks(format_details->bits_per_pixel, format_details->Rmask,
+                                                             format_details->Gmask, format_details->Bmask, amask));
 }
 
 void cartoon_switchout(magic_api *api ATTRIBUTE_UNUSED,
                        int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas ATTRIBUTE_UNUSED)
 {
   if (result_surf != NULL)
-    SDL_FreeSurface(result_surf);
+    SDL_DestroySurface(result_surf);
 }
 
 int cartoon_modes(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)

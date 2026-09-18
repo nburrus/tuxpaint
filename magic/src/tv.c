@@ -29,9 +29,11 @@
   Last updated: October 7, 2024
 */
 
+#include <stdio.h>
+#include <stdlib.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 #include <math.h>
 
 static int tv_radius = 16;
@@ -48,7 +50,7 @@ int tv_orders[NUM_TV_TOOLS] = {
   2001,
 };
 
-Mix_Chunk *tv_snd;
+MIX_Audio *tv_snd;
 
 Uint32 tv_api_version(void);
 void tv_set_color(magic_api * api, int which, SDL_Surface * canvas,
@@ -100,7 +102,7 @@ int tv_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 comp
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/tv.ogg", api->data_directory);
-  tv_snd = Mix_LoadWAV(fname);
+  tv_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -159,7 +161,7 @@ void tv_release(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
 
 void tv_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
-  Mix_FreeChunk(tv_snd);
+  MIX_DestroyAudio(tv_snd);
 }
 
 // Interactivity functions
@@ -174,7 +176,8 @@ void tv_do_tv(void *ptr_to_api, int which_tool,
   for (i = 0; i < 2; i++)
   {
     /* Convert the line below to their red/green/blue elements */
-    SDL_GetRGB(api->getpixel(snapshot, x, y + i), snapshot->format, &r8, &g8, &b8);
+    SDL_GetRGB(api->getpixel(snapshot, x, y + i), SDL_GetPixelFormatDetails(snapshot->format),
+               SDL_GetSurfacePalette(snapshot), &r8, &g8, &b8);
 
     /* The results should have been brighter. However, some artists used
        the original "TV" effect as a stylistic way to darken parts of their
@@ -220,7 +223,8 @@ void tv_do_tv(void *ptr_to_api, int which_tool,
     g8 = min(g, 255);
     b8 = min(b, 255);
 
-    api->putpixel(canvas, x, y + i, SDL_MapRGB(canvas->format, r8, g8, b8));
+    api->putpixel(canvas, x, y + i,
+                  SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r8, g8, b8));
   }
 }
 
@@ -229,14 +233,15 @@ void tv_paint_tv(void *ptr_to_api, int which_tool,
 {
   int i, j;
   magic_api *api = (magic_api *) ptr_to_api;
+  int tv_radius_p = max(2, (int)(tv_radius * api->pressure));
 
   y = (y - (y % 2));
 
-  for (i = x - tv_radius; i < x + tv_radius; i++)
+  for (i = x - tv_radius_p; i < x + tv_radius_p; i++)
   {
-    for (j = y - tv_radius; j < y + tv_radius; j += 2)
+    for (j = y - tv_radius_p; j < y + tv_radius_p; j += 2)
     {
-      if (api->in_circle(i - x, j - y, tv_radius) && !api->touched(i, j))
+      if (api->in_circle(i - x, j - y, tv_radius_p) && !api->touched(i, j))
       {
         tv_do_tv(api, which_tool, canvas, snapshot, i, j);
       }

@@ -27,11 +27,12 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
-static Mix_Chunk *crescent_snd;
+static MIX_Audio *crescent_snd;
 static int crescent_neg_size;
 Uint32 crescent_color;
 int crescent_cx, crescent_cy;
@@ -83,7 +84,7 @@ int crescent_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/crescent.ogg", api->data_directory);
-  crescent_snd = Mix_LoadWAV(fname);
+  crescent_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -227,7 +228,7 @@ void crescent_release(magic_api *api ATTRIBUTE_UNUSED,
 void crescent_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (crescent_snd != NULL)
-    Mix_FreeChunk(crescent_snd);
+    MIX_DestroyAudio(crescent_snd);
 }
 
 void crescent_set_color(magic_api *api ATTRIBUTE_UNUSED,
@@ -235,7 +236,7 @@ void crescent_set_color(magic_api *api ATTRIBUTE_UNUSED,
                         SDL_Surface *last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g,
                         Uint8 b, SDL_Rect *update_rect ATTRIBUTE_UNUSED)
 {
-  crescent_color = SDL_MapRGB(canvas->format, r, g, b);
+  crescent_color = SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b);
 }
 
 int crescent_requires_colors(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)

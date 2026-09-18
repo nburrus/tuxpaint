@@ -9,13 +9,13 @@ This library supports BMP, PNM (PPM/PGM/PBM), XPM, LBM, PCX, GIF, JPEG, PNG,
 TGA, and TIFF formats.
 
 API:
-#include "SDL_image.h"
+#include <SDL3_image/SDL_image.h>
 
 	SDL_Surface *IMG_Load(const char *file);
 or
-	SDL_Surface *IMG_Load_RW(SDL_RWops *src, int freesrc);
+	SDL_Surface *IMG_Load_RW(SDL_IOStream *src, int freesrc);
 or
-	SDL_Surface *IMG_LoadTyped_RW(SDL_RWops *src, int freesrc, char *type);
+	SDL_Surface *IMG_LoadTyped_RW(SDL_IOStream *src, int freesrc, char *type);
 
 where type is a string specifying the format (i.e. "PNG" or "pcx").
 Note that IMG_Load_RW cannot load TGA images.

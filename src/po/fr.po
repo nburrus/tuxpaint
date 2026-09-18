@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-24 11:49+0100\n"
-"PO-Revision-Date: 2026-06-05 13:44+0200\n"
+"PO-Revision-Date: 2026-03-06 10:17+0100\n"
 "Last-Translator: jacques.chion@orange.fr\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Poedit 3.8\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -392,33 +392,33 @@ msgstr ""
 "L'outil 'Tampon' fournit un ensemble de tampons caoutchouc ou d'autocollants"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
+#, fuzzy
+#| msgid "New Magic tools: Dither, Filled Polygon."
 msgid "New Magic tools: \"Ordered Dither\""
-msgstr "Nouvel outils Magie : \"Tramage ordonné\""
+msgstr "Nouveaux outils Magie : Tramage, Polygone plein."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid "Color picker shows current color, for comparison"
 msgstr ""
-"Le sélecteur de couleurs affiche la couleur actuelle, à des fins de "
-"comparaison"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "Support for FontConfig &lt;include&gt; directives"
-msgstr "Prise en charge des directives &lt;include&gt; de FontConfig"
+msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid ""
 "Discarding sub-pixel mouse motion, for improved performance with gaming mice"
 msgstr ""
-"Suppression des mouvements de souris inférieurs au pixel, pour des "
-"performances améliorées avec les souris de jeu"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
 msgid "Documentation improvements"
 msgstr "Amélioration de la documentation"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:57
+#, fuzzy
+#| msgid "Localization updates."
 msgid "Localization updates"
-msgstr "Mises à jour des localisations"
+msgstr "Mises à jour des localisations."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:58
 msgid "Bug fixes"
@@ -634,8 +634,8 @@ msgid ""
 "Minor improvements to the selection buttons for the 'special' colors "
 "(pipette, HSV picker, and color mixer)."
 msgstr ""
-"Des améliorations mineures ont été apportées pour les couleurs 'spéciales' "
-"(pipette, sélecteur HSV et mélangeur de couleurs)."
+"Des améliorations mineures ont été apportées pour les couleurs "
+"'spéciales' (pipette, sélecteur HSV et mélangeur de couleurs)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:116
 msgid "Many Magic tools now offer size settings."
@@ -835,9 +835,9 @@ msgstr ""
 "Un certain nombre d'outils \"Magie\" ont été mis à jour. Des améliorations "
 "ont été apportées à \"Photogravure\" qui simule des photographies sur un "
 "journal; \"B.D.\" qui fait que l'image ressemble  à une bande dessinée et "
-"\"TV' qui fait que l'image ressemble à une télévision ancienne. De plus, "
-"\"B.D.\" et \"Photogravure\", tout comme \"Blocs\", \"Craie\" et \"Relief\" "
-"ont maintenant la possibilité de traiter l'image entière d'un seul coup !"
+"\"TV' qui fait que l'image ressemble à une télévision ancienne. De plus, \"B."
+"D.\" et \"Photogravure\", tout comme \"Blocs\", \"Craie\" et \"Relief\" ont "
+"maintenant la possibilité de traiter l'image entière d'un seul coup !"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:149
 msgid ""
@@ -2136,12 +2136,16 @@ msgstr "Tramage"
 
 #. Bayer 4x4
 #: ../../magic/src/dither.c:50
+#, fuzzy
+#| msgid "Dither"
 msgid "Ordered Dither"
-msgstr "Tramage ordonné"
+msgstr "Tramage"
 
 #: ../../magic/src/dither.c:51
+#, fuzzy
+#| msgid "Dither (Keep Color)"
 msgid "Ordered Dither (Keep Color)"
-msgstr "Tramage ordonné (avec couleur conservée)"
+msgstr "Tramage"
 
 #
 #: ../../magic/src/dither.c:57
@@ -2183,41 +2187,57 @@ msgstr ""
 
 #
 #: ../../magic/src/dither.c:69
+#, fuzzy
+#| msgid ""
+#| "Click and drag to replace parts of your image with a dithered pattern of "
+#| "dots in your chosen color."
 msgid ""
 "Click and drag to replace parts of your image with an ordered dithered "
 "pattern of dots in your chosen color."
 msgstr ""
-"Clique pour remplacer une partie du dessin par une trame ordonnée de points "
-"utilisant la couleur que tu as choisie."
+"Clique pour remplacer une partie du dessin par une trame de points utilisant "
+"la couleur que tu as choisie."
 
 #
 #
 #: ../../magic/src/dither.c:70
+#, fuzzy
+#| msgid ""
+#| "Click to replace your entire image with a dithered pattern of dots in "
+#| "your chosen color."
 msgid ""
 "Click to replace your entire image with an ordered dithered pattern of dots "
 "in your chosen color."
 msgstr ""
-"Clique pour remplir entièrement le dessin avec une trame ordonnée de points "
-"utilisant la couleur que tu as choisie."
+"Clique pour remplir entièrement le dessin avec une trame de points utilisant "
+"la couleur que tu as choisie."
 
 #
 #: ../../magic/src/dither.c:74
+#, fuzzy
+#| msgid ""
+#| "Click and drag to replace parts of your image with a dithered pattern of "
+#| "dots using the picture's original colors."
 msgid ""
 "Click and drag to replace parts of your image with an ordered dithered "
 "pattern of dots using the picture's original colors."
 msgstr ""
 "Clique et déplace la souris pour remplacer une partie du dessin par une "
-"trame ordonnéede points utilisant les couleurs d'origine du dessin."
+"trame de points utilisant les couleurs d'origine du dessin."
 
 #
 #
 #: ../../magic/src/dither.c:76
+#, fuzzy
+#| msgid ""
+#| "Click to replace your entire image with a dithered pattern of dots using "
+#| "the picture's original colors."
 msgid ""
 "Click to replace your entire image with an ordered dithered pattern of dots "
 "using the picture's original colors."
 msgstr ""
-"Clique pour remplir entièrement le dessin avec une trame ordonnée de points "
-"utilisant les couleurs d'origine du dessin."
+"Clique pour remplir entièrement le dessin avec une trame de points utilisant "
+"les couleurs d'origine du dessin."
 
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"

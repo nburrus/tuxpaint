@@ -30,9 +30,10 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 /* What tools we contain: */
 
@@ -45,7 +46,7 @@ enum
 
 /* Our globals: */
 
-static Mix_Chunk *pixel_snd;
+static MIX_Audio *pixel_snd;
 static Uint8 pixels_r, pixels_g, pixels_b;
 static int pixel_size = 8;
 
@@ -85,7 +86,7 @@ int pixels_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/pixels.ogg", api->data_directory);
-  pixel_snd = Mix_LoadWAV(fname);
+  pixel_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -149,7 +150,9 @@ static void do_pixels(void *ptr ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
   dest.w = pixel_size;
   dest.h = pixel_size;
 
-  SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, pixels_r, pixels_g, pixels_b));
+  SDL_FillSurfaceRect(canvas, &dest,
+                      SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), pixels_r,
+                                 pixels_g, pixels_b));
 }
 
 // Affect the canvas on drag:
@@ -205,7 +208,7 @@ void pixels_release(magic_api *api, int which ATTRIBUTE_UNUSED,
 void pixels_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (pixel_snd != NULL)
-    Mix_FreeChunk(pixel_snd);
+    MIX_DestroyAudio(pixel_snd);
 }
 
 // Record the color from Tux Paint:

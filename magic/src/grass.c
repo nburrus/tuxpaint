@@ -31,12 +31,12 @@
 #include <string.h>
 #include <stdlib.h>             /* for RAND_MAX */
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 /* Our globals: */
 
-static Mix_Chunk *grass_snd;
+static MIX_Audio *grass_snd;
 static Uint8 grass_r, grass_g, grass_b;
 static SDL_Surface *img_grass;
 
@@ -75,7 +75,7 @@ int grass_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 c
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/grass.wav", api->data_directory);
-  grass_snd = Mix_LoadWAV(fname);
+  grass_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   snprintf(fname, sizeof(fname), "%simages/magic/grass_data.png", api->data_directory);
   img_grass = IMG_Load(fname);
@@ -179,7 +179,9 @@ void grass_release(magic_api *api ATTRIBUTE_UNUSED,
 void grass_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (grass_snd != NULL)
-    Mix_FreeChunk(grass_snd);
+    MIX_DestroyAudio(grass_snd);
+  if (img_grass)
+    SDL_DestroySurface(img_grass);
 }
 
 // Record the color from Tux Paint:
@@ -239,7 +241,8 @@ static void do_grass(void *ptr, int which ATTRIBUTE_UNUSED,
       {
         double rd, gd, bd;
 
-        SDL_GetRGBA(api->getpixel(img_grass, xx + src.x, yy + src.y), img_grass->format, &r, &g, &b, &a);
+        SDL_GetRGBA(api->getpixel(img_grass, xx + src.x, yy + src.y), SDL_GetPixelFormatDetails(img_grass->format),
+                    SDL_GetSurfacePalette(img_grass), &r, &g, &b, &a);
 
         rd = api->sRGB_to_linear(r) * 8.0 + tmp_red;
         rd = rd * (a / 255.0) / 11.0;
@@ -248,13 +251,15 @@ static void do_grass(void *ptr, int which ATTRIBUTE_UNUSED,
         bd = api->sRGB_to_linear(b) * 8.0 + tmp_blue;
         bd = bd * (a / 255.0) / 11.0;
 
-        SDL_GetRGB(api->getpixel(canvas, xx + dest.x, yy + dest.y), canvas->format, &r, &g, &b);
+        SDL_GetRGB(api->getpixel(canvas, xx + dest.x, yy + dest.y), SDL_GetPixelFormatDetails(canvas->format),
+                   SDL_GetSurfacePalette(canvas), &r, &g, &b);
 
         r = api->linear_to_sRGB(api->sRGB_to_linear(r) * (1.0 - a / 255.0) + rd);
         g = api->linear_to_sRGB(api->sRGB_to_linear(g) * (1.0 - a / 255.0) + gd);
         b = api->linear_to_sRGB(api->sRGB_to_linear(b) * (1.0 - a / 255.0) + bd);
 
-        api->putpixel(canvas, xx + dest.x, yy + dest.y, SDL_MapRGB(canvas->format, r, g, b));
+        api->putpixel(canvas, xx + dest.x, yy + dest.y,
+                      SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b));
       }
     }
   }

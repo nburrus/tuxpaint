@@ -30,7 +30,7 @@
 #ifndef CURSOR_H
 #define CURSOR_H
 
-#include "SDL.h"
+#include <SDL3/SDL.h>
 
 #include "watch.xbm"
 #include "watch-mask.xbm"

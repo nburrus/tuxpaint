@@ -32,8 +32,8 @@
 #include <string.h>
 #include <libintl.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 #include <math.h>
 #include <limits.h>
 
@@ -72,7 +72,7 @@ enum
 
 static int blur_RADIUS = 16;
 
-static Mix_Chunk *blur_snd_effect[blur_NUM_TOOLS];
+static MIX_Audio *blur_snd_effect[blur_NUM_TOOLS];
 
 const char *blur_snd_filenames[blur_NUM_TOOLS] = {
   "blur.wav",
@@ -113,7 +113,7 @@ int blur_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 co
   for (i = 0; i < blur_NUM_TOOLS; i++)
   {
     snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, blur_snd_filenames[i]);
-    blur_snd_effect[i] = Mix_LoadWAV(fname);
+    blur_snd_effect[i] = MIX_LoadAudio(api->mmixer, fname, 0);
   }
   return (1);
 }
@@ -182,7 +182,8 @@ static void do_blur_pixel(void *ptr, int which ATTRIBUTE_UNUSED, SDL_Surface *ca
     for (j = -2; j < 3; j++)
     {
       //Add the pixels around the current one wieghted 
-      SDL_GetRGB(api->getpixel(last, x + i, y + j), last->format, &temp[0], &temp[1], &temp[2]);
+      SDL_GetRGB(api->getpixel(last, x + i, y + j), SDL_GetPixelFormatDetails(last->format),
+                 SDL_GetSurfacePalette(last), &temp[0], &temp[1], &temp[2]);
       for (k = 0; k < 3; k++)
       {
         blurValue[k] += temp[k] * weight[i + 2][j + 2];
@@ -193,7 +194,9 @@ static void do_blur_pixel(void *ptr, int which ATTRIBUTE_UNUSED, SDL_Surface *ca
   {
     blurValue[k] /= 273;
   }
-  api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, blurValue[0], blurValue[1], blurValue[2]));
+  api->putpixel(canvas, x, y,
+                SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), blurValue[0],
+                           blurValue[1], blurValue[2]));
 }
 
 // Do the effect for the full image
@@ -221,12 +224,13 @@ static void do_blur_brush(void *ptr, int which, SDL_Surface *canvas, SDL_Surface
 {
   int xx, yy;
   magic_api *api = (magic_api *) ptr;
+  float p = api->pressure;
 
-  for (yy = y - blur_RADIUS; yy < y + blur_RADIUS; yy++)
+  for (yy = y - blur_RADIUS * p; yy < y + blur_RADIUS * p; yy++)
   {
-    for (xx = x - blur_RADIUS; xx < x + blur_RADIUS; xx++)
+    for (xx = x - blur_RADIUS * p; xx < x + blur_RADIUS * p; xx++)
     {
-      if (api->in_circle(xx - x, yy - y, blur_RADIUS) && !api->touched(xx, yy))
+      if (api->in_circle(xx - x, yy - y, blur_RADIUS * p) && !api->touched(xx, yy))
       {
         do_blur_pixel(api, which, canvas, last, xx, yy);
       }
@@ -300,7 +304,7 @@ void blur_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   {
     if (blur_snd_effect[i] != NULL)
     {
-      Mix_FreeChunk(blur_snd_effect[i]);
+      MIX_DestroyAudio(blur_snd_effect[i]);
     }
   }
 }

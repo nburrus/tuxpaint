@@ -29,15 +29,15 @@
 #include <stdio.h>
 #include <string.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 /* Our globals: */
 
 #define KAL_MAX_SIZE 6
 #define KAL_DEF_SIZE 4
 
-static Mix_Chunk *kalidescope_snd;
+static MIX_Audio *kalidescope_snd;
 static Uint8 kalidescope_r, kalidescope_g, kalidescope_b;
 static Uint8 kalidescope_sz = (KAL_DEF_SIZE * 2);
 static int square_size = 128;
@@ -100,7 +100,7 @@ int kalidescope_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, U
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/kaleidoscope.ogg", api->data_directory);
-  kalidescope_snd = Mix_LoadWAV(fname);
+  kalidescope_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -195,14 +195,17 @@ static void do_kalidescope(void *ptr, int which, SDL_Surface *canvas, SDL_Surfac
   int xx, yy;
   int i, j;
   Uint32 colr;
+  int kalidescope_sz_p = max(1, (int)(kalidescope_sz * api->pressure));
 
-  colr = SDL_MapRGB(canvas->format, kalidescope_r, kalidescope_g, kalidescope_b);
+  colr =
+    SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), kalidescope_r, kalidescope_g,
+               kalidescope_b);
 
-  for (yy = -kalidescope_sz; yy < kalidescope_sz; yy++)
+  for (yy = -kalidescope_sz_p; yy < kalidescope_sz_p; yy++)
   {
-    for (xx = -kalidescope_sz; xx < kalidescope_sz; xx++)
+    for (xx = -kalidescope_sz_p; xx < kalidescope_sz_p; xx++)
     {
-      if (api->in_circle(xx, yy, kalidescope_sz))
+      if (api->in_circle(xx, yy, kalidescope_sz_p))
       {
         api->putpixel(canvas, x + xx, y + yy, colr);
 
@@ -268,7 +271,7 @@ void kalidescope_release(magic_api *api, int which ATTRIBUTE_UNUSED,
 void kalidescope_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (kalidescope_snd != NULL)
-    Mix_FreeChunk(kalidescope_snd);
+    MIX_DestroyAudio(kalidescope_snd);
 }
 
 // Use colors:

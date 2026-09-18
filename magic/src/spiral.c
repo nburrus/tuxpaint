@@ -28,10 +28,12 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #include <string.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 enum
 {
@@ -70,7 +72,7 @@ const char *spiral_icons[NUM_TOOLS] = {
   "concentric-square.png",
 };
 
-static Mix_Chunk *spiral_snd[NUM_TOOLS];
+static MIX_Audio *spiral_snd[NUM_TOOLS];
 static int spiral_thickness = 2;
 Uint32 spiral_color;
 int spiral_cx, spiral_cy, spiral_has_dragged;
@@ -131,7 +133,7 @@ int spiral_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
   for (i = 0; i < NUM_TOOLS; i++)
   {
     snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, spiral_sounds[i]);
-    spiral_snd[i] = Mix_LoadWAV(fname);
+    spiral_snd[i] = MIX_LoadAudio(api->mmixer, fname, 0);
   }
 
   return (1);
@@ -196,7 +198,7 @@ static void do_spiral_render(void *ptr, int which,
     dest.w = thick;
     dest.h = thick;
 
-    SDL_FillRect(canvas, &dest, spiral_color);
+    SDL_FillSurfaceRect(canvas, &dest, spiral_color);
   }
 }
 
@@ -386,7 +388,7 @@ void spiral_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 
   for (i = 0; i < NUM_TOOLS; i++)
     if (spiral_snd[i] != NULL)
-      Mix_FreeChunk(spiral_snd[i]);
+      MIX_DestroyAudio(spiral_snd[i]);
 }
 
 void spiral_set_color(magic_api *api ATTRIBUTE_UNUSED,
@@ -394,7 +396,7 @@ void spiral_set_color(magic_api *api ATTRIBUTE_UNUSED,
                       SDL_Surface *last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g,
                       Uint8 b, SDL_Rect *update_rect ATTRIBUTE_UNUSED)
 {
-  spiral_color = SDL_MapRGB(canvas->format, r, g, b);
+  spiral_color = SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b);
 }
 
 int spiral_requires_colors(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)

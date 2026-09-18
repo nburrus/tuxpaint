@@ -33,12 +33,12 @@
 #include <string.h>
 #include <stdlib.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 /* Our globals: */
 
-static Mix_Chunk *glasstile_snd;
+static MIX_Audio *glasstile_snd;
 
 // Prototypes
 Uint32 glasstile_api_version(void);
@@ -84,7 +84,7 @@ int glasstile_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED /* F
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/glasstile.ogg", api->data_directory);
-  glasstile_snd = Mix_LoadWAV(fname);
+  glasstile_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   glasstile_hit = NULL;
   glasstile_hit_ysize = 0;
@@ -170,10 +170,14 @@ static void do_glasstile(void *ptr, int which ATTRIBUTE_UNUSED, SDL_Surface *can
   {
     for (xx = -GT_SIZE; xx < GT_SIZE; xx = xx + 2)
     {
-      SDL_GetRGB(api->getpixel(last, x + xx, y + yy), last->format, &r1, &g1, &b1);
-      SDL_GetRGB(api->getpixel(last, x + xx + 1, y + yy), last->format, &r2, &g2, &b2);
-      SDL_GetRGB(api->getpixel(last, x + xx, y + yy + 1), last->format, &r3, &g3, &b3);
-      SDL_GetRGB(api->getpixel(last, x + xx + 1, y + yy + 1), last->format, &r4, &g4, &b4);
+      SDL_GetRGB(api->getpixel(last, x + xx, y + yy), SDL_GetPixelFormatDetails(last->format),
+                 SDL_GetSurfacePalette(last), &r1, &g1, &b1);
+      SDL_GetRGB(api->getpixel(last, x + xx + 1, y + yy), SDL_GetPixelFormatDetails(last->format),
+                 SDL_GetSurfacePalette(last), &r2, &g2, &b2);
+      SDL_GetRGB(api->getpixel(last, x + xx, y + yy + 1), SDL_GetPixelFormatDetails(last->format),
+                 SDL_GetSurfacePalette(last), &r3, &g3, &b3);
+      SDL_GetRGB(api->getpixel(last, x + xx + 1, y + yy + 1), SDL_GetPixelFormatDetails(last->format),
+                 SDL_GetSurfacePalette(last), &r4, &g4, &b4);
 
       r = (r1 + r2 + r3 + r4) >> 2;
       g = (g1 + g2 + g3 + g4) >> 2;
@@ -192,7 +196,7 @@ static void do_glasstile(void *ptr, int which ATTRIBUTE_UNUSED, SDL_Surface *can
         b = max(0, b - 64);
       }
 
-      rgb = SDL_MapRGB(canvas->format, r, g, b);
+      rgb = SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b);
 
       xl = (xx / 3) - GT_SIZE + (GT_SIZE / 3);
       xr = (xx / 3) + (GT_SIZE * 2) / 3;
@@ -305,7 +309,7 @@ void glasstile_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   int y;
 
   if (glasstile_snd != NULL)
-    Mix_FreeChunk(glasstile_snd);
+    MIX_DestroyAudio(glasstile_snd);
 
   if (glasstile_hit != NULL)
   {

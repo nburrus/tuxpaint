@@ -59,6 +59,14 @@
 #define mbstowcs(wtok, tok, size) MultiByteToWideChar(CP_UTF8,0,tok,-1,wtok,size)
 #endif
 
+
+/*
+ * SDL3 forbids writing '\b', '\t', etc inside event.text.text
+ */
+
+char im_text_command[2];
+
+
 /* ***************************************************************************
 * I18N GETTEXT
 */
@@ -626,7 +634,7 @@ static int charmap_load(CHARMAP *cm, const char *path)
       if (charmap_add(cm, section, buf, unicode, flag))
       {
 #ifndef __BEOS__
-#if defined __GLIBC__ && __GLIBC__ == 2 && __GLIBC_MINOR__ >=2 || __GLIBC__ > 2 || __APPLE__
+#if defined __GLIBC__ && __GLIBC__ == 2 && __GLIBC_MINOR__ >=2 || __GLIBC__ > 2 || SDL_PLATFORM_APPLE
         size_t i = 0;
 
         fwprintf(stderr, L"Unable to add sequence '%ls', unicode ", buf);
@@ -727,7 +735,7 @@ static const wchar_t *charmap_search(CHARMAP *cm, wchar_t *s)
 */
 static int im_event_c(IM_DATA *im, SDL_Event event)
 {
-  SDL_Keysym ks = event.key.keysym;
+  SDL_KeyboardEvent ks = event.key;
 
   /* Handle event requests */
   im->s[0] = L'\0';
@@ -735,7 +743,7 @@ static int im_event_c(IM_DATA *im, SDL_Event event)
     return 0;
 
   /* Handle key stroke */
-  switch (ks.sym)
+  switch (ks.key)
   {
   case SDLK_BACKSPACE:
     im->s[0] = L'\b';
@@ -752,12 +760,13 @@ static int im_event_c(IM_DATA *im, SDL_Event event)
   default:
     mbstowcs(im->s, event.text.text, 16);
     //default:             wcsncpy(im->s , event.text.text, 16);
+
+    //im->s[1] = L'\0';
+#ifdef IM_DEBUG
+    printf("im->s %ls, event.text.text %s\n", im->s, event.text.text);
+#endif
   }
 
-  //im->s[1] = L'\0';
-#ifdef IM_DEBUG
-  printf("im->s %ls, event.text.text %s\n", im->s, event.text.text);
-#endif
   im->buf[0] = L'\0';
 
   return 0;
@@ -791,19 +800,19 @@ int im_read(IM_DATA *im, SDL_Event event)
   /* FIXME SDL2: This adds text to events that are not meant to carry text.
      Right procedure would be to modify the different im_event_LL() functions,
      but for now letting as this as it is what the functions expect. */
-  switch (event.key.keysym.sym)
+  switch (event.key.key)
   {
   case SDLK_BACKSPACE:
-    event.text.text[0] = L'\b';
-    event.text.text[1] = L'\0';
+    im_text_command[0] = L'\b';
+    im_text_command[1] = L'\0';
     break;
   case SDLK_RETURN:
-    event.text.text[0] = L'\r';
-    event.text.text[1] = L'\0';
+    im_text_command[0] = L'\r';
+    im_text_command[1] = L'\0';
     break;
   case SDLK_TAB:
-    event.text.text[0] = L'\t';
-    event.text.text[1] = L'\0';
+    im_text_command[0] = L'\t';
+    im_text_command[1] = L'\0';
     break;
   }
 
@@ -842,8 +851,8 @@ static void im_event(IM_DATA *im)
 {
   SDL_Event event;
 
-  event.key.keysym.sym = 0;
-  event.text.text[0] = '\0';
+  event.key.key = 0;
+  im_text_command[0] = '\0';
 
   im_read(im, event);
 }
@@ -938,7 +947,7 @@ static void im_fullreset(IM_DATA *im)
 */
 static int im_event_zh_tw(IM_DATA *im, SDL_Event event)
 {
-  SDL_Keysym ks = event.key.keysym;
+  SDL_KeyboardEvent ks = event.key;
   static const char *lang_file = IMDIR "zh_tw.im";
   enum
   { SEC_ENGLISH, SEC_ZH_TW, SEC_TOTAL };
@@ -999,7 +1008,7 @@ static int im_event_zh_tw(IM_DATA *im, SDL_Event event)
 
 
   /* Handle keys */
-  switch (ks.sym)
+  switch (ks.key)
   {
     /* Keys to ignore */
   case SDLK_NUMLOCKCLEAR:
@@ -1047,20 +1056,26 @@ static int im_event_zh_tw(IM_DATA *im, SDL_Event event)
 
     /* Actual character processing */
   default:
-    if (event.type == SDL_TEXTINPUT || ks.sym == SDLK_BACKSPACE || ks.sym == SDLK_RETURN || ks.sym == SDLK_TAB)
+    if (event.type == SDL_EVENT_TEXT_INPUT || ks.key == SDLK_BACKSPACE || ks.key == SDLK_RETURN || ks.key == SDLK_TAB)
     {
       /* English mode */
       if (cm.section == SEC_ENGLISH)
       {
-        mbstowcs(im->s, event.text.text, 16);
-//        im->s[0] = event.text.text[0];
-//        im->s[1] = L'\0';
+        if (event.type != SDL_EVENT_TEXT_INPUT)
+          mbstowcs(im->s, im_text_command, 16);
+        else
+          mbstowcs(im->s, event.text.text, 16);
         im->buf[0] = L'\0';
       }
       /* ZH_TW mode */
       else
       {
-        wchar_t u = event.text.text[0];
+        wchar_t u;
+
+        if (event.type != SDL_EVENT_TEXT_INPUT)
+          u = im_text_command[0];
+        else
+          u = event.text.text[0];
 
         im->s[0] = L'\0';       /* Zero-out output string */
         wcsncat(im->buf, &u, 1);        /* Copy new character */
@@ -1161,7 +1176,7 @@ static int im_event_zh_tw(IM_DATA *im, SDL_Event event)
 */
 static int im_event_th(IM_DATA *im, SDL_Event event)
 {
-  SDL_Keysym ks = event.key.keysym;
+  SDL_KeyboardEvent ks = event.key;
   static const char *lang_file = IMDIR "th.im";
   enum
   { SEC_ENGLISH, SEC_THAI, SEC_TOTAL };
@@ -1222,7 +1237,7 @@ static int im_event_th(IM_DATA *im, SDL_Event event)
 
 
   /* Handle keys */
-  switch (ks.sym)
+  switch (ks.key)
   {
     /* Keys to ignore */
   case SDLK_NUMLOCKCLEAR:
@@ -1232,7 +1247,6 @@ static int im_event_th(IM_DATA *im, SDL_Event event)
   case SDLK_RSHIFT:
   case SDLK_LCTRL:
   case SDLK_RCTRL:
-  case SDLK_LALT:
   case SDLK_LGUI:
   case SDLK_RGUI:
   case SDLK_MENU:
@@ -1242,6 +1256,8 @@ static int im_event_th(IM_DATA *im, SDL_Event event)
 
     /* Right-Alt mapped to mode-switch */
   case SDLK_RALT:
+    /* FIXME SDL3: LALT added as RALT seems do nothing? */
+  case SDLK_LALT:
     cm.section = ((cm.section + 1) % SEC_TOTAL);        /* Change section */
     im_softreset(im);           /* Soft reset */
 
@@ -1270,102 +1286,111 @@ static int im_event_th(IM_DATA *im, SDL_Event event)
 
     /* Actual character processing */
   default:
-    /* English mode */
-    if (cm.section == SEC_ENGLISH)
+    if (event.type == SDL_EVENT_TEXT_INPUT || ks.key == SDLK_BACKSPACE || ks.key == SDLK_RETURN || ks.key == SDLK_TAB)
     {
-      //        im->s[0] = event.text.text[0];
-      mbstowcs(im->s, event.text.text, 16);
-      //im->s[1] = L'\0';
-      im->buf[0] = L'\0';
-    }
-    /* Thai mode */
-    else
-    {
-      wchar_t u = event.text.text[0];
-
-      im->s[0] = L'\0';         /* Zero-out output string */
-      wcsncat(im->buf, &u, 1);  /* Copy new character */
-
-      /* Translate the characters */
-      im->redraw = 0;
-      while (1)
+      /* English mode */
+      if (cm.section == SEC_ENGLISH)
       {
-        const wchar_t *us = charmap_search(&cm, im->buf);
-
-#ifdef IM_DEBUG
-        wprintf(L"  [%8ls] [%8ls] %2d %2d\n", im->s, im->buf, wcslen(im->s), wcslen(im->buf));
-#endif
-
-        /* Match was found? */
-        if (us && wcslen(us))
-        {
-#ifdef IM_DEBUG
-          wprintf(L"    1\n");
-#endif
-
-          wcscat(im->s, us);
-
-          /* Final match */
-          if (cm.match_is_final)
-          {
-            wcs_lshift(im->buf, cm.match_count);
-            cm.match_count = 0;
-            cm.match_is_final = 0;
-          }
-          /* May need to be overwritten next time */
-          else
-          {
-            im->redraw += wcslen(us);
-            break;
-          }
-        }
-        /* No match, but more data is in the buffer */
-        else if (wcslen(im->buf) > 0)
-        {
-          /* If the input character has no state, it's its own state */
-          if (cm.match_count == 0)
-          {
-#ifdef IM_DEBUG
-            wprintf(L"    2a\n");
-#endif
-            wcsncat(im->s, im->buf, 1);
-            wcs_lshift(im->buf, 1);
-            cm.match_is_final = 0;
-          }
-          /* If the matched characters didn't consume all, it's own state */
-          else if ((size_t)cm.match_count != wcslen(im->buf))
-          {
-#ifdef IM_DEBUG
-            wprintf(L"    2b (%2d)\n", cm.match_count);
-#endif
-            wcsncat(im->s, im->buf, 1);
-            wcs_lshift(im->buf, 1);
-            cm.match_is_final = 0;
-          }
-          /* Otherwise it's just a part of a future input */
-          else
-          {
-#ifdef IM_DEBUG
-            wprintf(L"    2c (%2d)\n", cm.match_count);
-#endif
-            wcscat(im->s, im->buf);
-            cm.match_is_final = 0;
-            im->redraw += wcslen(im->buf);
-            break;
-          }
-        }
-        /* No match and no more data in the buffer */
+        if (ks.key == SDLK_BACKSPACE || ks.key == SDLK_RETURN || ks.key == SDLK_TAB)
+          mbstowcs(im->s, im_text_command, 16);
         else
-        {
-#ifdef IM_DEBUG
-          wprintf(L"    3\n");
-#endif
-          break;
-        }
+          mbstowcs(im->s, event.text.text, 16);
+        im->buf[0] = L'\0';
+      }
+      /* Thai mode */
+      else
+      {
+        wchar_t u;
 
-        /* Is this the end? */
-        if (cm.match_is_final)
-          break;
+        if (ks.key == SDLK_BACKSPACE || ks.key == SDLK_RETURN || ks.key == SDLK_TAB)
+          u = im_text_command[0];
+        else
+          u = event.text.text[0];
+
+        im->s[0] = L'\0';       /* Zero-out output string */
+        wcsncat(im->buf, &u, 1);        /* Copy new character */
+
+        /* Translate the characters */
+        im->redraw = 0;
+        while (1)
+        {
+          const wchar_t *us = charmap_search(&cm, im->buf);
+
+#ifdef IM_DEBUG
+          wprintf(L"  [%8ls] [%8ls] %2d %2d\n", im->s, im->buf, wcslen(im->s), wcslen(im->buf));
+#endif
+
+          /* Match was found? */
+          if (us && wcslen(us))
+          {
+#ifdef IM_DEBUG
+            wprintf(L"    1\n");
+#endif
+
+            wcscat(im->s, us);
+
+            /* Final match */
+            if (cm.match_is_final)
+            {
+              wcs_lshift(im->buf, cm.match_count);
+              cm.match_count = 0;
+              cm.match_is_final = 0;
+            }
+            /* May need to be overwritten next time */
+            else
+            {
+              im->redraw += wcslen(us);
+              break;
+            }
+          }
+          /* No match, but more data is in the buffer */
+          else if (wcslen(im->buf) > 0)
+          {
+            /* If the input character has no state, it's its own state */
+            if (cm.match_count == 0)
+            {
+#ifdef IM_DEBUG
+              wprintf(L"    2a\n");
+#endif
+              wcsncat(im->s, im->buf, 1);
+              wcs_lshift(im->buf, 1);
+              cm.match_is_final = 0;
+            }
+            /* If the matched characters didn't consume all, it's own state */
+            else if ((size_t)cm.match_count != wcslen(im->buf))
+            {
+#ifdef IM_DEBUG
+              wprintf(L"    2b (%2d)\n", cm.match_count);
+#endif
+              wcsncat(im->s, im->buf, 1);
+              wcs_lshift(im->buf, 1);
+              cm.match_is_final = 0;
+            }
+            /* Otherwise it's just a part of a future input */
+            else
+            {
+#ifdef IM_DEBUG
+              wprintf(L"    2c (%2d)\n", cm.match_count);
+#endif
+              wcscat(im->s, im->buf);
+              cm.match_is_final = 0;
+              im->redraw += wcslen(im->buf);
+              break;
+            }
+          }
+          /* No match and no more data in the buffer */
+          else
+          {
+#ifdef IM_DEBUG
+            wprintf(L"    3\n");
+#endif
+            break;
+          }
+
+          /* Is this the end? */
+          if (cm.match_is_final)
+            break;
+        }
       }
     }
   }
@@ -1381,7 +1406,7 @@ static int im_event_th(IM_DATA *im, SDL_Event event)
 */
 static int im_event_ja(IM_DATA *im, SDL_Event event)
 {
-  SDL_Keysym ks = event.key.keysym;
+  SDL_KeyboardEvent ks = event.key;
   static const char *lang_file = IMDIR "ja.im";
   enum
   { SEC_ENGLISH, SEC_HIRAGANA, SEC_KATAKANA, SEC_TOTAL };
@@ -1442,7 +1467,7 @@ static int im_event_ja(IM_DATA *im, SDL_Event event)
 
 
   /* Handle keys */
-  switch (ks.sym)
+  switch (ks.key)
   {
     /* Keys to ignore */
   case SDLK_NUMLOCKCLEAR:
@@ -1493,20 +1518,26 @@ static int im_event_ja(IM_DATA *im, SDL_Event event)
 
     /* Actual character processing */
   default:
-    if (event.type == SDL_TEXTINPUT || ks.sym == SDLK_BACKSPACE || ks.sym == SDLK_RETURN || ks.sym == SDLK_TAB)
+    if (event.type == SDL_EVENT_TEXT_INPUT || ks.key == SDLK_BACKSPACE || ks.key == SDLK_RETURN || ks.key == SDLK_TAB)
     {
       /* English mode */
       if (cm.section == SEC_ENGLISH)
       {
-        mbstowcs(im->s, event.text.text, 16);
-//        im->s[0] = event.text.text[0];
-//      im->s[1] = L'\0';
+        if (event.type != SDL_EVENT_TEXT_INPUT)
+          mbstowcs(im->s, im_text_command, 16);
+        else
+          mbstowcs(im->s, event.text.text, 16);
         im->buf[0] = L'\0';
       }
       /* Hiragana and Katakana modes */
       else
       {
-        wchar_t u = event.text.text[0];
+        wchar_t u;
+
+        if (event.type != SDL_EVENT_TEXT_INPUT)
+          u = im_text_command[0];
+        else
+          u = event.text.text[0];
 
         im->s[0] = L'\0';       /* Zero-out output string */
         wcsncat(im->buf, &u, 1);        /* Copy new character */
@@ -1631,7 +1662,7 @@ static int im_event_ko_isvowel(CHARMAP *cm, wchar_t c)
 */
 static int im_event_ko(IM_DATA *im, SDL_Event event)
 {
-  SDL_Keysym ks = event.key.keysym;
+  SDL_KeyboardEvent ks = event.key;
   static const char *lang_file = IMDIR "ko.im";
   enum
   { SEC_ENGLISH, SEC_HANGUL, SEC_TOTAL };
@@ -1692,7 +1723,7 @@ static int im_event_ko(IM_DATA *im, SDL_Event event)
 
 
   /* Handle keys */
-  switch (ks.sym)
+  switch (ks.key)
   {
     /* Keys to ignore */
   case SDLK_NUMLOCKCLEAR:
@@ -1735,25 +1766,33 @@ static int im_event_ko(IM_DATA *im, SDL_Event event)
       wcs_pull(im->buf, 1);
       if (im->redraw > 0)
         im->redraw--;
-      event.text.text[0] = L'\0';
+      im_text_command[0] = L'\0';
     }
     FALL_THROUGH;               /* continue processing: */
 
     /* Actual character processing */
   default:
-    if (event.type == SDL_TEXTINPUT || ks.sym == SDLK_BACKSPACE || ks.sym == SDLK_RETURN || ks.sym == SDLK_TAB)
+    if (event.type == SDL_EVENT_TEXT_INPUT || ks.key == SDLK_BACKSPACE || ks.key == SDLK_RETURN || ks.key == SDLK_TAB)
     {
       /* English mode */
       if (cm.section == SEC_ENGLISH)
       {
-        mbstowcs(im->s, event.text.text, 16);
+        if (event.type != SDL_EVENT_TEXT_INPUT)
+          mbstowcs(im->s, im_text_command, 16);
+        else
+          mbstowcs(im->s, event.text.text, 16);
         im->buf[0] = L'\0';
       }
       /* Hangul mode */
       else
       {
-        wchar_t u = event.text.text[0];
+        wchar_t u;
         wchar_t *bp = im->buf;
+
+        if (event.type != SDL_EVENT_TEXT_INPUT)
+          u = im_text_command[0];
+        else
+          u = event.text.text[0];
 
         im->s[0] = L'\0';       /* Zero-out output string */
         wcsncat(bp, &u, 1);     /* Copy new character */

@@ -13,8 +13,8 @@
 #include <libintl.h>            // For "gettext()"
 
 #include "tp_magic_api.h"       // Tux Paint "Magic" tool API header
-#include "SDL_image.h"          // For IMG_Load(), to load our PNG icon
-#include "SDL_mixer.h"          // For Mix_LoadWAV(), to load our sound effects
+#include <SDL3_image/SDL_image.h>          // For IMG_Load(), to load our PNG icon
+#include <SDL3_mixer/SDL_mixer.h>          // For Mix_LoadWAV(), to load our sound effects
 
 
 /* Tool Enumerations: */

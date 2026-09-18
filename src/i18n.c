@@ -51,8 +51,7 @@
 #endif
 
 #ifdef __ANDROID__
-#include "SDL2/SDL.h"
-#include "../../../SDL2/src/core/android/SDL_android.h"
+#include <SDL3/SDL.h>
 #include "jni.h"
 // since setlocale on the Android is not supported well,
 // setlocale cannot get current default locale of the device.
@@ -834,7 +833,7 @@ static const char *language_to_locale(const char *langstr)
 }
 
 
-#if defined(__APPLE__)
+#if defined(SDL_PLATFORM_APPLE)
 
 /**
  * For a given locale, return the known locale that matches it closest, or exit
@@ -1160,7 +1159,7 @@ static void set_current_language(const char *restrict loc, int *ptr_num_wished_l
 #endif
 
   /* Old version of glibc does not have bind_textdomain_codeset() */
-#if defined(_WIN32) || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 2) || __GLIBC__ > 2 || defined(__NetBSD__) || __APPLE__
+#if defined(_WIN32) || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 2) || __GLIBC__ > 2 || defined(__NetBSD__) || SDL_PLATFORM_APPLE
   bind_textdomain_codeset("tuxpaint", "UTF-8");
 #endif
   textdomain("tuxpaint");
@@ -1282,7 +1281,7 @@ void setup_i18n(const char *restrict lang, const char *restrict locale, int *num
   }
   else
   {
-#if defined(__APPLE__)
+#if defined(SDL_PLATFORM_APPLE)
     locale = locale_to_closest_locale(apple_locale());
 #else
     locale = "";

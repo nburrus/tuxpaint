@@ -35,8 +35,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 #include <math.h>
 
 enum
@@ -77,7 +77,7 @@ int smooth_sizes[NUM_TOOLS] = {
   8,
 };
 
-static Mix_Chunk *smooth_snds[NUM_TOOLS];
+static MIX_Audio *smooth_snds[NUM_TOOLS];
 static Uint32 smooth_color;
 static int smooth_size;
 
@@ -135,7 +135,7 @@ int smooth_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
   for (i = 0; i < NUM_TOOLS; i++)
   {
     snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, smooth_snd_fnames[i]);
-    smooth_snds[i] = Mix_LoadWAV(fname);
+    smooth_snds[i] = MIX_LoadAudio(api->mmixer, fname, 0);
   }
 
   return (1);
@@ -199,7 +199,7 @@ static void smooth_linecb(void *ptr, int which, SDL_Surface *canvas, SDL_Surface
     dest.w = smooth_size;
     dest.h = smooth_size;
 
-    SDL_FillRect(canvas, &dest, smooth_color);
+    SDL_FillSurfaceRect(canvas, &dest, smooth_color);
   }
   else if (which == TOOL_LOOPS)
   {
@@ -209,7 +209,7 @@ static void smooth_linecb(void *ptr, int which, SDL_Surface *canvas, SDL_Surface
     dest.w = 2;
     dest.h = 2;
 
-    SDL_FillRect(canvas, &dest, smooth_color);
+    SDL_FillSurfaceRect(canvas, &dest, smooth_color);
   }
   else if (which == TOOL_SQUIGGLES)
   {
@@ -224,6 +224,7 @@ static void smooth_squiggle_linecb(void *ptr, int which,
 {
   magic_api *api = (magic_api *) ptr;
   int xx1, yy1, xx2, yy2, i;
+  int smooth_size_p = max(1, (int)(smooth_size * api->pressure));
 
   xx2 = x + (cos(smooth_squiggle_angle * M_PI / 180.0) * smooth_squiggle_rad);
   yy2 = y - (sin(smooth_squiggle_angle * M_PI / 180.0) * smooth_squiggle_rad);
@@ -236,17 +237,17 @@ static void smooth_squiggle_linecb(void *ptr, int which,
     if (which == TOOL_LOOPS)
     {
       smooth_squiggle_angle += 5;
-      smooth_squiggle_rad = LOOP_RAD_CALC;
+      smooth_squiggle_rad = max(10, (int)(smooth_size * 10 * api->pressure));
     }
     else if (which == TOOL_SQUIGGLES)
     {
       smooth_squiggle_angle += (rand() % 5) + 5;
-      smooth_squiggle_rad += ((rand() % 3 * smooth_size) - smooth_size);
+      smooth_squiggle_rad += ((rand() % 3 * smooth_size_p) - smooth_size_p);
       if (smooth_squiggle_rad < 5)
       {
         smooth_squiggle_rad += 5;
       }
-      else if (smooth_squiggle_rad >= 15 * smooth_size)
+      else if (smooth_squiggle_rad >= 15 * smooth_size_p)
       {
         smooth_squiggle_rad -= ((rand() % 10) + 10);
       }
@@ -353,7 +354,10 @@ void smooth_click(magic_api *api,
   else if (which == TOOL_LOOPS)
   {
     smooth_squiggle_angle = 0;
-    smooth_squiggle_rad = LOOP_RAD_CALC;
+    if (api->pressure < 1.0)
+      smooth_squiggle_rad = max(10, (int)(smooth_size * 10 * api->pressure));
+    else
+      smooth_squiggle_rad = LOOP_RAD_CALC;
     smooth_drag(api, which, canvas, last, x, y, x, y, update_rect);
   }
 }
@@ -425,7 +429,7 @@ void smooth_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   for (i = 0; i < NUM_TOOLS; i++)
   {
     if (smooth_snds[i] != NULL)
-      Mix_FreeChunk(smooth_snds[i]);
+      MIX_DestroyAudio(smooth_snds[i]);
   }
 }
 
@@ -434,7 +438,7 @@ void smooth_set_color(magic_api *api ATTRIBUTE_UNUSED,
                       SDL_Surface *last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g,
                       Uint8 b, SDL_Rect *update_rect ATTRIBUTE_UNUSED)
 {
-  smooth_color = SDL_MapRGB(canvas->format, r, g, b);
+  smooth_color = SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b);
 }
 
 int smooth_requires_colors(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)

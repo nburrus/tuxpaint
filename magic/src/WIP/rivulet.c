@@ -18,8 +18,8 @@
 #include <math.h>
 
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 // #define DEBUG_RADIUS
 // #define DEBUG_ALPHA
@@ -153,16 +153,16 @@ void rivulet_shutdown(magic_api *api ATTRIBUTE_UNUSED)
     Mix_FreeChunk(snd_effect);
 
   if (rivulet_img_brush_add != NULL)
-    SDL_FreeSurface(rivulet_img_brush_add);
+    SDL_DestroySurface(rivulet_img_brush_add);
 
   if (rivulet_img_brush_alpha != NULL)
-    SDL_FreeSurface(rivulet_img_brush_alpha);
+    SDL_DestroySurface(rivulet_img_brush_alpha);
 
   if (rivulet_img_brush_sub != NULL)
-    SDL_FreeSurface(rivulet_img_brush_sub);
+    SDL_DestroySurface(rivulet_img_brush_sub);
 
   if (rivulet_img_angles != NULL)
-    SDL_FreeSurface(rivulet_img_angles);
+    SDL_DestroySurface(rivulet_img_angles);
 
   if (riv_radii != NULL)
     free(riv_radii);
@@ -434,10 +434,7 @@ void rivulet_switchin(magic_api *api ATTRIBUTE_UNUSED,
   zero_riv_arrays(canvas);
 
   if (rivulet_snapshot == NULL)
-    rivulet_snapshot =
-      SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->w, canvas->h,
-                           canvas->format->BitsPerPixel,
-                           canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+    rivulet_snapshot = SDL_CreateSurface(canvas->w, canvas->h, canvas->format->format);
 
   if (rivulet_snapshot != NULL)
     SDL_BlitSurface(canvas, NULL, rivulet_snapshot, NULL);

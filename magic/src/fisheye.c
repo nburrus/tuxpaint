@@ -28,12 +28,13 @@
   Last updated: October 7, 2024
 */
 
+#include <stdio.h>
 #include <math.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
-Mix_Chunk *fisheye_snd;
+MIX_Audio *fisheye_snd;
 int last_x, last_y;
 int fisheye_radius = 80;
 
@@ -90,7 +91,7 @@ int fisheye_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/fisheye.ogg", api->data_directory);
-  fisheye_snd = Mix_LoadWAV(fname);
+  fisheye_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -145,7 +146,7 @@ void fisheye_release(magic_api *api ATTRIBUTE_UNUSED,
 
 void fisheye_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
-  Mix_FreeChunk(fisheye_snd);
+  MIX_DestroyAudio(fisheye_snd);
 }
 
 // do-fisheye
@@ -158,36 +159,28 @@ void fisheye_draw(void *ptr, int which ATTRIBUTE_UNUSED, SDL_Surface *canvas,
   SDL_Rect rect, temp_rect;
   int xx, yy;
   unsigned short int i;
+  int fisheye_radius_p = max(10, ((int)(fisheye_radius * api->pressure) / 2) * 2); //force it to be even
 
-  if (api->in_circle(last_x - x, last_y - y, fisheye_radius))
+  if (api->in_circle(last_x - x, last_y - y, fisheye_radius_p))
     return;
 
   last_x = x;
   last_y = y;
 
-  oryg =
-    SDL_CreateRGBSurface(SDL_SWSURFACE, fisheye_radius, fisheye_radius,
-                         canvas->format->BitsPerPixel, canvas->format->Rmask,
-                         canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+  oryg = SDL_CreateSurface(fisheye_radius_p, fisheye_radius_p, canvas->format);
 
-  output =
-    SDL_CreateRGBSurface(SDL_SWSURFACE, fisheye_radius, fisheye_radius,
-                         canvas->format->BitsPerPixel, canvas->format->Rmask,
-                         canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+  output = SDL_CreateSurface(fisheye_radius_p, fisheye_radius_p, canvas->format);
 
-  rect.x = x - (fisheye_radius / 2);
-  rect.y = y - (fisheye_radius / 2);
-  rect.w = rect.h = fisheye_radius;
+  rect.x = x - (fisheye_radius_p / 2);
+  rect.y = y - (fisheye_radius_p / 2);
+  rect.w = rect.h = fisheye_radius_p;
 
   SDL_BlitSurface(canvas, &rect, oryg, NULL);   //here we have a piece of source image. Now we've to scale it (keeping aspect ratio)
 
   //do vertical fisheye
-  for (i = 0; i < fisheye_radius / 2; i++)
+  for (i = 0; i < fisheye_radius_p / 2; i++)
   {
-    temp_src =
-      SDL_CreateRGBSurface(SDL_SWSURFACE, 1, fisheye_radius,
-                           canvas->format->BitsPerPixel,
-                           canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+    temp_src = SDL_CreateSurface(1, fisheye_radius_p, canvas->format);
 
     //let's take a smooth bar of scaled bitmap and copy it to temp
     //left side first
@@ -197,94 +190,85 @@ void fisheye_draw(void *ptr, int which ATTRIBUTE_UNUSED, SDL_Surface *canvas,
 
     SDL_BlitSurface(oryg, &rect, temp_src, NULL);       //this bar is copied to temp_src
 
-    temp_dest =
-      SDL_CreateRGBSurface(SDL_SWSURFACE, 1, fisheye_radius + 2 * i,
-                           canvas->format->BitsPerPixel,
-                           canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+    temp_dest = SDL_CreateSurface(1, fisheye_radius_p + 2 * i, canvas->format);
 
-    temp_dest = api->scale(temp_src, 1, fisheye_radius + 2 * i, 0);     //temp_dest stores scaled temp_src
+    temp_dest = api->scale(temp_src, 1, fisheye_radius_p + 2 * i, 0);     //temp_dest stores scaled temp_src
 
     temp_rect.x = 0;
     temp_rect.y = i;
     temp_rect.w = 1;
-    temp_rect.h = fisheye_radius;
+    temp_rect.h = fisheye_radius_p;
 
     SDL_BlitSurface(temp_dest, &temp_rect, output, &rect);      //let's copy it to output
 
     //right side then
 
-    rect.x = (fisheye_radius - 1) - i;
+    rect.x = (fisheye_radius_p - 1) - i;
 
     SDL_BlitSurface(oryg, &rect, temp_src, NULL);       //this bar is copied to temp_src //OK
 
-    temp_dest = api->scale(temp_src, 1, fisheye_radius + 2 * i, 0);     //temp_dest stores scaled temp_src
+    temp_dest = api->scale(temp_src, 1, fisheye_radius_p + 2 * i, 0);     //temp_dest stores scaled temp_src
 
     SDL_BlitSurface(temp_dest, &temp_rect, output, &rect);      //let's copy it to output
   }
 
   //do horizontal fisheye
-  for (i = 0; i < fisheye_radius / 2; i++)
+  for (i = 0; i < fisheye_radius_p / 2; i++)
   {
-    temp_src =
-      SDL_CreateRGBSurface(SDL_SWSURFACE, fisheye_radius, 1,
-                           canvas->format->BitsPerPixel,
-                           canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+    temp_src = SDL_CreateSurface(fisheye_radius_p, 1, canvas->format);
 
-    temp_dest =
-      SDL_CreateRGBSurface(SDL_SWSURFACE, fisheye_radius + 2 * i, 1,
-                           canvas->format->BitsPerPixel,
-                           canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+    temp_dest = SDL_CreateSurface(fisheye_radius_p + 2 * i, 1, canvas->format);
 
     //upper side first
     rect.x = 0;
     rect.y = i;
-    rect.w = fisheye_radius;
+    rect.w = fisheye_radius_p;
     rect.h = 1;
 
     temp_rect.x = i;
     temp_rect.y = 0;
-    temp_rect.w = fisheye_radius;
+    temp_rect.w = fisheye_radius_p;
     temp_rect.h = 1;
 
     SDL_BlitSurface(output, &rect, temp_src, NULL);
 
-    temp_dest = api->scale(temp_src, fisheye_radius + 2 * i, 1, 0);
+    temp_dest = api->scale(temp_src, fisheye_radius_p + 2 * i, 1, 0);
 
     SDL_BlitSurface(temp_dest, &temp_rect, output, &rect);
 
     //lower side then
 
-    rect.y = (fisheye_radius - 1) - i;
+    rect.y = (fisheye_radius_p - 1) - i;
     SDL_BlitSurface(output, &rect, temp_src, NULL);
 
-    temp_dest = api->scale(temp_src, fisheye_radius + 2 * i, 1, 0);
+    temp_dest = api->scale(temp_src, fisheye_radius_p + 2 * i, 1, 0);
     SDL_BlitSurface(temp_dest, &temp_rect, output, &rect);
   }
 
-  rect.x = x - (fisheye_radius / 2);
-  rect.y = y - (fisheye_radius / 2);
-  rect.w = rect.h = fisheye_radius;
+  rect.x = x - (fisheye_radius_p / 2);
+  rect.y = y - (fisheye_radius_p / 2);
+  rect.w = rect.h = fisheye_radius_p;
 
   //let's blit an area surrounded by a circle
 
-  for (yy = y - (fisheye_radius / 2); yy < y + (fisheye_radius / 2); yy++)
+  for (yy = y - (fisheye_radius_p / 2); yy < y + (fisheye_radius_p / 2); yy++)
   {
-    for (xx = x - (fisheye_radius / 2); xx < x + (fisheye_radius / 2); xx++)
+    for (xx = x - (fisheye_radius_p / 2); xx < x + (fisheye_radius_p / 2); xx++)
     {
-      if (api->in_circle(xx - x, yy - y, (fisheye_radius / 2)))
+      if (api->in_circle(xx - x, yy - y, (fisheye_radius_p / 2)))
       {
         api->putpixel(canvas, xx, yy,
-                      api->getpixel(output, xx + (fisheye_radius / 2) - x, yy + (fisheye_radius / 2) - y));
+                      api->getpixel(output, xx + (fisheye_radius_p / 2) - x, yy + (fisheye_radius_p / 2) - y));
       }
     }
   }
 
-  SDL_FreeSurface(oryg);
-  SDL_FreeSurface(output);
+  SDL_DestroySurface(oryg);
+  SDL_DestroySurface(output);
   if (temp_dest != NULL)
-    SDL_FreeSurface(temp_dest);
+    SDL_DestroySurface(temp_dest);
   if (temp_src != NULL)
-    SDL_FreeSurface(temp_src);
+    SDL_DestroySurface(temp_src);
 
   api->playsound(fisheye_snd, (x * 255) / canvas->w, 255);
 }

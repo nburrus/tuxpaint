@@ -29,8 +29,8 @@
 #include <stdio.h>
 #include <string.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 /* Our globals: */
 
@@ -76,7 +76,7 @@ static const int rainbow_hexes[NUM_RAINBOW_COLORS][3] = {
 
 static int rainbow_color, rainbow_mix;
 static Uint32 rainbow_rgb;
-static Mix_Chunk *rainbow_snd;
+static MIX_Audio *rainbow_snd;
 
 int rainbow_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 Uint32 rainbow_api_version(void);
@@ -126,7 +126,7 @@ int rainbow_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
   rainbow_mix = 0;
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/rainbow.wav", api->data_directory);
-  rainbow_snd = Mix_LoadWAV(fname);
+  rainbow_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -190,12 +190,13 @@ static void rainbow_linecb(void *ptr, int which ATTRIBUTE_UNUSED,
 {
   magic_api *api = (magic_api *) ptr;
   int xx, yy;
+  int rainbow_radius_p = max(1,(int)(rainbow_radius * api->pressure));
 
-  for (yy = y - rainbow_radius; yy < y + rainbow_radius; yy++)
+  for (yy = y - rainbow_radius_p; yy < y + rainbow_radius_p; yy++)
   {
-    for (xx = x - rainbow_radius; xx < x + rainbow_radius; xx++)
+    for (xx = x - rainbow_radius_p; xx < x + rainbow_radius_p; xx++)
     {
-      if (api->in_circle(xx - x, yy - y, rainbow_radius))
+      if (api->in_circle(xx - x, yy - y, rainbow_radius_p))
       {
         api->putpixel(canvas, xx, yy, rainbow_rgb);
       }
@@ -238,7 +239,7 @@ void rainbow_drag(magic_api *api, int which, SDL_Surface *canvas,
   g2 = rainbow_hexes[rc_tmp][1];
   b2 = rainbow_hexes[rc_tmp][2];
 
-  rainbow_rgb = SDL_MapRGB(canvas->format,
+  rainbow_rgb = SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
                            ((r1 * (MIX_MAX - rainbow_mix)) +
                             (r2 * rainbow_mix)) / MIX_MAX,
                            ((g1 * (MIX_MAX - rainbow_mix)) +
@@ -294,7 +295,7 @@ void rainbow_release(magic_api *api ATTRIBUTE_UNUSED,
 void rainbow_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (rainbow_snd != NULL)
-    Mix_FreeChunk(rainbow_snd);
+    MIX_DestroyAudio(rainbow_snd);
 }
 
 // Record the color from Tux Paint:

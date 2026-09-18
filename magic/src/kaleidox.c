@@ -8,13 +8,14 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <libintl.h>
 #include <math.h>
 
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 enum
 {
@@ -48,7 +49,7 @@ char *kaleidox_descrs[NUM_TOOLS] = {
   gettext_noop("Click and drag around your picture to look through it with a kaleidoscope!"),
 };
 
-Mix_Chunk *snd_effects[NUM_TOOLS];
+MIX_Audio *snd_effects[NUM_TOOLS];
 
 Uint32 kaleidox_api_version(void);
 int kaleidox_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
@@ -92,7 +93,7 @@ int kaleidox_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint
   for (i = 0; i < NUM_TOOLS; i++)
   {
     snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, kaleidox_snd_fnames[i]);
-    snd_effects[i] = Mix_LoadWAV(fname);
+    snd_effects[i] = MIX_LoadAudio(api->mmixer, fname, 0);
   }
 
   return (1);
@@ -150,7 +151,7 @@ void kaleidox_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   for (i = 0; i < NUM_TOOLS; i++)
   {
     if (snd_effects[i] != NULL)
-      Mix_FreeChunk(snd_effects[i]);
+      MIX_DestroyAudio(snd_effects[i]);
   }
 }
 
@@ -290,7 +291,7 @@ void kaleidox_render(magic_api *api, int which, SDL_Surface *canvas, SDL_Surface
             dest.w = 2;
             dest.h = 2;
           }
-          SDL_FillRect(canvas, &dest, colr);
+          SDL_FillSurfaceRect(canvas, &dest, colr);
 
           xx = xx + xxm;
           if ((xxm > 0 && xx > len) || (xxm < 0 && xx < len))

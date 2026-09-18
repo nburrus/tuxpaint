@@ -29,15 +29,15 @@
 #include <stdio.h>
 #include <string.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 #include "math.h"
 
 /* Our globals: */
 
 static int shift_x, shift_y;
-static Mix_Chunk *shift_snd;
+static MIX_Audio *shift_snd;
 
 
 /* Local function prototypes: */
@@ -86,7 +86,7 @@ int shift_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 c
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/shift.ogg", api->data_directory);
-  shift_snd = Mix_LoadWAV(fname);
+  shift_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -268,14 +268,18 @@ static void shift_doit(magic_api *api ATTRIBUTE_UNUSED,
     dest.w = 3;
     dest.h = canvas->h;
 
-    SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, 255, 255, 255));
+    SDL_FillSurfaceRect(canvas, &dest,
+                        SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), 255, 255,
+                                   255));
 
     dest.x = 0;
     dest.y = (canvas->h / 2) - 1;
     dest.w = canvas->w;
     dest.h = 3;
 
-    SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, 255, 255, 255));
+    SDL_FillSurfaceRect(canvas, &dest,
+                        SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), 255, 255,
+                                   255));
 
 
     dest.x = canvas->w / 2;
@@ -283,14 +287,16 @@ static void shift_doit(magic_api *api ATTRIBUTE_UNUSED,
     dest.w = 1;
     dest.h = canvas->h;
 
-    SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, 0, 0, 0));
+    SDL_FillSurfaceRect(canvas, &dest,
+                        SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), 0, 0, 0));
 
     dest.x = 0;
     dest.y = canvas->h / 2;
     dest.w = canvas->w;
     dest.h = 1;
 
-    SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, 0, 0, 0));
+    SDL_FillSurfaceRect(canvas, &dest,
+                        SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), 0, 0, 0));
   }
 
 
@@ -327,7 +333,7 @@ void shift_release(magic_api *api, int which,
 void shift_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (shift_snd != NULL)
-    Mix_FreeChunk(shift_snd);
+    MIX_DestroyAudio(shift_snd);
 }
 
 // Record the color from Tux Paint:

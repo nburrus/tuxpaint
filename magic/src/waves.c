@@ -30,13 +30,13 @@
 #include <string.h>
 #include <math.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 
 /* Our globals: */
 
-static Mix_Chunk *waves_snd[2];
+static MIX_Audio *waves_snd[2];
 
 /* Local function prototypes: */
 
@@ -78,10 +78,10 @@ int waves_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 c
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/waves.ogg", api->data_directory);
-  waves_snd[0] = Mix_LoadWAV(fname);
+  waves_snd[0] = MIX_LoadAudio(api->mmixer, fname, 0);
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/wavelet.ogg", api->data_directory);
-  waves_snd[1] = Mix_LoadWAV(fname);
+  waves_snd[1] = MIX_LoadAudio(api->mmixer, fname, 0);
 
 
   return (1);
@@ -219,9 +219,9 @@ void waves_release(magic_api *api ATTRIBUTE_UNUSED,
 void waves_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (waves_snd[0] != NULL)
-    Mix_FreeChunk(waves_snd[0]);
+    MIX_DestroyAudio(waves_snd[0]);
   if (waves_snd[1] != NULL)
-    Mix_FreeChunk(waves_snd[1]);
+    MIX_DestroyAudio(waves_snd[1]);
 }
 
 // Record the color from Tux Paint:

@@ -28,14 +28,16 @@
   Last updated: October 7, 2024
 */
 
+#include <stdio.h>
+#include <stdlib.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 static Uint8 checkerboard_r, checkerboard_g, checkerboard_b;
 int checkerboard_start_x, checkerboard_start_y;
 
-Mix_Chunk *checkerboard_snd;
+MIX_Audio *checkerboard_snd;
 
 // Prototypes
 Uint32 checkerboard_api_version(void);
@@ -96,7 +98,7 @@ int checkerboard_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, 
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/checkerboard.ogg", api->data_directory);
-  checkerboard_snd = Mix_LoadWAV(fname);
+  checkerboard_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -151,7 +153,7 @@ void checkerboard_release(magic_api *api ATTRIBUTE_UNUSED,
 
 void checkerboard_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
-  Mix_FreeChunk(checkerboard_snd);
+  MIX_DestroyAudio(checkerboard_snd);
 }
 
 // Interactivity functions
@@ -169,7 +171,9 @@ void checkerboard_drag(magic_api *api, int which ATTRIBUTE_UNUSED,
 
   sz = max(10, max(abs(x - checkerboard_start_x), abs(y - checkerboard_start_y)));
 
-  colr = SDL_MapRGB(canvas->format, checkerboard_r, checkerboard_g, checkerboard_b);
+  colr =
+    SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), checkerboard_r, checkerboard_g,
+               checkerboard_b);
 
   draw_start = 1;
   if (x < checkerboard_start_x)
@@ -191,7 +195,7 @@ void checkerboard_drag(magic_api *api, int which ATTRIBUTE_UNUSED,
         dest.y = yy;
         dest.w = sz;
         dest.h = sz;
-        SDL_FillRect(canvas, &dest, colr);
+        SDL_FillSurfaceRect(canvas, &dest, colr);
       }
       draw_cell = !draw_cell;
     }
@@ -206,7 +210,7 @@ void checkerboard_drag(magic_api *api, int which ATTRIBUTE_UNUSED,
         dest.y = yy;
         dest.w = sz;
         dest.h = sz;
-        SDL_FillRect(canvas, &dest, colr);
+        SDL_FillSurfaceRect(canvas, &dest, colr);
       }
       draw_cell = !draw_cell;
     }
@@ -228,7 +232,7 @@ void checkerboard_drag(magic_api *api, int which ATTRIBUTE_UNUSED,
         dest.y = yy;
         dest.w = sz;
         dest.h = sz;
-        SDL_FillRect(canvas, &dest, colr);
+        SDL_FillSurfaceRect(canvas, &dest, colr);
       }
       draw_cell = !draw_cell;
     }
@@ -243,7 +247,7 @@ void checkerboard_drag(magic_api *api, int which ATTRIBUTE_UNUSED,
         dest.y = yy;
         dest.w = sz;
         dest.h = sz;
-        SDL_FillRect(canvas, &dest, colr);
+        SDL_FillSurfaceRect(canvas, &dest, colr);
       }
       draw_cell = !draw_cell;
     }

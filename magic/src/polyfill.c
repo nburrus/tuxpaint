@@ -12,12 +12,13 @@
 
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <libintl.h>
 
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 // #define DEBUG
 
@@ -71,7 +72,7 @@ int polyfill_editing = MAX_PTS;
 int polyfill_dragged = 0;
 int polyfill_active = 0;
 
-Mix_Chunk *snd_effects[NUM_SOUNDS];
+MIX_Audio *snd_effects[NUM_SOUNDS];
 
 Uint32 polyfill_color, polyfill_color_red, polyfill_color_green;
 
@@ -125,7 +126,7 @@ int polyfill_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint
   for (i = 0; i < NUM_SOUNDS; i++)
   {
     snprintf(filename, sizeof(filename), "%ssounds/magic/%s", api->data_directory, polyfill_snd_filenames[i]);
-    snd_effects[i] = Mix_LoadWAV(filename);
+    snd_effects[i] = MIX_LoadAudio(api->mmixer, filename, 0);
   }
 
   return (1);
@@ -203,13 +204,13 @@ void polyfill_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   {
     if (snd_effects[i] != NULL)
     {
-      Mix_FreeChunk(snd_effects[i]);
+      MIX_DestroyAudio(snd_effects[i]);
     }
   }
 
   if (polyfill_snapshot != NULL)
   {
-    SDL_FreeSurface(polyfill_snapshot);
+    SDL_DestroySurface(polyfill_snapshot);
     polyfill_snapshot = NULL;
   }
 }
@@ -356,7 +357,7 @@ void polyfill_draw_preview(magic_api *api, SDL_Surface *canvas, int show_handles
       dest.y = polyfill_pt_y[0] - SNAP_SIZE;
       dest.w = SNAP_SIZE * 2;
       dest.h = SNAP_SIZE * 2;
-      SDL_FillRect(canvas, &dest, polyfill_color_green);
+      SDL_FillSurfaceRect(canvas, &dest, polyfill_color_green);
     }
 
     if (polyfill_num_pts > 1)
@@ -365,7 +366,7 @@ void polyfill_draw_preview(magic_api *api, SDL_Surface *canvas, int show_handles
       dest.y = polyfill_pt_y[polyfill_num_pts - 1] - SNAP_SIZE;
       dest.w = SNAP_SIZE * 2;
       dest.h = SNAP_SIZE * 2;
-      SDL_FillRect(canvas, &dest, polyfill_color_red);
+      SDL_FillSurfaceRect(canvas, &dest, polyfill_color_red);
     }
   }
 
@@ -522,7 +523,7 @@ void polyfill_set_color(magic_api *api, int which ATTRIBUTE_UNUSED,
                         SDL_Surface *canvas,
                         SDL_Surface *snapshot ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b, SDL_Rect *update_rect)
 {
-  polyfill_color = SDL_MapRGB(canvas->format, r, g, b);
+  polyfill_color = SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b);
 
   if (polyfill_active)
   {
@@ -554,22 +555,20 @@ void polyfill_line_callback(void *pointer ATTRIBUTE_UNUSED,
   dest.w = 3;
   dest.h = 3;
 
-  SDL_FillRect(canvas, &dest, polyfill_color);
+  SDL_FillSurfaceRect(canvas, &dest, polyfill_color);
 }
 
 
 void polyfill_switchin(magic_api *api ATTRIBUTE_UNUSED,
                        int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas)
 {
-  polyfill_color_red = SDL_MapRGB(canvas->format, 255, 0, 0);
-  polyfill_color_green = SDL_MapRGB(canvas->format, 0, 255, 0);
+  polyfill_color_red = SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), 255, 0, 0);
+  polyfill_color_green =
+    SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), 0, 255, 0);
 
   if (polyfill_snapshot == NULL)
   {
-    polyfill_snapshot =
-      SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->w, canvas->h,
-                           canvas->format->BitsPerPixel,
-                           canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+    polyfill_snapshot = SDL_CreateSurface(canvas->w, canvas->h, canvas->format);
   }
 
   if (polyfill_snapshot != NULL)
@@ -683,7 +682,7 @@ void polyfill_draw_final(SDL_Surface *canvas)
         rect.y = y;
         rect.w = nodeX[i + 1] - nodeX[i] + 1;
         rect.h = 1;
-        SDL_FillRect(canvas, &rect, polyfill_color);
+        SDL_FillSurfaceRect(canvas, &rect, polyfill_color);
       }
     }
   }

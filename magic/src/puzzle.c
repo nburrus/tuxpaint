@@ -29,10 +29,12 @@
 */
 
 
+#include <stdio.h>
+#include <stdlib.h>
 #include <time.h>               //for time()
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 static int RATIO = 5;
 
@@ -42,7 +44,7 @@ static int RATIO = 5;
 //else not whole the screen will be affected
 
 
-static Mix_Chunk *puzzle_snd;
+static MIX_Audio *puzzle_snd;
 static int puzzle_gcd = 0;      //length of side of each rectangle; 0 is temporary value.
 
 // static int puzzle_rect_q=4;          //quantity of rectangles when using paint mode. Must be an odd value - but it's even!
@@ -88,7 +90,7 @@ int puzzle_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/puzzle.wav", api->data_directory);
-  puzzle_snd = Mix_LoadWAV(fname);
+  puzzle_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return 1;
 }
@@ -142,7 +144,7 @@ void puzzle_release(magic_api *api ATTRIBUTE_UNUSED,
 void puzzle_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (puzzle_snd != NULL)
-    Mix_FreeChunk(puzzle_snd);
+    MIX_DestroyAudio(puzzle_snd);
 }
 
 void puzzle_set_color(magic_api *api ATTRIBUTE_UNUSED,
@@ -172,16 +174,13 @@ void puzzle_switchin(magic_api *api ATTRIBUTE_UNUSED,
   puzzle_gcd = RATIO * gcd(canvas->w, canvas->h);
   rects_w = (unsigned int)canvas->w / puzzle_gcd;
   rects_h = (unsigned int)canvas->h / puzzle_gcd;
-  canvas_backup =
-    SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->w, canvas->h,
-                         canvas->format->BitsPerPixel, canvas->format->Rmask,
-                         canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+  canvas_backup = SDL_CreateSurface(canvas->w, canvas->h, canvas->format);
 }
 
 void puzzle_switchout(magic_api *api ATTRIBUTE_UNUSED,
                       int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas ATTRIBUTE_UNUSED)
 {
-  SDL_FreeSurface(canvas_backup);
+  SDL_DestroySurface(canvas_backup);
   canvas_backup = NULL;
 }
 

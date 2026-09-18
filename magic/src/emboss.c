@@ -29,12 +29,12 @@
 #include <stdio.h>
 #include <string.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 /* Our globals: */
 
-static Mix_Chunk *emboss_snd;
+static MIX_Audio *emboss_snd;
 static int emboss_radius = 16;
 
 // Prototypes
@@ -81,7 +81,7 @@ int emboss_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/emboss.ogg", api->data_directory);
-  emboss_snd = Mix_LoadWAV(fname);
+  emboss_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -140,8 +140,10 @@ static void emboss_pixel(void *ptr, SDL_Surface *last, int x, int y, SDL_Surface
   float h, s, v;
   int avg1, avg2;
 
-  SDL_GetRGB(api->getpixel(last, x, y), last->format, &r1, &g1, &b1);
-  SDL_GetRGB(api->getpixel(last, x + 2, y + 2), last->format, &r2, &g2, &b2);
+  SDL_GetRGB(api->getpixel(last, x, y), SDL_GetPixelFormatDetails(last->format), SDL_GetSurfacePalette(last), &r1, &g1,
+             &b1);
+  SDL_GetRGB(api->getpixel(last, x + 2, y + 2), SDL_GetPixelFormatDetails(last->format), SDL_GetSurfacePalette(last),
+             &r2, &g2, &b2);
 
   avg1 = (r1 + g1 + b1) / 3;
   avg2 = (r2 + g2 + b2) / 3;
@@ -158,7 +160,8 @@ static void emboss_pixel(void *ptr, SDL_Surface *last, int x, int y, SDL_Surface
 
   api->hsvtorgb(h, s, v, &r1, &g1, &b1);
 
-  api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, r1, g1, b1));
+  api->putpixel(canvas, x, y,
+                SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r1, g1, b1));
 }
 
 
@@ -167,12 +170,13 @@ static void do_emboss(void *ptr, int which ATTRIBUTE_UNUSED, SDL_Surface *canvas
 {
   magic_api *api = (magic_api *) ptr;
   int xx, yy;
+  int emboss_radius_p = emboss_radius * api->pressure;
 
-  for (yy = -emboss_radius; yy < emboss_radius; yy++)
+  for (yy = -emboss_radius_p; yy < emboss_radius_p; yy++)
   {
-    for (xx = -emboss_radius; xx < emboss_radius; xx++)
+    for (xx = -emboss_radius_p; xx < emboss_radius_p; xx++)
     {
-      if (api->in_circle(xx, yy, emboss_radius))
+      if (api->in_circle(xx, yy, emboss_radius_p))
       {
         if (!api->touched(x + xx, y + yy))
         {
@@ -255,7 +259,7 @@ void emboss_release(magic_api *api ATTRIBUTE_UNUSED,
 void emboss_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (emboss_snd != NULL)
-    Mix_FreeChunk(emboss_snd);
+    MIX_DestroyAudio(emboss_snd);
 }
 
 // Record the color from Tux Paint:

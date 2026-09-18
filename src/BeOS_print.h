@@ -26,7 +26,7 @@
 #ifndef __BEOS_PRINT_H__
 #define __BEOS_PRINT_H__
 
-#include "SDL.h"
+#include <SDL3/SDL.h>
 
 #ifdef __cplusplus
 extern "C"

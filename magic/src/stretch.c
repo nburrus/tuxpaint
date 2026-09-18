@@ -28,9 +28,10 @@
   Last updated: October 7, 2024
 */
 
+#include <stdio.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 int stretch_side, stretch_start_x, stretch_start_y;
 
@@ -46,7 +47,7 @@ enum stretch_tools
   STRETCH_NUMTOOLS
 };
 
-Mix_Chunk *stretch_snd;
+MIX_Audio *stretch_snd;
 
 // Prototypes
 Uint32 stretch_api_version(void);
@@ -97,7 +98,7 @@ int stretch_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/stretch.ogg", api->data_directory);
-  stretch_snd = Mix_LoadWAV(fname);
+  stretch_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -151,7 +152,7 @@ void stretch_release(magic_api *api ATTRIBUTE_UNUSED,
 
 void stretch_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
-  Mix_FreeChunk(stretch_snd);
+  MIX_DestroyAudio(stretch_snd);
 }
 
 // Interactivity functions

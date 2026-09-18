@@ -23,7 +23,7 @@
 //  (See COPYING.txt)
 //
 
-#include "SDL.h"
+#include <SDL3/SDL.h>
 
 const char *SurfacePrint(SDL_Surface * surface, int showDialog);
 int DisplayPageSetup(const SDL_Surface * surface);

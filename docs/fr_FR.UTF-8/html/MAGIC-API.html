@@ -382,7 +382,7 @@
                 <p>
                   This should return an SDL_Surface containing the icon representing the tool.  (A greyscale image with alpha, no larger than 40x40.) This will appear on the button in the 'Magic' selector within Tux Paint.                </p>
                 <p>
-                  Tux Paint will free ("<code>SDL_FreeSurface()</code>") the surface upon exit.                </p>
+                  Tux Paint will free ("<code>SDL_DestroySurface()</code>") the surface upon exit.                </p>
                 <p>
                   <b>Note:</b> Called once for each Magic tool your plugin claims to contain (by your "<code>get_tool_count()</code>").                <p>
               </dd>
@@ -1462,7 +1462,7 @@ See also:
             <dt>SDL</dt>
       <dd>
         See "Simple DirectMedia Layer"              </dd>
-            <dt><code>SDL_FreeSurface()</code></dt>
+            <dt><code>SDL_DestroySurface()</code></dt>
       <dd>
         A libSDL function that frees (deallocates) memory allocated for an SDL surface ("<code>SDL_Surface *</code>").              </dd>
             <dt><code>SDL_GetRGB()</code></dt>

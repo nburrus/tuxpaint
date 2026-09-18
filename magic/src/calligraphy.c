@@ -30,8 +30,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 #include <math.h>
 
@@ -40,7 +40,7 @@ typedef struct
   float x, y;
 } Point2D;
 
-static Mix_Chunk *calligraphy_snd;
+static MIX_Audio *calligraphy_snd;
 static Point2D calligraphy_control_points[4];
 static int calligraphy_r, calligraphy_g, calligraphy_b;
 static int calligraphy_old_thick;
@@ -86,7 +86,7 @@ int calligraphy_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, U
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/calligraphy.ogg", api->data_directory);
 
-  calligraphy_snd = Mix_LoadWAV(fname);
+  calligraphy_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   snprintf(fname, sizeof(fname), "%simages/magic/calligraphy_brush.png", api->data_directory);
 
@@ -210,6 +210,7 @@ void calligraphy_drag(magic_api *api, int which ATTRIBUTE_UNUSED,
   {
     thick = ((new_thick * i) + (calligraphy_old_thick * (n_points - i))) / n_points;
     thick = thick * callig_size / 4;
+    thick = thick * api->pressure;
     if (thick < 4)
       thick = 4;
 
@@ -308,11 +309,11 @@ void calligraphy_release(magic_api *api ATTRIBUTE_UNUSED,
 void calligraphy_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (calligraphy_snd != NULL)
-    Mix_FreeChunk(calligraphy_snd);
+    MIX_DestroyAudio(calligraphy_snd);
   if (calligraphy_brush != NULL)
-    SDL_FreeSurface(calligraphy_brush);
+    SDL_DestroySurface(calligraphy_brush);
   if (calligraphy_colored_brush != NULL)
-    SDL_FreeSurface(calligraphy_colored_brush);
+    SDL_DestroySurface(calligraphy_colored_brush);
 }
 
 // We don't use colors
@@ -325,6 +326,8 @@ void calligraphy_set_color(magic_api *api, int which ATTRIBUTE_UNUSED,
   Uint8 a;
   Uint32 amask;
 
+  const SDL_PixelFormatDetails *format_details = SDL_GetPixelFormatDetails(calligraphy_brush->format);
+
   if (calligraphy_r == r && calligraphy_g == g && calligraphy_b == b)
     return;
 
@@ -333,17 +336,14 @@ void calligraphy_set_color(magic_api *api, int which ATTRIBUTE_UNUSED,
   calligraphy_b = b;
 
   if (calligraphy_colored_brush != NULL)
-    SDL_FreeSurface(calligraphy_colored_brush);
+    SDL_DestroySurface(calligraphy_colored_brush);
 
-  amask = ~(calligraphy_brush->format->Rmask | calligraphy_brush->format->Gmask | calligraphy_brush->format->Bmask);
+  amask = ~(format_details->Rmask | format_details->Gmask | format_details->Bmask);
 
   calligraphy_colored_brush =
-    SDL_CreateRGBSurface(SDL_SWSURFACE,
-                         calligraphy_brush->w,
-                         calligraphy_brush->h,
-                         calligraphy_brush->format->BitsPerPixel,
-                         calligraphy_brush->format->Rmask,
-                         calligraphy_brush->format->Gmask, calligraphy_brush->format->Bmask, amask);
+    SDL_CreateSurface(calligraphy_brush->w, calligraphy_brush->h,
+                      SDL_GetPixelFormatForMasks(format_details->bits_per_pixel, format_details->Rmask,
+                                                 format_details->Gmask, format_details->Bmask, amask));
 
   if (calligraphy_colored_brush == NULL)
     return;                     // FIXME: Error!
@@ -356,10 +356,13 @@ void calligraphy_set_color(magic_api *api, int which ATTRIBUTE_UNUSED,
   {
     for (x = 0; x < calligraphy_brush->w; x++)
     {
-      SDL_GetRGBA(api->getpixel(calligraphy_brush, x, y), calligraphy_brush->format, &r, &g, &b, &a);
+      SDL_GetRGBA(api->getpixel(calligraphy_brush, x, y), SDL_GetPixelFormatDetails(calligraphy_brush->format),
+                  SDL_GetSurfacePalette(calligraphy_brush), &r, &g, &b, &a);
 
       api->putpixel(calligraphy_colored_brush, x, y,
-                    SDL_MapRGBA(calligraphy_colored_brush->format, calligraphy_r, calligraphy_g, calligraphy_b, a));
+                    SDL_MapRGBA(SDL_GetPixelFormatDetails(calligraphy_colored_brush->format),
+                                SDL_GetSurfacePalette(calligraphy_colored_brush), calligraphy_r, calligraphy_g,
+                                calligraphy_b, a));
     }
   }
 

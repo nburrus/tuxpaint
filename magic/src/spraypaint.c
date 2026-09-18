@@ -27,11 +27,13 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <math.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
-static Mix_Chunk *spraypaint_snd_spray, *spraypaint_snd_shake;
+static MIX_Audio *spraypaint_snd_spray, *spraypaint_snd_shake;
 static int spraypaint_radius = 16;
 static Uint8 spraypaint_r, spraypaint_g, spraypaint_b;
 static int spraypaint_cnt = 0;
@@ -77,10 +79,10 @@ int spraypaint_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Ui
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/spraypaint-spray.ogg", api->data_directory);
-  spraypaint_snd_spray = Mix_LoadWAV(fname);
+  spraypaint_snd_spray = MIX_LoadAudio(api->mmixer, fname, 0);
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/spraypaint-shake.ogg", api->data_directory);
-  spraypaint_snd_shake = Mix_LoadWAV(fname);
+  spraypaint_snd_shake = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -124,13 +126,14 @@ static void do_spraypaint(magic_api *api, SDL_Surface *canvas, int x, int y, int
   Uint8 r, g, b, intensity;
   Uint32 pixel;
 
-  SDL_GetRGB(api->getpixel(canvas, x, y), canvas->format, &r, &g, &b);
+  SDL_GetRGB(api->getpixel(canvas, x, y), SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), &r,
+             &g, &b);
   intensity = (rand() % max_intensity) / 4;
 
   r = (((spraypaint_r * intensity) + (r * (255 - intensity))) / 255);
   g = (((spraypaint_g * intensity) + (g * (255 - intensity))) / 255);
   b = (((spraypaint_b * intensity) + (b * (255 - intensity))) / 255);
-  pixel = SDL_MapRGB(canvas->format, r, g, b);
+  pixel = SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b);
   api->putpixel(canvas, x, y, pixel);
 }
 
@@ -140,15 +143,16 @@ static void do_spraypaint_circle(void *ptr, int which ATTRIBUTE_UNUSED,
   magic_api *api = (magic_api *) ptr;
   int xx, yy, dist;
   int max_dist;
+  int spraypaint_radius_p = max(1, (int)(spraypaint_radius * api->pressure));
 
-  max_dist = sqrt((spraypaint_radius * spraypaint_radius) * 2);
+  max_dist = sqrt((spraypaint_radius_p * spraypaint_radius_p) * 2);
 
-  for (yy = -spraypaint_radius; yy < spraypaint_radius; yy++)
+  for (yy = -spraypaint_radius_p; yy < spraypaint_radius_p; yy++)
   {
-    for (xx = -spraypaint_radius; xx < spraypaint_radius; xx++)
+    for (xx = -spraypaint_radius_p; xx < spraypaint_radius_p; xx++)
     {
       dist = sqrt((xx * xx) + (yy * yy));
-      if (dist <= spraypaint_radius)
+      if (dist <= spraypaint_radius_p)
       {
         if ((rand() % (dist * 2 + 1)) == 0)
         {
@@ -211,9 +215,9 @@ void spraypaint_release(magic_api *api ATTRIBUTE_UNUSED,
 void spraypaint_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (spraypaint_snd_spray != NULL)
-    Mix_FreeChunk(spraypaint_snd_spray);
+    MIX_DestroyAudio(spraypaint_snd_spray);
   if (spraypaint_snd_shake != NULL)
-    Mix_FreeChunk(spraypaint_snd_shake);
+    MIX_DestroyAudio(spraypaint_snd_shake);
 }
 
 void spraypaint_set_color(magic_api *api ATTRIBUTE_UNUSED,

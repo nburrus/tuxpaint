@@ -1,0 +1,41 @@
+# Notes on building Tux Paint for macOS using SDL3
+
+First, set these options in /opt/local/etc/macports/macports.conf if desired:
+
+  buildfromsource           always
+  macosx_deployment_target  11.0
+
+Also, set this environment variable if desired:
+
+  export MACOSX_DEPLOYMENT_TARGET=11.0
+
+
+1. Install these packages from MacPorts:
+
+  SDL3
+  SDL3_image
+  SDL3_ttf
+
+
+2. Build and install these packages from the source:
+
+  SDL3_mixer
+     git clone https://github.com/libsdl-org/SDL_mixer SDL3_mixer
+     cd SDL3_mixer
+     cmake -DCMAKE_INSTALL_PREFIX:PATH=/opt/local . && make && sudo make install
+
+  SDL3_pango
+     Download SDL3_Pango.tar.gz from https://provant.freeddns.org/pere/public_html/Tux%20Paint/devel/20250629/
+     tar xzvf SDL3_Pango.tar.gz
+     cd SDL3_Pango
+     ./configure --prefix=/opt/local && make && sudo make install
+
+  SDL3_gfx
+     git clone git@github.com:sabdul-khabir/SDL3_gfx.git
+     cd SDL3_gfx
+     patch -p1 < path/to/SDL3_gfx.diff    # SDL3_gfx.diff can be found in the same folder as this file you're reading
+     cmake -DCMAKE_INSTALL_PREFIX:PATH=/opt/local . && make && sudo make install
+
+
+3. Build Tux Paint using the installation instructions from the standard distribution.
+

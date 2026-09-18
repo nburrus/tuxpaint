@@ -6,7 +6,7 @@ Copyright (c) 2002-2026
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2026.September.16 (0.9.36)
+2026.May.24 (0.9.36)
   * New Magic Tools:
     ----------------
     + Ordered Dither tools
@@ -60,29 +60,6 @@ https://tuxpaint.org/
       Pere Pujal i Carabantes <perepujal@gmail.com>
       h/t Sadie for reporting
 
-    + WIP - Tux Paint now delays window/screen refreshes to avoid slow-downs
-      in situations where SDL waits for VSYNC every time (though Tux Paint
-      does not explicitly request this).
-      - Two compile-time options (currently only configurable by editing
-        #defines in src/tuxpaint.c) now exist:
-        = MAINLOOP_THREAD (second attempt) moves the main Tux Paint
-          event loop into a separate thread, and collects window rectangles
-          that need updating, doing them in batches.
-          ~ WARNING: This crashes because event polling is not restricted
-            to the main thread.
-        = VSYNC_WORKAROUND (earlier attempt) avoids updating small
-          rectangles, but instead flips the entire surface (via SDL_Flip()),
-          but only on occasion, per its _WAIT and _CYCLES setting #defines
-      - Also, for testing, these options exist (also via #defines):
-        = VSYNC_ENABLE asks libSDL to sync with screen refresh
-          ("SDL_RENDERER_PRESENTVSYNC" render flag)
-        = BIGGER_SCREENS allows Tux Paint to open a window larger than
-          the physical screen size
-      Pere Pujal i Carabantes <perepujal@gmail.com>
-      For https://sourceforge.net/p/tuxpaint/bugs/302/
-      h/t Chong Kai Xiong for reporting issues with input lag
-      under GNOME Wayland when running Tux Paint in fullscreen mode.
-
   * Bug Fixes:
     ----------
     + When Magic tools are not grouped ("ungroupmagictools"),
@@ -115,18 +92,10 @@ https://tuxpaint.org/
     + Mirror and Flip magic tools would not flip Templates.
       Pere Pujal i Carabantes <perepujal@gmail.com>
 
-    + Avoid glitchy response to scroll wheel (style events)
-      in some situations.
-      Closes https://sourceforge.net/p/tuxpaint/bugs/291/
-      Pere Pujal i Carabantes <perepujal@gmail.com>
-
   * Localization Updates:
     ---------------------
     + French translation
       Jacques Chion <jacques.chion@orange.fr>
-
-    + Japanese
-      ysrt387 <ysrt387@protonmail.com>
 
     + Portuguese (Portugal) translation
       Hugo Carvalho <hugokarvalho@hotmail.com>
@@ -147,10 +116,6 @@ https://tuxpaint.org/
       architectures (previously was only `x64`)
       TOYAMA Shin-ichi <shin1@z1r.org>
       (h/t Abdullah T. for testing on a Microsoft Surface)
-
-    + Added support for Windows build using source-built libs in /usr/local.
-      The previous build environment with official MinGW packages is still supported.
-      TOYAMA Shin-ichi <shin1@z1r.org>
 
     + Add nonstring attribute to linear_to_sRGB_table to remove warnings
       emitted by -Wunterminated-string-initialization
@@ -5187,7 +5152,7 @@ https://tuxpaint.org/
       to choose which you want.)
       Albert Cahalan <albert@users.sourceforge.net>
 
-    * Now uses "AUDIO_S16SYS" when initializing audio system
+    * Now uses "SDL_AUDIO_S16" when initializing audio system
       (on Linux/Mac/BeOS); helps sound under Linux on Mac hardware.
       Albert Cahalan <albert@users.sourceforge.net>
 

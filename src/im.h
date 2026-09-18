@@ -25,7 +25,7 @@
 #ifndef TUXPAINT_IM_H
 #define TUXPAINT_IM_H
 
-#include "SDL.h"
+#include <SDL3/SDL.h>
 #include "i18n.h"
 
 

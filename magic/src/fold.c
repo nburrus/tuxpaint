@@ -11,9 +11,10 @@
 
 //sound playing needs fixing.
 
+#include <stdio.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 #ifdef __ANDROID__
 #define inline static
@@ -24,7 +25,7 @@ int fold_ox, fold_oy;
 int fold_x, fold_y;
 Uint8 fold_shadow_value;
 Uint8 corner;
-Mix_Chunk *fold_snd;
+MIX_Audio *fold_snd;
 Uint8 fold_r, fold_g, fold_b;
 Uint32 fold_color;
 SDL_Surface *fold_surface_src, *fold_surface_dst;
@@ -94,7 +95,7 @@ int fold_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 co
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/fold.wav", api->data_directory);
-  fold_snd = Mix_LoadWAV(fname);
+  fold_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -144,12 +145,12 @@ static void fold_shadow(void *ptr, int which ATTRIBUTE_UNUSED, SDL_Surface *canv
   magic_api *api = (magic_api *) ptr;
   Uint8 r, g, b, a;
 
-  SDL_GetRGBA(api->getpixel(temp, x, y), temp->format, &r, &g, &b, &a);
-  api->putpixel(canvas, x, y, SDL_MapRGBA(canvas->format,
-                                          max(r - 160 + fold_shadow_value * 4,
-                                              0),
-                                          max(g - 160 + fold_shadow_value * 4,
-                                              0), max(b - 160 + fold_shadow_value * 4, 0), a));
+  SDL_GetRGBA(api->getpixel(temp, x, y), SDL_GetPixelFormatDetails(temp->format), SDL_GetSurfacePalette(temp), &r, &g,
+              &b, &a);
+  api->putpixel(canvas, x, y,
+                SDL_MapRGBA(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
+                            max(r - 160 + fold_shadow_value * 4, 0), max(g - 160 + fold_shadow_value * 4, 0),
+                            max(b - 160 + fold_shadow_value * 4, 0), a));
 }
 
 void fold_draw(magic_api *api, int which,
@@ -161,10 +162,7 @@ void fold_draw(magic_api *api, int which,
   float w, h;
   SDL_Surface *temp;
 
-  temp =
-    SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->w, canvas->h,
-                         canvas->format->BitsPerPixel, canvas->format->Rmask,
-                         canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+  temp = SDL_CreateSurface(canvas->w, canvas->h, canvas->format);
   SDL_BlitSurface(canvas, 0, temp, 0);
 
   right_step_x = (float)(x - left_arm_x) / (float)(left_arm_x - fold_ox);
@@ -253,15 +251,9 @@ SDL_Surface *rotate(magic_api *api, SDL_Surface *canvas, int angle)
   int a, b;
 
   if (angle == 180)
-    temp =
-      SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->w, canvas->h,
-                           canvas->format->BitsPerPixel,
-                           canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+    temp = SDL_CreateSurface(canvas->w, canvas->h, canvas->format);
   else
-    temp =
-      SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->h, canvas->w,
-                           canvas->format->BitsPerPixel,
-                           canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+    temp = SDL_CreateSurface(canvas->h, canvas->w, canvas->format);
 
   switch (angle)
   {
@@ -366,8 +358,8 @@ void fold_release(magic_api *api, int which,
     fold_draw(api, which, temp, snapshot, a, b, update_rect);
     temp2 = rotate(api, temp, 270);
     SDL_BlitSurface(temp2, 0, canvas, 0);
-    SDL_FreeSurface(temp);
-    SDL_FreeSurface(temp2);
+    SDL_DestroySurface(temp);
+    SDL_DestroySurface(temp2);
     break;
 
   case 2:
@@ -381,8 +373,8 @@ void fold_release(magic_api *api, int which,
     fold_draw(api, which, temp, snapshot, a, b, update_rect);
     temp2 = rotate(api, temp, 90);
     SDL_BlitSurface(temp2, 0, canvas, 0);
-    SDL_FreeSurface(temp);
-    SDL_FreeSurface(temp2);
+    SDL_DestroySurface(temp);
+    SDL_DestroySurface(temp2);
     break;
 
   case 4:
@@ -392,8 +384,8 @@ void fold_release(magic_api *api, int which,
     fold_draw(api, which, temp, snapshot, a, b, update_rect);
     temp2 = rotate(api, temp, 180);
     SDL_BlitSurface(temp2, 0, canvas, 0);
-    SDL_FreeSurface(temp);
-    SDL_FreeSurface(temp2);
+    SDL_DestroySurface(temp);
+    SDL_DestroySurface(temp2);
     break;
   }
 
@@ -405,9 +397,9 @@ void fold_release(magic_api *api, int which,
 
 void fold_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
-  Mix_FreeChunk(fold_snd);
-  SDL_FreeSurface(fold_surface_dst);
-  SDL_FreeSurface(fold_surface_src);
+  MIX_DestroyAudio(fold_snd);
+  SDL_DestroySurface(fold_surface_dst);
+  SDL_DestroySurface(fold_surface_src);
 }
 
 // Interactivity functions
@@ -435,7 +427,7 @@ static void fold_print_line(void *ptr, int which ATTRIBUTE_UNUSED, SDL_Surface *
 {
   magic_api *api = (magic_api *) ptr;
 
-  api->putpixel(canvas, x, y, SDL_MapRGB(last->format, 222, 222, 222)); //Middle gray. Color have been set arbitrary. 
+  api->putpixel(canvas, x, y, SDL_MapRGB(SDL_GetPixelFormatDetails(last->format), SDL_GetSurfacePalette(last), 222, 222, 222)); //Middle gray. Color have been set arbitrary. 
 }
 
 static void fold_print_dark_line(void *ptr, int which ATTRIBUTE_UNUSED,
@@ -443,7 +435,7 @@ static void fold_print_dark_line(void *ptr, int which ATTRIBUTE_UNUSED,
 {
   magic_api *api = (magic_api *) ptr;
 
-  api->putpixel(canvas, x, y, SDL_MapRGB(last->format, 90, 90, 90));    //It should not look too black nor too white with shadowed colors. 
+  api->putpixel(canvas, x, y, SDL_MapRGB(SDL_GetPixelFormatDetails(last->format), SDL_GetSurfacePalette(last), 90, 90, 90));    //It should not look too black nor too white with shadowed colors. 
 }
 
 static void fold_erase(void *ptr, int which ATTRIBUTE_UNUSED,
@@ -451,7 +443,9 @@ static void fold_erase(void *ptr, int which ATTRIBUTE_UNUSED,
 {
   magic_api *api = (magic_api *) ptr;
 
-  api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, fold_r, fold_g, fold_b));
+  api->putpixel(canvas, x, y,
+                SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), fold_r, fold_g,
+                           fold_b));
 }
 
 void fold_click(magic_api *ptr, int which, int mode ATTRIBUTE_UNUSED,

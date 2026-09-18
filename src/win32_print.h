@@ -11,7 +11,7 @@
 #define __WIN32_PRINT_H__
 
 #ifndef _SDL_H
-#include "SDL.h"
+#include <SDL3/SDL.h>
 #endif
 
 /* if printcfg is NULL, uses the default printer */

@@ -25,9 +25,11 @@
 
 #include "playsound.h"
 #include "debug.h"
-
+#include <stdio.h>
 #ifndef NOSOUND
-Mix_Chunk *sounds[NUM_SOUNDS];
+MIX_Audio *sounds[NUM_SOUNDS];
+//MIX_Track *mtrack = NULL;
+MIX_Track *mmtrack = NULL;
 #endif
 
 int mute;
@@ -54,6 +56,7 @@ void playsound(SDL_Surface *screen, int chan, int s, int override, int x, int y)
 #ifndef NOSOUND
   int left, dist;
 
+  static MIX_Track * aux_track;
   if (!mute && use_sound && s != SND_NONE)
   {
 #ifdef DEBUG
@@ -61,10 +64,14 @@ void playsound(SDL_Surface *screen, int chan, int s, int override, int x, int y)
            s, chan, x, y, override ? "" : "no ", sounds[s]);
     fflush(stdout);
 #endif
-    if (override || !Mix_Playing(chan))
+    if (override || !MIX_TrackPlaying(mtrack))
     {
-      Mix_PlayChannel(chan, sounds[s], 0);
-
+      //MIX_DestroyTrack(mtrack);
+      //aux_track = MIX_CreateTrack(mmixer);
+      MIX_SetTrackAudio(mtrack, sounds[s]);
+      MIX_PlayTrack(mtrack, MIX_GetMixerProperties(mmixer));
+      //mtrack = aux_track;
+      
       old_sound[chan] = s;
     }
 
@@ -111,7 +118,11 @@ void playsound(SDL_Surface *screen, int chan, int s, int override, int x, int y)
       printf("Panning of sound #%d in channel %d, left=%d, right=%d\n", s, chan, left, (255 - dist) - left);
       fflush(stdout);
 #endif
-      Mix_SetPanning(chan, left, (255 - dist) - left);
+      //      Mix_SetPanning(chan, left, (255 - dist) - left);
+      MIX_StereoGains mix_stereogains = {
+					     (float)left / 255,       (float)((255 - dist) - left) / 255};
+      printf("left %f, dist %d, right %f\n", (float)left / 255, dist, (float)((255 - dist) - left) / 255);
+      MIX_SetTrackStereo(mtrack, &mix_stereogains);
     }
   }
 #endif

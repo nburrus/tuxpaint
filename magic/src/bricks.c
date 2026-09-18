@@ -32,8 +32,8 @@
 #include <string.h>
 #include <stdlib.h>             /* For RAND_MAX */
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 /* What tools we contain: */
 
@@ -47,7 +47,7 @@ enum
 
 /* Our globals: */
 
-static Mix_Chunk *brick_snd;
+static MIX_Audio *brick_snd;
 static Uint8 bricks_r, bricks_g, bricks_b;
 static int brick_two_tools = 0;
 static int brick_size = TOOL_LARGEBRICKS;
@@ -87,7 +87,7 @@ int bricks_init(magic_api *api, Uint8 disabled_features, Uint8 complexity_level 
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/brick.wav", api->data_directory);
-  brick_snd = Mix_LoadWAV(fname);
+  brick_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   if (disabled_features & MAGIC_FEATURE_SIZE)
     brick_two_tools = 1;
@@ -304,7 +304,7 @@ void bricks_release(magic_api *api ATTRIBUTE_UNUSED,
 void bricks_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (brick_snd != NULL)
-    Mix_FreeChunk(brick_snd);
+    MIX_DestroyAudio(brick_snd);
 }
 
 // Record the color from Tux Paint:
@@ -346,7 +346,8 @@ static void do_brick(magic_api *api, SDL_Surface *canvas, int x, int y, int w, i
   dest.h = h;
 
 
-  SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, r, g, b));
+  SDL_FillSurfaceRect(canvas, &dest,
+                      SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b));
 
 
   /* Note: We only play the brick sound when we actually DRAW a brick: */

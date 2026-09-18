@@ -1,0 +1,19 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 04b2115..cea7972 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -76,12 +76,14 @@ endif()
+ if(NOT (CMAKE_SYSTEM_NAME STREQUAL "Emscripten"))
+   target_include_directories(${PROJECT_NAME}_Shared PUBLIC
+     "${CMAKE_CURRENT_SOURCE_DIR}/../SDL/include"
++    "/opt/local/include"
+   )
+ endif()
+ 
+ # Add the include directories of standard SDL3 for static library.
+ target_include_directories(${PROJECT_NAME}_Static PUBLIC
+     "${CMAKE_CURRENT_SOURCE_DIR}/../SDL/include"
++    "/opt/local/include"
+ )
+ ################################################################################
+ # Dependencies

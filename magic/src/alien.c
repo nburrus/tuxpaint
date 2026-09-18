@@ -29,11 +29,12 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <libintl.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 #include <math.h>
 #include <limits.h>
 #include <time.h>
@@ -53,7 +54,8 @@ enum
   alien_NUM_TOOLS
 };
 
-static Mix_Chunk *alien_snd_effect[alien_NUM_TOOLS];
+static MIX_Mixer * mmixer;
+static MIX_Audio *alien_snd_effect[alien_NUM_TOOLS];
 
 const char *alien_snd_filenames[alien_NUM_TOOLS] = {
   "alien.ogg",
@@ -91,7 +93,7 @@ int alien_get_order(int which);
 char *alien_get_description(magic_api * api, int which, int mode);
 void alien_drag(magic_api * api, int which, SDL_Surface * canvas,
                 SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect);
-Mix_Chunk *magic_loadsound(char *file);
+MIX_Audio *magic_loadsound(char *file);
 void alien_click(magic_api * api, int which, int mode,
                  SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 void alien_release(magic_api * api, int which, SDL_Surface * canvas,
@@ -121,11 +123,12 @@ int alien_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 c
   char fname[1024];
 
   srand(time(0));
+  mmixer = api->mmixer;
 
   for (i = 0; i < alien_NUM_TOOLS; i++)
   {
     snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, alien_snd_filenames[i]);
-    alien_snd_effect[i] = Mix_LoadWAV(fname);
+    alien_snd_effect[i] = MIX_LoadAudio(mmixer, fname, 0);
   }
   return (1);
 }
@@ -176,7 +179,8 @@ static void do_alien_pixel(void *ptr, int which ATTRIBUTE_UNUSED,
   double temp2[3];
   int k;
 
-  SDL_GetRGB(api->getpixel(canvas, x, y), canvas->format, &temp[0], &temp[1], &temp[2]);
+  SDL_GetRGB(api->getpixel(canvas, x, y), SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
+             &temp[0], &temp[1], &temp[2]);
   for (k = 0; k < 3; k++)
   {
 //EP      temp2[k] = clamp(0,127.5 * (1.0 + sin (((temp[k] / 127.5 - 1.0) * alien_FREQUENCY[k] + alien_ANGLE[k] / 180.0) * M_PI)),255);
@@ -185,7 +189,9 @@ static void do_alien_pixel(void *ptr, int which ATTRIBUTE_UNUSED,
                               sin(((temp[k] / 127.5 -
                                     1.0) * alien_FREQUENCY[k] + alien_ANGLE[k] / 180.0) * M_PI)), 255.0);
   }
-  api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, temp2[0], temp2[1], temp2[2]));
+  api->putpixel(canvas, x, y,
+                SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), temp2[0], temp2[1],
+                           temp2[2]));
 
 }
 
@@ -208,12 +214,13 @@ static void do_alien_brush(void *ptr, int which, SDL_Surface *canvas, SDL_Surfac
 {
   int xx, yy;
   magic_api *api = (magic_api *) ptr;
+  int alien_RADIUS_p = max(1, (int)(alien_RADIUS * api->pressure));
 
-  for (yy = y - alien_RADIUS; yy < y + alien_RADIUS; yy++)
+  for (yy = y - alien_RADIUS_p; yy < y + alien_RADIUS_p; yy++)
   {
-    for (xx = x - alien_RADIUS; xx < x + alien_RADIUS; xx++)
+    for (xx = x - alien_RADIUS_p; xx < x + alien_RADIUS_p; xx++)
     {
-      if (api->in_circle(xx - x, yy - y, alien_RADIUS) && !api->touched(xx, yy))
+      if (api->in_circle(xx - x, yy - y, alien_RADIUS_p) && !api->touched(xx, yy))
       {
         do_alien_pixel(api, which, canvas, last, xx, yy);
       }
@@ -253,15 +260,15 @@ void alien_drag(magic_api *api, int which, SDL_Surface *canvas,
 
 int use_sound = 1;
 
-Mix_Chunk *magic_loadsound(char *file)
+MIX_Audio *magic_loadsound(char *file)
 {
-  Mix_Chunk *temp;
+  MIX_Audio *temp;
 
   if (!use_sound)
   {
-    return (Mix_Chunk *) - 1;
+    return (MIX_Audio *) - 1;
   }
-  temp = Mix_LoadWAV(file);
+  temp = MIX_LoadAudio(mmixer, file, 0);
   return temp;
 }
 
@@ -301,7 +308,7 @@ void alien_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   {
     if (alien_snd_effect[i] != NULL)
     {
-      Mix_FreeChunk(alien_snd_effect[i]);
+      MIX_DestroyAudio(alien_snd_effect[i]);
     }
   }
 }

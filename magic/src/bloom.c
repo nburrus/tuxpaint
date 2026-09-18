@@ -7,13 +7,14 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <libintl.h>
 #include <math.h>
 
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 /* Radius of the painting tool */
 static int BLOOM_PAINT_RADIUS = 24;
@@ -38,7 +39,7 @@ float sample_weights[NUM_SAMPLE_WEIGHTS] = {
   0.0842, 0.0752, 0.0627, 0.0449
 };
 
-Mix_Chunk *snd_effects = NULL;
+MIX_Audio *snd_effects = NULL;
 Uint8 *bloom_mask = NULL;
 int bloom_scale;
 
@@ -83,7 +84,7 @@ int bloom_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 c
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/bloom.ogg", api->data_directory);
-  snd_effects = Mix_LoadWAV(fname);
+  snd_effects = MIX_LoadAudio(api->mmixer, fname, 0);
 
   bloom_scale = sqrt(2 * (BLOOM_PAINT_RADIUS * BLOOM_PAINT_RADIUS));
 
@@ -145,7 +146,7 @@ void bloom_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (snd_effects != NULL)
   {
-    Mix_FreeChunk(snd_effects);
+    MIX_DestroyAudio(snd_effects);
     snd_effects = NULL;
   }
 
@@ -255,14 +256,14 @@ void bloom_apply_effect(magic_api *api, SDL_Surface *canvas, SDL_Surface *snapsh
         {
           /* Horizontal samples */
           color = api->getpixel(snapshot, x - ((NUM_SAMPLE_WEIGHTS - 1) / 2) + sample, y);
-          SDL_GetRGB(color, snapshot->format, &r, &g, &b);
+          SDL_GetRGB(color, SDL_GetPixelFormatDetails(snapshot->format), SDL_GetSurfacePalette(snapshot), &r, &g, &b);
           sums[0] += r * sample_weights[sample];
           sums[1] += g * sample_weights[sample];
           sums[2] += b * sample_weights[sample];
 
           /* Vertical samples */
           color = api->getpixel(snapshot, x, y - ((NUM_SAMPLE_WEIGHTS - 1) / 2) + sample);
-          SDL_GetRGB(color, snapshot->format, &r, &g, &b);
+          SDL_GetRGB(color, SDL_GetPixelFormatDetails(snapshot->format), SDL_GetSurfacePalette(snapshot), &r, &g, &b);
           sums[0] += r * sample_weights[sample];
           sums[1] += g * sample_weights[sample];
           sums[2] += b * sample_weights[sample];
@@ -279,7 +280,8 @@ void bloom_apply_effect(magic_api *api, SDL_Surface *canvas, SDL_Surface *snapsh
             if (xx >= 0 && xx < canvas->w && yy >= 0 && yy < canvas->h)
             {
               color = api->getpixel(snapshot, xx, yy);
-              SDL_GetRGB(color, snapshot->format, &r, &g, &b);
+              SDL_GetRGB(color, SDL_GetPixelFormatDetails(snapshot->format), SDL_GetSurfacePalette(snapshot), &r, &g,
+                         &b);
 
               mask_weight = (float)(bloom_mask[(yy) * canvas->w + xx] / 255.0);
               mask_weight *= BLOOM_WEIGHT_CONST;
@@ -314,7 +316,9 @@ void bloom_apply_effect(magic_api *api, SDL_Surface *canvas, SDL_Surface *snapsh
               gf *= 255.0;
               bf *= 255.0;
 
-              api->putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, (Uint8) rf, (Uint8) gf, (Uint8) bf));
+              api->putpixel(canvas, xx, yy,
+                            SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
+                                       (Uint8) rf, (Uint8) gf, (Uint8) bf));
             }
           }
         }
@@ -340,21 +344,22 @@ void bloom_line_callback_drag(void *ptr, int which ATTRIBUTE_UNUSED,
 {
   int xrad, yrad, xx, yy, chg, n;
   magic_api *api = (magic_api *) ptr;
+  int BLOOM_PAINT_RADIUS_P = max(1, (int)(BLOOM_PAINT_RADIUS * api->pressure));
 
   if (snd_effects != NULL)
     api->playsound(snd_effects, (x * 255) / canvas->w, 255);
 
-  for (yrad = -BLOOM_PAINT_RADIUS; yrad < BLOOM_PAINT_RADIUS; yrad++)
+  for (yrad = -BLOOM_PAINT_RADIUS_P; yrad < BLOOM_PAINT_RADIUS_P; yrad++)
   {
     yy = y + yrad;
     if (yy >= 0 && yy < canvas->h)
     {
-      for (xrad = -BLOOM_PAINT_RADIUS; xrad < BLOOM_PAINT_RADIUS; xrad++)
+      for (xrad = -BLOOM_PAINT_RADIUS_P; xrad < BLOOM_PAINT_RADIUS_P; xrad++)
       {
         xx = x + xrad;
         if (xx >= 0 && xx < canvas->w)
         {
-          if (api->in_circle(xrad, yrad, BLOOM_PAINT_RADIUS))
+          if (api->in_circle(xrad, yrad, BLOOM_PAINT_RADIUS_P))
           {
             /* Add to the bloom mask */
             n = (int)bloom_mask[yy * canvas->w + xx];
@@ -367,7 +372,9 @@ void bloom_line_callback_drag(void *ptr, int which ATTRIBUTE_UNUSED,
             bloom_mask[yy * canvas->w + xx] = (Uint8) n;
 
             /* Draw on the canvas temporarily */
-            api->putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, n, n, n));
+            api->putpixel(canvas, xx, yy,
+                          SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), n, n,
+                                     n));
           }
         }
       }

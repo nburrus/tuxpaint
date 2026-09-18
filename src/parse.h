@@ -97,7 +97,12 @@ struct cfginfo
   const char *joystick_button_pagesetup;
   const char *joystick_button_print;
   const char *joystick_buttons_ignore;
-
+  const char *pressure_disable;
+  const char *pressure_min_opacity;
+  const char *pressure_min_width;
+  const char *pressure_min_threshold;
+  const char *pressure_max_threshold;
+  const char *pressure_smooth;
 };
 
 #define CFGINFO_MAXOFFSET  (sizeof(struct cfginfo))

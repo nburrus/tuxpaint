@@ -3,9 +3,11 @@
 
   Last updated: October 7, 2024
 */
+#include <stdio.h>
+#include <stdlib.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 unsigned int img_w, img_h;
 static Uint8 string_r, string_g, string_b;
@@ -20,7 +22,7 @@ enum string_tools
   STRING_NUMTOOLS
 };
 
-Mix_Chunk *string_snd[STRING_NUMTOOLS];
+MIX_Audio *string_snd[STRING_NUMTOOLS];
 
 // Custom function declarations
 
@@ -216,13 +218,13 @@ int string_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/string.ogg", api->data_directory);
-  string_snd[STRING_TOOL_FULL_BY_OFFSET] = Mix_LoadWAV(fname);
+  string_snd[STRING_TOOL_FULL_BY_OFFSET] = MIX_LoadAudio(api->mmixer, fname, 0);
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/string2.ogg", api->data_directory);
-  string_snd[STRING_TOOL_TRIANGLE] = Mix_LoadWAV(fname);
+  string_snd[STRING_TOOL_TRIANGLE] = MIX_LoadAudio(api->mmixer, fname, 0);
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/string3.ogg", api->data_directory);
-  string_snd[STRING_TOOL_ANGLE] = Mix_LoadWAV(fname);
+  string_snd[STRING_TOOL_ANGLE] = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -232,12 +234,12 @@ void string_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   int i = 0;
 
   if (canvas_backup)
-    SDL_FreeSurface(canvas_backup);
+    SDL_DestroySurface(canvas_backup);
 
   while (i < STRING_NUMTOOLS)
   {
     if (string_snd[i] != NULL)
-      Mix_FreeChunk(string_snd[i]);
+      MIX_DestroyAudio(string_snd[i]);
     i++;
   }
 }
@@ -246,17 +248,14 @@ void string_switchin(magic_api *api ATTRIBUTE_UNUSED,
                      int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
                      SDL_Surface *canvas, SDL_Surface *snapshot ATTRIBUTE_UNUSED)
 {
-  canvas_backup =
-    SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->w, canvas->h,
-                         canvas->format->BitsPerPixel, canvas->format->Rmask,
-                         canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+  canvas_backup = SDL_CreateSurface(canvas->w, canvas->h, canvas->format);
 }
 
 void string_switchout(magic_api *api ATTRIBUTE_UNUSED,
                       int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
                       SDL_Surface *canvas ATTRIBUTE_UNUSED, SDL_Surface *snapshot ATTRIBUTE_UNUSED)
 {
-  SDL_FreeSurface(canvas_backup);
+  SDL_DestroySurface(canvas_backup);
   canvas_backup = NULL;
 }
 
@@ -268,7 +267,9 @@ void string_callback(void *ptr, int which ATTRIBUTE_UNUSED,
 {
   magic_api *api = (magic_api *) ptr;
 
-  api->putpixel(canvas, x, y, SDL_MapRGBA(canvas->format, string_r, string_g, string_b, 255));
+  api->putpixel(canvas, x, y,
+                SDL_MapRGBA(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), string_r,
+                            string_g, string_b, 255));
 }
 
 void string_callback_xor(void *ptr, int which ATTRIBUTE_UNUSED,

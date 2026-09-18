@@ -31,15 +31,15 @@
 #include <stdlib.h>
 #include <math.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 
 #define REFLECTION_XOR_SIZE 10
 
 /* Our globals: */
 
-static Mix_Chunk *reflection_snd;
+static MIX_Audio *reflection_snd;
 int reflection_x1, reflection_y1;
 enum reflection_sides
 {
@@ -86,7 +86,7 @@ int reflection_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Ui
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/reflection.ogg", api->data_directory);
-  reflection_snd = Mix_LoadWAV(fname);
+  reflection_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -383,7 +383,7 @@ void reflection_release(magic_api *api, int which ATTRIBUTE_UNUSED,
 void reflection_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (reflection_snd != NULL)
-    Mix_FreeChunk(reflection_snd);
+    MIX_DestroyAudio(reflection_snd);
 }
 
 void reflection_set_color(magic_api *api ATTRIBUTE_UNUSED,

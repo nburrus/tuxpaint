@@ -34,11 +34,12 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <libintl.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 #include <math.h>
 #include <limits.h>
 #include <time.h>
@@ -118,7 +119,7 @@ int magic_shaped_order[mosaic_shaped_NUM_TOOLS] = {
   1000,
 };
 
-static Mix_Chunk *mosaic_shaped_snd_effect[mosaic_shaped_NUM_TOOLS];
+static MIX_Audio *mosaic_shaped_snd_effect[mosaic_shaped_NUM_TOOLS];
 static SDL_Surface *canvas_shaped;
 static SDL_Surface *canvas_back;
 static SDL_Surface *mosaic_shaped_pattern;
@@ -182,7 +183,7 @@ int mosaic_shaped_init(magic_api *api,
   for (i = 0; i < mosaic_shaped_NUM_TOOLS; i++)
   {
     snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, mosaic_shaped_snd_filenames[i]);
-    mosaic_shaped_snd_effect[i] = Mix_LoadWAV(fname);
+    mosaic_shaped_snd_effect[i] = MIX_LoadAudio(api->mmixer, fname, 0);
   }
 
   return (1);
@@ -241,7 +242,9 @@ static void do_mosaic_shaped_full(void *ptr, SDL_Surface *canvas,
   Uint32 mosaic_shaped_color;
   magic_api *api = (magic_api *) ptr;
 
-  mosaic_shaped_color = SDL_MapRGBA(canvas->format, mosaic_shaped_r, mosaic_shaped_g, mosaic_shaped_b, 0);
+  mosaic_shaped_color =
+    SDL_MapRGBA(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), mosaic_shaped_r,
+                mosaic_shaped_g, mosaic_shaped_b, 0);
 
   for (i = 3; i < canvas->w - 3; i += 2)
   {
@@ -265,7 +268,7 @@ static void do_mosaic_shaped_full(void *ptr, SDL_Surface *canvas,
               reset_counter(canvas, mosaic_shaped_counted);
               size = 0;
               pixel_average =
-                SDL_MapRGB(canvas->format,
+                SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
                            mosaic_shaped_average_r /
                            mosaic_shaped_average_count,
                            mosaic_shaped_average_g /
@@ -287,7 +290,9 @@ static void mosaic_shaped_fill(void *ptr_to_api, int which ATTRIBUTE_UNUSED,
 
   x = clamp(0, x, canvas->w - 1);
   y = clamp(0, y, canvas->h - 1);
-  mosaic_shaped_color = SDL_MapRGBA(canvas->format, mosaic_shaped_r, mosaic_shaped_g, mosaic_shaped_b, 0);
+  mosaic_shaped_color =
+    SDL_MapRGBA(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), mosaic_shaped_r,
+                mosaic_shaped_g, mosaic_shaped_b, 0);
   mosaic_shaped_average_r = 0;
   mosaic_shaped_average_g = 0;
   mosaic_shaped_average_b = 0;
@@ -304,7 +309,7 @@ static void mosaic_shaped_fill(void *ptr_to_api, int which ATTRIBUTE_UNUSED,
   {
     size = 0;
     pixel_average =
-      SDL_MapRGB(canvas->format,
+      SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
                  mosaic_shaped_average_r / mosaic_shaped_average_count,
                  mosaic_shaped_average_g / mosaic_shaped_average_count,
                  mosaic_shaped_average_b / mosaic_shaped_average_count);
@@ -363,7 +368,7 @@ void mosaic_shaped_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   {
     if (mosaic_shaped_snd_effect[i] != NULL)
     {
-      Mix_FreeChunk(mosaic_shaped_snd_effect[i]);
+      MIX_DestroyAudio(mosaic_shaped_snd_effect[i]);
     }
   }
 }
@@ -414,7 +419,8 @@ static void mosaic_shaped_sharpen_pixel(void *ptr,
     for (j = -1; j < 2; j++)
     {
       //No need to check if inside canvas, getpixel does it for us.
-      SDL_GetRGB(api->getpixel(last, x + i, y + j), last->format, &r1, &g1, &b1);
+      SDL_GetRGB(api->getpixel(last, x + i, y + j), SDL_GetPixelFormatDetails(last->format),
+                 SDL_GetSurfacePalette(last), &r1, &g1, &b1);
       grey = mosaic_shaped_grey(r1, g1, b1);
       sobel_1 += grey * sobel_weights_1[i + 1][j + 1];
       sobel_2 += grey * sobel_weights_2[i + 1][j + 1];
@@ -426,7 +432,9 @@ static void mosaic_shaped_sharpen_pixel(void *ptr,
 
   if (temp > 25)
   {
-    api->putpixel(canvas_shaped, x, y, SDL_MapRGBA(canvas_shaped->format, 0, 0, 0, 0));
+    api->putpixel(canvas_shaped, x, y,
+                  SDL_MapRGBA(SDL_GetPixelFormatDetails(canvas_shaped->format), SDL_GetSurfacePalette(canvas_shaped), 0,
+                              0, 0, 0));
   }
 }
 
@@ -439,6 +447,9 @@ void mosaic_shaped_switchin(magic_api *api, int which, int mode ATTRIBUTE_UNUSED
   SDL_Rect rect;
   SDL_Surface *surf_aux, *tmp, *tmp2;
   Uint32 amask;
+  const SDL_PixelFormatDetails *msp_det;
+  const SDL_PixelFormatDetails *canvas_format_details = SDL_GetPixelFormatDetails(canvas->format);
+  SDL_Palette *msp_pal;
 
   mosaic_shaped_counted = (Uint8 *) malloc(sizeof(Uint8) * (canvas->w * canvas->h));
 
@@ -456,79 +467,73 @@ void mosaic_shaped_switchin(magic_api *api, int which, int mode ATTRIBUTE_UNUSED
     exit(1);
   }
 
-  amask = ~(canvas->format->Rmask | canvas->format->Gmask | canvas->format->Bmask);
+  amask = ~(canvas_format_details->Rmask | canvas_format_details->Gmask | canvas_format_details->Bmask);
 
-  tmp = SDL_CreateRGBSurface(SDL_SWSURFACE,
-                             canvas->w,
-                             canvas->h,
-                             canvas->format->BitsPerPixel,
-                             canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, amask);
-  canvas_shaped = SDL_ConvertSurfaceFormat(tmp, SDL_PIXELFORMAT_RGB888, 0);
-  SDL_FreeSurface(tmp);
+  tmp = SDL_CreateSurface(canvas->w, canvas->h,
+                          SDL_GetPixelFormatForMasks(canvas_format_details->bits_per_pixel,
+                                                     canvas_format_details->Rmask, canvas_format_details->Gmask,
+                                                     canvas_format_details->Bmask, amask));
+  canvas_shaped = SDL_ConvertSurface(tmp, SDL_PIXELFORMAT_XRGB8888);
+  SDL_DestroySurface(tmp);
 
-  tmp2 = SDL_CreateRGBSurface(SDL_SWSURFACE,
-                              canvas->w + 10,
-                              canvas->h + 10,
-                              canvas->format->BitsPerPixel,
-                              canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, amask);
+  tmp2 = SDL_CreateSurface(canvas->w + 10, canvas->h + 10,
+                           SDL_GetPixelFormatForMasks(canvas_format_details->bits_per_pixel,
+                                                      canvas_format_details->Rmask, canvas_format_details->Gmask,
+                                                      canvas_format_details->Bmask, amask));
 
-  surf_aux = SDL_ConvertSurfaceFormat(tmp2, SDL_PIXELFORMAT_RGB888, 0);
-  SDL_FreeSurface(tmp2);
+  surf_aux = SDL_ConvertSurface(tmp2, SDL_PIXELFORMAT_XRGB8888);
+  SDL_DestroySurface(tmp2);
 
   /* Generation of patterns now in the program, solves #210 */
   if (which == TOOL_SQUARE)
   {
-    mosaic_shaped_pattern = SDL_CreateRGBSurface(SDL_SWSURFACE,
-                                                 16,
-                                                 16,
-                                                 canvas->format->BitsPerPixel,
-                                                 canvas->format->Rmask,
-                                                 canvas->format->Gmask, canvas->format->Bmask, amask);
-    SDL_FillRect(mosaic_shaped_pattern, NULL,
-                 SDL_MapRGBA(mosaic_shaped_pattern->format, 255, 255, 255, SDL_ALPHA_OPAQUE));
+    mosaic_shaped_pattern = SDL_CreateSurface(16, 16,
+                                              SDL_GetPixelFormatForMasks(canvas_format_details->bits_per_pixel,
+                                                                         canvas_format_details->Rmask,
+                                                                         canvas_format_details->Gmask,
+                                                                         canvas_format_details->Bmask, amask));
+    msp_det = SDL_GetPixelFormatDetails(mosaic_shaped_pattern->format);
+    msp_pal = SDL_GetSurfacePalette(mosaic_shaped_pattern);
+    SDL_FillSurfaceRect(mosaic_shaped_pattern, NULL, SDL_MapRGBA(msp_det, msp_pal, 255, 255, 255, SDL_ALPHA_OPAQUE));
     /* Shape */
     for (i = 0; i < mosaic_shaped_pattern->w; i++)
     {
-      api->putpixel(mosaic_shaped_pattern, 0, i, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
+      api->putpixel(mosaic_shaped_pattern, 0, i, SDL_MapRGBA(msp_det, msp_pal, 0, 0, 0, SDL_ALPHA_OPAQUE));
       api->putpixel(mosaic_shaped_pattern, mosaic_shaped_pattern->w - 1, i,
-                    SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
-      api->putpixel(mosaic_shaped_pattern, i, 0, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
+                    SDL_MapRGBA(msp_det, msp_pal, 0, 0, 0, SDL_ALPHA_OPAQUE));
+      api->putpixel(mosaic_shaped_pattern, i, 0, SDL_MapRGBA(msp_det, msp_pal, 0, 0, 0, SDL_ALPHA_OPAQUE));
       api->putpixel(mosaic_shaped_pattern, i, mosaic_shaped_pattern->w - 1,
-                    SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
+                    SDL_MapRGBA(msp_det, msp_pal, 0, 0, 0, SDL_ALPHA_OPAQUE));
     }
     /* Shadow */
     for (i = 1; i < mosaic_shaped_pattern->w - 1; i++)
     {
-      api->putpixel(mosaic_shaped_pattern, 1, i,
-                    SDL_MapRGBA(mosaic_shaped_pattern->format, 128, 128, 128, SDL_ALPHA_OPAQUE));
+      api->putpixel(mosaic_shaped_pattern, 1, i, SDL_MapRGBA(msp_det, msp_pal, 128, 128, 128, SDL_ALPHA_OPAQUE));
       api->putpixel(mosaic_shaped_pattern, mosaic_shaped_pattern->w - 2, i,
-                    SDL_MapRGBA(mosaic_shaped_pattern->format, 128, 128, 128, SDL_ALPHA_OPAQUE));
-      api->putpixel(mosaic_shaped_pattern, i, 1,
-                    SDL_MapRGBA(mosaic_shaped_pattern->format, 128, 128, 128, SDL_ALPHA_OPAQUE));
+                    SDL_MapRGBA(msp_det, msp_pal, 128, 128, 128, SDL_ALPHA_OPAQUE));
+      api->putpixel(mosaic_shaped_pattern, i, 1, SDL_MapRGBA(msp_det, msp_pal, 128, 128, 128, SDL_ALPHA_OPAQUE));
       api->putpixel(mosaic_shaped_pattern, i, mosaic_shaped_pattern->w - 2,
-                    SDL_MapRGBA(mosaic_shaped_pattern->format, 128, 128, 128, SDL_ALPHA_OPAQUE));
+                    SDL_MapRGBA(msp_det, msp_pal, 128, 128, 128, SDL_ALPHA_OPAQUE));
 
     }
-    api->putpixel(mosaic_shaped_pattern, 2, 2,
-                  SDL_MapRGBA(mosaic_shaped_pattern->format, 152, 152, 152, SDL_ALPHA_OPAQUE));
+    api->putpixel(mosaic_shaped_pattern, 2, 2, SDL_MapRGBA(msp_det, msp_pal, 152, 152, 152, SDL_ALPHA_OPAQUE));
     api->putpixel(mosaic_shaped_pattern, 2, mosaic_shaped_pattern->h - 3,
-                  SDL_MapRGBA(mosaic_shaped_pattern->format, 152, 152, 152, SDL_ALPHA_OPAQUE));
+                  SDL_MapRGBA(msp_det, msp_pal, 152, 152, 152, SDL_ALPHA_OPAQUE));
     api->putpixel(mosaic_shaped_pattern, mosaic_shaped_pattern->w - 3, 2,
-                  SDL_MapRGBA(mosaic_shaped_pattern->format, 152, 152, 152, SDL_ALPHA_OPAQUE));
+                  SDL_MapRGBA(msp_det, msp_pal, 152, 152, 152, SDL_ALPHA_OPAQUE));
     api->putpixel(mosaic_shaped_pattern, mosaic_shaped_pattern->w - 3,
-                  mosaic_shaped_pattern->h - 3,
-                  SDL_MapRGBA(mosaic_shaped_pattern->format, 152, 152, 152, SDL_ALPHA_OPAQUE));
+                  mosaic_shaped_pattern->h - 3, SDL_MapRGBA(msp_det, msp_pal, 152, 152, 152, SDL_ALPHA_OPAQUE));
   }
   else if (which == TOOL_IRREGULAR)
   {
-    mosaic_shaped_pattern = SDL_CreateRGBSurface(SDL_SWSURFACE,
-                                                 64,
-                                                 64,
-                                                 canvas->format->BitsPerPixel,
-                                                 canvas->format->Rmask,
-                                                 canvas->format->Gmask, canvas->format->Bmask, amask);
-    SDL_FillRect(mosaic_shaped_pattern, NULL,
-                 SDL_MapRGBA(mosaic_shaped_pattern->format, 255, 255, 255, SDL_ALPHA_OPAQUE));
+    mosaic_shaped_pattern = SDL_CreateSurface(64, 64,
+                                              SDL_GetPixelFormatForMasks(canvas_format_details->bits_per_pixel,
+                                                                         canvas_format_details->Rmask,
+                                                                         canvas_format_details->Gmask,
+                                                                         canvas_format_details->Bmask, amask));
+    SDL_FillSurfaceRect(mosaic_shaped_pattern, NULL,
+                        SDL_MapRGBA(SDL_GetPixelFormatDetails(mosaic_shaped_pattern->format),
+                                    SDL_GetSurfacePalette(mosaic_shaped_pattern), 255, 255, 255, SDL_ALPHA_OPAQUE));
 
     /* Start/end of lines taken from the original mosaic_shaped_irregular_pattern.png */
     api->line(api, which, mosaic_shaped_pattern, NULL, 0, 8, 36, 23, 1, mosaic_shaped_paint);
@@ -568,14 +573,15 @@ void mosaic_shaped_switchin(magic_api *api, int which, int mode ATTRIBUTE_UNUSED
 
   else if (which == TOOL_HEX)
   {
-    mosaic_shaped_pattern = SDL_CreateRGBSurface(SDL_SWSURFACE,
-                                                 48,
-                                                 28,
-                                                 canvas->format->BitsPerPixel,
-                                                 canvas->format->Rmask,
-                                                 canvas->format->Gmask, canvas->format->Bmask, amask);
-    SDL_FillRect(mosaic_shaped_pattern, NULL,
-                 SDL_MapRGBA(mosaic_shaped_pattern->format, 255, 255, 255, SDL_ALPHA_OPAQUE));
+    mosaic_shaped_pattern = SDL_CreateSurface(48, 28,
+                                              SDL_GetPixelFormatForMasks(canvas_format_details->bits_per_pixel,
+                                                                         canvas_format_details->Rmask,
+                                                                         canvas_format_details->Gmask,
+                                                                         canvas_format_details->Bmask, amask));
+    msp_det = SDL_GetPixelFormatDetails(mosaic_shaped_pattern->format);
+    msp_pal = SDL_GetSurfacePalette(mosaic_shaped_pattern);
+
+    SDL_FillSurfaceRect(mosaic_shaped_pattern, NULL, SDL_MapRGBA(msp_det, msp_pal, 255, 255, 255, SDL_ALPHA_OPAQUE));
 
     api->line(api, which, mosaic_shaped_pattern, NULL, 0, 16, 8, 0, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 8, 0, 26, 0, 1, mosaic_shaped_paint);
@@ -586,13 +592,13 @@ void mosaic_shaped_switchin(magic_api *api, int which, int mode ATTRIBUTE_UNUSED
     api->line(api, which, mosaic_shaped_pattern, NULL, 0, 13, 8, 27, 1, mosaic_shaped_paint);
 
     //make pattern more accurate
-    api->putpixel(mosaic_shaped_pattern, 9, 27, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
-    api->putpixel(mosaic_shaped_pattern, 9, 26, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
-    api->putpixel(mosaic_shaped_pattern, 26, 27, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
+    api->putpixel(mosaic_shaped_pattern, 9, 27, SDL_MapRGBA(msp_det, msp_pal, 0, 0, 0, SDL_ALPHA_OPAQUE));
+    api->putpixel(mosaic_shaped_pattern, 9, 26, SDL_MapRGBA(msp_det, msp_pal, 0, 0, 0, SDL_ALPHA_OPAQUE));
+    api->putpixel(mosaic_shaped_pattern, 26, 27, SDL_MapRGBA(msp_det, msp_pal, 0, 0, 0, SDL_ALPHA_OPAQUE));
     api->update_progress_bar();
-    api->putpixel(mosaic_shaped_pattern, 26, 26, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
-    api->putpixel(mosaic_shaped_pattern, 26, 25, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
-    api->putpixel(mosaic_shaped_pattern, 25, 27, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
+    api->putpixel(mosaic_shaped_pattern, 26, 26, SDL_MapRGBA(msp_det, msp_pal, 0, 0, 0, SDL_ALPHA_OPAQUE));
+    api->putpixel(mosaic_shaped_pattern, 26, 25, SDL_MapRGBA(msp_det, msp_pal, 0, 0, 0, SDL_ALPHA_OPAQUE));
+    api->putpixel(mosaic_shaped_pattern, 25, 27, SDL_MapRGBA(msp_det, msp_pal, 0, 0, 0, SDL_ALPHA_OPAQUE));
 
   }
 
@@ -616,9 +622,9 @@ void mosaic_shaped_switchin(magic_api *api, int which, int mode ATTRIBUTE_UNUSED
 
   SDL_SetSurfaceBlendMode(surf_aux, SDL_BLENDMODE_NONE);
   SDL_BlitSurface(surf_aux, NULL, canvas_shaped, NULL);
-  SDL_FreeSurface(surf_aux);
-  black = SDL_MapRGBA(canvas->format, 0, 0, 0, 0);
-  white = SDL_MapRGBA(canvas->format, 255, 255, 255, 0);
+  SDL_DestroySurface(surf_aux);
+  black = SDL_MapRGBA(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), 0, 0, 0, 0);
+  white = SDL_MapRGBA(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), 255, 255, 255, 0);
 
   /* Two black lines at the edges */
   for (i = 0; i < canvas->w; i++)
@@ -638,11 +644,10 @@ void mosaic_shaped_switchin(magic_api *api, int which, int mode ATTRIBUTE_UNUSED
   }
 
   /* A copy of canvas at switchin, will be used to draw from it as snapshot changes at each click */
-  canvas_back = SDL_CreateRGBSurface(SDL_SWSURFACE,
-                                     canvas->w,
-                                     canvas->h,
-                                     canvas->format->BitsPerPixel,
-                                     canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, amask);
+  canvas_back = SDL_CreateSurface(canvas->w, canvas->h,
+                                  SDL_GetPixelFormatForMasks(canvas_format_details->bits_per_pixel,
+                                                             canvas_format_details->Rmask, canvas_format_details->Gmask,
+                                                             canvas_format_details->Bmask, amask));
   SDL_BlitSurface(canvas, NULL, canvas_back, NULL);
 
   if (which != TOOL_SQUARE)     /* The pattern for square is small enouth to not need an additional shape */
@@ -662,9 +667,9 @@ void mosaic_shaped_switchout(magic_api *api ATTRIBUTE_UNUSED,
                              int which ATTRIBUTE_UNUSED,
                              int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas ATTRIBUTE_UNUSED)
 {
-  SDL_FreeSurface(canvas_shaped);
-  SDL_FreeSurface(canvas_back);
-  SDL_FreeSurface(mosaic_shaped_pattern);
+  SDL_DestroySurface(canvas_shaped);
+  SDL_DestroySurface(canvas_back);
+  SDL_DestroySurface(mosaic_shaped_pattern);
   free(mosaic_shaped_counted);
 }
 
@@ -729,16 +734,18 @@ int scan_fill(magic_api *api, SDL_Surface *canvas, SDL_Surface *srfc,
     Uint8 cnvsr, cnvsg, cnvsb, cnvsa;
 
     shadow = api->getpixel(srfc, x, y);
-    SDL_GetRGBA(shadow, srfc->format, &shr, &shg, &shb, &sha);
-    SDL_GetRGBA(pixel_average, srfc->format, &cnvsr, &cnvsg, &cnvsb, &cnvsa);
-    shadow = SDL_MapRGBA(canvas->format, (shr * cnvsr) / 255, (shg * cnvsg) / 255, (shb * cnvsb) / 255, 0);     //(shr + cnvsr) /2, ;
+    SDL_GetRGBA(shadow, SDL_GetPixelFormatDetails(srfc->format), SDL_GetSurfacePalette(srfc), &shr, &shg, &shb, &sha);
+    SDL_GetRGBA(pixel_average, SDL_GetPixelFormatDetails(srfc->format), SDL_GetSurfacePalette(srfc), &cnvsr, &cnvsg,
+                &cnvsb, &cnvsa);
+    shadow = SDL_MapRGBA(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), (shr * cnvsr) / 255, (shg * cnvsg) / 255, (shb * cnvsb) / 255, 0);   //(shr + cnvsr) /2, ;
     api->putpixel(canvas, x, y, shadow);
     mosaic_shaped_counted[y * canvas->w + x] = 1;
     mosaic_shaped_done[y * canvas->w + x] = 1;
   }
   else
   {
-    SDL_GetRGBA(api->getpixel(canvas_back, x, y), canvas_back->format, &r, &g, &b, &a);
+    SDL_GetRGBA(api->getpixel(canvas_back, x, y), SDL_GetPixelFormatDetails(canvas_back->format),
+                SDL_GetSurfacePalette(canvas_back), &r, &g, &b, &a);
     mosaic_shaped_average_r += r;
     mosaic_shaped_average_g += g;
     mosaic_shaped_average_b += b;
@@ -815,7 +822,8 @@ static void mosaic_shaped_paint(void *ptr, int which ATTRIBUTE_UNUSED,
   Uint8 r, g, b, a;
   Uint32 shadow_tone;
 
-  black = SDL_MapRGBA(canvas->format, 0, 0, 0, SDL_ALPHA_OPAQUE);
+  black =
+    SDL_MapRGBA(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), 0, 0, 0, SDL_ALPHA_OPAQUE);
 
   radius = 1;
   shadow = 3;
@@ -844,7 +852,8 @@ static void mosaic_shaped_paint(void *ptr, int which ATTRIBUTE_UNUSED,
 
       else if (api->in_circle(i, j, radius + shadow) && shadow_tone != black)
       {
-        SDL_GetRGBA(shadow_tone, canvas->format, &r, &g, &b, &a);
+        SDL_GetRGBA(shadow_tone, SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), &r, &g, &b,
+                    &a);
 
         /* Shadows should be shadows, not black */
         if (r > 10)
@@ -854,7 +863,9 @@ static void mosaic_shaped_paint(void *ptr, int which ATTRIBUTE_UNUSED,
         if (b > 10)
           b -= 9;
 
-        api->putpixel(canvas, ii, jj, SDL_MapRGBA(canvas->format, r, g, b, SDL_ALPHA_OPAQUE));
+        api->putpixel(canvas, ii, jj,
+                      SDL_MapRGBA(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b,
+                                  SDL_ALPHA_OPAQUE));
 
       }
 

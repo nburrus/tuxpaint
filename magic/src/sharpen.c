@@ -32,8 +32,8 @@
 #include <string.h>
 #include <libintl.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 #include <math.h>
 #include <limits.h>
 
@@ -57,7 +57,7 @@ static int sharpen_RADIUS = 16;
 
 static const double SHARPEN = 0.5;
 
-static Mix_Chunk *sharpen_snd_effect[sharpen_NUM_TOOLS];
+static MIX_Audio *sharpen_snd_effect[sharpen_NUM_TOOLS];
 
 const char *sharpen_snd_filenames[sharpen_NUM_TOOLS] = {
   "edges.ogg",
@@ -142,7 +142,7 @@ int sharpen_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
   for (i = 0; i < sharpen_NUM_TOOLS; i++)
   {
     snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, sharpen_snd_filenames[i]);
-    sharpen_snd_effect[i] = Mix_LoadWAV(fname);
+    sharpen_snd_effect[i] = MIX_LoadAudio(api->mmixer, fname, 0);
   }
 
   return (1);
@@ -221,7 +221,8 @@ static void do_sharpen_pixel(void *ptr, int which, SDL_Surface *canvas, SDL_Surf
     for (j = -1; j < 2; j++)
     {
       //No need to check if inside canvas, getpixel does it for us.
-      SDL_GetRGB(api->getpixel(last, x + i, y + j), last->format, &r1, &g1, &b1);
+      SDL_GetRGB(api->getpixel(last, x + i, y + j), SDL_GetPixelFormatDetails(last->format),
+                 SDL_GetSurfacePalette(last), &r1, &g1, &b1);
       grey = sharpen_grey(r1, g1, b1);
       sobel_1 += grey * sobel_weights_1[i + 1][j + 1];
       sobel_2 += grey * sobel_weights_2[i + 1][j + 1];
@@ -236,22 +237,31 @@ static void do_sharpen_pixel(void *ptr, int which, SDL_Surface *canvas, SDL_Surf
   {
     if (temp < THRESHOLD)
     {
-      api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, 255, 255, 255));
+      api->putpixel(canvas, x, y,
+                    SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), 255, 255,
+                               255));
     }
   }
   //Simply display the edge values - provides a nice black and white silhouette image
   else if (which == TOOL_SILHOUETTE)
   {
-    api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, temp, temp, temp));
+    api->putpixel(canvas, x, y,
+                  SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), temp, temp,
+                             temp));
   }
   //Add the edge values to the original image, creating a more distinct jump in contrast at edges
   else if (which == TOOL_SHARPEN)
   {
-    SDL_GetRGB(api->getpixel(last, x, y), last->format, &r1, &g1, &b1);
+    SDL_GetRGB(api->getpixel(last, x, y), SDL_GetPixelFormatDetails(last->format), SDL_GetSurfacePalette(last), &r1,
+               &g1, &b1);
     api->putpixel(canvas, x, y,
-                  SDL_MapRGB(canvas->format,
-                             clamp(0.0, r1 + SHARPEN * temp, 255.0),
-                             clamp(0.0, g1 + SHARPEN * temp, 255.0), clamp(0.0, b1 + SHARPEN * temp, 255.0)));
+                  SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas),
+                             clamp(0.0, r1 + SHARPEN * temp, 255.0), clamp(0.0, g1 + SHARPEN * temp, 255.0), clamp(0.0,
+                                                                                                                   b1 +
+                                                                                                                   SHARPEN
+                                                                                                                   *
+                                                                                                                   temp,
+                                                                                                                   255.0)));
   }
 }
 
@@ -282,11 +292,11 @@ static void do_sharpen_brush(void *ptr, int which, SDL_Surface *canvas, SDL_Surf
   int xx, yy;
   magic_api *api = (magic_api *) ptr;
 
-  for (yy = y - sharpen_RADIUS; yy < y + sharpen_RADIUS; yy++)
+  for (yy = y - sharpen_RADIUS * api->pressure; yy < y + sharpen_RADIUS * api->pressure; yy++)
   {
-    for (xx = x - sharpen_RADIUS; xx < x + sharpen_RADIUS; xx++)
+    for (xx = x - sharpen_RADIUS * api->pressure; xx < x + sharpen_RADIUS * api->pressure; xx++)
     {
-      if (api->in_circle(xx - x, yy - y, sharpen_RADIUS) && !api->touched(xx, yy))
+      if (api->in_circle(xx - x, yy - y, sharpen_RADIUS * api->pressure) && !api->touched(xx, yy))
       {
         do_sharpen_pixel(api, which, canvas, last, xx, yy);
       }
@@ -360,7 +370,7 @@ void sharpen_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   {
     if (sharpen_snd_effect[i] != NULL)
     {
-      Mix_FreeChunk(sharpen_snd_effect[i]);
+      MIX_DestroyAudio(sharpen_snd_effect[i]);
     }
   }
 }

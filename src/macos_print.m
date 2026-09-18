@@ -131,13 +131,7 @@ static NSImage* CreateImage( SDL_Surface *surface )
     SDL_Surface*      surface32RGBA;
 
     // convert surface to 32bit RGBA
-#ifdef BIG_ENDIAN_ARCH
-    surface32RGBA = SDL_CreateRGBSurface( SDL_SWSURFACE, surface->w, surface->h,
-                                          32, 0xff<<24, 0xff<<16, 0xff<<8, 0xff<<0 );
-#else
-    surface32RGBA = SDL_CreateRGBSurface( SDL_SWSURFACE, surface->w, surface->h,
-                                          32, 0xff<<0, 0xff<<8, 0xff<<16, 0xff<<24 );
-#endif
+    surface32RGBA = SDL_CreateSurface(surface->w, surface->h, surface->format);
     if( surface32RGBA == NULL ) {
         NSLog (@"CreateImage: Cannot allocate conversion surface");
         return nil;

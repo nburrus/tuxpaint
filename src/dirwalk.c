@@ -37,7 +37,7 @@
 #include <unistd.h>
 #include <dirent.h>
 
-#include "SDL_ttf.h"
+#include <SDL3_ttf/SDL_ttf.h>
 
 #include "dirwalk.h"
 #include "progressbar.h"
@@ -161,7 +161,7 @@ void loadfont_callback(SDL_Surface *screen, SDL_Texture *texture,
 #ifdef DEBUG
         if (font->typ == FONT_TYPE_TTF)
         {
-          int numfaces = TTF_FontFaces(font->ttf_font);
+          int numfaces = TTF_GetNumFontFaces(font->ttf_font);
 
           if (numfaces != 1)
             printf("%s:%d - Found %d faces in %s, %s, %s\n", __FILE__, __LINE__, numfaces, files[i].str, family, style);
@@ -444,7 +444,7 @@ void tp_ftw(SDL_Surface *screen, SDL_Texture *texture,
 #warning Failed to see DT_UNKNOWN
 #endif
 
-#if defined(_DIRENT_HAVE_D_NAMLEN) || defined(__APPLE__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__FreeBSD__)
+#if defined(_DIRENT_HAVE_D_NAMLEN) || defined(SDL_PLATFORM_APPLE) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__FreeBSD__)
     d_namlen = f->d_namlen;
 #else
     d_namlen = strlen(f->d_name);

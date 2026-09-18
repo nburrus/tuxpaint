@@ -303,7 +303,7 @@ filename. That is, if your plugin is called "zoom.so" (on Linux) or "zoom.dll"
     tool. (A greyscale image with alpha, no larger than 40x40.) This will
     appear on the button in the 'Magic' selector within Tux Paint.
 
-    Tux Paint will free ("SDL_FreeSurface()") the surface upon exit.
+    Tux Paint will free ("SDL_DestroySurface()") the surface upon exit.
 
     Note: Called once for each Magic tool your plugin claims to contain (by
     your "get_tool_count()").
@@ -1457,7 +1457,7 @@ Plugin Functions," above.)
     → SDL ←
         See "Simple DirectMedia Layer"
          
-    → SDL_FreeSurface() ←
+    → SDL_DestroySurface() ←
         A libSDL function that frees (deallocates) memory allocated for an SDL
         surface ("SDL_Surface *").
          

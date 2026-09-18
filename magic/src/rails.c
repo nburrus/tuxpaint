@@ -5,9 +5,11 @@
 
   Last updated: October 7, 2024
 */
+#include <stdio.h>
+#include <stdlib.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 #define SEG_NONE 0
 
@@ -32,7 +34,7 @@
 #define inline static
 #endif
 
-Mix_Chunk *rails_snd;
+MIX_Audio *rails_snd;
 unsigned int img_w, img_h;
 unsigned int rails_segments_x, rails_segments_y;        //how many segments do we have?
 inline int rails_math_ceil(int x, int y);       //ceil() in cstdlib returns float and is relative slow, so we'll use our one
@@ -150,7 +152,7 @@ int rails_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 c
   img_h = rails_one->h;
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/rails.wav", api->data_directory);
-  rails_snd = Mix_LoadWAV(fname);
+  rails_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -207,12 +209,12 @@ void rails_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   Uint8 i;
 
   if (rails_snd != NULL)
-    Mix_FreeChunk(rails_snd);
-  SDL_FreeSurface(rails_one);
-  SDL_FreeSurface(rails_three);
-  SDL_FreeSurface(rails_four);
-  SDL_FreeSurface(rails_corner);
-  SDL_FreeSurface(canvas_backup);
+    MIX_DestroyAudio(rails_snd);
+  SDL_DestroySurface(rails_one);
+  SDL_DestroySurface(rails_three);
+  SDL_DestroySurface(rails_four);
+  SDL_DestroySurface(rails_corner);
+  SDL_DestroySurface(canvas_backup);
 
   for (i = 0; i < 4; i++)
     free(rails_images[i]);
@@ -226,10 +228,7 @@ void rails_switchin(magic_api *api ATTRIBUTE_UNUSED,
 {
   //we've to compute the quantity of segments in each direction
 
-  canvas_backup =
-    SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->w, canvas->h,
-                         canvas->format->BitsPerPixel, canvas->format->Rmask,
-                         canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+  canvas_backup = SDL_CreateSurface(canvas->w, canvas->h, canvas->format);
 
   SDL_BlitSurface(canvas, NULL, canvas_backup, NULL);
   rails_segments_x = rails_math_ceil(canvas->w, img_w);
@@ -471,17 +470,9 @@ static void rails_draw(void *ptr, int which ATTRIBUTE_UNUSED,
   rails_status_of_segments[segment] = image;    //and write it to global table
 
 
-  result =
-    SDL_CreateRGBSurface(SDL_SWSURFACE, img_w, img_h,
-                         rails_one->format->BitsPerPixel,
-                         rails_one->format->Rmask, rails_one->format->Gmask,
-                         rails_one->format->Bmask, rails_one->format->Amask);
+  result = SDL_CreateSurface(img_w, img_h, rails_one->format);
 
-  temp =
-    SDL_CreateRGBSurface(SDL_SWSURFACE, img_w, img_h,
-                         rails_one->format->BitsPerPixel,
-                         rails_one->format->Rmask, rails_one->format->Gmask,
-                         rails_one->format->Bmask, rails_one->format->Amask);
+  temp = SDL_CreateSurface(img_w, img_h, rails_one->format);
 
   SDL_BlitSurface(canvas_backup, &modification_rect, result, NULL);
 
@@ -547,9 +538,9 @@ static void rails_draw(void *ptr, int which ATTRIBUTE_UNUSED,
   if (use_temp)
     SDL_BlitSurface(temp, NULL, result, NULL);
 
-  SDL_FreeSurface(temp);
+  SDL_DestroySurface(temp);
   SDL_BlitSurface(result, NULL, canvas, &modification_rect);
-  SDL_FreeSurface(result);
+  SDL_DestroySurface(result);
   api->playsound(rails_snd, (x * 255) / canvas->w, 255);
 }
 

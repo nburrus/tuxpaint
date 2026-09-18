@@ -27,9 +27,10 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 #define NUM_TOOLS 4
 
@@ -58,7 +59,7 @@ int num_pts = 0;
 
 float fractal_click_x, fractal_click_y;
 
-static Mix_Chunk *fractal_snd;
+static MIX_Audio *fractal_snd;
 static int fractal_radius = 16;
 Uint8 fractal_r, fractal_g, fractal_b;
 
@@ -108,7 +109,7 @@ int fractal_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/fractals.ogg", api->data_directory);
-  fractal_snd = Mix_LoadWAV(fname);
+  fractal_snd = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -192,7 +193,8 @@ static void do_fractal_circle(void *ptr, int which ATTRIBUTE_UNUSED,
     {
       if (fractal_opacity_cur < 1.0)
       {
-        SDL_GetRGB(api->getpixel(canvas, xx + x, yy + y), canvas->format, &r, &g, &b);
+        SDL_GetRGB(api->getpixel(canvas, xx + x, yy + y), SDL_GetPixelFormatDetails(canvas->format),
+                   SDL_GetSurfacePalette(canvas), &r, &g, &b);
         r = (Uint8) (((float)r * (1.0 - fractal_opacity_cur)) + ((float)fractal_r * fractal_opacity_cur));
         g = (Uint8) (((float)g * (1.0 - fractal_opacity_cur)) + ((float)fractal_g * fractal_opacity_cur));
         b = (Uint8) (((float)b * (1.0 - fractal_opacity_cur)) + ((float)fractal_b * fractal_opacity_cur));
@@ -204,7 +206,7 @@ static void do_fractal_circle(void *ptr, int which ATTRIBUTE_UNUSED,
         b = fractal_b;
       }
 
-      pix = SDL_MapRGB(canvas->format, r, g, b);
+      pix = SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b);
       api->putpixel(canvas, xx + x, yy + y, pix);
     }
   }
@@ -324,7 +326,7 @@ void fractal_release(magic_api *api, int which,
 void fractal_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (fractal_snd != NULL)
-    Mix_FreeChunk(fractal_snd);
+    MIX_DestroyAudio(fractal_snd);
 }
 
 void fractal_set_color(magic_api *api ATTRIBUTE_UNUSED,

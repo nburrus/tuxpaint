@@ -31,7 +31,7 @@
 #ifndef PROGRESSBAR_H
 #define PROGRESSBAR_H
 
-#include "SDL.h"
+#include <SDL3/SDL.h>
 
 extern SDL_Surface *img_progress;
 extern int progress_bar_disabled, prog_bar_ctr;

@@ -6,13 +6,14 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <libintl.h>
 #include <math.h>
 
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 #define MAZE_BLOCK_SIZE 8
 #define MAZE_PAINT_RADIUS ((MAZE_BLOCK_SIZE * 3) + 2)
@@ -33,7 +34,7 @@ typedef struct
   int x, y;
 } maze_start_t;
 
-Mix_Chunk *snd_effect = NULL;
+MIX_Audio *snd_effect = NULL;
 Uint8 *maze_mask = NULL, *new_maze_mask = NULL, *maze_array = NULL;
 Uint32 *maze_color;
 maze_start_t *maze_starts;
@@ -86,7 +87,7 @@ int maze_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 co
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/maze.ogg", api->data_directory);
-  snd_effect = Mix_LoadWAV(fname);
+  snd_effect = MIX_LoadAudio(api->mmixer, fname, 0);
 
   return (1);
 }
@@ -142,7 +143,7 @@ int maze_modes(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 void maze_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (snd_effect != NULL)
-    Mix_FreeChunk(snd_effect);
+    MIX_DestroyAudio(snd_effect);
 
   if (maze_mask != NULL)
     free(maze_mask);
@@ -192,7 +193,8 @@ maze_click(magic_api *api, int which, int mode,
     maze_add_start();
     memset(maze_mask, 1, (canvas->w * canvas->h));
 
-    color = SDL_MapRGB(canvas->format, maze_r, maze_g, maze_b);
+    color =
+      SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), maze_r, maze_g, maze_b);
 //  memset(maze_color, color, (sizeof(Uint32) * (canvas->w * canvas->h))); // FIXME: Why doesn't this work? -bjk 2023.01.21
     for (y = 0; y < canvas->h; y++)
       for (x = 0; x < canvas->w; x++)
@@ -381,7 +383,7 @@ void maze_line_callback_drag(void *ptr, int which ATTRIBUTE_UNUSED,
   if (snd_effect != NULL)
     api->playsound(snd_effect, (x * 255) / canvas->w, 255);
 
-  color = SDL_MapRGB(canvas->format, maze_r, maze_g, maze_b);
+  color = SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), maze_r, maze_g, maze_b);
 
   x = floor(x / (MAZE_BLOCK_SIZE * 3)) * (MAZE_BLOCK_SIZE * 3);
   y = floor(y / (MAZE_BLOCK_SIZE * 3)) * (MAZE_BLOCK_SIZE * 3);
@@ -469,10 +471,7 @@ void maze_switchin(magic_api *api ATTRIBUTE_UNUSED,
   zero_maze_arrays(canvas);
 
   if (maze_snapshot == NULL)
-    maze_snapshot = SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->w, canvas->h,
-                                         canvas->format->BitsPerPixel,
-                                         canvas->format->Rmask,
-                                         canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+    maze_snapshot = SDL_CreateSurface(canvas->w, canvas->h, canvas->format);
 
   if (maze_snapshot != NULL)
     SDL_BlitSurface(canvas, NULL, maze_snapshot, NULL);

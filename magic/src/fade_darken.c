@@ -28,9 +28,10 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 enum
 {
@@ -103,7 +104,7 @@ char *icon_filenames[NUM_TOOLS] = {
   "keep_color.png",
 };
 
-static Mix_Chunk *snd_effects[NUM_TOOLS];
+static MIX_Audio *snd_effects[NUM_TOOLS];
 float chosen_h, chosen_s;
 static int fade_darken_radius = 16;
 
@@ -153,7 +154,7 @@ int fade_darken_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, U
   for (i = 0; i < NUM_TOOLS; i++)
   {
     snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, sfx_filenames[i]);
-    snd_effects[i] = Mix_LoadWAV(fname);
+    snd_effects[i] = MIX_LoadAudio(api->mmixer, fname, 0);
   }
 
   return (1);
@@ -209,7 +210,8 @@ static void do_fade_darken(void *ptr, int which, SDL_Surface *canvas, SDL_Surfac
   Uint8 r, g, b;
   magic_api *api = (magic_api *) ptr;
 
-  SDL_GetRGB(api->getpixel(last, x, y), last->format, &r, &g, &b);
+  SDL_GetRGB(api->getpixel(last, x, y), SDL_GetPixelFormatDetails(last->format), SDL_GetSurfacePalette(last), &r, &g,
+             &b);
 
   if (which == TOOL_FADE)
   {
@@ -266,7 +268,8 @@ static void do_fade_darken(void *ptr, int which, SDL_Surface *canvas, SDL_Surfac
     api->hsvtorgb(h, s, v, &r, &g, &b);
   }
 
-  api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, r, g, b));
+  api->putpixel(canvas, x, y,
+                SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b));
 }
 
 
@@ -275,12 +278,13 @@ static void do_fade_darken_paint(void *ptr, int which, SDL_Surface *canvas, SDL_
 {
   int xx, yy;
   magic_api *api = (magic_api *) ptr;
+  int fade_darken_radius_p = max(1, (int)(fade_darken_radius * api->pressure));
 
-  for (yy = y - fade_darken_radius; yy < y + fade_darken_radius; yy++)
+  for (yy = y - fade_darken_radius_p; yy < y + fade_darken_radius_p; yy++)
   {
-    for (xx = x - fade_darken_radius; xx < x + fade_darken_radius; xx++)
+    for (xx = x - fade_darken_radius_p; xx < x + fade_darken_radius_p; xx++)
     {
-      if (api->in_circle(xx - x, yy - y, fade_darken_radius) && !api->touched(xx, yy))
+      if (api->in_circle(xx - x, yy - y, fade_darken_radius_p) && !api->touched(xx, yy))
       {
         do_fade_darken(api, which, canvas, last, xx, yy);
       }
@@ -361,9 +365,9 @@ void fade_darken_release(magic_api *api ATTRIBUTE_UNUSED,
 void fade_darken_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (snd_effects[0] != NULL)
-    Mix_FreeChunk(snd_effects[0]);
+    MIX_DestroyAudio(snd_effects[0]);
   if (snd_effects[1] != NULL)
-    Mix_FreeChunk(snd_effects[1]);
+    MIX_DestroyAudio(snd_effects[1]);
 }
 
 void fade_darken_set_color(magic_api *api, int which ATTRIBUTE_UNUSED,

@@ -14,8 +14,8 @@
 #include <math.h>
 
 #include "tp_magic_api.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
 
 enum
 {
@@ -54,7 +54,7 @@ char *colorsep_descr_anaglyph_simple =
   gettext_noop
   ("Click and drag left and right to separate your picture's red and cyan, to make anaglyphs you can view with 3D glasses!");
 
-Mix_Chunk *snd_effects[NUM_TOOLS];
+MIX_Audio *snd_effects[NUM_TOOLS];
 int colorsep_click_x, colorsep_click_y;
 float colorsep_r_pct, colorsep_g_pct, colorsep_b_pct;
 int colorsep_complexity;
@@ -118,7 +118,7 @@ int colorsep_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint
   for (i = 0; i < NUM_TOOLS; i++)
   {
     snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, colorsep_snd_filenames[i]);
-    snd_effects[i] = Mix_LoadWAV(fname);
+    snd_effects[i] = MIX_LoadAudio(api->mmixer, fname, 0);
   }
 
   colorsep_complexity = complexity_level;
@@ -188,7 +188,7 @@ void colorsep_shutdown(magic_api *api ATTRIBUTE_UNUSED)
   for (i = 0; i < NUM_TOOLS; i++)
   {
     if (snd_effects[i] != NULL)
-      Mix_FreeChunk(snd_effects[i]);
+      MIX_DestroyAudio(snd_effects[i]);
   }
 }
 
@@ -253,8 +253,10 @@ void colorsep_apply(magic_api *api, int which, SDL_Surface *canvas,
   {
     for (xx = 0; xx < canvas->w; xx = xx + step)
     {
-      SDL_GetRGB(api->getpixel(snapshot, xx + offset_x / 2, yy + offset_y / 2), snapshot->format, &r1, &g1, &b1);
-      SDL_GetRGB(api->getpixel(snapshot, xx - offset_x / 2, yy - offset_y / 2), snapshot->format, &r2, &g2, &b2);
+      SDL_GetRGB(api->getpixel(snapshot, xx + offset_x / 2, yy + offset_y / 2),
+                 SDL_GetPixelFormatDetails(snapshot->format), SDL_GetSurfacePalette(snapshot), &r1, &g1, &b1);
+      SDL_GetRGB(api->getpixel(snapshot, xx - offset_x / 2, yy - offset_y / 2),
+                 SDL_GetPixelFormatDetails(snapshot->format), SDL_GetSurfacePalette(snapshot), &r2, &g2, &b2);
 
       if (which == COLORSEP_TOOL_3DGLASSES)
       {
@@ -343,11 +345,14 @@ void colorsep_apply(magic_api *api, int which, SDL_Surface *canvas,
         dest.w = step;
         dest.h = step;
 
-        SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, r, g, b));
+        SDL_FillSurfaceRect(canvas, &dest,
+                            SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g,
+                                       b));
       }
       else
       {
-        api->putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));
+        api->putpixel(canvas, xx, yy,
+                      SDL_MapRGB(SDL_GetPixelFormatDetails(canvas->format), SDL_GetSurfacePalette(canvas), r, g, b));
       }
     }
   }
