@@ -18,3 +18,13 @@ thumbnails under AddressSanitizer completed without errors.
 The build also converts sub-byte indexed surfaces before thumbnailing and
 converts the Emitter plugin's paletted surface to RGBA before scaling. Both
 changes fix startup memory errors found with AddressSanitizer.
+
+## Surface pen eraser on Wayland
+
+SDL 3.4.2 records Wayland tablet tool type `ERASER`, but its Wayland event
+handler passes `false` as the eraser argument to every `SDL_SendPenTouch` call.
+As a result, Tux Paint sees the reversed pen end as another drawing tip. Apply
+`patches/SDL-3.4.2-wayland-eraser.patch` to SDL 3.4.2 source with `patch -p1`
+and build SDL with Wayland enabled. Place its `libSDL3.so.0` in the private
+Tux Paint library directory so the `/opt` launcher loads it. This avoids
+changing the system SDL library used by other applications.
