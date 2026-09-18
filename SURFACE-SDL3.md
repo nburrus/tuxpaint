@@ -28,3 +28,14 @@ As a result, Tux Paint sees the reversed pen end as another drawing tip. Apply
 and build SDL with Wayland enabled. Place its `libSDL3.so.0` in the private
 Tux Paint library directory so the `/opt` launcher loads it. This avoids
 changing the system SDL library used by other applications.
+
+## Alicia's launcher
+
+On Alicia's GNOME Wayland session, the pen stops sending tablet-down events to
+Tux Paint after it leaves proximity in SDL fullscreen mode. Alt-Tab away and
+back restores them. A Wayland protocol trace shows hover events continue but
+the compositor sends no `zwp_tablet_tool_v2.down` until focus changes. The same
+pen works in other applications and in Tux Paint windowed mode. Run
+`sudo sh install-alicia-tuxpaint-windowed-icon.sh` to give Alicia one desktop
+icon that opens the stable 1280x800 windowed mode with plain cursors and simple
+shapes. The installer removes her old fullscreen desktop icon.
