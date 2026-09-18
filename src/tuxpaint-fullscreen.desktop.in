@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Tux Paint (Fullscreen)
 Type=Application
-Exec=tuxpaint --fullscreen=native
+Exec=tuxpaint --fullscreen=yes --nofancycursors
 Icon=tuxpaint
 Terminal=false
 Categories=Education;Art;Graphics;2DGraphics;Game;KidsGame;

@@ -329,12 +329,12 @@ CURSOR_SHAPES:=LARGE
 SDL_LIBS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs)
 SDL_LIBS+=$(call linktest,SDL3_image,-lSDL3_image,$(SDL_LIBS))
 SDL_LIBS+=$(call linktest,SDL3_ttf,-lSDL3_ttf,$(SDL_LIBS))
-SDL_LIBS+=$(shell $(PKG_CONFIG) SDL3_gfx --libs)
+SDL_LIBS+=$(shell $(PKG_CONFIG) sdl3-gfx --libs)
 SDL_LIBS+=$(call linktest,zlib,-lz,)
 SDL_LIBS+=$(call linktest,libpng,$(PNG),)
 
 # Sound support
-SDL_MIXER_LIB:=$(call linktest,SDL3_mixer,-lSDL3_mixer,$(SDL_LIBS))
+SDL_MIXER_LIB:=$(call linktest,sdl3-mixer,-lSDL3_mixer,$(SDL_LIBS))
 NOSOUNDFLAG:=$(if $(SDL_MIXER_LIB),,-DNOSOUND$(warning -lSDL3_Mixer failed, no sound for you!))
 
 # SDL3_Pango is used to render text (and is needed for complex scripts like Thai and Arabic)
@@ -350,6 +350,8 @@ SDL_LIBS+=$(SDL_MIXER_LIB) $(SDL3_PANGO_LIB) $(PANGO_LIB)
 
 SDL_CFLAGS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --cflags)
 SDL_CFLAGS+=$(shell $(PKG_CONFIG) sdl3-gfx --cflags)
+SDL_CFLAGS+=$(shell $(PKG_CONFIG) freetype2 --cflags)
+SDL_CFLAGS+=$(shell $(PKG_CONFIG) pango --cflags)
 
 # New one: -lrsvg-2 -lcairo
 # Old one: -lcairo -lsvg -lsvg-cairo
@@ -425,7 +427,7 @@ MOUSE_CFLAGS:=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
 # are 132x80.  On larger screens, they will be bigger (since the New dialog
 # is always 4x4 thumbnails); therefore, generating larger thumbs, which can
 # be still be scaled down fairly quickly (esp. complicated SVG ones).
-CONVERT_OPTS:=-alpha Background -alpha Off +depth -resize "!264x160" -background white -interlace none
+CONVERT_OPTS:=-alpha Background -alpha Off -depth 8 -resize "!264x160" -background white -interlace none
 
 .SUFFIXES:
 
@@ -1017,7 +1019,7 @@ install-pkgxdg: src/tuxpaint.desktop src/tuxpaint-fullscreen.desktop src/org.tux
 	@mkdir -p $(DESTDIR)$(PREFIX)/share/applications
 	cp -a src/tuxpaint.desktop $(DESTDIR)$(PREFIX)/share/applications/
 	cp -a src/tuxpaint-fullscreen.desktop $(DESTDIR)$(PREFIX)/share/applications/
-	mkdir -p $(NEWICON_PREFIX)/{16x16,22x22,32x32,48x48,64x64,96x96,128x128,192x192}/apps
+	@for size in 16 22 32 48 64 96 128 192; do mkdir -p $(NEWICON_PREFIX)/$${size}x$${size}/apps; done
 	mkdir -p $(METAINFO_PREFIX)
 	cp -a data/images/icon16x16.png $(NEWICON_PREFIX)/16x16/apps/tuxpaint.png
 	cp -a data/images/icon22x22.png $(NEWICON_PREFIX)/22x22/apps/tuxpaint.png
@@ -1317,7 +1319,7 @@ obj/parse.o:	obj/parse.c src/parse.h src/compiler.h
 obj/i18n.o:	src/i18n.c src/i18n.h src/debug.h
 	echo
 	echo "...Compiling i18n support..."
-	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(DEFS) $(ARCH_DEFS) \
+	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/i18n.c -o obj/i18n.o
 
 obj/im.o:	src/im.c src/im.h src/debug.h
@@ -1486,7 +1488,7 @@ obj:
 
 ######
 
-MAGIC_SDL_CPPFLAGS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) SDL3_gfx --cflags)
+MAGIC_SDL_CPPFLAGS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) sdl3-gfx --cflags)
 
 # FIXME: Expose SDL_rotozoom to Magic API? -bjk 2021.09.06
 windows_MAGIC_SDL_LIBS:=-L/usr/local/lib $(LIBMINGW) $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL3_image -lSDL3_ttf $(SDL_MIXER_LIB) -lSDL3_gfx
@@ -1494,7 +1496,7 @@ os2_MAGIC_SDL_LIBS:=-L/@unixroot/usr/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) --l
 macos_MAGIC_SDL_LIBS:=-L/usr/local/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL3_image -lSDL3_ttf $(SDL_MIXER_LIB) -lSDL3_gfx
 ios_MAGIC_SDL_LIBS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL3_image -lSDL3_ttf $(SDL_MIXER_LIB) -lSDL3_gfx
 beos_MAGIC_SDL_LIBS:=-L/usr/local/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL3_image -lSDL3_ttf $(SDL_MIXER_LIB)
-linux_MAGIC_SDL_LIBS:=-L/usr/local/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) SDL3_gfx --libs) -lSDL3_image -lSDL3_ttf $(SDL_MIXER_LIB)
+linux_MAGIC_SDL_LIBS:=-L/usr/local/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) sdl3-gfx --libs) -lSDL3_image -lSDL3_ttf $(SDL_MIXER_LIB)
 netbsd_MAGIC_SDL_LIBS:=-L/usr/local/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL3_image -lSDL3_ttf $(SDL_MIXER_LIB)
 MAGIC_SDL_LIBS:=$($(OS)_MAGIC_SDL_LIBS)
 
@@ -1532,4 +1534,3 @@ magic-plugins:	src/tp_magic_api.h $(MAGIC_SO)
 
 test-png:	src/test-png.c
 	$(CC) $(PNG_CFLAGS) src/test-png.c -o test-png $(PNG)
-

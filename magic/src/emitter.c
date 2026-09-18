@@ -177,6 +177,15 @@ int emitter_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
       return (0);
     }
 
+    SDL_Surface *rgba_surf = SDL_ConvertSurface(surf, SDL_PIXELFORMAT_RGBA32);
+    SDL_DestroySurface(surf);
+    if (rgba_surf == NULL)
+    {
+      fprintf(stderr, "Cannot convert %s (%d) emitter's image: '%s'\n", emitter_names[i], i, fname);
+      return (0);
+    }
+    surf = rgba_surf;
+
     const SDL_PixelFormatDetails *format_details = SDL_GetPixelFormatDetails(surf->format);
 
     if (emitter_frames[i] == 1)
@@ -206,7 +215,6 @@ int emitter_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
     for (j = 1; j < EMITTER_QUEUE_SIZE; j++)
     {
       int w, h;
-      float w_scale, h_scale;
 
       emitter_images[i][j] = (SDL_Surface * *)malloc(sizeof(SDL_Surface *) * emitter_frames[i]);
       if (emitter_images[i][j] == NULL)
@@ -219,10 +227,12 @@ int emitter_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
       {
         w = emitter_images[i][0][k]->w - (emitter_images[i][0][k]->w * j / EMITTER_QUEUE_SIZE);
         h = emitter_images[i][0][k]->h - (emitter_images[i][0][k]->h * j / EMITTER_QUEUE_SIZE);
-        w_scale = (float)w / (float)emitter_images[i][0][k]->w;
-        h_scale = (float)h / (float)emitter_images[i][0][k]->h;
+        if (w < 1)
+          w = 1;
+        if (h < 1)
+          h = 1;
 
-        emitter_images[i][j][k] = zoomSurface(emitter_images[i][0][k], w_scale, h_scale, 1 /* smooth */ );
+        emitter_images[i][j][k] = SDL_ScaleSurface(emitter_images[i][0][k], w, h, SDL_SCALEMODE_LINEAR);
 
         if (emitter_images[i][j][k] == NULL)
         {

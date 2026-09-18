@@ -1075,7 +1075,11 @@ static Uint32 window_format;
 
 static void SDL_WarpMouse(Uint16 x, Uint16 y)
 {
-  SDL_WarpMouseInWindow(window_screen, x, y);
+  float window_x = x, window_y = y;
+
+  if (renderer)
+    SDL_RenderCoordinatesToWindow(renderer, x, y, &window_x, &window_y);
+  SDL_WarpMouseInWindow(window_screen, window_x, window_y);
 }
 
 static SDL_Surface *SDL_DisplayFormat(SDL_Surface *surface)
@@ -1144,9 +1148,23 @@ static void GetIntMouseState(int *intmx, int *intmy)
   float my;
 
   SDL_GetMouseState(&mx, &my);
+  if (renderer)
+    SDL_RenderCoordinatesFromWindow(renderer, mx, my, &mx, &my);
   *intmx = round(mx);
   *intmy = round(my);
 }
+
+static bool TP_PollEvent(SDL_Event *event)
+{
+  if (!SDL_PollEvent(event))
+    return false;
+
+  if (renderer)
+    SDL_ConvertEventToRenderCoordinates(renderer, event);
+  return true;
+}
+
+#define SDL_PollEvent TP_PollEvent
 
 /* End of 2.0 <-> 3.0 compatibility functions */
 
@@ -6516,9 +6534,9 @@ static void mainloop(void)
           {
             fill_drag_started = 0;
           }
-          pressure = pressure_old = 2.0;
         }
         button_down = 0;
+        pressure = pressure_old = 2.0;
 
 #ifdef __ANDROID__
         stop_motion_convert(event);
@@ -7245,13 +7263,18 @@ static void mainloop(void)
       }
       else if (event.type == SDL_EVENT_PEN_AXIS)
       {
-	if (!pressure_disable)
+	if (!pressure_disable && event.paxis.axis == SDL_PEN_AXIS_PRESSURE &&
+            (event.paxis.pen_state & SDL_PEN_INPUT_DOWN))
 	  pressure = event.paxis.value;
       }
       else if(event.type == SDL_EVENT_PEN_DOWN)
       {
-	if (event.ptouch.eraser && HIT(r_canvas))
+	if (event.ptouch.eraser && hit_test(&r_canvas, event.ptouch.x, event.ptouch.y))
 	  do_quick_eraser();
+      }
+      else if (event.type == SDL_EVENT_PEN_UP)
+      {
+        pressure = pressure_old = 2.0;
       }
     }
 
@@ -12138,6 +12161,20 @@ static SDL_Surface *thumbnail(SDL_Surface *src, int max_x, int max_y, int keep_a
  */
 static SDL_Surface *thumbnail2(SDL_Surface *src, int max_x, int max_y, int keep_aspect, int keep_alpha)
 {
+  /* The pixel helpers address whole bytes. Indexed PNGs with 1, 2, or 4
+     bits per pixel must be unpacked before the thumbnail loops read them. */
+  if (SDL_BITSPERPIXEL(src->format) < 8)
+  {
+    SDL_Surface *unpacked = SDL_ConvertSurface(src, SDL_PIXELFORMAT_RGBA32);
+    SDL_Surface *result;
+
+    if (unpacked == NULL)
+      return NULL;
+    result = thumbnail2(unpacked, max_x, max_y, keep_aspect, keep_alpha);
+    SDL_DestroySurface(unpacked);
+    return result;
+  }
+
   int x, y;
   float src_x, src_y, off_x, off_y;
   SDL_Surface *s;
@@ -24503,8 +24540,13 @@ static void do_quick_eraser(void)
       }
       else if (event.type == SDL_EVENT_PEN_AXIS)
       {
-	if (!pressure_disable)
+	if (!pressure_disable && event.paxis.axis == SDL_PEN_AXIS_PRESSURE &&
+            (event.paxis.pen_state & SDL_PEN_INPUT_DOWN))
 	  pressure = event.paxis.value;
+      }
+      else if (event.type == SDL_EVENT_PEN_UP)
+      {
+        pressure = pressure_old = 2.0;
       }
       else if (event.type == SDL_EVENT_MOUSE_BUTTON_UP)
       {
@@ -29333,8 +29375,7 @@ bool TP_EventFilter( __attribute__((unused))
       event->type == SDL_EVENT_WILL_ENTER_FOREGROUND ||
       event->type == SDL_EVENT_DID_ENTER_BACKGROUND ||
       event->type == SDL_EVENT_DID_ENTER_FOREGROUND ||
-      event->type == SDL_EVENT_PEN_AXIS ||
-      event->type == SDL_EVENT_PEN_DOWN ||
+      (event->type >= SDL_EVENT_PEN_PROXIMITY_IN && event->type <= SDL_EVENT_PEN_AXIS) ||
       event->type == TP_USEREVENT_PLAYDESCSOUND)
     return 1;
   return 0;
@@ -29605,8 +29646,10 @@ static SDL_PropertiesID options;
     }
     else
     {
-      WINDOW_WIDTH = 0;
-      WINDOW_HEIGHT = 0;
+      /* SDL3 still needs a valid requested window size. Fullscreen will use
+         the desktop size, which we query from the renderer below. */
+      WINDOW_WIDTH = 800;
+      WINDOW_HEIGHT = 600;
     }
   }
 
@@ -29655,13 +29698,16 @@ static SDL_PropertiesID options;
     if (window_screen == NULL)
       printf("Warning: Cannot open fullscreen with software surface\n");
 #endif
+    if (window_screen != NULL)
+      SDL_SyncWindow(window_screen);
     /* FIXME: Check window_screen for being NULL, and abort?! (Also see below) -bjk 2024.12.20 */
     renderer = SDL_CreateRenderer(window_screen, NULL);
     /* SDL3 now defaults to linear filtering, so disabled
        SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear"); */
     if (native_screensize)
     {
-      SDL_GetWindowSizeInPixels(window_screen, &ww, &hh);
+      if (!SDL_GetRenderOutputSize(renderer, &ww, &hh))
+        SDL_GetWindowSizeInPixels(window_screen, &ww, &hh);
       /* Tuxpaint goes wrong under 500x480.
          Scale it using SDL2 features */
       if (ww < 500 || hh < 480)
@@ -29854,7 +29900,8 @@ static SDL_PropertiesID options;
     }
   }
 
-  SDL_SetRenderLogicalPresentation(renderer, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_LOGICAL_PRESENTATION_INTEGER_SCALE);
+  if (!native_screensize || render_scale != 1.0f)
+    SDL_SetRenderLogicalPresentation(renderer, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_LOGICAL_PRESENTATION_INTEGER_SCALE);
   window_format = SDL_GetWindowPixelFormat(window_screen);
   /* (Need to do this after native screen resolution is handled) */
   if (button_size_auto)         /* Automatic size of buttons, see https://sourceforge.net/p/tuxpaint/feature-requests/218/ */

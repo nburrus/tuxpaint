@@ -52,8 +52,8 @@ fi
 
 # Determine preferred savedir
 
-# First, check /usr/local/etc/
-x=`grep -m 1 "^savedir=" /usr/local/etc/tuxpaint/tuxpaint.conf`
+# First, check /opt/tuxpaint-sdl3/etc/
+x=`grep -m 1 "^savedir=" /opt/tuxpaint-sdl3/etc/tuxpaint/tuxpaint.conf`
 if test $? = 0 ; then
   SAVEDIR=`echo $x | cut -d = -f 2-99`
 fi
@@ -100,8 +100,8 @@ fi
 window_width=800
 window_height=600
 
-# First, check /usr/local/etc/
-x=`grep -m 1 "^windowsize=" /usr/local/etc/tuxpaint/tuxpaint.conf`
+# First, check /opt/tuxpaint-sdl3/etc/
+x=`grep -m 1 "^windowsize=" /opt/tuxpaint-sdl3/etc/tuxpaint/tuxpaint.conf`
 if test $? = 0 ; then
   window_width=`echo $x | cut -d = -f 2 | cut -d x -f 1`
   window_height=`echo $x | cut -d = -f 2 | cut -d x -f 2`
