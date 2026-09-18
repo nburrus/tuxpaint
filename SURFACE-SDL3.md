@@ -1,41 +1,84 @@
-# SDL3 Surface build
+# Tux Paint SDL3 build for the Surface Pro 6
 
-This branch carries Pere Pujal i Carabantes's SDL3 port snapshot
-(`90843bf70`) on top of the official Tux Paint Git history, plus fixes tested
-on a Surface Pro 6. The installed copy on that machine lives in
-`/opt/tuxpaint-sdl3`, with launchers in `/opt/bin`.
+This repository's `main` branch starts from the official SourceForge Git history
+(`upstream`), applies Pere Pujal i Carabantes's SDL3 snapshot (`90843bf70`),
+and adds the Surface fixes. `origin` is `git@github.com:nburrus/tuxpaint.git`.
+The port and fixes are in commits `b62cd30fc` and `615c71cde`; the SDL eraser
+patch was recorded in `425ad968a`.
 
-The fullscreen launcher uses `--fullscreen=yes --nofancycursors`. On the
-Surface's Wayland session, changing Tux Paint's custom cursors caused pen
-events to stop arriving. The plain cursor setting kept pen input responsive.
+## What was changed in Tux Paint
 
-The Makefile generates 8-bit PNG starter and template thumbnails. This
-SDL3_image build writes past its destination buffer when opening the 16-bit
-thumbnails produced by ImageMagick's `+depth` option; pressing New then
-crashed. AddressSanitizer found the overrun, and loading all generated 8-bit
-thumbnails under AddressSanitizer completed without errors.
+- Ported the application and plugins from SDL2 to SDL3, including rendering,
+  input events, audio, image/font handling, and build linkage.
+- Converted SDL window coordinates to renderer coordinates, including the
+  fullscreen letterbox area, so touch, mouse, and pen select the right point.
+- Converted sub-byte indexed thumbnails and Emitter's paletted surface before
+  scaling. AddressSanitizer found memory errors in the old paths.
+- Made ImageMagick generate 8-bit starter/template thumbnails (`-depth 8` in
+  `Makefile`). The installed SDL3_image build overflowed on 16-bit thumbnails;
+  pressing New could crash. Existing installed thumbnails were converted too.
+- The reversed pen end selects Tux Paint's eraser when SDL reports an eraser
+  pen-down event.
 
-The build also converts sub-byte indexed surfaces before thumbnailing and
-converts the Emitter plugin's paletted surface to RGBA before scaling. Both
-changes fix startup memory errors found with AddressSanitizer.
+The SDL3 port still uses the local SDL3_gfx, SDL3_Pango, and SDL3_mixer builds
+alongside SDL3_image and SDL3_ttf. Those dependency binaries are staged in
+`/home/nb/Perso/surface/package-opt/opt/tuxpaint-sdl3/lib`; they are not
+committed to this source repository.
 
-## Surface pen eraser on Wayland
+## SDL Wayland eraser patch
 
-SDL 3.4.2 records Wayland tablet tool type `ERASER`, but its Wayland event
-handler passes `false` as the eraser argument to every `SDL_SendPenTouch` call.
-As a result, Tux Paint sees the reversed pen end as another drawing tip. Apply
-`patches/SDL-3.4.2-wayland-eraser.patch` to SDL 3.4.2 source with `patch -p1`
-and build SDL with Wayland enabled. Place its `libSDL3.so.0` in the private
-Tux Paint library directory so the `/opt` launcher loads it. This avoids
-changing the system SDL library used by other applications.
+The installed private SDL is based on SDL 3.4.2. Its Wayland tablet handler
+records tool subtype `SDL_PEN_TYPE_ERASER` but passes `false` to all three
+`SDL_SendPenTouch` calls. Apply
+`patches/SDL-3.4.2-wayland-eraser.patch` with `patch -p1` at the root of the
+SDL 3.4.2 source tree, then build SDL with Wayland and shared libraries enabled.
+The resulting `libSDL3.so.0` belongs in `/opt/tuxpaint-sdl3/lib`, where the
+Tux Paint wrapper loads it via `LD_LIBRARY_PATH`. System SDL is untouched.
+The patch also applies to the official SDL 3.4.16 release. A patched 3.4.16
+trial did not solve Alicia's fullscreen pen loss, so 3.4.2 remains installed.
+A probe verified eraser events from the reversed end and normal events from
+the drawing tip with the patched library.
 
-## Alicia's launcher
+Example SDL rebuild from a matching release source tree:
 
-On Alicia's GNOME Wayland session, the pen stops sending tablet-down events to
-Tux Paint after it leaves proximity in SDL fullscreen mode. Alt-Tab away and
-back restores them. A Wayland protocol trace shows hover events continue but
-the compositor sends no `zwp_tablet_tool_v2.down` until focus changes. The same
-pen works in other applications and in Tux Paint windowed mode. Run
-`sudo sh install-alicia-tuxpaint-windowed-icon.sh` to give Alicia one desktop
-icon that opens the stable 1280x800 windowed mode with plain cursors and simple
-shapes. The installer removes her old fullscreen desktop icon.
+```sh
+cd /path/to/SDL3-3.4.2
+patch -p1 < /home/nb/Perso/tuxpaint/patches/SDL-3.4.2-wayland-eraser.patch
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DSDL_SHARED=ON -DSDL_WAYLAND=ON
+cmake --build build -j
+# Copy build/libSDL3.so.0.4.2 as /opt/tuxpaint-sdl3/lib/libSDL3.so.0
+```
+
+Check the actual library path in `build/` before copying; CMake output paths
+vary by generator. Do not overwrite the system SDL library.
+
+## Installation on this machine
+
+The built application is in `/opt/tuxpaint-sdl3`. `/opt/bin/tuxpaint` and
+`/opt/bin/tuxpaint-fullscreen` are symlinks to its wrappers. The first wrapper
+sets the private library path. The fullscreen wrapper adds
+`--fullscreen=yes --nofancycursors`. Source and staged binaries also remain
+under `/home/nb/Perso/surface`; `install-tuxpaint-sdl3.sh` there copies the
+staged tree into `/opt/tuxpaint-sdl3` and checks `--version`. The staged tree
+is a local build artifact, not part of this Git repository. Rebuilding from a
+fresh clone also requires the SDL3 dependencies listed above and the standard
+Tux Paint build dependencies. Use `make PREFIX=/opt/tuxpaint-sdl3` and
+`make install PREFIX=/opt/tuxpaint-sdl3` once those dependencies are available.
+
+## Alicia's pen and desktop launcher
+
+Alicia's GNOME Wayland session loses pen taps after the pen leaves proximity
+in SDL fullscreen mode. Alt-Tab away and back restores them. A Wayland protocol
+trace showed hover returning to Tux Paint, but no `zwp_tablet_tool_v2.down`
+for taps until focus changed. The pen works in other applications and in Tux
+Paint windowed mode. SDL 3.4.16, native fullscreen, matched 1368x912 canvas,
+`--dontgrab`, a named window, and disabling mouse warps did not fix the loss.
+The matched canvas fixed drawing alignment but not the pen issue. Fullscreen
+remains available for investigation; windowed mode is the reliable choice for
+Alicia.
+
+Run `sudo sh /home/nb/Perso/tuxpaint/install-alicia-tuxpaint-windowed-icon.sh`
+on the host to replace Alicia's fullscreen desktop icon with one windowed icon.
+It launches 1280x800 with `--nofancycursors --dontgrab --simpleshapes`.
+`--simpleshapes` removes the shape rotation step. This launcher script is
+committed; installing it changes only Alicia's desktop entry.
